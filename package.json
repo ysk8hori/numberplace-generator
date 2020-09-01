@@ -28,17 +28,22 @@
     },
     "globals": {
       "ts-jest": {
-        "tsConfigFile": "tsconfig.json"
+        "tsConfig": "tsconfig.json"
       }
     },
     "testMatch": [
-      "**/tests/*.+(ts|tsx|js)"
+      "**/tests/**/*.spec.+(ts|tsx|js)"
     ],
     "moduleNameMapper": {
       "^@/(.*)$": "<rootDir>/src/$1"
-    }
+    },
+    "setupFilesAfterEnv": [
+      "<rootDir>/tests/jest.setup.ts"
+    ]
   },
   "dependencies": {
+    "@types/uuid": "^8.3.0",
+    "reflect-metadata": "^0.1.13",
     "tsyringe": "^4.3.0",
     "uuid": "^8.3.0"
   }

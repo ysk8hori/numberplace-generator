@@ -41,7 +41,7 @@
     // "noFallthroughCasesInSwitch": true,    /* Report errors for fallthrough cases in switch statement. */
 
     /* Module Resolution Options */
-    // "moduleResolution": "node",            /* Specify module resolution strategy: 'node' (Node.js) or 'classic' (TypeScript pre-1.6). */
+    // "moduleResolution": "node" /* Specify module resolution strategy: 'node' (Node.js) or 'classic' (TypeScript pre-1.6). */,
     "baseUrl": "./" /* Base directory to resolve non-absolute module names. */,
     "paths": {
       "@/*": ["src/*"]
@@ -65,7 +65,7 @@
 
     /* Experimental Options */
     "experimentalDecorators": true /* Enables experimental support for ES7 decorators. */,
-    // "emitDecoratorMetadata": true,         /* Enables experimental support for emitting type metadata for decorators. */
+    "emitDecoratorMetadata": true /* Enables experimental support for emitting type metadata for decorators. */,
 
     /* Advanced Options */
     "skipLibCheck": true /* Skip type checking of declaration files. */,
@@ -75,8 +75,8 @@
     // "src/**/*",
     "src/**/*.ts",
     "src/**/*.tsx",
-    "src/**/*.vue",
-    "tests/**/*.ts",
-    "tests/**/*.tsx"
+    "src/**/*.vue"
+    // "tests/**/*.ts",
+    // "tests/**/*.tsx"
   ]
 }

@@ -33,7 +33,10 @@
     },
     "testMatch": [
       "**/tests/*.+(ts|tsx|js)"
-    ]
+    ],
+    "moduleNameMapper": {
+      "^@/(.*)$": "<rootDir>/src/$1"
+    }
   },
   "dependencies": {
     "tsyringe": "^4.3.0",

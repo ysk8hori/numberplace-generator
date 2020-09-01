@@ -58,7 +58,7 @@ export default class InfiniteAnalyzeLogic {
         );
       this.cellRepository
         .findAll(tentativeAnalyzer.successGameId)
-        .forEach(analyzedCell => {
+        .forEach((analyzedCell) => {
           const cell = this.cellRepository.findByPosition(
             this.gameId,
             analyzedCell.position

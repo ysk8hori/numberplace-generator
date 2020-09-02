@@ -32,13 +32,13 @@
       }
     },
     "testMatch": [
-      "**/tests/**/*.spec.+(ts|tsx|js)"
+      "**/__tests__/**/*.spec.+(ts|tsx|js)"
     ],
     "moduleNameMapper": {
       "^@/(.*)$": "<rootDir>/src/$1"
     },
     "setupFilesAfterEnv": [
-      "<rootDir>/tests/jest.setup.ts"
+      "<rootDir>/jest.setup.ts"
     ]
   },
   "dependencies": {

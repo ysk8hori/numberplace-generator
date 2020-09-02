@@ -75,7 +75,9 @@
     // "src/**/*",
     "src/**/*.ts",
     "src/**/*.tsx",
-    "src/**/*.vue"
+    "src/**/*.vue",
+    "jest.setup.ts",
+    "**/__tests__"
     // "tests/**/*.ts",
     // "tests/**/*.tsx"
   ]

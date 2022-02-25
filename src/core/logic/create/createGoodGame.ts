@@ -1,12 +1,12 @@
 import GameID from '@/core/valueobject/gameId';
-import CreateGameLogic from './createGameLogic';
+import { createGame } from './createGame';
 import CellRepository from '@/core/repository/cellRepository';
 import BaseHeight from '@/core/valueobject/baseHeight';
 import BaseWidth from '@/core/valueobject/baseWidth';
 import DeleteGameLogic from '../deleteGameLogic';
 import CellRepositoryImpl from '@/repository/cellRepositoryImpl';
-// import GroupRepositoryImpl from '@/repository/groupRepositoryImpl';
-// import GameRepositoryImpl from '@/repository/gameRepositoryImpl';
+import GroupRepositoryImpl from '@/repository/groupRepositoryImpl';
+import GameRepositoryImpl from '@/repository/gameRepositoryImpl';
 
 type Params = {
   baseHeight: BaseHeight;
@@ -17,13 +17,18 @@ export function createGoodGame({ baseHeight, baseWidth }: Params): GameID {
   let createdGameId: GameID | undefined;
 
   const cellRepository = CellRepositoryImpl.create();
-  // const groupRepository = GroupRepositoryImpl.create();
-  // const gameRepository = GameRepositoryImpl.create();
+  const groupRepository = GroupRepositoryImpl.create();
+  const gameRepository = GameRepositoryImpl.create();
 
   do {
     try {
-      createdGameId = undefined;
-      createdGameId = CreateGameLogic.create(baseHeight, baseWidth).execute();
+      createdGameId = createGame({
+        baseHeight,
+        baseWidth,
+        cellRepository,
+        groupRepository,
+        gameRepository,
+      });
     } catch (e) {
       //
     }

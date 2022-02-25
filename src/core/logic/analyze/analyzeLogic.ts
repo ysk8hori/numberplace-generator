@@ -6,7 +6,6 @@ import GameRepository from '../../repository/gameRepository';
 import BusinessError from '../../businessError';
 import FillAllLonelyLogic from './fillAllLonelyLogic';
 import FillOwnAnswerIfLastOneAnswerCandidate from './fillOwnAnswerIfLastOneAnswerCandidateLogic';
-import OutputAnswerStringLogic from '../outputAnswerStringLogic';
 
 @autoInjectable()
 export default class AnalyzeLogic {
@@ -53,7 +52,7 @@ export default class AnalyzeLogic {
   }
 
   private getRemainingCount(): number {
-    let count: number = 0;
+    let count = 0;
     this.cellRepository.findAll(this.gameId).forEach(cell => {
       if (cell.isAnswered) count++;
     });

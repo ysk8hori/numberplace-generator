@@ -20,8 +20,8 @@ export default class TestDefiner {
   public static create(
     issue: string,
     answers: string,
-    baseHeight: number = 3,
-    baseWidth: number = 3
+    baseHeight = 3,
+    baseWidth = 3
   ): TestDefiner {
     return new TestDefiner(issue, answers)
       .setBaseHeight(BaseHeight.create(baseHeight))

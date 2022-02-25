@@ -3,20 +3,20 @@ export default class Utils {
     return [...Array(count)].map((value, index) => index);
   }
   public static shuffle<T>(array: T[]): T[] {
-    for (var i = array.length - 1; 0 < i; i--) {
-      var r = Math.floor(Math.random() * (i + 1));
-      var tmp = array[i];
+    for (let i = array.length - 1; 0 < i; i--) {
+      const r = Math.floor(Math.random() * (i + 1));
+      const tmp = array[i];
       array[i] = array[r];
       array[r] = tmp;
     }
     return array;
   }
-  public static round(number: number, precision: number = 0) {
-    let shift = (number: number, precision: number, reverseShift: boolean) => {
+  public static round(number: number, precision = 0) {
+    const shift = (number: number, precision: number, reverseShift: boolean) => {
       if (reverseShift) {
         precision = -precision;
       }
-      var numArray = ('' + number).split('e');
+      const numArray = ('' + number).split('e');
       return +(
         numArray[0] +
         'e' +

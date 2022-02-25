@@ -5,7 +5,6 @@ import CellRepository from '@/core/repository/cellRepository';
 import GroupRepository from '@/core/repository/groupRepository';
 import GameRepository from '@/core/repository/gameRepository';
 import BusinessError from '@/core/businessError';
-import Game from '@/core/entity/game';
 import BaseHeight from '@/core/valueobject/baseHeight';
 import BaseWidth from '@/core/valueobject/baseWidth';
 import DeleteGameLogic from '../deleteGameLogic';
@@ -59,9 +58,9 @@ export default class CreateGoodGameLogic {
    * 解答済みのセルの数が全セルの半分より少なければGOOD!
    * @param createdGameId
    */
-  private isGood(createdGameId: GameID, remove: boolean = true) {
+  private isGood(createdGameId: GameID, remove = true) {
     const allCell = this.cellRepository.findAll(createdGameId);
-    if (allCell.filter(cell => cell.isAnswered).length < allCell.length / 2) {
+    if (allCell.filter((cell) => cell.isAnswered).length < allCell.length / 2) {
       //good
       return true;
     } else {

@@ -19,7 +19,7 @@ import DeleteGameLogic from '../../deleteGameLogic';
 export default class TentativeAnalyzer {
   public static create(
     parrentGameId: GameID,
-    create: boolean = false,
+    create = false,
     tentativeDecision?: TentativeDecision
   ): TentativeAnalyzer {
     return new TentativeAnalyzer(parrentGameId, create, tentativeDecision);
@@ -59,7 +59,7 @@ export default class TentativeAnalyzer {
   private myGame: Game;
   /** 解析に成功した際のGameID */
   private _successGameId?: GameID;
-  static count: number = 1;
+  static count = 1;
   /**
    * 解析に成功した際のGameID。解析できなかった場合はundefined。
    */

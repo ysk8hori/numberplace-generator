@@ -4,7 +4,7 @@ import Game from '@/core/entity/game';
 
 export default class GameSize {
   public static MAX_SIZE = 10;
-  public static MIN_SIZE: number = 3;
+  public static MIN_SIZE = 3;
   public static create(
     baseHeight: number,
     baseWidth: number

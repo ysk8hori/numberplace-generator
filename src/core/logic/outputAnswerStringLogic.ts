@@ -32,8 +32,8 @@ export default class OutputAnswerStringLogic {
   public getAnswerString(): string {
     return this.groupRepository
       .findByType(this.gameId, GroupType.Horizontal)
-      .map((row) =>
-        row.cells.map((cell) => cell.getAnswer()?.value ?? ' ').join('|')
+      .map(row =>
+        row.cells.map(cell => cell.getAnswer()?.value ?? ' ').join('|')
       )
       .join('\n');
   }

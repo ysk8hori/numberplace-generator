@@ -42,7 +42,7 @@ export default class Cell {
   }
 
   public getGroupIdByType(groupType: GroupType): GroupID {
-    return this.groupIds.find((groupId) => groupId.type === groupType)!;
+    return this.groupIds.find(groupId => groupId.type === groupType)!;
   }
 
   /**

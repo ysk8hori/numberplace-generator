@@ -69,8 +69,8 @@ export default class CellRepositoryImpl implements CellRepository {
         cell.getAnswerCandidateStringArray().length <
           minimumAnswerCandidateLength
       ) {
-        minimumAnswerCandidateLength = cell.getAnswerCandidateStringArray()
-          .length;
+        minimumAnswerCandidateLength =
+          cell.getAnswerCandidateStringArray().length;
       }
     });
     return minimumAnswerCandidateLength;

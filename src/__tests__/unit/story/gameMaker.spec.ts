@@ -27,7 +27,7 @@ describe('GameMaker', () => {
       ).toEqual([
         GroupID.create(game.gameId, 'h0'),
         GroupID.create(game.gameId, 'v0'),
-        GroupID.create(game.gameId, 's0')
+        GroupID.create(game.gameId, 's0'),
       ]);
     });
     test('[0,1]のCellのグループにs0が含まれていること', () => {

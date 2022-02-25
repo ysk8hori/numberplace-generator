@@ -15,7 +15,7 @@ export default class AnswerCandidateCollection {
   ): AnswerCandidateCollection {
     return new AnswerCandidateCollection(
       Utils.createArray(baseHeight.value * baseWidth.value).map(
-        (candidateValue) =>
+        candidateValue =>
           // candidateValueは0-originなので+1しとく
           AnswerCandidate.create((candidateValue + 1).toString())
       )
@@ -29,13 +29,13 @@ export default class AnswerCandidateCollection {
 
   public removeCandidate(removeValue: IAnswer) {
     this.answerCandidateList = this.answerCandidateList.filter(
-      (candidateValue) => !candidateValue.equals(removeValue)
+      candidateValue => !candidateValue.equals(removeValue)
     );
   }
 
   public getAnswerCandidateStringArray(): string[] {
     return this.answerCandidateList.map(
-      (answerCandidate) => answerCandidate.value
+      answerCandidate => answerCandidate.value
     );
   }
 
@@ -54,7 +54,7 @@ export default class AnswerCandidateCollection {
    * @param target 候補
    */
   public has(target: AnswerCandidate): boolean {
-    return this.answerCandidateList.some((value) => value.equals(target));
+    return this.answerCandidateList.some(value => value.equals(target));
   }
 
   public clear() {
@@ -82,7 +82,7 @@ export default class AnswerCandidateCollection {
 
   public toString(): string {
     return this.answerCandidateList
-      .map((answerCandidate) => answerCandidate.value)
+      .map(answerCandidate => answerCandidate.value)
       .toString();
   }
 

@@ -80,5 +80,5 @@ export default class Group {
 export enum GroupType {
   Vertical = 'v',
   Horizontal = 'h',
-  Square = 's'
+  Square = 's',
 }

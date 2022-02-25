@@ -53,7 +53,7 @@ export default class AnalyzeLogic {
 
   private getRemainingCount(): number {
     let count = 0;
-    this.cellRepository.findAll(this.gameId).forEach((cell) => {
+    this.cellRepository.findAll(this.gameId).forEach(cell => {
       if (cell.isAnswered) count++;
     });
     return this.cellRepository.findAll(this.gameId).length - count;

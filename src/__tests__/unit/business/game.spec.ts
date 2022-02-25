@@ -162,7 +162,7 @@ describe('game.ts', () => {
       ).toEqual([
         GroupID.create(game.gameId, 'h0'),
         GroupID.create(game.gameId, 'v0'),
-        GroupID.create(game.gameId, 's0')
+        GroupID.create(game.gameId, 's0'),
       ]);
     });
     it('1,0 が v1,h0,s0に属していること', () => {
@@ -174,7 +174,7 @@ describe('game.ts', () => {
       ).toEqual([
         GroupID.create(game.gameId, 'h0'),
         GroupID.create(game.gameId, 'v1'),
-        GroupID.create(game.gameId, 's0')
+        GroupID.create(game.gameId, 's0'),
       ]);
     });
     it('2, 0 が h0,v2,s0に属していること', () => {
@@ -186,7 +186,7 @@ describe('game.ts', () => {
       ).toEqual([
         GroupID.create(game.gameId, 'h0'),
         GroupID.create(game.gameId, 'v2'),
-        GroupID.create(game.gameId, 's0')
+        GroupID.create(game.gameId, 's0'),
       ]);
     });
     it('3, 0 が h0,v3,s1に属していること', () => {
@@ -198,7 +198,7 @@ describe('game.ts', () => {
       ).toEqual([
         GroupID.create(game.gameId, 'h0'),
         GroupID.create(game.gameId, 'v3'),
-        GroupID.create(game.gameId, 's1')
+        GroupID.create(game.gameId, 's1'),
       ]);
     });
     it('4, 0 が h0,v4,s1に属していること', () => {
@@ -210,7 +210,7 @@ describe('game.ts', () => {
       ).toEqual([
         GroupID.create(game.gameId, 'h0'),
         GroupID.create(game.gameId, 'v4'),
-        GroupID.create(game.gameId, 's1')
+        GroupID.create(game.gameId, 's1'),
       ]);
     });
     it('5, 0 が h0,v5,s1に属していること', () => {
@@ -222,7 +222,7 @@ describe('game.ts', () => {
       ).toEqual([
         GroupID.create(game.gameId, 'h0'),
         GroupID.create(game.gameId, 'v5'),
-        GroupID.create(game.gameId, 's1')
+        GroupID.create(game.gameId, 's1'),
       ]);
     });
     it('0, 1 が h1,v0,s0に属していること', () => {
@@ -234,7 +234,7 @@ describe('game.ts', () => {
       ).toEqual([
         GroupID.create(game.gameId, 'h1'),
         GroupID.create(game.gameId, 'v0'),
-        GroupID.create(game.gameId, 's0')
+        GroupID.create(game.gameId, 's0'),
       ]);
     });
     it('0, 2 が h2,v0,s2に属していること', () => {
@@ -246,7 +246,7 @@ describe('game.ts', () => {
       ).toEqual([
         GroupID.create(game.gameId, 'h2'),
         GroupID.create(game.gameId, 'v0'),
-        GroupID.create(game.gameId, 's2')
+        GroupID.create(game.gameId, 's2'),
       ]);
     });
     it('0, 3 が h3,v0,s2に属していること', () => {
@@ -258,7 +258,7 @@ describe('game.ts', () => {
       ).toEqual([
         GroupID.create(game.gameId, 'h3'),
         GroupID.create(game.gameId, 'v0'),
-        GroupID.create(game.gameId, 's2')
+        GroupID.create(game.gameId, 's2'),
       ]);
     });
     it('0, 4 が h4,v0,s4に属していること', () => {
@@ -270,7 +270,7 @@ describe('game.ts', () => {
       ).toEqual([
         GroupID.create(game.gameId, 'h4'),
         GroupID.create(game.gameId, 'v0'),
-        GroupID.create(game.gameId, 's4')
+        GroupID.create(game.gameId, 's4'),
       ]);
     });
     it('0, 5 が h5,v0,s4に属していること', () => {
@@ -282,7 +282,7 @@ describe('game.ts', () => {
       ).toEqual([
         GroupID.create(game.gameId, 'h5'),
         GroupID.create(game.gameId, 'v0'),
-        GroupID.create(game.gameId, 's4')
+        GroupID.create(game.gameId, 's4'),
       ]);
     });
   });

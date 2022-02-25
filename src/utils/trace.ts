@@ -28,7 +28,7 @@ function toTraceStart(marker: string, args: IArguments) {
 
 function toTraceEnd(ret: any, marker: string) {
   if (ret instanceof Promise) {
-    ret.then((returnValue) => {
+    ret.then(returnValue => {
       console.log(createEndingLog(marker, returnValue));
     });
   } else {

@@ -78,7 +78,7 @@ export default class TestDefiner {
     // });
     this.cellRepository
       ?.findAll(this.answeredGame.gameId)
-      .forEach((answeredCell) => this.defineOneTest(answeredCell));
+      .forEach(answeredCell => this.defineOneTest(answeredCell));
   }
 
   private defineOneTest(answeredCell: Cell) {

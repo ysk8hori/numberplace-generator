@@ -29,7 +29,7 @@ describe('range', () => {
       `("row $row 's CellPositions", ({ positions }) => {
         const next = generated.next();
         expect(
-          next.done ? undefined : next.value.map((cell) => cell.position)
+          next.done ? undefined : next.value.map(cell => cell.position)
         ).toEqual(positions);
       });
     });

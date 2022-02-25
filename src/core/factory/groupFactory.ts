@@ -4,7 +4,7 @@ import Height from '@/core/valueobject/height';
 import BaseHeight from '@/core/valueobject/baseHeight';
 import BaseWidth from '@/core/valueobject/baseWidth';
 import HorizontalPosition, {
-  hPos
+  hPos,
 } from '@/core/valueobject/horizontalPosition';
 import Width from '@/core/valueobject/width';
 import Utils from '@/utils/utils';

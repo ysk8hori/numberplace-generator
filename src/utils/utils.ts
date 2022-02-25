@@ -12,7 +12,11 @@ export default class Utils {
     return array;
   }
   public static round(number: number, precision = 0) {
-    const shift = (number: number, precision: number, reverseShift: boolean) => {
+    const shift = (
+      number: number,
+      precision: number,
+      reverseShift: boolean
+    ) => {
       if (reverseShift) {
         precision = -precision;
       }

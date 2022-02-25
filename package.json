@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "build": "tsc",
-    "test": "jest"
+    "test": "jest",
+    "lint:fix": "eslint --fix src",
+    "prettier": "prettier --write ."
   },
   "keywords": [],
   "author": "",

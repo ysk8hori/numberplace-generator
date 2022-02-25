@@ -3,7 +3,6 @@ import BaseHeight from '@/core/valueobject/baseHeight';
 import BaseWidth from '@/core/valueobject/baseWidth';
 import CellPosition from '@/core/valueobject/cellPosition';
 import Answer from '@/core/valueobject/answer';
-import FillAllLonelyLogic from '@/core/logic/analyze/fillAllLonelyLogic';
 import FillOwnAnswerIfLastOneAnswerCandidate from '@/core/logic/analyze/fillOwnAnswerIfLastOneAnswerCandidateLogic';
 
 describe('FillLonelyLogic', () => {

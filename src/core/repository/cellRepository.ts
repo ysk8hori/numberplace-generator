@@ -3,7 +3,6 @@ import CellPosition from '../valueobject/cellPosition';
 import CellCollection from '@/core/cellCollection';
 import GroupID from '@/core/valueobject/groupId';
 import GameID from '@/core/valueobject/gameId';
-import VerticalPosition from '@/core/valueobject/verticalPosition';
 
 /**
  * Game生成時のCellの保存、及びCellの取り出しを可能とするリポジトリ。

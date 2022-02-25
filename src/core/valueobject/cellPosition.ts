@@ -2,7 +2,6 @@ import HorizontalPosition, { hPos } from './horizontalPosition';
 import VerticalPosition, { vPos } from './verticalPosition';
 import Width from '@/core/valueobject/width';
 import Height from '@/core/valueobject/height';
-import Cell from '@/core/entity/cell';
 
 /**
  * GameBoardにおけるCellの位置を表すクラス。

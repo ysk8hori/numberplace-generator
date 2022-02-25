@@ -76,14 +76,13 @@ export default class CreateGameLogic {
   }
 
   private 微調整する(shuffledAnsweredCells: Cell[]): Game {
-    let clonedGame: Game;
     const answeredCell = shuffledAnsweredCells.pop();
     AnswerLogic.createAndExecute(
       this.game.gameId,
       answeredCell!.position,
       answeredCell!.getAnswer()!
     );
-    clonedGame = this.game.clone();
+    const clonedGame = this.game.clone();
     InfiniteAnalyzeLogic.createAndExecute(clonedGame.gameId, true);
     return clonedGame;
   }

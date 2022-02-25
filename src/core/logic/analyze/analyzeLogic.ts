@@ -36,7 +36,7 @@ export default class AnalyzeLogic {
    * @returns 解析で答えが確定しなかったセルの数
    */
   public execute(): number {
-    const remainingCount = this.doFill();
+    this.doFill();
     this.outputAnswerString();
     return this.getRemainingCount();
   }
@@ -53,7 +53,7 @@ export default class AnalyzeLogic {
 
   private getRemainingCount(): number {
     let count = 0;
-    this.cellRepository.findAll(this.gameId).forEach(cell => {
+    this.cellRepository.findAll(this.gameId).forEach((cell) => {
       if (cell.isAnswered) count++;
     });
     return this.cellRepository.findAll(this.gameId).length - count;

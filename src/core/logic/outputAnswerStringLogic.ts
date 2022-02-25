@@ -1,7 +1,6 @@
 import GameID from '@/core/valueobject/gameId';
 import { inject, autoInjectable } from 'tsyringe';
 import GameRepository from '@/core/repository/gameRepository';
-import Game from '@/core/entity/game';
 import BusinessError from '@/core/businessError';
 import CellRepository from '@/core/repository/cellRepository';
 import GroupRepository from '@/core/repository/groupRepository';
@@ -33,8 +32,8 @@ export default class OutputAnswerStringLogic {
   public getAnswerString(): string {
     return this.groupRepository
       .findByType(this.gameId, GroupType.Horizontal)
-      .map(row =>
-        row.cells.map(cell => cell.getAnswer()?.value ?? ' ').join('|')
+      .map((row) =>
+        row.cells.map((cell) => cell.getAnswer()?.value ?? ' ').join('|')
       )
       .join('\n');
   }

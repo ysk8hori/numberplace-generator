@@ -1,11 +1,8 @@
-import GameID from '@/core/valueobject/gameId';
 import Game from '@/core/entity/game';
 import BaseHeight from '@/core/valueobject/baseHeight';
 import BaseWidth from '@/core/valueobject/baseWidth';
 import CellRepositoryImpl from '@/repository/cellRepositoryImpl';
-import CellPosition, { pos } from '@/core/valueobject/cellPosition';
-import { vPos } from '@/core/valueobject/verticalPosition';
-import { hPos } from '@/core/valueobject/horizontalPosition';
+import { pos } from '@/core/valueobject/cellPosition';
 import LoadLogic from '@/core/logic/loadLogic';
 
 describe('LoadLogic', () => {

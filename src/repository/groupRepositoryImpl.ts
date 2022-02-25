@@ -30,7 +30,8 @@ export default class GroupRepositoryImpl implements GroupRepository {
     return (
       GroupRepositoryImpl.groupMap
         .get(gameId)
-        ?.find(group => group.isIdMatch(groupID)) ?? this.throw(gameId, groupID)
+        ?.find((group) => group.isIdMatch(groupID)) ??
+      this.throw(gameId, groupID)
     );
   }
 
@@ -38,7 +39,7 @@ export default class GroupRepositoryImpl implements GroupRepository {
     return (
       GroupRepositoryImpl.groupMap
         .get(gameId)
-        ?.filter(group => group.groupType === groupType) ??
+        ?.filter((group) => group.groupType === groupType) ??
       this.throw(gameId, groupType)
     );
   }
@@ -48,10 +49,10 @@ export default class GroupRepositoryImpl implements GroupRepository {
     verticalPosition: VerticalPosition
   ): Group {
     return (
-      this.findByType(gameId, GroupType.Horizontal).find(group =>
+      this.findByType(gameId, GroupType.Horizontal).find((group) =>
         group.range
           .getVerticalPositions()
-          .some(vPos => vPos.equals(verticalPosition))
+          .some((vPos) => vPos.equals(verticalPosition))
       ) ?? this.throw(gameId, verticalPosition)
     );
   }
@@ -60,10 +61,10 @@ export default class GroupRepositoryImpl implements GroupRepository {
     horizontalPosition: HorizontalPosition
   ): Group {
     return (
-      this.findByType(gameId, GroupType.Vertical).find(group =>
+      this.findByType(gameId, GroupType.Vertical).find((group) =>
         group.range
           .getHorizontalPositions()
-          .some(vPos => vPos.equals(horizontalPosition))
+          .some((vPos) => vPos.equals(horizontalPosition))
       ) ?? this.throw(gameId, horizontalPosition)
     );
   }
@@ -72,7 +73,7 @@ export default class GroupRepositoryImpl implements GroupRepository {
     GroupRepositoryImpl.groupMap.delete(gameId);
   }
 
-  public throw(gameId: GameID, arg2?: any): never {
+  public throw(gameId: GameID, arg2?: unknown): never {
     RepositoryError.throw(
       GroupRepositoryImpl.name,
       this.find.name,

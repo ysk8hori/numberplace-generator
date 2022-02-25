@@ -3,7 +3,6 @@ import VerticalPosition from '@/core/valueobject/verticalPosition';
 import Cell from '@/core/entity/cell';
 import CellRepository from '@/core/repository/cellRepository';
 import { inject, autoInjectable } from 'tsyringe';
-import BusinessError from '@/core/businessError';
 import RepositoryError from '@/repository/repositoryError';
 import GameID from '@/core/valueobject/gameId';
 import HorizontalPosition from '@/core/valueobject/horizontalPosition';

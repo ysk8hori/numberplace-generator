@@ -1,6 +1,5 @@
 import Height from '@/core/valueobject/height';
 import Utils from '@/utils/utils';
-import CellPosition from '@/core/valueobject/cellPosition';
 
 /**
  * GameBoardにおけるCellの縦位置。

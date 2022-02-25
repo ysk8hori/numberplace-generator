@@ -16,7 +16,6 @@ import FillOwnAnswerIfLastOneAnswerCandidate from '@/core/logic/analyze/fillOwnA
 import FillAllLonelyLogic from '@/core/logic/analyze/fillAllLonelyLogic';
 import AnalyzeLogic from '../logic/analyze/analyzeLogic';
 import Difficalty from '../valueobject/difficalty';
-import { Trace } from '@/utils/trace';
 import GameSize from './gameSize';
 
 @autoInjectable()
@@ -99,7 +98,7 @@ export default class Game {
     const clonedGame = Game.create(this.baseHeight, this.baseWidth);
     // 難易度をコピー
     clonedGame.setDifficalty(this.difficalty);
-    this.cells.findAll().forEach(cell => {
+    this.cells.findAll().forEach((cell) => {
       if (cell.answer)
         AnswerLogic.createAndExecute(
           clonedGame.gameId,

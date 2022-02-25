@@ -44,8 +44,7 @@ export default class AnswerCandidateCollection {
       value: AnswerCandidate,
       index: number,
       array: AnswerCandidate[]
-    ) => void,
-    thisArg?: any
+    ) => void
   ): void {
     this.answerCandidateList.forEach(callbackfn);
   }

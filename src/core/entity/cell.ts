@@ -1,10 +1,8 @@
 import AnswerCandidateCollection from '@/core/answerCandidateCollection';
 import Answer from '@/core/valueobject/answer';
-import VerticalPosition, { vPos } from '@/core/valueobject/verticalPosition';
-import HorizontalPosition, {
-  hPos
-} from '@/core/valueobject/horizontalPosition';
-import CellPosition, { pos } from '@/core/valueobject/cellPosition';
+import VerticalPosition from '@/core/valueobject/verticalPosition';
+import HorizontalPosition from '@/core/valueobject/horizontalPosition';
+import CellPosition from '@/core/valueobject/cellPosition';
 import IAnswer from '@/core/valueobject/iAnswer';
 import AnswerCandidate from '@/core/valueobject/answerCandidate';
 import GroupID from '@/core/valueobject/groupId';
@@ -12,7 +10,6 @@ import AnswerLogic from '@/core/logic/analyze/answerLogic';
 import GameID from '@/core/valueobject/gameId';
 import { GroupType } from '@/core/entity/group';
 import BusinessError from '@/core/businessError';
-import OutputAnswerStringLogic from '@/core/logic/outputAnswerStringLogic';
 
 /**
  * Cell。
@@ -45,7 +42,7 @@ export default class Cell {
   }
 
   public getGroupIdByType(groupType: GroupType): GroupID {
-    return this.groupIds.find(groupId => groupId.type === groupType)!;
+    return this.groupIds.find((groupId) => groupId.type === groupType)!;
   }
 
   /**

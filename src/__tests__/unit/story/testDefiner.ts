@@ -2,8 +2,7 @@ import Game from '@/core/entity/game';
 import BaseHeight from '@/core/valueobject/baseHeight';
 import BaseWidth from '@/core/valueobject/baseWidth';
 import LoadLogic from '@/core/logic/loadLogic';
-import AnalyzeLogic from '@/core/logic/analyze/analyzeLogic';
-import { inject, autoInjectable, injectable } from 'tsyringe';
+import { inject, autoInjectable } from 'tsyringe';
 import CellRepository from '@/core/repository/cellRepository';
 import Cell from '@/core/entity/cell';
 import InfiniteAnalyzeLogic from '@/core/logic/analyze/infiniteAnalyze/infiniteAnalyzeLogic';
@@ -61,7 +60,7 @@ export default class TestDefiner {
         10 <= this.baseHeight.value * this.baseWidth.value ? ',' : '';
       LoadLogic.create(this.game.gameId).execute(this.issue, {
         rowSplitter: '|',
-        colSplitter
+        colSplitter,
       });
       InfiniteAnalyzeLogic.createAndExecute(this.game.gameId);
       console.log(
@@ -69,7 +68,7 @@ export default class TestDefiner {
       );
       LoadLogic.create(this.answeredGame.gameId).execute(this.answers, {
         rowSplitter: '|',
-        colSplitter
+        colSplitter,
       });
     });
   }
@@ -79,7 +78,7 @@ export default class TestDefiner {
     // });
     this.cellRepository
       ?.findAll(this.answeredGame.gameId)
-      .forEach(answeredCell => this.defineOneTest(answeredCell));
+      .forEach((answeredCell) => this.defineOneTest(answeredCell));
   }
 
   private defineOneTest(answeredCell: Cell) {

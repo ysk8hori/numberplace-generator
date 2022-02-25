@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable prefer-rest-params */
 /**
  * トレースログを出力する。ログの内容は以下。
  * - クラス名
@@ -11,7 +13,7 @@ export const Trace = (
   descriptor: PropertyDescriptor
 ) => {
   const delegate = descriptor.value;
-  descriptor.value = function() {
+  descriptor.value = function () {
     const color = getColor();
     const marker = createMarker(target, props, color);
     toTraceStart(marker, arguments);
@@ -26,7 +28,7 @@ function toTraceStart(marker: string, args: IArguments) {
 
 function toTraceEnd(ret: any, marker: string) {
   if (ret instanceof Promise) {
-    ret.then(returnValue => {
+    ret.then((returnValue) => {
       console.log(createEndingLog(marker, returnValue));
     });
   } else {
@@ -39,20 +41,20 @@ function createMarker(target: any, props: string, color: Color) {
 }
 
 function createEndingLog(marker: string, ret: any): any {
-  return `[ END ] ${marker} \n${ret ? JSON.stringify(ret, null, "  ") : ""}`;
+  return `[ END ] ${marker} \n${ret ? JSON.stringify(ret, null, '  ') : ''}`;
 }
 
 function createStartingLog(marker: string, arg: IArguments): any {
-  return `[START] ${marker} \n${arg ? JSON.stringify(arg, null, "  ") : ""}`;
+  return `[START] ${marker} \n${arg ? JSON.stringify(arg, null, '  ') : ''}`;
 }
 
 enum Color {
-  red = "\u001b[31m",
-  green = "\u001b[32m",
-  blue = "\u001b[34m",
-  magenta = "\u001b[35m",
-  cyan = "\u001b[36m",
-  reset = "\u001b[0m"
+  red = '\u001b[31m',
+  green = '\u001b[32m',
+  blue = '\u001b[34m',
+  magenta = '\u001b[35m',
+  cyan = '\u001b[36m',
+  reset = '\u001b[0m',
 }
 /** コンソールログの色を順繰り変更するために使用する、色の配列の定義 */
 const colors = [Color.red, Color.green, Color.blue, Color.magenta];

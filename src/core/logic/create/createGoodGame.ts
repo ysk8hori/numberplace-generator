@@ -7,14 +7,15 @@ import DeleteGameLogic from '../deleteGameLogic';
 import CellRepositoryImpl from '@/repository/cellRepositoryImpl';
 import GroupRepositoryImpl from '@/repository/groupRepositoryImpl';
 import GameRepositoryImpl from '@/repository/gameRepositoryImpl';
+import Game from '@/core/entity/game';
 
 type Params = {
   baseHeight: BaseHeight;
   baseWidth: BaseWidth;
 };
 
-export function createGoodGame({ baseHeight, baseWidth }: Params): GameID {
-  let createdGameId: GameID | undefined;
+export function createGoodGame({ baseHeight, baseWidth }: Params): Game {
+  let createdGame: Game | undefined;
 
   const cellRepository = CellRepositoryImpl.create();
   const groupRepository = GroupRepositoryImpl.create();
@@ -22,7 +23,7 @@ export function createGoodGame({ baseHeight, baseWidth }: Params): GameID {
 
   do {
     try {
-      createdGameId = createGame({
+      createdGame = createGame({
         baseHeight,
         baseWidth,
         cellRepository,
@@ -33,10 +34,10 @@ export function createGoodGame({ baseHeight, baseWidth }: Params): GameID {
       //
     }
   } while (
-    createdGameId === undefined ||
-    !isGood(createdGameId, cellRepository)
+    createdGame === undefined ||
+    !isGood(createdGame.gameId, cellRepository)
   );
-  return createdGameId;
+  return createdGame;
 }
 
 /**

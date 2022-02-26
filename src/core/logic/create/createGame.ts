@@ -25,7 +25,7 @@ export function createGame({
   cellRepository,
   groupRepository,
   gameRepository,
-}: Params): GameID {
+}: Params): Game {
   const game = Game.create(baseHeight, baseWidth);
   const answeredGame = game.clone();
   infiniteAnalyze({
@@ -63,7 +63,7 @@ export function createGame({
 
   deleteGameLogic.execute(answeredGame.gameId);
 
-  return game.gameId;
+  return game;
 }
 
 /** 微調整する */

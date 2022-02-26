@@ -5,7 +5,6 @@ import CellRepository from '@/core/repository/cellRepository';
 import GroupRepository from '@/core/repository/groupRepository';
 import GameRepository from '@/core/repository/gameRepository';
 import BusinessError from '@/core/businessError';
-import InfiniteAnalyzeLogic from './infiniteAnalyzeLogic';
 import Game from '@/core/entity/game';
 import AnalyzeLogic from '../analyzeLogic';
 import Cell from '@/core/entity/cell';
@@ -38,14 +37,14 @@ export default class TentativeAnalyzer {
     TentativeAnalyzer.count++;
     if (1000 < TentativeAnalyzer.count) {
       BusinessError.throw(
-        InfiniteAnalyzeLogic.name,
+        'TentativeAnalyzer',
         'constructor',
         '処理が終了しませんでした。'
       );
     }
     if (!cellRepository || !groupRepository || !gameRepository)
       BusinessError.throw(
-        InfiniteAnalyzeLogic.name,
+        'TentativeAnalyzer',
         'constructor',
         'リポジトリが指定されていません。'
       );

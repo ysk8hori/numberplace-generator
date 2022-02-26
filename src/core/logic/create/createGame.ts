@@ -2,7 +2,7 @@ import GameID from '@/core/valueobject/gameId';
 import CellRepository from '@/core/repository/cellRepository';
 import GroupRepository from '@/core/repository/groupRepository';
 import GameRepository from '@/core/repository/gameRepository';
-import InfiniteAnalyzeLogic from '../analyze/infiniteAnalyze/infiniteAnalyzeLogic';
+import { infiniteAnalyze } from '../analyze/infiniteAnalyze/infiniteAnalyze';
 import Utils from '@/utils/utils';
 import AnswerLogic from '../analyze/answerLogic';
 import Game from '@/core/entity/game';
@@ -28,7 +28,13 @@ export function createGame({
 }: Params): GameID {
   const game = Game.create(baseHeight, baseWidth);
   const answeredGame = game.clone();
-  InfiniteAnalyzeLogic.createAndExecute(answeredGame.gameId, true);
+  infiniteAnalyze({
+    game: answeredGame,
+    isCreate: true,
+    cellRepository,
+    groupRepository,
+    gameRepository,
+  });
 
   // clonedGameからgameIdのゲームに20数個のセル答えを転写する。
   const shuffledAnsweredCells = Utils.shuffle(
@@ -44,7 +50,13 @@ export function createGame({
   const deleteGameLogic = DeleteGameLogic.create();
   // console.log('微調整開始');
   do {
-    clonedGame = tune({ shuffledAnsweredCells, game });
+    clonedGame = tune({
+      shuffledAnsweredCells,
+      game,
+      cellRepository,
+      groupRepository,
+      gameRepository,
+    });
     deleteGameLogic.execute(clonedGame.gameId);
   } while (clonedGame.difficalty?.value !== 0);
   // console.log('微調整完了');
@@ -58,9 +70,15 @@ export function createGame({
 function tune({
   shuffledAnsweredCells,
   game,
+  cellRepository,
+  groupRepository,
+  gameRepository,
 }: {
   shuffledAnsweredCells: Cell[];
   game: Game;
+  cellRepository: CellRepository;
+  groupRepository: GroupRepository;
+  gameRepository: GameRepository;
 }): Game {
   const answeredCell = shuffledAnsweredCells.pop();
   AnswerLogic.createAndExecute(
@@ -69,7 +87,14 @@ function tune({
     answeredCell!.getAnswer()!
   );
   const clonedGame = game.clone();
-  InfiniteAnalyzeLogic.createAndExecute(clonedGame.gameId, true);
+
+  infiniteAnalyze({
+    game: clonedGame,
+    isCreate: true,
+    cellRepository,
+    groupRepository,
+    gameRepository,
+  });
   return clonedGame;
 }
 

@@ -7,6 +7,7 @@ import GameID from '@/core/valueobject/gameId';
 import AnswerCandidateCollection from '@/core/answerCandidateCollection';
 import GroupRepositoryImpl from '@/repository/groupRepositoryImpl';
 import { GroupType } from '@/core/entity/group';
+import { describe, it, expect } from 'vitest';
 
 describe('GroupFactory', () => {
   const baseHeight = BaseHeight.create(2);

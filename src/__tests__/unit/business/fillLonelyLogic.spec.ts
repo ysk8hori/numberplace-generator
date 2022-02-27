@@ -4,6 +4,7 @@ import BaseWidth from '@/core/valueobject/baseWidth';
 import CellPosition from '@/core/valueobject/cellPosition';
 import Answer from '@/core/valueobject/answer';
 import FillOwnAnswerIfLastOneAnswerCandidate from '@/core/logic/analyze/fillOwnAnswerIfLastOneAnswerCandidateLogic';
+import { describe, it, beforeAll, expect } from 'vitest';
 
 describe('FillLonelyLogic', () => {
   describe('候補が一つになった際に、自動的に答えが決まるかを検証する1', () => {

@@ -1,4 +1,5 @@
 import TestDefiner from '../testDefiner';
+import { describe } from 'vitest';
 
 describe('クラシック上級お試し12x12 1', () => {
   const testDefiner = TestDefiner.create(

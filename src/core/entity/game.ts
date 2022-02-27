@@ -124,4 +124,8 @@ export default class Game {
       this.baseWidth.value
     ) as GameSize;
   }
+
+  public get answeredCellCount() {
+    return this.cells.findAll().filter(cell => cell.isAnswered).length;
+  }
 }

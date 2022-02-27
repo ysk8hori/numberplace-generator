@@ -1,5 +1,6 @@
 import TestDefiner from '../testDefiner';
 import GameRepositoryImpl from '@/repository/gameRepositoryImpl';
+import { describe, afterAll } from 'vitest';
 
 describe('クラシック上級お試し16x16 40', () => {
   const testDefiner = TestDefiner.create(

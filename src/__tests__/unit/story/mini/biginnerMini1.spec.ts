@@ -2,6 +2,7 @@ import Game from '@/core/entity/game';
 import BaseHeight from '@/core/valueobject/baseHeight';
 import BaseWidth from '@/core/valueobject/baseWidth';
 import CellPosition from '@/core/valueobject/cellPosition';
+import { describe, it, beforeAll, expect } from 'vitest';
 import Answer from '@/core/valueobject/answer';
 
 describe('初級ミニ1', () => {

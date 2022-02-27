@@ -7,6 +7,7 @@ import VerticalPosition from '@/core/valueobject/verticalPosition';
 import HorizontalPosition from '@/core/valueobject/horizontalPosition';
 import CellRepositoryImpl from '@/repository/cellRepositoryImpl';
 import GroupID from '@/core/valueobject/groupId';
+import { describe, it, test, beforeAll, expect } from 'vitest';
 
 describe('GameMaker', () => {
   describe('2×3のゲーム', () => {
@@ -48,72 +49,71 @@ describe('GameMaker', () => {
             Answer.create('1')
           );
         });
-        it.each`
-          hPos | vPos
-          ${0} | ${0}
-          ${1} | ${0}
-          ${2} | ${0}
-          ${3} | ${0}
-          ${4} | ${0}
-          ${5} | ${0}
-          ${0} | ${1}
-          ${1} | ${1}
-          ${2} | ${1}
-          ${0} | ${2}
-          ${0} | ${3}
-          ${0} | ${4}
-          ${0} | ${5}
-        `(
-          '同一グループのCellのAnswerCandidateから"1"が除外されていること($hPos, $vPos)',
-          ({ vPos, hPos }: { vPos: number; hPos: number }) => {
-            expect(
-              game.getAnswerCandidate(
-                CellPosition.create(
-                  VerticalPosition.create(vPos),
-                  HorizontalPosition.create(hPos)
-                )
+        test('同一グループのCellのAnswerCandidateから"1"が除外されていること', () => {
+          [
+            [0, 0],
+            [1, 0],
+            [2, 0],
+            [3, 0],
+            [4, 0],
+            [5, 0],
+            [0, 1],
+            [1, 1],
+            [2, 1],
+            [0, 2],
+            [0, 3],
+            [0, 4],
+            [0, 5],
+          ]
+            .map(([hPos, vPos]) =>
+              CellPosition.create(
+                VerticalPosition.create(vPos),
+                HorizontalPosition.create(hPos)
               )
-            ).not.toContain('1');
-          }
-        );
-        it.each`
-          vPos | hPos
-          ${1} | ${3}
-          ${1} | ${4}
-          ${1} | ${5}
-          ${2} | ${1}
-          ${2} | ${2}
-          ${2} | ${3}
-          ${2} | ${4}
-          ${2} | ${5}
-          ${3} | ${1}
-          ${3} | ${2}
-          ${3} | ${3}
-          ${3} | ${4}
-          ${3} | ${5}
-          ${4} | ${1}
-          ${4} | ${2}
-          ${4} | ${3}
-          ${4} | ${4}
-          ${4} | ${5}
-          ${5} | ${1}
-          ${5} | ${2}
-          ${5} | ${3}
-          ${5} | ${4}
-          ${5} | ${5}
-        `(
-          '同一グループ外のCellのAnswerCandidateから"1"が除外されていないこと($hPos, $vPos)',
-          ({ vPos, hPos }: { vPos: number; hPos: number }) => {
-            expect(
-              game.getAnswerCandidate(
-                CellPosition.create(
-                  VerticalPosition.create(vPos),
-                  HorizontalPosition.create(hPos)
-                )
+            )
+            .map(pos => game.getAnswerCandidate(pos))
+            .forEach(candidates => {
+              expect(candidates).not.toContain('1');
+            });
+        });
+        test('同一グループ外のCellのAnswerCandidateから"1"が除外されていないこと', () => {
+          // vPos | hPos
+          [
+            [1, 3],
+            [1, 4],
+            [1, 5],
+            [2, 1],
+            [2, 2],
+            [2, 3],
+            [2, 4],
+            [2, 5],
+            [3, 1],
+            [3, 2],
+            [3, 3],
+            [3, 4],
+            [3, 5],
+            [4, 1],
+            [4, 2],
+            [4, 3],
+            [4, 4],
+            [4, 5],
+            [5, 1],
+            [5, 2],
+            [5, 3],
+            [5, 4],
+            [5, 5],
+          ]
+            .map(([vPos, hPos]) =>
+              CellPosition.create(
+                VerticalPosition.create(vPos),
+                HorizontalPosition.create(hPos)
               )
-            ).toContain('1');
-          }
-        );
+            )
+            .map(pos => game.getAnswerCandidate(pos))
+            .forEach(candidates => {
+              expect(candidates).toContain('1');
+            });
+        });
       });
     });
   });

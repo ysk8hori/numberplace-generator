@@ -1,4 +1,5 @@
 import TestDefiner from '../testDefiner';
+import { describe } from 'vitest';
 
 describe('道場1', () => {
   const testDefiner = TestDefiner.create(

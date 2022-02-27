@@ -8,6 +8,7 @@ import Cell from '@/core/entity/cell';
 import InfiniteAnalyzeLogic from '@/core/logic/analyze/infiniteAnalyze/infiniteAnalyzeLogic';
 import OutputAnswerStringLogic from '@/core/logic/outputAnswerStringLogic';
 import DeleteGameLogic from '@/core/logic/deleteGameLogic';
+import { test, beforeAll, expect } from 'vitest';
 
 @autoInjectable()
 export default class TestDefiner {

@@ -5,6 +5,7 @@ import CreateGoodGameLogic from '@/core/logic/create/createGoodGameLogic';
 import GameID from '@/core/valueobject/gameId';
 import CellRepositoryImpl from '@/repository/cellRepositoryImpl';
 import GameRepositoryImpl from '@/repository/gameRepositoryImpl';
+import { describe, test, expect, beforeAll, it } from 'vitest';
 
 describe('CreateGameLogic', () => {
   describe('1x3(base)', () => {

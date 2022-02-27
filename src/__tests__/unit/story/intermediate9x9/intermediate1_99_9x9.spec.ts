@@ -1,4 +1,5 @@
 import TestDefiner from '../testDefiner';
+import { describe } from 'vitest';
 
 describe('クラシック中級1', () => {
   describe('中上級99', () => {

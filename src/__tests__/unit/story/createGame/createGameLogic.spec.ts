@@ -2,6 +2,7 @@ import BaseHeight from '@/core/valueobject/baseHeight';
 import BaseWidth from '@/core/valueobject/baseWidth';
 import { createGoodGame } from '@/core/logic/create/createGoodGame';
 import GameRepositoryImpl from '@/repository/gameRepositoryImpl';
+import { describe, test, expect } from 'vitest';
 
 describe('CreateGameLogic', () => {
   describe('1x3(base)', () => {

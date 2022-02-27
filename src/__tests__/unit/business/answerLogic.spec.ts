@@ -6,6 +6,7 @@ import { vPos } from '@/core/valueobject/verticalPosition';
 import { hPos } from '@/core/valueobject/horizontalPosition';
 import Answer from '@/core/valueobject/answer';
 import CellRepositoryImpl from '@/repository/cellRepositoryImpl';
+import { describe, test, beforeEach, expect } from 'vitest';
 
 describe('AnswerLogic', () => {
   let game: Game;

@@ -4,6 +4,7 @@ import BaseWidth from '@/core/valueobject/baseWidth';
 import CellRepositoryImpl from '@/repository/cellRepositoryImpl';
 import GroupID from '@/core/valueobject/groupId';
 import CellPosition from '@/core/valueobject/cellPosition';
+import { describe, it, expect } from 'vitest';
 
 describe('game.ts', () => {
   describe('ゲームを生成し、各グループに6つずつCellが設定されていることをチェックする', () => {

@@ -33,14 +33,6 @@ export default class VerticalPosition {
   public equals(other: VerticalPosition): boolean {
     return this.value === other.value;
   }
-  /**
-   * 縦方向に移動する
-   * @param count 移動する距離
-   */
-  public move(count: number): VerticalPosition {
-    this._value = this.value + count;
-    return this;
-  }
 
   public compare(other: VerticalPosition): -1 | 0 | 1 {
     if (this.value - other.value < 0) {

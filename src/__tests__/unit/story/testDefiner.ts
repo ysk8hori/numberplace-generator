@@ -5,11 +5,12 @@ import LoadLogic from '@/core/logic/loadLogic';
 import { inject, autoInjectable } from 'tsyringe';
 import CellRepository from '@/core/repository/cellRepository';
 import Cell from '@/core/entity/cell';
-import { infiniteAnalyze } from '@/core/logic/analyze/infiniteAnalyze/infiniteAnalyze';
 import OutputAnswerStringLogic from '@/core/logic/outputAnswerStringLogic';
 import DeleteGameLogic from '@/core/logic/deleteGameLogic';
 import GroupRepository from '@/core/repository/groupRepository';
 import GameRepository from '@/core/repository/gameRepository';
+import { infiniteAnalyze } from '@/core/logic/analyze/infiniteAnalyze/infiniteAnalyze';
+import { test, beforeAll, expect } from 'vitest';
 
 @autoInjectable()
 export default class TestDefiner {

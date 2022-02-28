@@ -5,7 +5,9 @@ import GroupID from '@/core/valueobject/groupId';
 import { autoInjectable, inject } from 'tsyringe';
 import GroupRepository from '@/core/repository/groupRepository';
 import GameID from '@/core/valueobject/gameId';
-import AnswerLogic from '@/core/logic/analyze/answerLogic';
+import { fillOneAnswer } from '@/core/logic/analyze/answerLogic';
+import CellRepository from '@/core/repository/cellRepository';
+import GameRepository from '@/core/repository/gameRepository';
 
 /**
  * グループ内で、とある候補がそのグループ内の1つのCellにしか存在しない場合に、
@@ -30,8 +32,12 @@ export default class FillLonelyLogic {
   public constructor(
     private gameId: GameID,
     private groupId: GroupID,
+    @inject('GameRepository')
+    private gameRepository?: GameRepository,
     @inject('GroupRepository')
-    private groupRepository?: GroupRepository
+    private groupRepository?: GroupRepository,
+    @inject('CellRepository')
+    private cellRepository?: CellRepository
   ) {
     this.group = this.groupRepository!.find(this.gameId, this.groupId);
   }
@@ -44,12 +50,15 @@ export default class FillLonelyLogic {
   public do() {
     this.group.answerCandidateCollection.forEach(answerCandidate => {
       const cellList = this.getFillableCells(answerCandidate);
-      if (cellList.length === 1)
-        AnswerLogic.createAndExecute(
-          this.gameId,
-          cellList[0].position,
-          answerCandidate.toAnswer()
-        );
+      if (cellList.length === 1) {
+        fillOneAnswer({
+          game: this.gameRepository!.find(this.gameId)!,
+          answer: answerCandidate.toAnswer(),
+          position: cellList[0].position,
+          cellRepository: this.cellRepository!,
+          groupRepository: this.groupRepository!,
+        });
+      }
     });
   }
 

@@ -5,6 +5,7 @@ import GroupRepository from '@/core/repository/groupRepository';
 import Cell from '@/core/entity/cell';
 import GameID from '@/core/valueobject/gameId';
 import { inject, autoInjectable } from 'tsyringe';
+import Game from '@/core/entity/game';
 
 /** 1つのCellに答えを記入する際のロジック */
 @autoInjectable()
@@ -72,5 +73,55 @@ export default class AnswerLogic {
     this.cell.groupIds.forEach(groupId =>
       this.groupRepository?.find(this.gameId, groupId).fillLonely()
     );
+  }
+}
+
+/**
+ * 解答を記入する。
+ * 記入後、各グループのAnsweredCallbackを実行する。
+ */
+export function fillOneAnswer({
+  game,
+  position,
+  answer,
+  groupRepository,
+  cellRepository,
+}: {
+  game: Game;
+  position: CellPosition;
+  answer: Answer;
+  groupRepository: GroupRepository;
+  cellRepository: CellRepository;
+}) {
+  const cell = cellRepository!.findByPosition(game.gameId, position);
+  cell.setAnswer(answer);
+  cell.clearAnswerCandidateList();
+  callGroupsOnAnswered({
+    game,
+    cell,
+    answer,
+    groupRepository,
+  });
+}
+
+/**
+ * 対象のCellが所属するグループのonAnsweredメソッドをコールする。
+ * @param answer 答え
+ */
+function callGroupsOnAnswered({
+  game,
+  cell,
+  answer,
+  groupRepository,
+}: {
+  game: Game;
+  cell: Cell;
+  answer: Answer;
+  groupRepository: GroupRepository;
+}) {
+  if (answer) {
+    cell.groupIds.forEach(groupId => {
+      groupRepository?.find(game.gameId, groupId).onAnswered(answer);
+    });
   }
 }

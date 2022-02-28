@@ -1,10 +1,9 @@
-import GameID from '@/core/valueobject/gameId';
 import CellRepository from '@/core/repository/cellRepository';
 import GroupRepository from '@/core/repository/groupRepository';
 import GameRepository from '@/core/repository/gameRepository';
 import { infiniteAnalyze } from '../analyze/infiniteAnalyze/infiniteAnalyze';
 import Utils from '@/utils/utils';
-import AnswerLogic from '../analyze/answerLogic';
+import { fillOneAnswer } from '../analyze/answerLogic';
 import Game from '@/core/entity/game';
 import Cell from '@/core/entity/cell';
 import BaseHeight from '@/core/valueobject/baseHeight';
@@ -43,7 +42,13 @@ export function createGame({
   for (let i = 0; i < getBaseAnsweredCellCount({ cellRepository, game }); i++) {
     const cell = shuffledAnsweredCells.pop();
     if (!cell) break;
-    AnswerLogic.createAndExecute(game.gameId, cell.position, cell.getAnswer()!);
+    fillOneAnswer({
+      game,
+      position: cell.position,
+      answer: cell.getAnswer()!,
+      cellRepository,
+      groupRepository,
+    });
   }
   // 解析を行いdifficaltyを見る。1以上だったら難しいのでさらにもう1つ答えを転写して・・・以降ループ。
   let clonedGame: Game;
@@ -81,11 +86,14 @@ function tune({
   gameRepository: GameRepository;
 }): Game {
   const answeredCell = shuffledAnsweredCells.pop();
-  AnswerLogic.createAndExecute(
-    game.gameId,
-    answeredCell!.position,
-    answeredCell!.getAnswer()!
-  );
+
+  fillOneAnswer({
+    game,
+    position: answeredCell!.position,
+    answer: answeredCell!.getAnswer()!,
+    cellRepository,
+    groupRepository,
+  });
   const clonedGame = game.clone();
 
   infiniteAnalyze({

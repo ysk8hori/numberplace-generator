@@ -14,7 +14,6 @@ import { inject, autoInjectable } from 'tsyringe';
 import AnswerCandidateCollection from '@/core/answerCandidateCollection';
 import FillOwnAnswerIfLastOneAnswerCandidate from '@/core/logic/analyze/fillOwnAnswerIfLastOneAnswerCandidateLogic';
 import FillAllLonelyLogic from '@/core/logic/analyze/fillAllLonelyLogic';
-import AnalyzeLogic from '../logic/analyze/analyzeLogic';
 import Difficalty from '../valueobject/difficalty';
 import GameSize from './gameSize';
 
@@ -106,7 +105,6 @@ export default class Game {
           cell.answer
         );
     });
-    AnalyzeLogic.create(clonedGame.gameId).execute();
     return clonedGame;
   }
 

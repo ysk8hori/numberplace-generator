@@ -3,7 +3,7 @@ import TentativeDecision from './tentativeDecision';
 import CellRepository from '@/core/repository/cellRepository';
 import BusinessError from '@/core/businessError';
 import Game from '@/core/entity/game';
-import AnalyzeLogic from '../analyzeLogic';
+import { analyze } from '../analyzeLogic';
 import Cell from '@/core/entity/cell';
 import Utils from '@/utils/utils';
 import DeleteGameLogic from '../../deleteGameLogic';
@@ -44,7 +44,7 @@ export function tentativeAnalyze({
     });
   }
   // 解析をして残セル数を取得する。残セル数が0なら解析成功。
-  if (AnalyzeLogic.create(game.gameId).execute() === 0) {
+  if (analyze({ gameId: game.gameId, cellRepository: cellRepository }) === 0) {
     return game.gameId;
   }
   for (const tentativeDecision of generateTentativeDecision({

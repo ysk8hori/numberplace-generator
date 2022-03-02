@@ -46,7 +46,7 @@ export default class CellRepositoryImpl implements CellRepository {
 
   public getMinimumAnswerCountCells(gameId: GameID): Cell[] {
     return this.findAll(gameId).filter(cell =>
-      this.isMinimum(cell, this.getMinimumAnswerCandidateCount(gameId))
+      this.isMinimum(cell, this.getMinimumAnswerCandidateCount(gameId)),
     );
   }
 
@@ -83,7 +83,7 @@ export default class CellRepositoryImpl implements CellRepository {
     return RepositoryError.throw(
       CellRepositoryImpl.name,
       this.findByPosition.name,
-      'CellCollectionが登録される前に検索処理が実行されました。'
+      'CellCollectionが登録される前に検索処理が実行されました。',
     );
   }
 }

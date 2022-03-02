@@ -37,7 +37,7 @@ export function createGame({
 
   // clonedGameからgameIdのゲームに20数個のセル答えを転写する。
   const shuffledAnsweredCells = Utils.shuffle(
-    cellRepository.findAll(answeredGame.gameId)
+    cellRepository.findAll(answeredGame.gameId),
   );
   for (let i = 0; i < getBaseAnsweredCellCount({ cellRepository, game }); i++) {
     const cell = shuffledAnsweredCells.pop();

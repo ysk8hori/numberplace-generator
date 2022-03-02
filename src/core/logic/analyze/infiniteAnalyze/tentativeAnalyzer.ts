@@ -31,7 +31,7 @@ export function tentativeAnalyze({
     BusinessError.throw(
       'tentativeAnalyze',
       'tentativeAnalyze',
-      '処理が終了しませんでした。'
+      '処理が終了しませんでした。',
     );
   }
   const game = parrentGame.clone();

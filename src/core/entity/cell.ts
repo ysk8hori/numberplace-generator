@@ -19,7 +19,7 @@ export default class Cell {
   public static create(
     gameId: GameID,
     position: CellPosition,
-    answerCandidateCollection: AnswerCandidateCollection
+    answerCandidateCollection: AnswerCandidateCollection,
   ): Cell {
     return new Cell(gameId, position, answerCandidateCollection);
   }
@@ -31,7 +31,7 @@ export default class Cell {
   public constructor(
     private gameId: GameID,
     public readonly position: CellPosition,
-    private answerCandidateList: AnswerCandidateCollection
+    private answerCandidateList: AnswerCandidateCollection,
   ) {}
   private _answer?: Answer;
   private myGroupIds: GroupID[] = [];
@@ -66,7 +66,7 @@ export default class Cell {
     AnswerLogic.createAndExecute(
       this.gameId,
       this.position,
-      this.answerCandidateList.getLastOne().toAnswer()
+      this.answerCandidateList.getLastOne().toAnswer(),
     );
   }
 
@@ -90,7 +90,7 @@ export default class Cell {
       BusinessError.throw(
         Cell.name,
         this.setAnswer.name,
-        `解答済みのCellです。position:(${this.position.verticalPosition.value}, ${this.position.horizontalPosition.value}) answer:${answer.value} this._answer:${this._answer?.value}`
+        `解答済みのCellです。position:(${this.position.verticalPosition.value}, ${this.position.horizontalPosition.value}) answer:${answer.value} this._answer:${this._answer?.value}`,
       );
     if (!this.hasAnswerCandidate(AnswerCandidate.create(answer.value))) {
       // BusinessError.throw(

@@ -11,14 +11,14 @@ import BusinessError from '@/core/businessError';
 export default class AnswerCandidateCollection {
   public static create(
     baseHeight: BaseHeight,
-    baseWidth: BaseWidth
+    baseWidth: BaseWidth,
   ): AnswerCandidateCollection {
     return new AnswerCandidateCollection(
       Utils.createArray(baseHeight.value * baseWidth.value).map(
         candidateValue =>
           // candidateValueは0-originなので+1しとく
-          AnswerCandidate.create((candidateValue + 1).toString())
-      )
+          AnswerCandidate.create((candidateValue + 1).toString()),
+      ),
     );
   }
   private constructor(private answerCandidateList: AnswerCandidate[]) {}
@@ -29,13 +29,13 @@ export default class AnswerCandidateCollection {
 
   public removeCandidate(removeValue: IAnswer) {
     this.answerCandidateList = this.answerCandidateList.filter(
-      candidateValue => !candidateValue.equals(removeValue)
+      candidateValue => !candidateValue.equals(removeValue),
     );
   }
 
   public getAnswerCandidateStringArray(): string[] {
     return this.answerCandidateList.map(
-      answerCandidate => answerCandidate.value
+      answerCandidate => answerCandidate.value,
     );
   }
 
@@ -43,8 +43,8 @@ export default class AnswerCandidateCollection {
     callbackfn: (
       value: AnswerCandidate,
       index: number,
-      array: AnswerCandidate[]
-    ) => void
+      array: AnswerCandidate[],
+    ) => void,
   ): void {
     this.answerCandidateList.forEach(callbackfn);
   }
@@ -72,7 +72,7 @@ export default class AnswerCandidateCollection {
       : BusinessError.throw(
           AnswerCandidateCollection.name,
           this.getLastOne.name,
-          'isLastOneで候補が1つになっていることを確認してから本メソッドを実行してください。'
+          'isLastOneで候補が1つになっていることを確認してから本メソッドを実行してください。',
         );
   }
 

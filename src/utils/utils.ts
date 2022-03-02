@@ -15,7 +15,7 @@ export default class Utils {
     const shift = (
       number: number,
       precision: number,
-      reverseShift: boolean
+      reverseShift: boolean,
     ) => {
       if (reverseShift) {
         precision = -precision;

@@ -37,7 +37,7 @@ export default class FillLonelyLogic {
     @inject('GroupRepository')
     private groupRepository?: GroupRepository,
     @inject('CellRepository')
-    private cellRepository?: CellRepository
+    private cellRepository?: CellRepository,
   ) {
     this.group = this.groupRepository!.find(this.gameId, this.groupId);
   }
@@ -70,7 +70,7 @@ export default class FillLonelyLogic {
    */
   private getFillableCells(answerCandidate: AnswerCandidate): Cell[] {
     return this.group.cells.filter(
-      cell => !cell.isAnswered && cell.hasAnswerCandidate(answerCandidate)
+      cell => !cell.isAnswered && cell.hasAnswerCandidate(answerCandidate),
     );
   }
 }

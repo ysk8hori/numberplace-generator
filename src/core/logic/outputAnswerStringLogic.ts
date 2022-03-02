@@ -18,13 +18,13 @@ export default class OutputAnswerStringLogic {
     @inject('GroupRepository')
     groupRepository?: GroupRepository,
     @inject('GameRepository')
-    gameRepository?: GameRepository
+    gameRepository?: GameRepository,
   ) {
     if (!cellRepository || !groupRepository || !gameRepository)
       BusinessError.throw(
         OutputAnswerStringLogic.name,
         'constructor',
-        'リポジトリが指定されていません。'
+        'リポジトリが指定されていません。',
       );
     this.groupRepository = groupRepository;
   }
@@ -33,7 +33,7 @@ export default class OutputAnswerStringLogic {
     return this.groupRepository
       .findByType(this.gameId, GroupType.Horizontal)
       .map(row =>
-        row.cells.map(cell => cell.getAnswer()?.value ?? ' ').join('|')
+        row.cells.map(cell => cell.getAnswer()?.value ?? ' ').join('|'),
       )
       .join('\n');
   }

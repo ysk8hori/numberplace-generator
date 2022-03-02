@@ -16,7 +16,7 @@ export default class Group {
     gameId: GameID,
     groupType: GroupType,
     groupId: GroupID,
-    answerCandidateCollection: AnswerCandidateCollection
+    answerCandidateCollection: AnswerCandidateCollection,
   ): Group {
     return new Group(gameId, groupType, groupId, answerCandidateCollection);
   }
@@ -27,14 +27,14 @@ export default class Group {
     private _groupId: GroupID,
     public answerCandidateCollection: AnswerCandidateCollection,
     @inject('CellRepository')
-    private cellRepository?: CellRepository
+    private cellRepository?: CellRepository,
   ) {
     this._range = Range.create(
       gameId,
       this.cellRepository
         ?.findByGroup(this.gameId, this.groupId)
         .map(cell => cell.position) ??
-        RepositoryError.throwNoRepository(Group.name, 'constructor')
+        RepositoryError.throwNoRepository(Group.name, 'constructor'),
     );
   }
 

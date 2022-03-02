@@ -42,7 +42,7 @@ export function infiniteAnalyze({
     cellRepository.findAll(successGameId).forEach(analyzedCell => {
       const cell = cellRepository.findByPosition(
         game.gameId,
-        analyzedCell.position
+        analyzedCell.position,
       );
       if (cell.isAnswered) return;
       game.fill(cell.position, analyzedCell.answer!);

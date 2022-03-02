@@ -19,7 +19,7 @@ export default class AnswerLogic {
   public static createAndExecute(
     gameId: GameID,
     position: CellPosition,
-    answer: Answer
+    answer: Answer,
   ) {
     new AnswerLogic(gameId, position, answer).execute();
   }
@@ -38,7 +38,7 @@ export default class AnswerLogic {
     @inject('GroupRepository')
     private groupRepository?: GroupRepository,
     @inject('CellRepository')
-    private cellRepository?: CellRepository
+    private cellRepository?: CellRepository,
   ) {
     this.cell = this.cellRepository!.findByPosition(this.gameId, this.position);
   }
@@ -71,7 +71,7 @@ export default class AnswerLogic {
    */
   private callFillLonely() {
     this.cell.groupIds.forEach(groupId =>
-      this.groupRepository?.find(this.gameId, groupId).fillLonely()
+      this.groupRepository?.find(this.gameId, groupId).fillLonely(),
     );
   }
 }

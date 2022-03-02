@@ -29,25 +29,25 @@ export default class Game {
     @inject('GameRepository')
     gameRepository?: GameRepository,
     @inject('GroupRepository')
-    private _groupRepository?: GroupRepository
+    private _groupRepository?: GroupRepository,
   ) {
     this._height = Height.create(this.baseHeight, this.baseWidth);
     this._width = Width.create(this.baseHeight, this.baseWidth);
     this._gameId = GameID.create();
     this._answerCandidateCollection = AnswerCandidateCollection.create(
       this.baseHeight,
-      this.baseWidth
+      this.baseWidth,
     );
     this.cells = CellFactory.create(
       this.gameId,
       this.baseHeight,
       this.baseWidth,
-      this.answerCandidateCollection
+      this.answerCandidateCollection,
     ).createCells();
     GroupFactory.create(
       this.gameId,
       this.baseHeight,
-      this.baseWidth
+      this.baseWidth,
     ).createGroups();
     gameRepository?.regist(this);
   }
@@ -105,7 +105,7 @@ export default class Game {
         AnswerLogic.createAndExecute(
           clonedGame.gameId,
           cell.position,
-          cell.answer
+          cell.answer,
         );
     });
     return clonedGame;
@@ -122,7 +122,7 @@ export default class Game {
   public get gameSize(): GameSize {
     return GameSize.create(
       this.baseHeight.value,
-      this.baseWidth.value
+      this.baseWidth.value,
     ) as GameSize;
   }
 

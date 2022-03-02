@@ -21,11 +21,11 @@ export default class VerticalPosition {
    */
   public static create(value: number): VerticalPosition;
   public static create(
-    arg: number | Height
+    arg: number | Height,
   ): VerticalPosition | VerticalPosition[] {
     return arg instanceof Height
       ? Utils.createArray(arg.value).map(index =>
-          VerticalPosition.create(index)
+          VerticalPosition.create(index),
         )
       : new VerticalPosition(arg);
   }

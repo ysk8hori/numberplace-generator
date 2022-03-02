@@ -13,9 +13,10 @@ import GameRepository from '@/core/repository/gameRepository';
 import { inject, autoInjectable } from 'tsyringe';
 import AnswerCandidateCollection from '@/core/answerCandidateCollection';
 import FillOwnAnswerIfLastOneAnswerCandidate from '@/core/logic/analyze/fillOwnAnswerIfLastOneAnswerCandidateLogic';
-import FillAllLonelyLogic from '@/core/logic/analyze/fillAllLonelyLogic';
+import { fillAllLonely } from '@/core/logic/analyze/fillAllLonelyLogic';
 import Difficalty from '../valueobject/difficalty';
 import GameSize from './gameSize';
+import GroupRepository from '../repository/groupRepository';
 
 @autoInjectable()
 export default class Game {
@@ -26,7 +27,9 @@ export default class Game {
     private _baseHeight: BaseHeight,
     private _baseWidth: BaseWidth,
     @inject('GameRepository')
-    gameRepository?: GameRepository
+    gameRepository?: GameRepository,
+    @inject('GroupRepository')
+    private _groupRepository?: GroupRepository
   ) {
     this._height = Height.create(this.baseHeight, this.baseWidth);
     this._width = Width.create(this.baseHeight, this.baseWidth);
@@ -84,7 +87,7 @@ export default class Game {
   public fill(position: CellPosition, answer: Answer) {
     AnswerLogic.createAndExecute(this.gameId, position, answer);
     FillOwnAnswerIfLastOneAnswerCandidate.create(this.gameId).execute();
-    FillAllLonelyLogic.create(this.gameId).execute();
+    fillAllLonely(this);
   }
   public getAnswer(position: CellPosition): Answer | undefined {
     return this.cells.get(position).answer;
@@ -125,5 +128,9 @@ export default class Game {
 
   public get answeredCellCount() {
     return this.cells.findAll().filter(cell => cell.isAnswered).length;
+  }
+
+  public get groupRepository() {
+    return this._groupRepository!;
   }
 }

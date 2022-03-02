@@ -44,7 +44,7 @@ export function tentativeAnalyze({
     });
   }
   // 解析をして残セル数を取得する。残セル数が0なら解析成功。
-  if (analyze({ gameId: game.gameId, cellRepository: cellRepository }) === 0) {
+  if (analyze({ game, cellRepository: cellRepository }) === 0) {
     return game.gameId;
   }
   for (const tentativeDecision of generateTentativeDecision({

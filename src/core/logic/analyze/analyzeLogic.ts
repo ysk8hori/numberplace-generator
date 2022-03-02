@@ -1,6 +1,6 @@
-import GameID from '../../valueobject/gameId';
+import Game from '@/core/entity/game';
 import CellRepository from '../../repository/cellRepository';
-import FillAllLonelyLogic from './fillAllLonelyLogic';
+import { fillAllLonely } from './fillAllLonelyLogic';
 import FillOwnAnswerIfLastOneAnswerCandidate from './fillOwnAnswerIfLastOneAnswerCandidateLogic';
 
 /**
@@ -8,42 +8,42 @@ import FillOwnAnswerIfLastOneAnswerCandidate from './fillOwnAnswerIfLastOneAnswe
  * @returns 解析で答えが確定しなかったセルの数
  */
 export function analyze({
-  gameId,
+  game,
   cellRepository,
 }: {
-  gameId: GameID;
+  game: Game;
   cellRepository: CellRepository;
 }) {
-  doFill({ gameId, cellRepository });
-  return getRemainingCount({ gameId, cellRepository });
+  doFill({ game, cellRepository });
+  return getRemainingCount({ game, cellRepository });
 }
 
 function doFill({
-  gameId,
+  game,
   cellRepository,
 }: {
-  gameId: GameID;
+  game: Game;
   cellRepository: CellRepository;
 }) {
   let remainingCount: number;
   do {
-    remainingCount = getRemainingCount({ gameId, cellRepository });
-    FillAllLonelyLogic.create(gameId).execute();
-    FillOwnAnswerIfLastOneAnswerCandidate.create(gameId).execute();
-  } while (remainingCount !== getRemainingCount({ gameId, cellRepository }));
+    remainingCount = getRemainingCount({ game, cellRepository });
+    fillAllLonely(game);
+    FillOwnAnswerIfLastOneAnswerCandidate.create(game.gameId).execute();
+  } while (remainingCount !== getRemainingCount({ game, cellRepository }));
   return remainingCount;
 }
 
 function getRemainingCount({
-  gameId,
+  game,
   cellRepository,
 }: {
-  gameId: GameID;
+  game: Game;
   cellRepository: CellRepository;
 }): number {
   let count = 0;
-  cellRepository.findAll(gameId).forEach(cell => {
+  cellRepository.findAll(game.gameId).forEach(cell => {
     if (cell.isAnswered) count++;
   });
-  return cellRepository.findAll(gameId).length - count;
+  return cellRepository.findAll(game.gameId).length - count;
 }

@@ -18,14 +18,14 @@ export default class CellPosition {
    */
   public static createFromNumber(
     horizontalPosition: number,
-    verticalPosition: number
+    verticalPosition: number,
   ): CellPosition {
     return new CellPosition(vPos(verticalPosition), hPos(horizontalPosition));
   }
 
   public static create(
     verticalPosition: VerticalPosition,
-    horizontalPosition: HorizontalPosition
+    horizontalPosition: HorizontalPosition,
   ): CellPosition {
     return new CellPosition(verticalPosition, horizontalPosition);
   }
@@ -33,7 +33,7 @@ export default class CellPosition {
   public static createSquareRange(
     startingPoint: CellPosition,
     horizontalRange: number,
-    verticalRange: number
+    verticalRange: number,
   ): CellPosition[] {
     const cellPositions: CellPosition[] = [];
     for (
@@ -54,7 +54,7 @@ export default class CellPosition {
 
   public static *generate(
     width: Width,
-    height: Height
+    height: Height,
   ): Generator<CellPosition, void, unknown> {
     for (const vPos of VerticalPosition.create(height)) {
       for (const hPos of HorizontalPosition.create(width)) {
@@ -66,7 +66,7 @@ export default class CellPosition {
   /** コンストラクタ */
   private constructor(
     private _verticalPosition: VerticalPosition,
-    private _horizontalPosition: HorizontalPosition
+    private _horizontalPosition: HorizontalPosition,
   ) {}
 
   public get verticalPosition(): VerticalPosition {
@@ -119,10 +119,10 @@ export default class CellPosition {
 }
 export function pos(
   verticalPosition: number,
-  horizontalPosition: number
+  horizontalPosition: number,
 ): CellPosition {
   return CellPosition.create(
     VerticalPosition.create(verticalPosition),
-    HorizontalPosition.create(horizontalPosition)
+    HorizontalPosition.create(horizontalPosition),
   );
 }

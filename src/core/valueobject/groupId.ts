@@ -6,7 +6,7 @@ export default class GroupID {
   public static create(
     gameId: GameID,
     idString: string,
-    type?: GroupType
+    type?: GroupType,
   ): GroupID {
     return new GroupID(gameId, idString, type);
   }
@@ -14,7 +14,7 @@ export default class GroupID {
   private constructor(
     private gameId: GameID,
     private _idString: string,
-    private _type?: GroupType
+    private _type?: GroupType,
   ) {
     this._idString = _type ? `${_type}${_idString}` : _idString;
     this._type = _type ? _type : this.getTypeFromId();
@@ -42,7 +42,7 @@ export default class GroupID {
         BusinessError.throw(
           GroupID.name,
           this.getTypeFromId.name,
-          `IDが不正です。 id:${this.idString}`
+          `IDが不正です。 id:${this.idString}`,
         );
     }
   }

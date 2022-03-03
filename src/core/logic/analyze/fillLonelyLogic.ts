@@ -31,7 +31,7 @@ export default class FillLonelyLogic {
     private gameId: GameID,
     private groupId: GroupID,
     @inject('GroupRepository')
-    private groupRepository?: GroupRepository
+    private groupRepository?: GroupRepository,
   ) {
     this.group = this.groupRepository!.find(this.gameId, this.groupId);
   }
@@ -48,7 +48,7 @@ export default class FillLonelyLogic {
         AnswerLogic.createAndExecute(
           this.gameId,
           cellList[0].position,
-          answerCandidate.toAnswer()
+          answerCandidate.toAnswer(),
         );
     });
   }
@@ -61,7 +61,7 @@ export default class FillLonelyLogic {
    */
   private getFillableCells(answerCandidate: AnswerCandidate): Cell[] {
     return this.group.cells.filter(
-      cell => !cell.isAnswered && cell.hasAnswerCandidate(answerCandidate)
+      cell => !cell.isAnswered && cell.hasAnswerCandidate(answerCandidate),
     );
   }
 }

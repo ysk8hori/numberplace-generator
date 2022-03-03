@@ -17,7 +17,7 @@ import DeleteGameLogic from '../deleteGameLogic';
 export default class CreateGameLogic {
   public static create(
     baseHeight: BaseHeight,
-    baseWidth: BaseWidth
+    baseWidth: BaseWidth,
   ): CreateGameLogic {
     return new CreateGameLogic(baseHeight, baseWidth);
   }
@@ -29,13 +29,13 @@ export default class CreateGameLogic {
     @inject('GroupRepository')
     groupRepository?: GroupRepository,
     @inject('GameRepository')
-    gameRepository?: GameRepository
+    gameRepository?: GameRepository,
   ) {
     if (!cellRepository || !groupRepository || !gameRepository)
       BusinessError.throw(
         CreateGameLogic.name,
         'constructor',
-        'リポジトリが指定されていません。'
+        'リポジトリが指定されていません。',
       );
     this.cellRepository = cellRepository;
     this.game = Game.create(baseHeight, baseWidth);
@@ -50,7 +50,7 @@ export default class CreateGameLogic {
 
     // clonedGameからthis.gameIdのゲームに20数個のセル答えを転写する。
     const shuffledAnsweredCells = Utils.shuffle(
-      this.cellRepository.findAll(answeredGame.gameId)
+      this.cellRepository.findAll(answeredGame.gameId),
     );
     for (let i = 0; i < this.getBaseAnsweredCellCount(); i++) {
       const cell = shuffledAnsweredCells.pop();
@@ -58,7 +58,7 @@ export default class CreateGameLogic {
       AnswerLogic.createAndExecute(
         this.game.gameId,
         cell.position,
-        cell.getAnswer()!
+        cell.getAnswer()!,
       );
     }
     // 解析を行いdifficaltyを見る。1以上だったら難しいのでさらにもう1つ答えを転写して・・・以降ループ。
@@ -80,7 +80,7 @@ export default class CreateGameLogic {
     AnswerLogic.createAndExecute(
       this.game.gameId,
       answeredCell!.position,
-      answeredCell!.getAnswer()!
+      answeredCell!.getAnswer()!,
     );
     const clonedGame = this.game.clone();
     InfiniteAnalyzeLogic.createAndExecute(clonedGame.gameId, true);

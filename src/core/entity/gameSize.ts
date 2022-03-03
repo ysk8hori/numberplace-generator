@@ -6,7 +6,7 @@ export default class GameSize {
   public static MIN_SIZE = 3;
   public static create(
     baseHeight: number,
-    baseWidth: number
+    baseWidth: number,
   ): GameSize | string {
     const oneSideLength = baseHeight * baseWidth;
     return Number.isNaN(oneSideLength)
@@ -17,7 +17,7 @@ export default class GameSize {
       ? 'Please chose larger size.'
       : new GameSize(
           BaseHeight.create(baseHeight),
-          BaseWidth.create(baseWidth)
+          BaseWidth.create(baseWidth),
         );
   }
   constructor(private _baseHeight: BaseHeight, private _baseWidth: BaseWidth) {}

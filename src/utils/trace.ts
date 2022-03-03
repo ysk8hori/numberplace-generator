@@ -10,7 +10,7 @@
 export const Trace = (
   target: any,
   props: string,
-  descriptor: PropertyDescriptor
+  descriptor: PropertyDescriptor,
 ) => {
   const delegate = descriptor.value;
   descriptor.value = function () {

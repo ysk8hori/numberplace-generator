@@ -22,7 +22,7 @@ export default class GroupFactory {
   public static create(
     gameId: GameID,
     baseHeight: BaseHeight,
-    baseWidth: BaseWidth
+    baseWidth: BaseWidth,
   ): GroupFactory {
     return new GroupFactory(gameId, baseHeight, baseWidth);
   }
@@ -33,14 +33,14 @@ export default class GroupFactory {
     @inject('GroupRepository')
     private groupRepository?: GroupRepository,
     @inject('CellRepository')
-    private cellRepository?: CellRepository
+    private cellRepository?: CellRepository,
   ) {
     this.answerCandidateCollection = AnswerCandidateCollection.create(
       this.baseHeight,
-      this.baseWidth
+      this.baseWidth,
     );
     this.cellCollection = CellCollection.create(
-      this.cellRepository!.findAll(this.gameId)
+      this.cellRepository!.findAll(this.gameId),
     );
   }
   private cellCollection: CellCollection;
@@ -58,12 +58,12 @@ export default class GroupFactory {
    */
   public createVerticalGroup(): Group[] {
     const groups = HorizontalPosition.create(
-      Width.create(this.baseHeight, this.baseWidth)
+      Width.create(this.baseHeight, this.baseWidth),
     ).reduce((previous, currentPosition) => {
       const groupId = this.createId(
         this.gameId,
         GroupType.Vertical,
-        this.vIdNumber++
+        this.vIdNumber++,
       );
       this.cellCollection
         .filterHorizontalPosition(currentPosition)
@@ -73,8 +73,8 @@ export default class GroupFactory {
           this.gameId,
           GroupType.Vertical,
           groupId,
-          this.answerCandidateCollection.clone()
-        )
+          this.answerCandidateCollection.clone(),
+        ),
       );
       return previous;
     }, new Array<Group>());
@@ -88,12 +88,12 @@ export default class GroupFactory {
    */
   public createHorizontalGroup(): Group[] {
     const groups = VerticalPosition.create(
-      Height.create(this.baseHeight, this.baseWidth)
+      Height.create(this.baseHeight, this.baseWidth),
     ).reduce((previous, currentPosition) => {
       const groupId = this.createId(
         this.gameId,
         GroupType.Horizontal,
-        this.hIdNumber++
+        this.hIdNumber++,
       );
       this.cellCollection
         .filterVerticalPosition(currentPosition)
@@ -103,8 +103,8 @@ export default class GroupFactory {
           this.gameId,
           GroupType.Horizontal,
           groupId,
-          this.answerCandidateCollection.clone()
-        )
+          this.answerCandidateCollection.clone(),
+        ),
       );
       return previous;
     }, new Array<Group>());
@@ -128,7 +128,7 @@ export default class GroupFactory {
           const groupId = this.createId(
             this.gameId,
             GroupType.Square,
-            this.sIdNumber++
+            this.sIdNumber++,
           );
           // スクウェアグループのレンジに含まれる全てのCellポジションを作る
           this.createSquareRange(horizontalGroupCount, verticalGroupCount)
@@ -139,11 +139,11 @@ export default class GroupFactory {
               this.gameId,
               GroupType.Square,
               groupId,
-              this.answerCandidateCollection.clone()
-            )
+              this.answerCandidateCollection.clone(),
+            ),
           );
-        }
-      )
+        },
+      ),
     );
     this.groupRepository!.regist(this.gameId, squareGroups);
     return squareGroups;
@@ -153,25 +153,25 @@ export default class GroupFactory {
   /** スクウェアグループの範囲の全てのCellPositionをリストで取得する */
   private createSquareRange(
     horizontalGroupCount: number,
-    verticalGroupCount: number
+    verticalGroupCount: number,
   ): CellPosition[] {
     return CellPosition.createSquareRange(
       // スクウェアグループの開始位置
       CellPosition.create(
         vPos(verticalGroupCount * this.baseHeight.value),
-        hPos(horizontalGroupCount * this.baseWidth.value)
+        hPos(horizontalGroupCount * this.baseWidth.value),
       ),
       // スクウェアグループの横幅
       this.baseWidth.value,
       // スクウェアグループの高さ
-      this.baseHeight.value
+      this.baseHeight.value,
     );
   }
 
   private createId(
     gameId: GameID,
     groupType: GroupType,
-    idNumber: number
+    idNumber: number,
   ): GroupID {
     return GroupID.create(gameId, idNumber.toString(), groupType);
   }

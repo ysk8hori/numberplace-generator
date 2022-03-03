@@ -15,66 +15,66 @@ describe('GroupFactory', () => {
   const gameId = GameID.create();
   const answerCandidateCollection = AnswerCandidateCollection.create(
     baseHeight,
-    baseWidth
+    baseWidth,
   );
   CellFactory.create(
     gameId,
     baseHeight,
     baseWidth,
-    answerCandidateCollection
+    answerCandidateCollection,
   ).createCells();
   const groupFactory: GroupFactory = GroupFactory.create(
     gameId,
     baseHeight,
-    baseWidth
+    baseWidth,
   );
   const groupRepository = new GroupRepositoryImpl();
   describe('縦グループの生成', () => {
     groupFactory.createVerticalGroup();
     const verticalGroups = groupRepository.findByType(
       gameId,
-      GroupType.Vertical
+      GroupType.Vertical,
     );
     it('0,0', () => {
       expect(
         verticalGroups[0].cells[0].isSamePosition(
-          CellPosition.createFromNumber(0, 0)
-        )
+          CellPosition.createFromNumber(0, 0),
+        ),
       ).toBeTruthy();
     });
     it('verticalGroups[0].cells[5].isSamePosition(CellPosition.create(0, 5))', () => {
       expect(
         verticalGroups[0].cells[5].isSamePosition(
-          CellPosition.createFromNumber(0, 5)
-        )
+          CellPosition.createFromNumber(0, 5),
+        ),
       ).toBeTruthy();
     });
     it('verticalGroups[3].cells[0].isSamePosition(CellPosition.create(3, 0))', () => {
       expect(
         verticalGroups[3].cells[0].isSamePosition(
-          CellPosition.createFromNumber(3, 0)
-        )
+          CellPosition.createFromNumber(3, 0),
+        ),
       ).toBeTruthy();
     });
     it('verticalGroups[3].cells[5].isSamePosition(CellPosition.create(3, 5))', () => {
       expect(
         verticalGroups[3].cells[5].isSamePosition(
-          CellPosition.createFromNumber(3, 5)
-        )
+          CellPosition.createFromNumber(3, 5),
+        ),
       ).toBeTruthy();
     });
     it('verticalGroups[5].cells[0].isSamePosition(CellPosition.create(5, 0))', () => {
       expect(
         verticalGroups[5].cells[0].isSamePosition(
-          CellPosition.createFromNumber(5, 0)
-        )
+          CellPosition.createFromNumber(5, 0),
+        ),
       ).toBeTruthy();
     });
     it('verticalGroups[5].cells[5].isSamePosition(CellPosition.create(5, 5))', () => {
       expect(
         verticalGroups[5].cells[5].isSamePosition(
-          CellPosition.createFromNumber(5, 5)
-        )
+          CellPosition.createFromNumber(5, 5),
+        ),
       ).toBeTruthy();
     });
   });
@@ -82,48 +82,48 @@ describe('GroupFactory', () => {
     groupFactory.createHorizontalGroup();
     const horizontalGroups = groupRepository.findByType(
       gameId,
-      GroupType.Horizontal
+      GroupType.Horizontal,
     );
     it('horizontalGroups[0].cells[0].isSamePosition(CellPosition.create(0, 0))', () => {
       expect(
         horizontalGroups[0].cells[0].isSamePosition(
-          CellPosition.createFromNumber(0, 0)
-        )
+          CellPosition.createFromNumber(0, 0),
+        ),
       ).toBeTruthy();
     });
     it('horizontalGroups[0].cells[5].isSamePosition(CellPosition.create(5, 0))', () => {
       expect(
         horizontalGroups[0].cells[5].isSamePosition(
-          CellPosition.createFromNumber(5, 0)
-        )
+          CellPosition.createFromNumber(5, 0),
+        ),
       ).toBeTruthy();
     });
     it('horizontalGroups[3].cells[0].isSamePosition(CellPosition.create(0, 3))', () => {
       expect(
         horizontalGroups[3].cells[0].isSamePosition(
-          CellPosition.createFromNumber(0, 3)
-        )
+          CellPosition.createFromNumber(0, 3),
+        ),
       ).toBeTruthy();
     });
     it('horizontalGroups[3].cells[5].isSamePosition(CellPosition.create(5, 3))', () => {
       expect(
         horizontalGroups[3].cells[5].isSamePosition(
-          CellPosition.createFromNumber(5, 3)
-        )
+          CellPosition.createFromNumber(5, 3),
+        ),
       ).toBeTruthy();
     });
     it('horizontalGroups[5].cells[0].isSamePosition(CellPosition.create(0, 5))', () => {
       expect(
         horizontalGroups[5].cells[0].isSamePosition(
-          CellPosition.createFromNumber(0, 5)
-        )
+          CellPosition.createFromNumber(0, 5),
+        ),
       ).toBeTruthy();
     });
     it('horizontalGroups[5].cells[5].isSamePosition(CellPosition.create(5, 5))', () => {
       expect(
         horizontalGroups[5].cells[5].isSamePosition(
-          CellPosition.createFromNumber(5, 5)
-        )
+          CellPosition.createFromNumber(5, 5),
+        ),
       ).toBeTruthy();
     });
   });
@@ -133,43 +133,43 @@ describe('GroupFactory', () => {
     it('squareGroups[0].cells[0].isSamePosition(CellPosition.create(0, 0))', () => {
       expect(
         squareGroups[0].cells[0].isSamePosition(
-          CellPosition.createFromNumber(0, 0)
-        )
+          CellPosition.createFromNumber(0, 0),
+        ),
       ).toBeTruthy();
     });
     it('squareGroups[0].cells[5].isSamePosition(CellPosition.create(2, 1))', () => {
       expect(
         squareGroups[0].cells[5].isSamePosition(
-          CellPosition.createFromNumber(2, 1)
-        )
+          CellPosition.createFromNumber(2, 1),
+        ),
       ).toBeTruthy();
     });
     it('squareGroups[3].cells[0].isSamePosition(CellPosition.create(3, 2))', () => {
       expect(
         squareGroups[3].cells[0].isSamePosition(
-          CellPosition.createFromNumber(3, 2)
-        )
+          CellPosition.createFromNumber(3, 2),
+        ),
       ).toBeTruthy();
     });
     it('squareGroups[3].cells[5].isSamePosition(CellPosition.create(5, 3))', () => {
       expect(
         squareGroups[3].cells[5].isSamePosition(
-          CellPosition.createFromNumber(5, 3)
-        )
+          CellPosition.createFromNumber(5, 3),
+        ),
       ).toBeTruthy();
     });
     it('squareGroups[5].cells[0].isSamePosition(CellPosition.create(3, 4))', () => {
       expect(
         squareGroups[5].cells[0].isSamePosition(
-          CellPosition.createFromNumber(3, 4)
-        )
+          CellPosition.createFromNumber(3, 4),
+        ),
       ).toBeTruthy();
     });
     it('squareGroups[5].cells[5].isSamePosition(CellPosition.create(5, 5))', () => {
       expect(
         squareGroups[5].cells[5].isSamePosition(
-          CellPosition.createFromNumber(5, 5)
-        )
+          CellPosition.createFromNumber(5, 5),
+        ),
       ).toBeTruthy();
     });
   });

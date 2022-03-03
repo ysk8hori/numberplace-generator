@@ -29,7 +29,7 @@ describe('range', () => {
       ].forEach(positions => {
         const next = generated.next();
         expect(
-          next.done ? undefined : next.value.map(cell => cell.position)
+          next.done ? undefined : next.value.map(cell => cell.position),
         ).toEqual(positions);
       });
     });

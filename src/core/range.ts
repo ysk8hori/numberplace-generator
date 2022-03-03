@@ -16,7 +16,7 @@ export default class Range {
     private gameId: GameID,
     private cellPositions: CellPosition[],
     @inject('CellRepository')
-    cellRepository?: CellRepository
+    cellRepository?: CellRepository,
   ) {
     this.cellRepository =
       cellRepository ??
@@ -52,7 +52,7 @@ export default class Range {
   private getRow(verticalPosition: VerticalPosition): Cell[] {
     return this.cellPositions
       .filter(cellPosition =>
-        cellPosition.isSameVerticalPosition(verticalPosition)
+        cellPosition.isSameVerticalPosition(verticalPosition),
       )
       .sort((a, b) => a.compareByCol(b))
       .map(pos => this.cellRepository.findByPosition(this.gameId, pos));
@@ -78,7 +78,7 @@ export default class Range {
   private getCol(horizontalPosition: HorizontalPosition): Cell[] {
     return this.cellPositions
       .filter(cellPosition =>
-        cellPosition.isSameHorizontalPosition(horizontalPosition)
+        cellPosition.isSameHorizontalPosition(horizontalPosition),
       )
       .sort((a, b) => a.compareByCol(b))
       .map(pos => this.cellRepository.findByPosition(this.gameId, pos));

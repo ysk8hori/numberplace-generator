@@ -11,13 +11,13 @@ export default class FillOwnAnswerIfLastOneAnswerCandidate {
   constructor(
     private gameId: GameID,
     @inject('CellRepository')
-    cellRepository?: CellRepository
+    cellRepository?: CellRepository,
   ) {
     if (!cellRepository)
       BusinessError.throw(
         FillOwnAnswerIfLastOneAnswerCandidate.name,
         'constructor',
-        'リポジトリが指定されていません。'
+        'リポジトリが指定されていません。',
       );
     this.cellRepository = cellRepository;
   }

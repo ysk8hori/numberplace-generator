@@ -17,13 +17,13 @@ export default class GameRepositoryImpl implements GameRepository {
       BusinessError.throw(
         GameRepositoryImpl.name,
         this.find.name,
-        '指定したGameは見つかりません。'
+        '指定したGameは見つかりません。',
       )
     );
   }
   public remove(gameId: GameID): void {
     GameRepositoryImpl.games = GameRepositoryImpl.games.filter(
-      game => !game.gameId.equals(gameId)
+      game => !game.gameId.equals(gameId),
     );
   }
 }

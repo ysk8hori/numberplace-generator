@@ -37,7 +37,7 @@ export default class CellCollection {
   }
   public findByGroup(groupId: GroupID): Cell[] {
     return this.cells.filter(cell =>
-      cell.groupIds.some(cellGroupId => cellGroupId.equals(groupId))
+      cell.groupIds.some(cellGroupId => cellGroupId.equals(groupId)),
     );
   }
   public findAll(): Cell[] {

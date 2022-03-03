@@ -21,11 +21,11 @@ export default class HorizontalPosition {
    */
   public static create(value: number): HorizontalPosition;
   public static create(
-    arg: number | Width
+    arg: number | Width,
   ): HorizontalPosition | HorizontalPosition[] {
     return arg instanceof Width
       ? Utils.createArray(arg.value).map(index =>
-          HorizontalPosition.create(index)
+          HorizontalPosition.create(index),
         )
       : new HorizontalPosition(arg);
   }

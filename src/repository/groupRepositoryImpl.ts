@@ -17,7 +17,7 @@ export default class GroupRepositoryImpl implements GroupRepository {
     if (GroupRepositoryImpl.groupMap.has(gameId)) {
       GroupRepositoryImpl.groupMap.set(
         gameId,
-        GroupRepositoryImpl.groupMap.get(gameId)!.concat(groups)
+        GroupRepositoryImpl.groupMap.get(gameId)!.concat(groups),
       );
     } else {
       GroupRepositoryImpl.groupMap.set(gameId, groups);
@@ -45,25 +45,25 @@ export default class GroupRepositoryImpl implements GroupRepository {
 
   public findHorizontalGroupByVerticalPosition(
     gameId: GameID,
-    verticalPosition: VerticalPosition
+    verticalPosition: VerticalPosition,
   ): Group {
     return (
       this.findByType(gameId, GroupType.Horizontal).find(group =>
         group.range
           .getVerticalPositions()
-          .some(vPos => vPos.equals(verticalPosition))
+          .some(vPos => vPos.equals(verticalPosition)),
       ) ?? this.throw(gameId, verticalPosition)
     );
   }
   public findVerticalGroupByHorizontalPosition(
     gameId: GameID,
-    horizontalPosition: HorizontalPosition
+    horizontalPosition: HorizontalPosition,
   ): Group {
     return (
       this.findByType(gameId, GroupType.Vertical).find(group =>
         group.range
           .getHorizontalPositions()
-          .some(vPos => vPos.equals(horizontalPosition))
+          .some(vPos => vPos.equals(horizontalPosition)),
       ) ?? this.throw(gameId, horizontalPosition)
     );
   }
@@ -78,7 +78,7 @@ export default class GroupRepositoryImpl implements GroupRepository {
       this.find.name,
       `お探しのGroupが見つかりません。 gameId:${JSON.stringify(gameId)} ${
         arg2 ? `arg2:${JSON.stringify(arg2)}` : ''
-      }`
+      }`,
     );
   }
 }

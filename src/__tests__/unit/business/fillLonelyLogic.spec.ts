@@ -18,7 +18,7 @@ describe('FillLonelyLogic', () => {
     });
     it('{5,0}のCellに６が解答されていること', () => {
       expect(game.getAnswer(CellPosition.createFromNumber(5, 0))).toEqual(
-        Answer.create('6')
+        Answer.create('6'),
       );
     });
   });
@@ -33,7 +33,7 @@ describe('FillLonelyLogic', () => {
     });
     it('{0,5}のCellに６が解答されていること', () => {
       expect(game.getAnswer(CellPosition.createFromNumber(0, 5))).toEqual(
-        Answer.create('6')
+        Answer.create('6'),
       );
     });
   });
@@ -52,7 +52,7 @@ describe('FillLonelyLogic', () => {
     });
     it('{0,5}のCellに9が解答されていること', () => {
       expect(game.getAnswer(CellPosition.createFromNumber(2, 5))).toEqual(
-        Answer.create('9')
+        Answer.create('9'),
       );
     });
   });

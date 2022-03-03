@@ -21,7 +21,7 @@ export default class TestDefiner {
     issue: string,
     answers: string,
     baseHeight = 3,
-    baseWidth = 3
+    baseWidth = 3,
   ): TestDefiner {
     return new TestDefiner(issue, answers)
       .setBaseHeight(BaseHeight.create(baseHeight))
@@ -33,7 +33,7 @@ export default class TestDefiner {
     private issue: string,
     private answers: string,
     @inject('CellRepository')
-    private cellRepository?: CellRepository
+    private cellRepository?: CellRepository,
   ) {}
 
   public initialize(): TestDefiner {
@@ -65,7 +65,7 @@ export default class TestDefiner {
       });
       InfiniteAnalyzeLogic.createAndExecute(this.game.gameId);
       console.log(
-        OutputAnswerStringLogic.create(this.game.gameId).getAnswerString()
+        OutputAnswerStringLogic.create(this.game.gameId).getAnswerString(),
       );
       LoadLogic.create(this.answeredGame.gameId).execute(this.answers, {
         rowSplitter: '|',
@@ -89,7 +89,7 @@ export default class TestDefiner {
       expect(
         this.cellRepository
           ?.findByPosition(this.game.gameId, answeredCell.position)
-          .getAnswer()?.value
+          .getAnswer()?.value,
       ).toEqual(answeredCell.getAnswer()?.value);
     });
   }

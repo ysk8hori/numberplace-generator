@@ -10,8 +10,8 @@ export default class CellNotFoundError implements Error {
     throw new CellNotFoundError(
       CellPosition.create(
         VerticalPosition.create(0),
-        HorizontalPosition.create(0)
-      )
+        HorizontalPosition.create(0),
+      ),
     );
   }
 }

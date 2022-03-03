@@ -13,7 +13,7 @@ describe('CreateGameLogic', () => {
     beforeAll(() => {
       gameId = CreateGoodGameLogic.create(
         BaseHeight.create(1),
-        BaseWidth.create(3)
+        BaseWidth.create(3),
       ).execute();
     });
     it('解答済みのセル数が全セル数の半分より少ないこと', () => {
@@ -21,7 +21,7 @@ describe('CreateGameLogic', () => {
       expect(
         CellRepositoryImpl.create()
           .findAll(gameId)
-          .filter(cell => cell.isAnswered).length
+          .filter(cell => cell.isAnswered).length,
       ).toBeLessThan(10 / 2 + 5);
     });
     test('GameRepositoryの件数', () => {
@@ -33,7 +33,7 @@ describe('CreateGameLogic', () => {
     beforeAll(() => {
       gameId = CreateGoodGameLogic.create(
         BaseHeight.create(2),
-        BaseWidth.create(2)
+        BaseWidth.create(2),
       ).execute();
     });
     it('解答済みのセル数が全セル数の半分より少ないこと', () => {
@@ -41,7 +41,7 @@ describe('CreateGameLogic', () => {
       expect(
         CellRepositoryImpl.create()
           .findAll(gameId)
-          .filter(cell => cell.isAnswered).length
+          .filter(cell => cell.isAnswered).length,
       ).toBeLessThan(17 / 2 + 5);
     });
   });
@@ -50,7 +50,7 @@ describe('CreateGameLogic', () => {
     beforeAll(() => {
       gameId = CreateGoodGameLogic.create(
         BaseHeight.create(2),
-        BaseWidth.create(3)
+        BaseWidth.create(3),
       ).execute();
     });
     it('解答済みのセル数が全セル数の半分より少ないこと', () => {
@@ -58,7 +58,7 @@ describe('CreateGameLogic', () => {
       expect(
         CellRepositoryImpl.create()
           .findAll(gameId)
-          .filter(cell => cell.isAnswered).length
+          .filter(cell => cell.isAnswered).length,
       ).toBeLessThan(37 / 2 + 5);
     });
   });
@@ -67,7 +67,7 @@ describe('CreateGameLogic', () => {
     beforeAll(() => {
       gameId = CreateGoodGameLogic.create(
         BaseHeight.create(3),
-        BaseWidth.create(3)
+        BaseWidth.create(3),
       ).execute();
     });
     it('解答済みのセル数が全セル数の半分より少ないこと', () => {
@@ -75,7 +75,7 @@ describe('CreateGameLogic', () => {
       expect(
         CellRepositoryImpl.create()
           .findAll(gameId)
-          .filter(cell => cell.isAnswered).length
+          .filter(cell => cell.isAnswered).length,
       ).toBeLessThan(82 / 2 + 5);
     });
   });

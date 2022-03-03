@@ -24,14 +24,14 @@ export default class InfiniteAnalyzeLogic {
     @inject('GroupRepository')
     groupRepository?: GroupRepository,
     @inject('GameRepository')
-    gameRepository?: GameRepository
+    gameRepository?: GameRepository,
   ) {
     TentativeAnalyzer.count = 0;
     if (!cellRepository || !groupRepository || !gameRepository)
       BusinessError.throw(
         InfiniteAnalyzeLogic.name,
         'constructor',
-        'リポジトリが指定されていません。'
+        'リポジトリが指定されていません。',
       );
     this.cellRepository = cellRepository;
     this.gameRepository = gameRepository;
@@ -47,21 +47,21 @@ export default class InfiniteAnalyzeLogic {
     this.game.setDifficalty(Difficalty.create());
     const tentativeAnalyzer = TentativeAnalyzer.create(
       this.gameId,
-      this.isCreate
+      this.isCreate,
     );
     tentativeAnalyzer.execute();
     if (tentativeAnalyzer.successGameId) {
       this.gameRepository
         .find(this.gameId)
         .setDifficalty(
-          this.gameRepository.find(tentativeAnalyzer.successGameId).difficalty
+          this.gameRepository.find(tentativeAnalyzer.successGameId).difficalty,
         );
       this.cellRepository
         .findAll(tentativeAnalyzer.successGameId)
         .forEach(analyzedCell => {
           const cell = this.cellRepository.findByPosition(
             this.gameId,
-            analyzedCell.position
+            analyzedCell.position,
           );
           if (cell.isAnswered) return;
           this.game.fill(cell.position, analyzedCell.answer!);
@@ -72,7 +72,7 @@ export default class InfiniteAnalyzeLogic {
       BusinessError.throw(
         InfiniteAnalyzeLogic.name,
         this.execute.name,
-        '解析できません！'
+        '解析できません！',
       );
     }
   }

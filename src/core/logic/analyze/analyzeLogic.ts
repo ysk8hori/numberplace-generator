@@ -19,13 +19,13 @@ export default class AnalyzeLogic {
     @inject('GroupRepository')
     groupRepository?: GroupRepository,
     @inject('GameRepository')
-    gameRepository?: GameRepository
+    gameRepository?: GameRepository,
   ) {
     if (!cellRepository || !groupRepository || !gameRepository)
       BusinessError.throw(
         AnalyzeLogic.name,
         'constructor',
-        'リポジトリが指定されていません。'
+        'リポジトリが指定されていません。',
       );
     this.cellRepository = cellRepository;
   }

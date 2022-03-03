@@ -108,7 +108,7 @@ describe('LoadLogic', () => {
     ).map(([vPos, hPos, answer]) => {
       expect(
         cellRepository.findByPosition(game.gameId, pos(vPos, hPos)).getAnswer()
-          ?.value
+          ?.value,
       ).toEqual(answer);
     });
   });

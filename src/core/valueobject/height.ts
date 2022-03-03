@@ -18,7 +18,7 @@ export default class Height {
 
   public static validation(
     baseHeight: number,
-    baseWidth: number
+    baseWidth: number,
   ): boolean | string {
     const oneSideLength = baseHeight * baseWidth;
     return Number.isNaN(oneSideLength)

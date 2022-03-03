@@ -13,7 +13,7 @@ import DeleteGameLogic from '../deleteGameLogic';
 export default class CreateGoodGameLogic {
   public static create(
     baseHeight: BaseHeight,
-    baseWidth: BaseWidth
+    baseWidth: BaseWidth,
   ): CreateGoodGameLogic {
     return new CreateGoodGameLogic(baseHeight, baseWidth);
   }
@@ -25,13 +25,13 @@ export default class CreateGoodGameLogic {
     @inject('GroupRepository')
     groupRepository?: GroupRepository,
     @inject('GameRepository')
-    gameRepository?: GameRepository
+    gameRepository?: GameRepository,
   ) {
     if (!cellRepository || !groupRepository || !gameRepository)
       BusinessError.throw(
         CreateGameLogic.name,
         'constructor',
-        'リポジトリが指定されていません。'
+        'リポジトリが指定されていません。',
       );
     this.cellRepository = cellRepository;
   }
@@ -44,7 +44,7 @@ export default class CreateGoodGameLogic {
         createdGameId = undefined;
         createdGameId = CreateGameLogic.create(
           this.baseHeight,
-          this.baseWidth
+          this.baseWidth,
         ).execute();
         // console.log(`this is Good? :${this.isGood(createdGameId, false)}`);
       } catch (e) {

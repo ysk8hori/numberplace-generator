@@ -19,7 +19,7 @@ describe('AnswerLogic', () => {
     expect(
       cellRepository
         .findByPosition(game.gameId, CellPosition.create(vPos(1), hPos(0)))
-        .getAnswerCandidateStringArray()
+        .getAnswerCandidateStringArray(),
     ).toEqual(['2', '3', '4', '5', '6', '7', '8', '9']);
   });
   test('fill answer "2"', () => {
@@ -28,7 +28,7 @@ describe('AnswerLogic', () => {
     expect(
       cellRepository
         .findByPosition(game.gameId, CellPosition.create(vPos(1), hPos(0)))
-        .getAnswerCandidateStringArray()
+        .getAnswerCandidateStringArray(),
     ).toEqual(['3', '4', '5', '6', '7', '8', '9']);
   });
   test('fill answer "3"', () => {
@@ -38,7 +38,7 @@ describe('AnswerLogic', () => {
     expect(
       cellRepository
         .findByPosition(game.gameId, CellPosition.create(vPos(1), hPos(0)))
-        .getAnswerCandidateStringArray()
+        .getAnswerCandidateStringArray(),
     ).toEqual(['4', '5', '6', '7', '8', '9']);
   });
   test('fill answer "4"', () => {
@@ -49,7 +49,7 @@ describe('AnswerLogic', () => {
     expect(
       cellRepository
         .findByPosition(game.gameId, CellPosition.create(vPos(1), hPos(0)))
-        .getAnswerCandidateStringArray()
+        .getAnswerCandidateStringArray(),
     ).toEqual(['4', '5', '6', '7', '8', '9']);
   });
 });

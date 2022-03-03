@@ -20,7 +20,7 @@ export default class TentativeAnalyzer {
   public static create(
     parrentGameId: GameID,
     create = false,
-    tentativeDecision?: TentativeDecision
+    tentativeDecision?: TentativeDecision,
   ): TentativeAnalyzer {
     return new TentativeAnalyzer(parrentGameId, create, tentativeDecision);
   }
@@ -33,21 +33,21 @@ export default class TentativeAnalyzer {
     @inject('GroupRepository')
     groupRepository?: GroupRepository,
     @inject('GameRepository')
-    gameRepository?: GameRepository
+    gameRepository?: GameRepository,
   ) {
     TentativeAnalyzer.count++;
     if (1000 < TentativeAnalyzer.count) {
       BusinessError.throw(
         InfiniteAnalyzeLogic.name,
         'constructor',
-        '処理が終了しませんでした。'
+        '処理が終了しませんでした。',
       );
     }
     if (!cellRepository || !groupRepository || !gameRepository)
       BusinessError.throw(
         InfiniteAnalyzeLogic.name,
         'constructor',
-        'リポジトリが指定されていません。'
+        'リポジトリが指定されていません。',
       );
     this.cellRepository = cellRepository;
     this.gameRepository = gameRepository;
@@ -92,7 +92,7 @@ export default class TentativeAnalyzer {
     const tentativeAnalyzer = TentativeAnalyzer.create(
       this.myGame.gameId,
       this.isCreate,
-      tentativeDecision
+      tentativeDecision,
     );
     tentativeAnalyzer.execute();
     if (tentativeAnalyzer.successGameId) {
@@ -126,7 +126,7 @@ export default class TentativeAnalyzer {
   private getShuffledMinimumAnswerCountCells(): Cell[] {
     return this.isCreate
       ? Utils.shuffle(
-          this.cellRepository.getMinimumAnswerCountCells(this.myGame.gameId)
+          this.cellRepository.getMinimumAnswerCountCells(this.myGame.gameId),
         )
       : this.cellRepository.getMinimumAnswerCountCells(this.myGame.gameId);
   }

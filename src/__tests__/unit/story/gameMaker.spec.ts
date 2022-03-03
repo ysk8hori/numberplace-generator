@@ -23,8 +23,8 @@ describe('GameMaker', () => {
       expect(
         cellRepository.findByPosition(
           game.gameId,
-          CellPosition.createFromNumber(0, 0)
-        ).groupIds
+          CellPosition.createFromNumber(0, 0),
+        ).groupIds,
       ).toEqual([
         GroupID.create(game.gameId, 'h0'),
         GroupID.create(game.gameId, 'v0'),
@@ -35,8 +35,8 @@ describe('GameMaker', () => {
       expect(
         cellRepository.findByPosition(
           game.gameId,
-          CellPosition.createFromNumber(0, 1)
-        ).groupIds
+          CellPosition.createFromNumber(0, 1),
+        ).groupIds,
       ).toContainEqual(GroupID.create(game.gameId, 's0'));
     });
     describe('解答の入力', () => {
@@ -46,7 +46,7 @@ describe('GameMaker', () => {
         });
         it('[0,0]のCellのAnswerが"1"となること', () => {
           expect(game.getAnswer(CellPosition.createFromNumber(0, 0))).toEqual(
-            Answer.create('1')
+            Answer.create('1'),
           );
         });
         test('同一グループのCellのAnswerCandidateから"1"が除外されていること', () => {
@@ -68,8 +68,8 @@ describe('GameMaker', () => {
             .map(([hPos, vPos]) =>
               CellPosition.create(
                 VerticalPosition.create(vPos),
-                HorizontalPosition.create(hPos)
-              )
+                HorizontalPosition.create(hPos),
+              ),
             )
             .map(pos => game.getAnswerCandidate(pos))
             .forEach(candidates => {
@@ -106,8 +106,8 @@ describe('GameMaker', () => {
             .map(([vPos, hPos]) =>
               CellPosition.create(
                 VerticalPosition.create(vPos),
-                HorizontalPosition.create(hPos)
-              )
+                HorizontalPosition.create(hPos),
+              ),
             )
             .map(pos => game.getAnswerCandidate(pos))
             .forEach(candidates => {

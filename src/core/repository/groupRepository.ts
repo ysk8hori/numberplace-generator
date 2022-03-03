@@ -11,11 +11,11 @@ export default interface GroupRepository {
   findByType(gameId: GameID, groupType: GroupType): Group[];
   findHorizontalGroupByVerticalPosition(
     gameId: GameID,
-    verticalPosition: VerticalPosition
+    verticalPosition: VerticalPosition,
   ): Group;
   findVerticalGroupByHorizontalPosition(
     gameId: GameID,
-    horizontalPosition: HorizontalPosition
+    horizontalPosition: HorizontalPosition,
   ): Group;
   remove(gameId: GameID): void;
 }

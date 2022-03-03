@@ -16,13 +16,13 @@ export default class CellFactory {
     gameId: GameID,
     baseHeight: BaseHeight,
     baseWidth: BaseWidth,
-    answerCandidateCollectionOrg: AnswerCandidateCollection
+    answerCandidateCollectionOrg: AnswerCandidateCollection,
   ): CellFactory {
     return new CellFactory(
       gameId,
       baseHeight,
       baseWidth,
-      answerCandidateCollectionOrg
+      answerCandidateCollectionOrg,
     );
   }
 
@@ -32,17 +32,21 @@ export default class CellFactory {
     private baseWidth: BaseWidth,
     private answerCandidateCollectionOrg: AnswerCandidateCollection,
     @inject('CellRepository')
-    private cellRepository?: CellRepository
+    private cellRepository?: CellRepository,
   ) {}
 
   public createCells(): CellCollection {
     const cellArray: Cell[] = [];
     for (const pos of CellPosition.generate(
       Width.create(this.baseHeight, this.baseWidth),
-      Height.create(this.baseHeight, this.baseWidth)
+      Height.create(this.baseHeight, this.baseWidth),
     )) {
       cellArray.push(
-        Cell.create(this.gameId, pos, this.answerCandidateCollectionOrg.clone())
+        Cell.create(
+          this.gameId,
+          pos,
+          this.answerCandidateCollectionOrg.clone(),
+        ),
       );
     }
     const collection = CellCollection.create(cellArray);

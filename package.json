@@ -1,8 +1,21 @@
 {
-  "name": "ts-numberplace-core",
-  "version": "1.0.0",
+  "name": "@ysk8hori/ts-numberplace-core",
+  "version": "0.0.1",
   "description": "",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "license": "Apache-2.0",
+  "keywords": [
+    "sudoku",
+    "numberplace",
+    "game"
+  ],
+  "publishConfig": {
+    "@ysk8hori:registry": "https://npm.pkg.github.com"
+  },
   "scripts": {
     "build": "tsc",
     "test": "vitest --config vitest.config.ts",
@@ -10,9 +23,7 @@
     "prettier": "prettier --write .",
     "coverage": "vitest run --coverage"
   },
-  "keywords": [],
   "author": "",
-  "license": "ISC",
   "dependencies": {
     "@types/uuid": "^8.3.0",
     "reflect-metadata": "^0.1.13",

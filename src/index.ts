@@ -13,7 +13,6 @@ import InfiniteAnalyzeLogic from './core/logic/analyze/infiniteAnalyze/infiniteA
 import BaseHeight from './core/valueobject/baseHeight';
 import BaseWidth from './core/valueobject/baseWidth';
 import GameID from './core/valueobject/gameId';
-import OutputAnswerStringLogic from './core/logic/outputAnswerStringLogic';
 
 const cellRepository = CellRepositoryImpl.create();
 const groupRepository = GroupRepositoryImpl.create();
@@ -29,27 +28,33 @@ container.register<GameRepository>('GameRepository', {
   useValue: gameRepository,
 });
 
+/** Numberplace game. */
 type Game = {
   cells: Cell[];
   toString: () => string;
 };
 
+/** One cell. */
 type Cell = {
+  /** Position of cell. */
   pos: Position;
+  /** Answer filled in cell. If not filled in, undefined. */
   answer: undefined | string;
 };
 
+/** Position of x and y. */
 type Position = Readonly<[number, number]>;
 
 /**
+ * Generate number-place (Sudoku) game.
  *
- * @param blockSize `{width:number, height:number}` のオブジェクト。どちらも3以下を指定してください。
+ * @param blockSize Block size refers to the size of a 3x3 square area for a game that is 9x9 overall. The argument must be an object of { width: number, height: number }. Both must be less than or equal to 3.
  * @returns `[pazzules, corrected]`
  */
 export function createGame(blockSize: BlockSize): [Game, Game] {
   if (!validation(blockSize)) {
     throw new Error(
-      '引数は {width:number, height:number} のオブジェクトである必要があります。どちらも3以下を指定してください。',
+      'The argument must be an object of { width: number, height: number }. Both must be less than or equal to 3.',
     );
   }
 
@@ -92,8 +97,6 @@ export function createGame(blockSize: BlockSize): [Game, Game] {
     };
   }
 }
-
-// export function isCollect(game: Game): boolean {}
 
 type BlockSize = {
   width: number;

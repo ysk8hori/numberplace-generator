@@ -13,6 +13,7 @@ import InfiniteAnalyzeLogic from './core/logic/analyze/infiniteAnalyze/infiniteA
 import BaseHeight from './core/valueobject/baseHeight';
 import BaseWidth from './core/valueobject/baseWidth';
 import GameID from './core/valueobject/gameId';
+import OutputAnswerStringLogic from './core/logic/outputAnswerStringLogic';
 
 const cellRepository = CellRepositoryImpl.create();
 const groupRepository = GroupRepositoryImpl.create();
@@ -30,6 +31,7 @@ container.register<GameRepository>('GameRepository', {
 
 type Game = {
   cells: Cell[];
+  toString: () => string;
 };
 
 type Cell = {
@@ -39,7 +41,18 @@ type Cell = {
 
 type Position = Readonly<[number, number]>;
 
-export function createGame(blockSize: BlockSize) {
+/**
+ *
+ * @param blockSize `{width:number, height:number}` のオブジェクト。どちらも3以下を指定してください。
+ * @returns `[pazzules, corrected]`
+ */
+export function createGame(blockSize: BlockSize): [Game, Game] {
+  if (!validation(blockSize)) {
+    throw new Error(
+      '引数は {width:number, height:number} のオブジェクトである必要があります。どちらも3以下を指定してください。',
+    );
+  }
+
   const gameId = CreateGoodGameLogic.create(
     BaseHeight.create(blockSize.height),
     BaseWidth.create(blockSize.width),
@@ -62,6 +75,9 @@ export function createGame(blockSize: BlockSize) {
         ],
         answer: cell.answer?.value,
       })),
+      toString() {
+        return OutputAnswerStringLogic.create(gameId).getAnswerString();
+      },
     };
   }
 }
@@ -72,3 +88,12 @@ type BlockSize = {
   width: number;
   height: number;
 };
+
+function validation(blockSize: any) {
+  return (
+    typeof blockSize === 'object' &&
+    blockSize !== null &&
+    typeof blockSize?.height === 'number' &&
+    typeof blockSize?.width === 'number'
+  );
+}

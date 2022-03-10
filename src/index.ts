@@ -76,7 +76,18 @@ export function createGame(blockSize: BlockSize): [Game, Game] {
         answer: cell.answer?.value,
       })),
       toString() {
-        return OutputAnswerStringLogic.create(gameId).getAnswerString();
+        const horizontalLines: Map<number, Cell[]> = this.cells.reduce(
+          (p, cell) => {
+            const lineNo = cell.pos[1];
+            if (!p.has(lineNo)) p.set(lineNo, new Array<Cell>());
+            p.get(lineNo)?.push(cell);
+            return p;
+          },
+          new Map<number, Cell[]>(),
+        );
+        return Array.from(horizontalLines.values())
+          .map(line => line.map(cell => cell.answer ?? ' ').join(','))
+          .join('\n');
       },
     };
   }

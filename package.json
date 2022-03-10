@@ -17,7 +17,7 @@
     "@ysk8hori:registry": "https://npm.pkg.github.com"
   },
   "scripts": {
-    "build": "tsc",
+    "build": "tsc && tsc-alias",
     "test": "vitest --config vitest.config.ts",
     "lint:fix": "eslint --fix src",
     "prettier": "prettier --write .",
@@ -37,6 +37,7 @@
     "eslint": "^8.9.0",
     "eslint-config-prettier": "^8.4.0",
     "prettier": "^2.5.1",
+    "tsc-alias": "^1.6.4",
     "typescript": "^4.0.2",
     "vitest": "^0.5.4"
   }

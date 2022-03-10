@@ -4,13 +4,20 @@ The numberplace-generator provides a function to generate a game of numberplace 
 
 ## How to use
 
+Install it.
+
+```cli
+npm install @ysk8hori/ts-numberplace-core
+```
+
 Generate a number place game and its answers by doing the following
 
 ```typescript
+import { generateGame } from '@ysk8hori/ts-numberplace-core';
 // Generate standard 9x9 size number place questions.
-const [puzzles, corrected] = createGame({ width: 3, height: 3 });
+const [puzzle, corrected] = generateGame({ width: 3, height: 3 });
 
-console.log(pazzles.toString());
+console.log(pazzle.toString());
 /*
 9, , , , , ,4, , 
 6, , ,4,9,2,3,5, 

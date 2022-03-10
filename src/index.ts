@@ -51,7 +51,7 @@ type Position = Readonly<[number, number]>;
  * @param blockSize Block size refers to the size of a 3x3 square area for a game that is 9x9 overall. The argument must be an object of { width: number, height: number }. Both must be less than or equal to 3.
  * @returns `[pazzules, corrected]`
  */
-export function createGame(blockSize: BlockSize): [Game, Game] {
+export function generateGame(blockSize: BlockSize): [Game, Game] {
   if (!validation(blockSize)) {
     throw new Error(
       'The argument must be an object of { width: number, height: number }. Both must be less than or equal to 3.',

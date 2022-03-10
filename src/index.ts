@@ -48,13 +48,13 @@ type Position = Readonly<[number, number]>;
 /**
  * Generate number-place (Sudoku) game.
  *
- * @param blockSize Block size refers to the size of a 3x3 square area for a game that is 9x9 overall. The argument must be an object of { width: number, height: number }. Both must be less than or equal to 3.
+ * @param blockSize Block size refers to the size of a 3x3 square area for a game that is 9x9 overall. The argument must be an object of { width: number, height: number }. The length of one side of the game (width multiplied by height) must be 3 or higher, and less than 9.
  * @returns `[pazzules, corrected]`
  */
 export function generateGame(blockSize: BlockSize): [Game, Game] {
   if (!validation(blockSize)) {
     throw new Error(
-      'The argument must be an object of { width: number, height: number }. Both must be less than or equal to 3.',
+      'The argument must be an object of { width: number, height: number }. The length of one side of the game (width multiplied by height) must be 3 or higher, and less than 9.',
     );
   }
 
@@ -108,6 +108,8 @@ function validation(blockSize: any) {
     typeof blockSize === 'object' &&
     blockSize !== null &&
     typeof blockSize?.height === 'number' &&
-    typeof blockSize?.width === 'number'
+    typeof blockSize?.width === 'number' &&
+    blockSize.height * blockSize.width <= 9 &&
+    blockSize.height * blockSize.width >= 3
   );
 }

@@ -52,7 +52,6 @@ type Position = Readonly<[number, number]>;
  * @returns `[pazzules, corrected]`
  */
 export function generateGame(blockSize: BlockSize): [Game, Game] {
-  console.log(blockSize);
   if (!validation(blockSize)) {
     throw new Error(
       'The argument must be an object of { width: number, height: number }. The length of one side of the game (width multiplied by height) must be 3 or higher, and less than 9.',

@@ -1,6 +1,6 @@
 {
   "name": "@ysk8hori/numberplace-generator",
-  "version": "1.0.5-1",
+  "version": "1.0.5-2",
   "description": "Generate number-place (Sudoku) game.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",

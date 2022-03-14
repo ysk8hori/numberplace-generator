@@ -1,5 +1,4 @@
 import GameID from '@/core/valueobject/gameId';
-import { inject, autoInjectable } from 'tsyringe';
 import CellRepository from '@/core/repository/cellRepository';
 import GroupRepository from '@/core/repository/groupRepository';
 import GameRepository from '@/core/repository/gameRepository';
@@ -12,8 +11,8 @@ import Cell from '@/core/entity/cell';
 import BaseHeight from '@/core/valueobject/baseHeight';
 import BaseWidth from '@/core/valueobject/baseWidth';
 import DeleteGameLogic from '../deleteGameLogic';
+import { container } from 'tsyringe';
 
-@autoInjectable()
 export default class CreateGameLogic {
   public static create(
     baseHeight: BaseHeight,
@@ -24,12 +23,9 @@ export default class CreateGameLogic {
   constructor(
     private baseHeight: BaseHeight,
     private baseWidth: BaseWidth,
-    @inject('CellRepository')
-    cellRepository?: CellRepository,
-    @inject('GroupRepository')
-    groupRepository?: GroupRepository,
-    @inject('GameRepository')
-    gameRepository?: GameRepository,
+    cellRepository: CellRepository = container.resolve('CellRepository'),
+    groupRepository: GroupRepository = container.resolve('GroupRepository'),
+    gameRepository: GameRepository = container.resolve('GameRepository'),
   ) {
     if (!cellRepository || !groupRepository || !gameRepository)
       BusinessError.throw(

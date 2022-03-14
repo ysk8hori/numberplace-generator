@@ -15,9 +15,8 @@ import GroupID from '@/core/valueobject/groupId';
 import GroupRepository from '@/core/repository/groupRepository';
 import GameID from '@/core/valueobject/gameId';
 import CellRepository from '@/core/repository/cellRepository';
-import { autoInjectable, inject } from 'tsyringe';
+import { container } from 'tsyringe';
 
-@autoInjectable()
 export default class GroupFactory {
   public static create(
     gameId: GameID,
@@ -30,10 +29,12 @@ export default class GroupFactory {
     private gameId: GameID,
     private baseHeight: BaseHeight,
     private baseWidth: BaseWidth,
-    @inject('GroupRepository')
-    private groupRepository?: GroupRepository,
-    @inject('CellRepository')
-    private cellRepository?: CellRepository,
+    private cellRepository: CellRepository = container.resolve(
+      'CellRepository',
+    ),
+    private groupRepository: GroupRepository = container.resolve(
+      'GroupRepository',
+    ),
   ) {
     this.answerCandidateCollection = AnswerCandidateCollection.create(
       this.baseHeight,

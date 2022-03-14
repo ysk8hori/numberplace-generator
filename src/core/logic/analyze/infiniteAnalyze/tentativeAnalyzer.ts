@@ -1,4 +1,3 @@
-import { autoInjectable, inject } from 'tsyringe';
 import GameID from '@/core/valueobject/gameId';
 import TentativeDecision from './tentativeDecision';
 import CellRepository from '@/core/repository/cellRepository';
@@ -11,11 +10,11 @@ import AnalyzeLogic from '../analyzeLogic';
 import Cell from '@/core/entity/cell';
 import Utils from '@/utils/utils';
 import DeleteGameLogic from '../../deleteGameLogic';
+import { container } from 'tsyringe';
 
 /**
  * Gameの解析がAnalizeLogicで完了できない場合に、仮でいずれかのセルに値を入力して解析を進めるためのクラス。
  */
-@autoInjectable()
 export default class TentativeAnalyzer {
   public static create(
     parrentGameId: GameID,
@@ -28,12 +27,9 @@ export default class TentativeAnalyzer {
     private parrentGameId: GameID,
     private isCreate: boolean,
     private tentativeDecision?: TentativeDecision,
-    @inject('CellRepository')
-    cellRepository?: CellRepository,
-    @inject('GroupRepository')
-    groupRepository?: GroupRepository,
-    @inject('GameRepository')
-    gameRepository?: GameRepository,
+    cellRepository: CellRepository = container.resolve('CellRepository'),
+    groupRepository: GroupRepository = container.resolve('GroupRepository'),
+    gameRepository: GameRepository = container.resolve('GameRepository'),
   ) {
     TentativeAnalyzer.count++;
     if (1000 < TentativeAnalyzer.count) {

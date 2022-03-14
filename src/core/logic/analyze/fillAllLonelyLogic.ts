@@ -1,23 +1,19 @@
 import GameID from '@/core/valueobject/gameId';
-import { inject, autoInjectable } from 'tsyringe';
 import CellRepository from '@/core/repository/cellRepository';
 import GroupRepository from '@/core/repository/groupRepository';
 import GameRepository from '@/core/repository/gameRepository';
 import BusinessError from '@/core/businessError';
+import { container } from 'tsyringe';
 
-@autoInjectable()
 export default class FillAllLonelyLogic {
   public static create(gameId: GameID): FillAllLonelyLogic {
     return new FillAllLonelyLogic(gameId);
   }
   constructor(
     private gameId: GameID,
-    @inject('CellRepository')
-    cellRepository?: CellRepository,
-    @inject('GroupRepository')
-    groupRepository?: GroupRepository,
-    @inject('GameRepository')
-    gameRepository?: GameRepository,
+    cellRepository: CellRepository = container.resolve('CellRepository'),
+    groupRepository: GroupRepository = container.resolve('GroupRepository'),
+    gameRepository: GameRepository = container.resolve('GameRepository'),
   ) {
     if (!cellRepository || !groupRepository || !gameRepository)
       BusinessError.throw(

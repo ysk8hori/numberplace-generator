@@ -6,11 +6,10 @@ import GroupID from '@/core/valueobject/groupId';
 import CellRepository from '@/core/repository/cellRepository';
 import CellNotFoundError from '@/core/cellNotFoundError';
 import GameID from '@/core/valueobject/gameId';
-import { inject, autoInjectable } from 'tsyringe';
 import Range from '@/core/range';
 import RepositoryError from '@/repository/repositoryError';
+import { container } from 'tsyringe';
 
-@autoInjectable()
 export default class Group {
   public static create(
     gameId: GameID,
@@ -26,8 +25,9 @@ export default class Group {
     private _groupType: GroupType,
     private _groupId: GroupID,
     public answerCandidateCollection: AnswerCandidateCollection,
-    @inject('CellRepository')
-    private cellRepository?: CellRepository,
+    private cellRepository: CellRepository = container.resolve(
+      'CellRepository',
+    ),
   ) {
     this._range = Range.create(
       gameId,

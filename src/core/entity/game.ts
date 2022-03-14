@@ -10,15 +10,14 @@ import GroupFactory from '@/core/factory/groupFactory';
 import GameID from '@/core/valueobject/gameId';
 import AnswerLogic from '@/core/logic/analyze/answerLogic';
 import GameRepository from '@/core/repository/gameRepository';
-import { inject, autoInjectable } from 'tsyringe';
 import AnswerCandidateCollection from '@/core/answerCandidateCollection';
 import FillOwnAnswerIfLastOneAnswerCandidate from '@/core/logic/analyze/fillOwnAnswerIfLastOneAnswerCandidateLogic';
 import FillAllLonelyLogic from '@/core/logic/analyze/fillAllLonelyLogic';
 import AnalyzeLogic from '../logic/analyze/analyzeLogic';
 import Difficalty from '../valueobject/difficalty';
 import GameSize from './gameSize';
+import { container } from 'tsyringe';
 
-@autoInjectable()
 export default class Game {
   public static create(baseHeight: BaseHeight, baseWidth: BaseWidth): Game {
     return new Game(baseHeight, baseWidth);
@@ -26,8 +25,7 @@ export default class Game {
   public constructor(
     private _baseHeight: BaseHeight,
     private _baseWidth: BaseWidth,
-    @inject('GameRepository')
-    gameRepository?: GameRepository,
+    gameRepository: GameRepository = container.resolve('GameRepository'),
   ) {
     this._height = Height.create(this.baseHeight, this.baseWidth);
     this._width = Width.create(this.baseHeight, this.baseWidth);

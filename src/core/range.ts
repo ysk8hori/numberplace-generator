@@ -2,12 +2,11 @@ import CellPosition from '@/core/valueobject/cellPosition';
 import VerticalPosition from '@/core/valueobject/verticalPosition';
 import Cell from '@/core/entity/cell';
 import CellRepository from '@/core/repository/cellRepository';
-import { inject, autoInjectable } from 'tsyringe';
 import RepositoryError from '@/repository/repositoryError';
 import GameID from '@/core/valueobject/gameId';
 import HorizontalPosition from '@/core/valueobject/horizontalPosition';
+import { container } from 'tsyringe';
 
-@autoInjectable()
 export default class Range {
   public static create(gameId: GameID, cellPositions: CellPosition[]): Range {
     return new Range(gameId, cellPositions);
@@ -15,8 +14,7 @@ export default class Range {
   constructor(
     private gameId: GameID,
     private cellPositions: CellPosition[],
-    @inject('CellRepository')
-    cellRepository?: CellRepository,
+    cellRepository: CellRepository = container.resolve('CellRepository'),
   ) {
     this.cellRepository =
       cellRepository ??

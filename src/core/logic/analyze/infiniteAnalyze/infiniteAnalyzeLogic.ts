@@ -1,5 +1,4 @@
 import GameID from '../../../valueobject/gameId';
-import { inject, autoInjectable } from 'tsyringe';
 import CellRepository from '../../../repository/cellRepository';
 import GroupRepository from '../../../repository/groupRepository';
 import GameRepository from '../../../repository/gameRepository';
@@ -8,8 +7,8 @@ import TentativeAnalyzer from './tentativeAnalyzer';
 import Game from '@/core/entity/game';
 import Difficalty from '@/core/valueobject/difficalty';
 import DeleteGameLogic from '../../deleteGameLogic';
+import { container } from 'tsyringe';
 
-@autoInjectable()
 export default class InfiniteAnalyzeLogic {
   public static createAndExecute(gameId: GameID, isCreate = false) {
     // console.log('InfiniteAnalyzeLogic start');
@@ -19,12 +18,9 @@ export default class InfiniteAnalyzeLogic {
   constructor(
     private gameId: GameID,
     private isCreate: boolean,
-    @inject('CellRepository')
-    cellRepository?: CellRepository,
-    @inject('GroupRepository')
-    groupRepository?: GroupRepository,
-    @inject('GameRepository')
-    gameRepository?: GameRepository,
+    cellRepository: CellRepository = container.resolve('CellRepository'),
+    groupRepository: GroupRepository = container.resolve('GroupRepository'),
+    gameRepository: GameRepository = container.resolve('GameRepository'),
   ) {
     TentativeAnalyzer.count = 0;
     if (!cellRepository || !groupRepository || !gameRepository)

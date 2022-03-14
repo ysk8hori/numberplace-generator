@@ -2,15 +2,14 @@ import Game from '@/core/entity/game';
 import BaseHeight from '@/core/valueobject/baseHeight';
 import BaseWidth from '@/core/valueobject/baseWidth';
 import LoadLogic from '@/core/logic/loadLogic';
-import { inject, autoInjectable } from 'tsyringe';
 import CellRepository from '@/core/repository/cellRepository';
 import Cell from '@/core/entity/cell';
 import InfiniteAnalyzeLogic from '@/core/logic/analyze/infiniteAnalyze/infiniteAnalyzeLogic';
 import OutputAnswerStringLogic from '@/core/logic/outputAnswerStringLogic';
 import DeleteGameLogic from '@/core/logic/deleteGameLogic';
 import { test, beforeAll, expect } from 'vitest';
+import { container } from 'tsyringe';
 
-@autoInjectable()
 export default class TestDefiner {
   /**
    * issue、answers共に、カラムの区切り文字なし、行の区切りを'|'として渡すこと。
@@ -32,8 +31,9 @@ export default class TestDefiner {
   public constructor(
     private issue: string,
     private answers: string,
-    @inject('CellRepository')
-    private cellRepository?: CellRepository,
+    private cellRepository: CellRepository = container.resolve(
+      'CellRepository',
+    ),
   ) {}
 
   public initialize(): TestDefiner {

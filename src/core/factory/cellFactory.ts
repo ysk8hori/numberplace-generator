@@ -8,9 +8,8 @@ import BaseHeight from '@/core/valueobject/baseHeight';
 import CellCollection from '@/core/cellCollection';
 import CellRepository from '@/core/repository/cellRepository';
 import GameID from '@/core/valueobject/gameId';
-import { autoInjectable, inject } from 'tsyringe';
+import { container } from 'tsyringe';
 
-@autoInjectable()
 export default class CellFactory {
   public static create(
     gameId: GameID,
@@ -31,8 +30,9 @@ export default class CellFactory {
     private baseHeight: BaseHeight,
     private baseWidth: BaseWidth,
     private answerCandidateCollectionOrg: AnswerCandidateCollection,
-    @inject('CellRepository')
-    private cellRepository?: CellRepository,
+    private cellRepository: CellRepository = container.resolve(
+      'CellRepository',
+    ),
   ) {}
 
   public createCells(): CellCollection {

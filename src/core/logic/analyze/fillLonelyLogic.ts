@@ -2,17 +2,16 @@ import Cell from '@/core/entity/cell';
 import AnswerCandidate from '@/core/valueobject/answerCandidate';
 import Group from '@/core/entity/group';
 import GroupID from '@/core/valueobject/groupId';
-import { autoInjectable, inject } from 'tsyringe';
 import GroupRepository from '@/core/repository/groupRepository';
 import GameID from '@/core/valueobject/gameId';
 import AnswerLogic from '@/core/logic/analyze/answerLogic';
+import { container } from 'tsyringe';
 
 /**
  * グループ内で、とある候補がそのグループ内の1つのCellにしか存在しない場合に、
  * そのCellの答えをその候補で決定するロジック。
  * 全候補に対して行う。
  */
-@autoInjectable()
 export default class FillLonelyLogic {
   /**
    * FillLonelyLogicのインスタンスを生成する。
@@ -30,8 +29,9 @@ export default class FillLonelyLogic {
   public constructor(
     private gameId: GameID,
     private groupId: GroupID,
-    @inject('GroupRepository')
-    private groupRepository?: GroupRepository,
+    private groupRepository: GroupRepository = container.resolve(
+      'GroupRepository',
+    ),
   ) {
     this.group = this.groupRepository!.find(this.gameId, this.groupId);
   }

@@ -1,22 +1,18 @@
 import GameID from '../valueobject/gameId';
-import { autoInjectable, inject } from 'tsyringe';
 import CellRepository from '../repository/cellRepository';
 import GroupRepository from '../repository/groupRepository';
 import GameRepository from '../repository/gameRepository';
 import BusinessError from '../businessError';
+import { container } from 'tsyringe';
 
-@autoInjectable()
 export default class DeleteGameLogic {
   public static create(): DeleteGameLogic {
     return new DeleteGameLogic();
   }
   constructor(
-    @inject('CellRepository')
-    cellRepository?: CellRepository,
-    @inject('GroupRepository')
-    groupRepository?: GroupRepository,
-    @inject('GameRepository')
-    gameRepository?: GameRepository,
+    cellRepository: CellRepository = container.resolve('CellRepository'),
+    groupRepository: GroupRepository = container.resolve('GroupRepository'),
+    gameRepository: GameRepository = container.resolve('GameRepository'),
   ) {
     if (!cellRepository || !groupRepository || !gameRepository) {
       BusinessError.throw(

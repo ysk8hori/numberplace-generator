@@ -4,10 +4,9 @@ import CellRepository from '@/core/repository/cellRepository';
 import GroupRepository from '@/core/repository/groupRepository';
 import Cell from '@/core/entity/cell';
 import GameID from '@/core/valueobject/gameId';
-import { inject, autoInjectable } from 'tsyringe';
+import { container } from 'tsyringe';
 
 /** 1つのCellに答えを記入する際のロジック */
-@autoInjectable()
 export default class AnswerLogic {
   /**
    * AnswerLogicのインスタンスを生成し、答え記入処理を実行する。
@@ -34,10 +33,12 @@ export default class AnswerLogic {
     private gameId: GameID,
     private position: CellPosition,
     private answer: Answer,
-    @inject('GroupRepository')
-    private groupRepository?: GroupRepository,
-    @inject('CellRepository')
-    private cellRepository?: CellRepository,
+    private cellRepository: CellRepository = container.resolve(
+      'CellRepository',
+    ),
+    private groupRepository: GroupRepository = container.resolve(
+      'GroupRepository',
+    ),
   ) {
     this.cell = this.cellRepository!.findByPosition(this.gameId, this.position);
   }

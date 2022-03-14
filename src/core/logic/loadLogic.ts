@@ -1,5 +1,5 @@
 import GameID from '@/core/valueobject/gameId';
-import { inject, autoInjectable } from 'tsyringe';
+import { container } from 'tsyringe';
 import CellRepository from '@/core/repository/cellRepository';
 import GroupRepository from '@/core/repository/groupRepository';
 import GameRepository from '@/core/repository/gameRepository';
@@ -7,19 +7,15 @@ import BusinessError from '@/core/businessError';
 import { pos } from '@/core/valueobject/cellPosition';
 import Answer from '@/core/valueobject/answer';
 
-@autoInjectable()
 export default class LoadLogic {
   public static create(gameId: GameID): LoadLogic {
     return new LoadLogic(gameId);
   }
   constructor(
     private gameId: GameID,
-    @inject('CellRepository')
-    cellRepository?: CellRepository,
-    @inject('GroupRepository')
-    groupRepository?: GroupRepository,
-    @inject('GameRepository')
-    gameRepository?: GameRepository,
+    cellRepository: CellRepository = container.resolve('CellRepository'),
+    groupRepository: GroupRepository = container.resolve('GroupRepository'),
+    gameRepository: GameRepository = container.resolve('GameRepository'),
   ) {
     if (!cellRepository || !groupRepository || !gameRepository)
       BusinessError.throw(

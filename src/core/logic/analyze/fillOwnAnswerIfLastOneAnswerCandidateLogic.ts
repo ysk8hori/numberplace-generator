@@ -1,17 +1,15 @@
-import { inject, autoInjectable } from 'tsyringe';
 import CellRepository from '@/core/repository/cellRepository';
 import BusinessError from '@/core/businessError';
 import GameID from '@/core/valueobject/gameId';
+import { container } from 'tsyringe';
 
-@autoInjectable()
 export default class FillOwnAnswerIfLastOneAnswerCandidate {
   public static create(gameId: GameID): FillOwnAnswerIfLastOneAnswerCandidate {
     return new FillOwnAnswerIfLastOneAnswerCandidate(gameId);
   }
   constructor(
     private gameId: GameID,
-    @inject('CellRepository')
-    cellRepository?: CellRepository,
+    cellRepository: CellRepository = container.resolve('CellRepository'),
   ) {
     if (!cellRepository)
       BusinessError.throw(

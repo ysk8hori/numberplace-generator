@@ -34,6 +34,7 @@ export default class CreateGoodGameLogic {
   private cellRepository: CellRepository;
 
   public execute(): GameID {
+    console.log('CreateGoodGameLogic.execute');
     let createdGameId: GameID | undefined;
     do {
       try {

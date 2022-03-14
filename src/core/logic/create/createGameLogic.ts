@@ -45,6 +45,7 @@ export default class CreateGameLogic {
   private deleteGameLogic = DeleteGameLogic.create();
 
   public execute(): GameID {
+    console.log('CreateGameLogic.execute');
     const answeredGame = this.game.clone();
     InfiniteAnalyzeLogic.createAndExecute(answeredGame.gameId, true);
 

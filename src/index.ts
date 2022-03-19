@@ -29,13 +29,13 @@ container.register<GameRepository>('GameRepository', {
 });
 
 /** Numberplace game. */
-type Game = {
+export type Game = {
   cells: Cell[];
   toString: () => string;
 };
 
 /** One cell. */
-type Cell = {
+export type Cell = {
   /** Position of cell. */
   pos: Position;
   /** Answer filled in cell. If not filled in, undefined. */
@@ -43,7 +43,13 @@ type Cell = {
 };
 
 /** Position of x and y. */
-type Position = Readonly<[number, number]>;
+export type Position = Readonly<[number, number]>;
+
+/** Block size refers to the size of a 3x3 square area for a game that is 9x9 overall. The argument must be an object of { width: number, height: number }. The length of one side of the game (width multiplied by height) must be 3 or higher, and less than 9. */
+export type BlockSize = {
+  width: number;
+  height: number;
+};
 
 /**
  * Generate number-place (Sudoku) game.
@@ -97,11 +103,6 @@ export function generateGame(blockSize: BlockSize): [Game, Game] {
     };
   }
 }
-
-type BlockSize = {
-  width: number;
-  height: number;
-};
 
 function validation(blockSize: any) {
   return (

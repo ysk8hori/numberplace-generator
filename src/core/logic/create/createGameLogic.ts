@@ -12,6 +12,7 @@ import BaseHeight from '@/core/valueobject/baseHeight';
 import BaseWidth from '@/core/valueobject/baseWidth';
 import DeleteGameLogic from '../deleteGameLogic';
 import { container } from 'tsyringe';
+import AnalyzeLogic from '../analyze/analyzeLogic';
 
 export default class CreateGameLogic {
   public static create(
@@ -44,28 +45,42 @@ export default class CreateGameLogic {
     const answeredGame = this.game.clone();
     InfiniteAnalyzeLogic.createAndExecute(answeredGame.gameId, true);
 
-    // clonedGameからthis.gameIdのゲームに20数個のセル答えを転写する。
-    const shuffledAnsweredCells = Utils.shuffle(
-      this.cellRepository.findAll(answeredGame.gameId),
+    // 余分な記入セルを除去していき、ゲームが成り立つかを逐一チェックする
+    const filledCells = this.cellRepository
+      .findAll(answeredGame.gameId)
+      .filter(cell => cell.isAnswered);
+    const resultFilledCells = Utils.shuffle(
+      this.cellRepository
+        .findAll(answeredGame.gameId)
+        .filter(cell => cell.isAnswered),
     );
-    for (let i = 0; i < this.getBaseAnsweredCellCount(); i++) {
-      const cell = shuffledAnsweredCells.pop();
-      if (!cell) break;
+    for (let i = 0; i < filledCells.length; i++) {
+      const targetCell = resultFilledCells.pop();
+      const tempGame = new Game(this.baseHeight, this.baseWidth);
+      // pop してるので元のゲームより答えが一つ少ないゲームが出来上がる
+      resultFilledCells.forEach(cell =>
+        AnswerLogic.createAndExecute(
+          tempGame.gameId,
+          cell.position,
+          cell.answer!,
+        ),
+      );
+      const asdf = AnalyzeLogic.create(tempGame.gameId).execute();
+      if (asdf === 0) {
+        // targetCell はなくても良いってこと
+      } else {
+        // targetCell は必要なので先頭に追加しておく（上で pop してここで先頭追加）
+        resultFilledCells.unshift(targetCell!);
+      }
+      this.deleteGameLogic.execute(tempGame.gameId);
+    }
+    resultFilledCells.forEach(cell =>
       AnswerLogic.createAndExecute(
         this.game.gameId,
         cell.position,
-        cell.getAnswer()!,
-      );
-    }
-    // 解析を行いdifficaltyを見る。1以上だったら難しいのでさらにもう1つ答えを転写して・・・以降ループ。
-    let clonedGame: Game;
-    // console.log('微調整開始');
-    do {
-      clonedGame = this.微調整する(shuffledAnsweredCells);
-      this.deleteGameLogic.execute(clonedGame.gameId);
-    } while (clonedGame.difficalty?.value !== 0);
-    // console.log('微調整完了');
-
+        cell.answer!,
+      ),
+    );
     this.deleteGameLogic.execute(answeredGame.gameId);
 
     return this.game.gameId;

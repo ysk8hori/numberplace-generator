@@ -13,6 +13,8 @@ import BaseWidth from '@/core/valueobject/baseWidth';
 import DeleteGameLogic from '../deleteGameLogic';
 import { container } from 'tsyringe';
 import AnalyzeLogic from '../analyze/analyzeLogic';
+import Answer from '@/core/valueobject/answer';
+import CellPosition, { pos } from '@/core/valueobject/cellPosition';
 
 export default class CreateGameLogic {
   public static create(
@@ -43,6 +45,20 @@ export default class CreateGameLogic {
 
   public execute(): GameID {
     const answeredGame = this.game.clone();
+
+    // 横一列をランダムに記入する
+    const answers = Utils.createArray(
+      this.baseHeight.value * this.baseWidth.value,
+    );
+    const shuffledAnswers = Utils.shuffle(answers);
+    shuffledAnswers.forEach((answer, i) =>
+      AnswerLogic.createAndExecute(
+        answeredGame.gameId,
+        pos(0, i),
+        Answer.create(answer),
+      ),
+    );
+
     InfiniteAnalyzeLogic.createAndExecute(answeredGame.gameId, true);
 
     // 余分な記入セルを除去していき、ゲームが成り立つかを逐一チェックする

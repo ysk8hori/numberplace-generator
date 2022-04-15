@@ -110,7 +110,7 @@ function validation(blockSize: any) {
     blockSize !== null &&
     typeof blockSize?.height === 'number' &&
     typeof blockSize?.width === 'number' &&
-    blockSize.height * blockSize.width <= 9 &&
+    blockSize.height * blockSize.width <= 16 &&
     blockSize.height * blockSize.width >= 3
   );
 }

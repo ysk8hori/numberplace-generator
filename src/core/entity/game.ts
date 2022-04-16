@@ -17,14 +17,20 @@ import AnalyzeLogic from '../logic/analyze/analyzeLogic';
 import Difficalty from '../valueobject/difficalty';
 import GameSize from './gameSize';
 import { container } from 'tsyringe';
+import { GameType } from '../types';
 
 export default class Game {
-  public static create(baseHeight: BaseHeight, baseWidth: BaseWidth): Game {
-    return new Game(baseHeight, baseWidth);
+  public static create(
+    baseHeight: BaseHeight,
+    baseWidth: BaseWidth,
+    gameTypes: GameType[] = [],
+  ): Game {
+    return new Game(baseHeight, baseWidth, gameTypes);
   }
   public constructor(
     private _baseHeight: BaseHeight,
     private _baseWidth: BaseWidth,
+    private gameTypes: GameType[],
     gameRepository: GameRepository = container.resolve('GameRepository'),
   ) {
     this._height = Height.create(this.baseHeight, this.baseWidth);
@@ -40,11 +46,9 @@ export default class Game {
       this.baseWidth,
       this.answerCandidateCollection,
     ).createCells();
-    GroupFactory.create(
-      this.gameId,
-      this.baseHeight,
-      this.baseWidth,
-    ).createGroups();
+    GroupFactory.create(this.gameId, this.baseHeight, this.baseWidth, {
+      gameTypes: this.gameTypes,
+    }).createGroups();
     gameRepository?.regist(this);
   }
 
@@ -93,7 +97,11 @@ export default class Game {
   }
 
   public clone(): Game {
-    const clonedGame = Game.create(this.baseHeight, this.baseWidth);
+    const clonedGame = Game.create(
+      this.baseHeight,
+      this.baseWidth,
+      this.gameTypes,
+    );
     // 難易度をコピー
     clonedGame.setDifficalty(this.difficalty);
     this.cells.findAll().forEach(cell => {

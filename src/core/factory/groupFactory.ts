@@ -16,19 +16,25 @@ import GroupRepository from '@/core/repository/groupRepository';
 import GameID from '@/core/valueobject/gameId';
 import CellRepository from '@/core/repository/cellRepository';
 import { container } from 'tsyringe';
+import { GameType } from '../types';
 
 export default class GroupFactory {
   public static create(
     gameId: GameID,
     baseHeight: BaseHeight,
     baseWidth: BaseWidth,
+    option?: { gameTypes?: GameType[] },
   ): GroupFactory {
-    return new GroupFactory(gameId, baseHeight, baseWidth);
+    return new GroupFactory(gameId, baseHeight, baseWidth, {
+      ...{ gameTypes: ['standard'] },
+      ...option,
+    });
   }
   public constructor(
     private gameId: GameID,
     private baseHeight: BaseHeight,
     private baseWidth: BaseWidth,
+    private option: { gameTypes: GameType[] },
     private cellRepository: CellRepository = container.resolve(
       'CellRepository',
     ),
@@ -52,6 +58,7 @@ export default class GroupFactory {
     this.createHorizontalGroup();
     this.createVerticalGroup();
     this.createSquareGroup();
+    if (this.option.gameTypes.includes('cross')) this.createCrossGroup();
   }
 
   /**

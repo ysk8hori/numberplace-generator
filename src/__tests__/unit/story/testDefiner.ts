@@ -9,6 +9,7 @@ import OutputAnswerStringLogic from '@/core/logic/outputAnswerStringLogic';
 import DeleteGameLogic from '@/core/logic/deleteGameLogic';
 import { test, beforeAll, expect } from 'vitest';
 import { container } from 'tsyringe';
+import { GameType } from '@/core/types';
 
 export default class TestDefiner {
   /**
@@ -21,10 +22,12 @@ export default class TestDefiner {
     answers: string,
     baseHeight = 3,
     baseWidth = 3,
+    gameTypes: GameType[] = [],
   ): TestDefiner {
     return new TestDefiner(issue, answers)
       .setBaseHeight(BaseHeight.create(baseHeight))
       .setBaseWidth(BaseWidth.create(baseWidth))
+      .setGameTypes(gameTypes)
       .initialize();
   }
 
@@ -37,8 +40,12 @@ export default class TestDefiner {
   ) {}
 
   public initialize(): TestDefiner {
-    this.game = Game.create(this.baseHeight, this.baseWidth);
-    this.answeredGame = Game.create(this.baseHeight, this.baseWidth);
+    this.game = Game.create(this.baseHeight, this.baseWidth, this.gameTypes);
+    this.answeredGame = Game.create(
+      this.baseHeight,
+      this.baseWidth,
+      this.gameTypes,
+    );
     return this;
   }
 
@@ -50,6 +57,11 @@ export default class TestDefiner {
   private baseWidth: BaseWidth = BaseWidth.create(3);
   public setBaseWidth(baseWidth: BaseWidth): TestDefiner {
     this.baseWidth = baseWidth;
+    return this;
+  }
+  private gameTypes: GameType[] = [];
+  public setGameTypes(gameTypes: GameType[]): TestDefiner {
+    this.gameTypes = gameTypes;
     return this;
   }
   private game!: Game;

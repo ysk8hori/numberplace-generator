@@ -72,7 +72,7 @@ export default class CreateGameLogic {
     );
     for (let i = 0; i < filledCells.length; i++) {
       const targetCell = resultFilledCells.pop();
-      const tempGame = new Game(this.baseHeight, this.baseWidth);
+      const tempGame = Game.create(this.baseHeight, this.baseWidth);
       // pop してるので元のゲームより答えが一つ少ないゲームが出来上がる
       resultFilledCells.forEach(cell =>
         AnswerLogic.createAndExecute(

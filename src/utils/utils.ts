@@ -1,4 +1,5 @@
 export default class Utils {
+  /** 要素が index で初期化された配列 */
   public static createArray(count: number): number[] {
     return [...Array(count)].map((value, index) => index);
   }

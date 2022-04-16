@@ -8,11 +8,12 @@ import GroupRepository from '@/core/repository/groupRepository';
 import GroupRepositoryImpl from '@/repository/groupRepositoryImpl';
 import GameRepository from '@/core/repository/gameRepository';
 import GameRepositoryImpl from '@/repository/gameRepositoryImpl';
-import CreateGoodGameLogic from './core/logic/create/createGoodGameLogic';
+import CreateGameLogic from './core/logic/create/createGameLogic';
 import InfiniteAnalyzeLogic from './core/logic/analyze/infiniteAnalyze/infiniteAnalyzeLogic';
 import BaseHeight from './core/valueobject/baseHeight';
 import BaseWidth from './core/valueobject/baseWidth';
 import GameID from './core/valueobject/gameId';
+import { GameType } from './core/types';
 
 const cellRepository = CellRepositoryImpl.create();
 const groupRepository = GroupRepositoryImpl.create();
@@ -57,16 +58,20 @@ export type BlockSize = {
  * @param blockSize Block size refers to the size of a 3x3 square area for a game that is 9x9 overall. The argument must be an object of { width: number, height: number }. The length of one side of the game (width multiplied by height) must be 3 or higher, and less than 9.
  * @returns `[pazzules, corrected]`
  */
-export function generateGame(blockSize: BlockSize): [Game, Game] {
+export function generateGame(
+  blockSize: BlockSize,
+  option?: { gameTypes?: GameType[] },
+): [Game, Game] {
   if (!validation(blockSize)) {
     throw new Error(
       'The argument must be an object of { width: number, height: number }. The length of one side of the game (width multiplied by height) must be 3 or higher, and less than 9.',
     );
   }
 
-  const gameId = CreateGoodGameLogic.create(
+  const gameId = CreateGameLogic.create(
     BaseHeight.create(blockSize.height),
     BaseWidth.create(blockSize.width),
+    option,
   ).execute();
 
   const pazzules: Game = convert(gameId);

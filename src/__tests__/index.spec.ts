@@ -13,6 +13,17 @@ test('一辺のサイズが3の小さな問題を生成できる', () => {
   expect(corrected.cells.length).toBe(9);
 });
 
+test('一辺のサイズが9のクロスの問題を生成できる', () => {
+  const [pazzules, corrected] = generateGame(
+    { width: 3, height: 3 },
+    { gameTypes: ['cross'] },
+  );
+  expect(pazzules.cells.length).toBe(81);
+  console.log(pazzules.toString());
+  expect(corrected.cells.length).toBe(81);
+  console.log(corrected.toString());
+});
+
 test('一辺のサイズが17を超える問題を生成できない', () => {
   expect(() => generateGame({ width: 1, height: 17 })).toThrowError();
 });

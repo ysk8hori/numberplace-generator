@@ -15,17 +15,20 @@ import { container } from 'tsyringe';
 import AnalyzeLogic from '../analyze/analyzeLogic';
 import Answer from '@/core/valueobject/answer';
 import CellPosition, { pos } from '@/core/valueobject/cellPosition';
+import { GameType } from '@/core/types';
 
 export default class CreateGameLogic {
   public static create(
     baseHeight: BaseHeight,
     baseWidth: BaseWidth,
+    option?: { gameTypes?: GameType[] },
   ): CreateGameLogic {
-    return new CreateGameLogic(baseHeight, baseWidth);
+    return new CreateGameLogic(baseHeight, baseWidth, option);
   }
   constructor(
     private baseHeight: BaseHeight,
     private baseWidth: BaseWidth,
+    option?: { gameTypes?: GameType[] },
     cellRepository: CellRepository = container.resolve('CellRepository'),
     groupRepository: GroupRepository = container.resolve('GroupRepository'),
     gameRepository: GameRepository = container.resolve('GameRepository'),
@@ -37,7 +40,7 @@ export default class CreateGameLogic {
         'リポジトリが指定されていません。',
       );
     this.cellRepository = cellRepository;
-    this.game = Game.create(baseHeight, baseWidth);
+    this.game = Game.create(baseHeight, baseWidth, option?.gameTypes);
   }
   private cellRepository: CellRepository;
   private game: Game;

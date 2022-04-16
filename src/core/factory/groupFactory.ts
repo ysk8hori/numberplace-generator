@@ -169,6 +169,47 @@ export default class GroupFactory {
     );
   }
 
+  public createCrossGroup(): Group[] {
+    // 左上から右下への斜めのグループ
+    const groupId1 = this.createId(this.gameId, GroupType.Cross, 0);
+    const crossGroup1 = Group.create(
+      this.gameId,
+      GroupType.Cross,
+      groupId1,
+      this.answerCandidateCollection.clone(),
+    );
+    Utils.createArray(this.baseHeight.value * this.baseWidth.value)
+      .map(i => CellPosition.create(vPos(i), hPos(i)))
+      .map(pos =>
+        this.cellCollection.findAll().find(v => v.position.equals(pos)),
+      )
+      .forEach(cell => cell!.joinGroup(groupId1));
+    this.groupRepository!.regist(this.gameId, [crossGroup1]);
+
+    // 右上から左下への斜めのグループ
+    const groupId2 = this.createId(this.gameId, GroupType.Cross, 1);
+    const crossGroup2 = Group.create(
+      this.gameId,
+      GroupType.Cross,
+      groupId2,
+      this.answerCandidateCollection.clone(),
+    );
+    Utils.createArray(this.baseHeight.value * this.baseWidth.value)
+      .map(i =>
+        CellPosition.create(
+          vPos(i),
+          hPos(this.baseHeight.value * this.baseWidth.value - i - 1),
+        ),
+      )
+      .map(pos =>
+        this.cellCollection.findAll().find(v => v.position.equals(pos)),
+      )
+      .forEach(cell => cell!.joinGroup(groupId2));
+    this.groupRepository!.regist(this.gameId, [crossGroup2]);
+
+    return [crossGroup1, crossGroup2];
+  }
+
   private createId(
     gameId: GameID,
     groupType: GroupType,

@@ -173,4 +173,82 @@ describe('GroupFactory', () => {
       ).toBeTruthy();
     });
   });
+  describe('クロスグループの生成', () => {
+    groupFactory.createCrossGroup();
+    const crossGroups = groupRepository.findByType(gameId, GroupType.Cross);
+    describe('左上から右下への斜めのグループ', () => {
+      it('crossGroups[0].cells[0].isSamePosition(CellPosition.create(0, 0))', () => {
+        expect(
+          crossGroups[0].cells[0].isSamePosition(
+            CellPosition.createFromNumber(0, 0),
+          ),
+        ).toBeTruthy();
+      });
+      it('crossGroups[0].cells[1].isSamePosition(CellPosition.create(1, 1))', () => {
+        expect(crossGroups[0].cells[1].position).toEqual(
+          CellPosition.createFromNumber(1, 1),
+        );
+      });
+      it('crossGroups[0].cells[2].isSamePosition(CellPosition.create(2, 2))', () => {
+        expect(crossGroups[0].cells[2].position).toEqual(
+          CellPosition.createFromNumber(2, 2),
+        );
+      });
+      it('crossGroups[0].cells[3].isSamePosition(CellPosition.create(3, 3))', () => {
+        expect(crossGroups[0].cells[3].position).toEqual(
+          CellPosition.createFromNumber(3, 3),
+        );
+      });
+      it('crossGroups[0].cells[4].isSamePosition(CellPosition.create(4, 4))', () => {
+        expect(crossGroups[0].cells[4].position).toEqual(
+          CellPosition.createFromNumber(4, 4),
+        );
+      });
+      it('crossGroups[0].cells[5].isSamePosition(CellPosition.create(5, 5))', () => {
+        expect(crossGroups[0].cells[5].position).toEqual(
+          CellPosition.createFromNumber(5, 5),
+        );
+      });
+      it('crossGroups[0].cells[6] is undefind', () => {
+        expect(crossGroups[0].cells[6]).toBeUndefined();
+      });
+    });
+    describe('右上から左下への斜めのグループ', () => {
+      it('crossGroups[1].cells[0].isSamePosition(CellPosition.create(5, 0))', () => {
+        expect(
+          crossGroups[1].cells[0].isSamePosition(
+            CellPosition.createFromNumber(5, 0),
+          ),
+        ).toBeTruthy();
+      });
+      it('crossGroups[1].cells[1].isSamePosition(CellPosition.create(4, 1))', () => {
+        expect(crossGroups[1].cells[1].position).toEqual(
+          CellPosition.createFromNumber(4, 1),
+        );
+      });
+      it('crossGroups[1].cells[2].isSamePosition(CellPosition.create(3, 2))', () => {
+        expect(crossGroups[1].cells[2].position).toEqual(
+          CellPosition.createFromNumber(3, 2),
+        );
+      });
+      it('crossGroups[1].cells[3].isSamePosition(CellPosition.create(2, 3))', () => {
+        expect(crossGroups[1].cells[3].position).toEqual(
+          CellPosition.createFromNumber(2, 3),
+        );
+      });
+      it('crossGroups[1].cells[4].isSamePosition(CellPosition.create(1, 4))', () => {
+        expect(crossGroups[1].cells[4].position).toEqual(
+          CellPosition.createFromNumber(1, 4),
+        );
+      });
+      it('crossGroups[1].cells[5].isSamePosition(CellPosition.create(0, 5))', () => {
+        expect(crossGroups[1].cells[5].position).toEqual(
+          CellPosition.createFromNumber(0, 5),
+        );
+      });
+      it('crossGroups[1].cells[6] is undefind', () => {
+        expect(crossGroups[1].cells[6]).toBeUndefined();
+      });
+    });
+  });
 });

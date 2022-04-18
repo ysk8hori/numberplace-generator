@@ -14,6 +14,7 @@ import BaseHeight from './core/valueobject/baseHeight';
 import BaseWidth from './core/valueobject/baseWidth';
 import GameID from './core/valueobject/gameId';
 import { GameType } from './core/types';
+export { GameType } from './core/types';
 
 const cellRepository = CellRepositoryImpl.create();
 const groupRepository = GroupRepositoryImpl.create();

@@ -8,7 +8,7 @@ import GroupRepository from '@/core/repository/groupRepository';
 import GroupRepositoryImpl from '@/repository/groupRepositoryImpl';
 import GameRepository from '@/core/repository/gameRepository';
 import GameRepositoryImpl from '@/repository/gameRepositoryImpl';
-import CreateGameLogic from './core/logic/create/createGameLogic';
+import CreateGoodGameLogic from './core/logic/create/createGoodGameLogic';
 import InfiniteAnalyzeLogic from './core/logic/analyze/infiniteAnalyze/infiniteAnalyzeLogic';
 import BaseHeight from './core/valueobject/baseHeight';
 import BaseWidth from './core/valueobject/baseWidth';
@@ -68,7 +68,7 @@ export function generateGame(
     );
   }
 
-  const gameId = CreateGameLogic.create(
+  const gameId = CreateGoodGameLogic.create(
     BaseHeight.create(blockSize.height),
     BaseWidth.create(blockSize.width),
     option,
@@ -109,7 +109,7 @@ export function generateGame(
   }
 }
 
-function validation(blockSize: any) {
+function validation(blockSize: BlockSize) {
   return (
     typeof blockSize === 'object' &&
     blockSize !== null &&

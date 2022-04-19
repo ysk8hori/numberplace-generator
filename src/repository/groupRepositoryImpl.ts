@@ -38,8 +38,7 @@ export default class GroupRepositoryImpl implements GroupRepository {
     return (
       GroupRepositoryImpl.groupMap
         .get(gameId)
-        ?.filter(group => group.groupType === groupType) ??
-      this.throw(gameId, groupType)
+        ?.filter(group => group.groupType === groupType) ?? []
     );
   }
 

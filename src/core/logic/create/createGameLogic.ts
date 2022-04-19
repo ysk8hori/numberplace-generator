@@ -28,7 +28,7 @@ export default class CreateGameLogic {
   constructor(
     private baseHeight: BaseHeight,
     private baseWidth: BaseWidth,
-    option?: { gameTypes?: GameType[] },
+    private option?: { gameTypes?: GameType[] },
     cellRepository: CellRepository = container.resolve('CellRepository'),
     groupRepository: GroupRepository = container.resolve('GroupRepository'),
     gameRepository: GameRepository = container.resolve('GameRepository'),
@@ -75,7 +75,11 @@ export default class CreateGameLogic {
     );
     for (let i = 0; i < filledCells.length; i++) {
       const targetCell = resultFilledCells.pop();
-      const tempGame = Game.create(this.baseHeight, this.baseWidth);
+      const tempGame = Game.create(
+        this.baseHeight,
+        this.baseWidth,
+        this.option?.gameTypes,
+      );
       // pop してるので元のゲームより答えが一つ少ないゲームが出来上がる
       resultFilledCells.forEach(cell =>
         AnswerLogic.createAndExecute(
@@ -103,22 +107,5 @@ export default class CreateGameLogic {
     this.deleteGameLogic.execute(answeredGame.gameId);
 
     return this.game.gameId;
-  }
-
-  private 微調整する(shuffledAnsweredCells: Cell[]): Game {
-    const answeredCell = shuffledAnsweredCells.pop();
-    AnswerLogic.createAndExecute(
-      this.game.gameId,
-      answeredCell!.position,
-      answeredCell!.getAnswer()!,
-    );
-    const clonedGame = this.game.clone();
-    InfiniteAnalyzeLogic.createAndExecute(clonedGame.gameId, true);
-    return clonedGame;
-  }
-
-  /** 答えを入力しておくセルの数を取得する。 */
-  private getBaseAnsweredCellCount(): number {
-    return (this.cellRepository.findAll(this.game.gameId).length / 10) * 3;
   }
 }

@@ -23,6 +23,10 @@ export default class CellPosition {
     return new CellPosition(vPos(verticalPosition), hPos(horizontalPosition));
   }
 
+  public static c(x: number, y: number): CellPosition {
+    return new CellPosition(vPos(y), hPos(x));
+  }
+
   public static create(
     verticalPosition: VerticalPosition,
     horizontalPosition: HorizontalPosition,

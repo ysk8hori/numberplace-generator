@@ -82,4 +82,5 @@ export enum GroupType {
   Horizontal = 'h',
   Square = 's',
   Cross = 'x',
+  Hyper = 'hy',
 }

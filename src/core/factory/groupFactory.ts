@@ -59,6 +59,7 @@ export default class GroupFactory {
     this.createVerticalGroup();
     this.createSquareGroup();
     if (this.option.gameTypes.includes('cross')) this.createCrossGroup();
+    if (this.option.gameTypes.includes('hyper')) this.createHyperGroup();
   }
 
   /**
@@ -215,6 +216,81 @@ export default class GroupFactory {
     this.groupRepository!.regist(this.gameId, [crossGroup2]);
 
     return [crossGroup1, crossGroup2];
+  }
+
+  public static readonly HYPER_GROUP_POSITIONS = [
+    [
+      CellPosition.c(1, 1),
+      CellPosition.c(2, 1),
+      CellPosition.c(3, 1),
+      CellPosition.c(1, 2),
+      CellPosition.c(2, 2),
+      CellPosition.c(3, 2),
+      CellPosition.c(1, 3),
+      CellPosition.c(2, 3),
+      CellPosition.c(3, 3),
+    ],
+    [
+      CellPosition.c(5, 1),
+      CellPosition.c(6, 1),
+      CellPosition.c(7, 1),
+      CellPosition.c(5, 2),
+      CellPosition.c(6, 2),
+      CellPosition.c(7, 2),
+      CellPosition.c(5, 3),
+      CellPosition.c(6, 3),
+      CellPosition.c(7, 3),
+    ],
+    [
+      CellPosition.c(1, 5),
+      CellPosition.c(2, 5),
+      CellPosition.c(3, 5),
+      CellPosition.c(1, 6),
+      CellPosition.c(2, 6),
+      CellPosition.c(3, 6),
+      CellPosition.c(1, 7),
+      CellPosition.c(2, 7),
+      CellPosition.c(3, 7),
+    ],
+    [
+      CellPosition.c(5, 5),
+      CellPosition.c(6, 5),
+      CellPosition.c(7, 5),
+      CellPosition.c(5, 6),
+      CellPosition.c(6, 6),
+      CellPosition.c(7, 6),
+      CellPosition.c(5, 7),
+      CellPosition.c(6, 7),
+      CellPosition.c(7, 7),
+    ],
+  ];
+
+  /**
+   * 9x9 の場合のみ機能する
+   */
+  public createHyperGroup(): Group[] {
+    if (!(this.baseHeight.value === 3 && this.baseWidth.value === 3)) {
+      console.warn(
+        'hyper は baseWidth:3 baseHeight:3 の問題以外では作成できません',
+      );
+      return [];
+    }
+    return GroupFactory.HYPER_GROUP_POSITIONS.map((groupCellPoses, i) => {
+      // groupId を作り、Cell を GroupId と紐付けし、Group を生成し、groupRepository に登録し、Groupをリターンする。
+      const groupId = this.createId(this.gameId, GroupType.Hyper, i);
+      this.cellCollection
+        .findAll()
+        .filter(cell => groupCellPoses.some(pos => pos.equals(cell.position)))
+        .forEach(cell => cell.joinGroup(groupId));
+      const group = Group.create(
+        this.gameId,
+        GroupType.Hyper,
+        groupId,
+        this.answerCandidateCollection.clone(),
+      );
+      this.groupRepository!.regist(this.gameId, [group]);
+      return group;
+    });
   }
 
   private createId(

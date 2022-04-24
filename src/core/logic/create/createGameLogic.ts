@@ -7,28 +7,27 @@ import InfiniteAnalyzeLogic from '../analyze/infiniteAnalyze/infiniteAnalyzeLogi
 import Utils from '@/utils/utils';
 import AnswerLogic from '../analyze/answerLogic';
 import Game from '@/core/entity/game';
-import Cell from '@/core/entity/cell';
 import BaseHeight from '@/core/valueobject/baseHeight';
 import BaseWidth from '@/core/valueobject/baseWidth';
 import DeleteGameLogic from '../deleteGameLogic';
 import { container } from 'tsyringe';
 import AnalyzeLogic from '../analyze/analyzeLogic';
 import Answer from '@/core/valueobject/answer';
-import CellPosition, { pos } from '@/core/valueobject/cellPosition';
+import { pos } from '@/core/valueobject/cellPosition';
 import { GameType } from '@/core/types';
 
 export default class CreateGameLogic {
   public static create(
     baseHeight: BaseHeight,
     baseWidth: BaseWidth,
-    option?: { gameTypes?: GameType[] },
+    option?: { gameTypes?: GameType[]; kiwami?: boolean },
   ): CreateGameLogic {
     return new CreateGameLogic(baseHeight, baseWidth, option);
   }
   constructor(
     private baseHeight: BaseHeight,
     private baseWidth: BaseWidth,
-    private option?: { gameTypes?: GameType[] },
+    private option?: { gameTypes?: GameType[]; kiwami?: boolean },
     cellRepository: CellRepository = container.resolve('CellRepository'),
     groupRepository: GroupRepository = container.resolve('GroupRepository'),
     gameRepository: GameRepository = container.resolve('GameRepository'),
@@ -58,13 +57,20 @@ export default class CreateGameLogic {
       AnswerLogic.createAndExecute(
         answeredGame.gameId,
         pos(0, i),
-        Answer.create(answer),
+        Answer.create(answer + 1),
       ),
     );
 
     InfiniteAnalyzeLogic.createAndExecute(answeredGame.gameId, true);
 
-    // 余分な記入セルを除去していき、ゲームが成り立つかを逐一チェックする
+    this.makeHard(answeredGame);
+    this.deleteGameLogic.execute(answeredGame.gameId);
+
+    return this.game.gameId;
+  }
+
+  /** 余分な記入セルを除去していき、ゲームが成り立つかを逐一チェックする */
+  private makeHard(answeredGame: Game) {
     const filledCells = this.cellRepository
       .findAll(answeredGame.gameId)
       .filter(cell => cell.isAnswered);
@@ -88,14 +94,61 @@ export default class CreateGameLogic {
           cell.answer!,
         ),
       );
-      const asdf = AnalyzeLogic.create(tempGame.gameId).execute();
-      if (asdf === 0) {
+      const emptyCellCount = AnalyzeLogic.create(tempGame.gameId).execute();
+      if (emptyCellCount === 0) {
         // targetCell はなくても良いってこと
       } else {
         // targetCell は必要なので先頭に追加しておく（上で pop してここで先頭追加）
         resultFilledCells.unshift(targetCell!);
       }
       this.deleteGameLogic.execute(tempGame.gameId);
+    }
+    if (this.option?.kiwami) {
+      // レベル「極」の問題にする
+      const tempResultFilledCells = Array.from(resultFilledCells);
+      for (let i = 0; i < tempResultFilledCells.length; i++) {
+        const targetCell = resultFilledCells.pop();
+        const tempGame = Game.create(
+          this.baseHeight,
+          this.baseWidth,
+          this.option?.gameTypes,
+        );
+        // 答えを tempGame に転記する。pop してるので元のゲームより答えが一つ少ないゲームが出来上がる。
+        resultFilledCells.forEach(cell =>
+          AnswerLogic.createAndExecute(
+            tempGame.gameId,
+            cell.position,
+            cell.answer!,
+          ),
+        );
+        const fliped = tempGame.fliped();
+        try {
+          InfiniteAnalyzeLogic.createAndExecute(fliped.gameId);
+          const maybeSameAsAnswered = fliped.fliped();
+          const newFilledCells = this.cellRepository.findAll(
+            maybeSameAsAnswered.gameId,
+          );
+          const same = filledCells.every(cell =>
+            newFilledCells
+              .find(newCell => newCell.isSamePosition(cell.position))
+              ?.answer?.equals(cell.answer),
+          );
+          if (same) {
+            // targetCell はなくても良いってこと
+            console.log('極');
+          } else {
+            // targetCell は必要なので先頭に追加しておく（上で pop してここで先頭追加）
+            resultFilledCells.unshift(targetCell!);
+          }
+          this.deleteGameLogic.execute(maybeSameAsAnswered.gameId);
+        } catch (e) {
+          resultFilledCells.unshift(targetCell!);
+          //
+        } finally {
+          this.deleteGameLogic.execute(tempGame.gameId);
+          this.deleteGameLogic.execute(fliped.gameId);
+        }
+      }
     }
     resultFilledCells.forEach(cell =>
       AnswerLogic.createAndExecute(
@@ -104,8 +157,5 @@ export default class CreateGameLogic {
         cell.answer!,
       ),
     );
-    this.deleteGameLogic.execute(answeredGame.gameId);
-
-    return this.game.gameId;
   }
 }

@@ -13,7 +13,7 @@ export default class CreateGoodGameLogic {
   public static create(
     baseHeight: BaseHeight,
     baseWidth: BaseWidth,
-    option?: { gameTypes?: GameType[] },
+    option?: { gameTypes?: GameType[]; kiwami?: boolean },
   ): CreateGoodGameLogic {
     return new CreateGoodGameLogic(baseHeight, baseWidth, option);
   }

@@ -61,7 +61,7 @@ export type BlockSize = {
  */
 export function generateGame(
   blockSize: BlockSize,
-  option?: { gameTypes?: GameType[] },
+  option?: { gameTypes?: GameType[]; kiwami?: boolean },
 ): [Game, Game] {
   if (!validation(blockSize)) {
     throw new Error(

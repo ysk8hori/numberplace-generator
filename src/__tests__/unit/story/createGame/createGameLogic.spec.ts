@@ -79,4 +79,22 @@ describe('CreateGameLogic', () => {
       ).toBeLessThan(82 / 2 + 5);
     });
   });
+  describe('3x3(極)', () => {
+    let gameId: GameID;
+    beforeAll(() => {
+      gameId = CreateGoodGameLogic.create(
+        BaseHeight.create(3),
+        BaseWidth.create(3),
+        { kiwami: true },
+      ).execute();
+    });
+    it('解答済みのセル数が全セル数の半分より少ないこと', () => {
+      console.log(OutputAnswerStringLogic.create(gameId).getAnswerString());
+      expect(
+        CellRepositoryImpl.create()
+          .findAll(gameId)
+          .filter(cell => cell.isAnswered).length,
+      ).toBeLessThan(82 / 2 + 5);
+    });
+  });
 });

@@ -8,6 +8,15 @@ test('一辺のサイズが9のスタンダードな問題を生成できる', (
   expect(corrected.cells.length).toBe(81);
 });
 
+test('一辺のサイズが9の難易度「極」の問題を生成できる', () => {
+  const [pazzules, corrected] = generateGame(
+    { width: 3, height: 3 },
+    { kiwami: true },
+  );
+  expect(pazzules.cells.length).toBe(81);
+  expect(corrected.cells.length).toBe(81);
+});
+
 test('一辺のサイズが3の小さな問題を生成できる', () => {
   const [pazzules, corrected] = generateGame({ width: 3, height: 1 });
   expect(pazzules.cells.length).toBe(9);

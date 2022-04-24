@@ -13,7 +13,7 @@ export default class Answer implements IAnswer {
   public static create(value: string | number): Answer {
     return new Answer(typeof value === 'string' ? value : value.toString());
   }
-  public equals(answer: IAnswer): boolean {
-    return this.value === answer.value;
+  public equals(answer: IAnswer | undefined): boolean {
+    return this.value === answer?.value;
   }
 }

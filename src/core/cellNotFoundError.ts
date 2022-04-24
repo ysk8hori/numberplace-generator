@@ -1,17 +1,13 @@
 import CellPosition from '@/core/valueobject/cellPosition';
-import HorizontalPosition from '@/core/valueobject/horizontalPosition';
-import VerticalPosition from '@/core/valueobject/verticalPosition';
 
 export default class CellNotFoundError implements Error {
   public readonly name: string = 'CellNotFoundError';
-  public readonly message: string = 'お探しのCellが見つかりませんでした。';
-  constructor(public posistion: CellPosition) {}
-  public static throw(): never {
-    throw new CellNotFoundError(
-      CellPosition.create(
-        VerticalPosition.create(0),
-        HorizontalPosition.create(0),
-      ),
-    );
+  public readonly _message: string = 'お探しのCellが見つかりませんでした。';
+  public message = '';
+  constructor(public posistion: CellPosition) {
+    this.message = `${this._message} [${this.posistion}]`;
+  }
+  public static throw(position: CellPosition): never {
+    throw new CellNotFoundError(position);
   }
 }

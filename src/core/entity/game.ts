@@ -115,6 +115,28 @@ export default class Game {
     AnalyzeLogic.create(clonedGame.gameId).execute();
     return clonedGame;
   }
+  public fliped(): Game {
+    const clonedGame = Game.create(
+      this.baseHeight,
+      this.baseWidth,
+      this.gameTypes,
+    );
+    const max = this.baseHeight.value * this.baseWidth.value - 1;
+    clonedGame.setDifficalty(this.difficalty);
+    this.cells.findAll().forEach(cell => {
+      if (cell.answer)
+        AnswerLogic.createAndExecute(
+          clonedGame.gameId,
+          CellPosition.c(
+            max - cell.position.verticalPosition.value,
+            max - cell.position.horizontalPosition.value,
+          ),
+          cell.answer,
+        );
+    });
+    AnalyzeLogic.create(clonedGame.gameId).execute();
+    return clonedGame;
+  }
 
   public incrementDifficalty(): Game {
     this.difficalty.increment();

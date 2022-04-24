@@ -18,7 +18,7 @@ export default class CellCollection {
   public get(position: CellPosition): Cell {
     return (
       this.cells.find(cell => cell.isSamePosition(position)) ??
-      CellNotFoundError.throw()
+      CellNotFoundError.throw(position)
     );
   }
   /**

@@ -39,9 +39,11 @@ export default class CreateGameLogic {
         'リポジトリが指定されていません。',
       );
     this.cellRepository = cellRepository;
+    this.gameRepository = gameRepository;
     this.game = Game.create(baseHeight, baseWidth, option?.gameTypes);
   }
   private cellRepository: CellRepository;
+  private gameRepository: GameRepository;
   private game: Game;
   private deleteGameLogic = DeleteGameLogic.create();
 
@@ -135,7 +137,7 @@ export default class CreateGameLogic {
           );
           if (same) {
             // targetCell はなくても良いってこと
-            console.log('極');
+            this.gameRepository.find(this.game.gameId).incrementDifficalty();
           } else {
             // targetCell は必要なので先頭に追加しておく（上で pop してここで先頭追加）
             resultFilledCells.unshift(targetCell!);

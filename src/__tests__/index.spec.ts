@@ -3,24 +3,27 @@ import { generateGame } from '@/index';
 import { expect, test, describe } from 'vitest';
 
 test('一辺のサイズが9のスタンダードな問題を生成できる', () => {
-  const [pazzules, corrected] = generateGame({ width: 3, height: 3 });
+  const [pazzules, corrected, info] = generateGame({ width: 3, height: 3 });
   expect(pazzules.cells.length).toBe(81);
   expect(corrected.cells.length).toBe(81);
+  expect(info).toEqual({ difficulty: 0 });
 });
 
 test('一辺のサイズが9の難易度「極」の問題を生成できる', () => {
-  const [pazzules, corrected] = generateGame(
+  const [pazzules, corrected, info] = generateGame(
     { width: 3, height: 3 },
     { kiwami: true },
   );
   expect(pazzules.cells.length).toBe(81);
   expect(corrected.cells.length).toBe(81);
+  expect(info.difficulty).toBeGreaterThanOrEqual(1);
 });
 
 test('一辺のサイズが3の小さな問題を生成できる', () => {
-  const [pazzules, corrected] = generateGame({ width: 3, height: 1 });
+  const [pazzules, corrected, info] = generateGame({ width: 3, height: 1 });
   expect(pazzules.cells.length).toBe(9);
   expect(corrected.cells.length).toBe(9);
+  expect(info).toEqual({ difficulty: 0 });
 });
 
 describe.each([
@@ -29,7 +32,7 @@ describe.each([
   { width: 4, height: 3 },
 ])('', blockSize => {
   test(`${JSON.stringify(blockSize)}のクロスの問題を生成できる`, () => {
-    const [_, corrected] = generateGame(blockSize, {
+    const [_, corrected, info] = generateGame(blockSize, {
       gameTypes: ['cross'],
     });
     // 左上から右下にかけて斜めのグループのセルの数字が一意であること
@@ -46,6 +49,7 @@ describe.each([
       .map(c => c.answer);
     const set2 = new Set(rightups);
     expect(rightups.length).toBe(set2.size);
+    expect(info).toEqual({ difficulty: 0 });
   });
 });
 

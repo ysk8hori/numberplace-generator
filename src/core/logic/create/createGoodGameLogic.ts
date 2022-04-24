@@ -8,6 +8,7 @@ import BusinessError from '@/core/businessError';
 import BaseHeight from '@/core/valueobject/baseHeight';
 import BaseWidth from '@/core/valueobject/baseWidth';
 import { GameType } from '@/core/types';
+import InfiniteAnalyzeLogic from '../analyze/infiniteAnalyze/infiniteAnalyzeLogic';
 
 export default class CreateGoodGameLogic {
   public static create(
@@ -20,7 +21,7 @@ export default class CreateGoodGameLogic {
   constructor(
     private baseHeight: BaseHeight,
     private baseWidth: BaseWidth,
-    private option?: { gameTypes?: GameType[] },
+    private option?: { gameTypes?: GameType[]; kiwami?: boolean },
     cellRepository: CellRepository = container.resolve('CellRepository'),
     groupRepository: GroupRepository = container.resolve('GroupRepository'),
     gameRepository: GameRepository = container.resolve('GameRepository'),
@@ -32,11 +33,14 @@ export default class CreateGoodGameLogic {
         'リポジトリが指定されていません。',
       );
     this.cellRepository = cellRepository;
+    this.gameRepository = gameRepository;
   }
   private cellRepository: CellRepository;
+  private gameRepository: GameRepository;
 
   public execute(): GameID {
     let createdGameId: GameID | undefined;
+    let difficulty = 0;
     do {
       try {
         createdGameId = undefined;
@@ -45,11 +49,14 @@ export default class CreateGoodGameLogic {
           this.baseWidth,
           this.option,
         ).execute();
-        // console.log(`this is Good? :${this.isGood(createdGameId, false)}`);
+        difficulty = this.gameRepository.find(createdGameId).difficalty.value;
       } catch (e) {
         //
       }
-    } while (createdGameId === undefined);
+    } while (
+      createdGameId === undefined ||
+      (this.option?.kiwami && difficulty < 1)
+    );
     return createdGameId;
   }
 }

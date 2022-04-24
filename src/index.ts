@@ -53,6 +53,10 @@ export type BlockSize = {
   height: number;
 };
 
+export type GameInfo = {
+  difficulty: number;
+};
+
 /**
  * Generate number-place (Sudoku) game.
  *
@@ -62,7 +66,7 @@ export type BlockSize = {
 export function generateGame(
   blockSize: BlockSize,
   option?: { gameTypes?: GameType[]; kiwami?: boolean },
-): [Game, Game] {
+): [Game, Game, GameInfo] {
   if (!validation(blockSize)) {
     throw new Error(
       'The argument must be an object of { width: number, height: number }. The length of one side of the game (width multiplied by height) must be 3 or higher, and less than 9.',
@@ -78,10 +82,13 @@ export function generateGame(
   const pazzules: Game = convert(gameId);
   InfiniteAnalyzeLogic.createAndExecute(gameId);
   const corrected: Game = convert(gameId);
+  const gameInfo: GameInfo = {
+    difficulty: gameRepository.find(gameId).difficalty.value,
+  };
   cellRepository.remove(gameId);
   groupRepository.remove(gameId);
   gameRepository.remove(gameId);
-  return [pazzules, corrected];
+  return [pazzules, corrected, gameInfo];
 
   function convert(gameId: GameID): Game {
     return {

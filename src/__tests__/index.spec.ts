@@ -3,39 +3,39 @@ import { generateGame } from '@/index';
 import { expect, test, describe } from 'vitest';
 
 test('一辺のサイズが9のスタンダードな問題を生成できる', () => {
-  const [pazzules, corrected, info] = generateGame({ width: 3, height: 3 });
+  const [pazzules, solved, info] = generateGame({ width: 3, height: 3 });
   expect(pazzules.cells.length).toBe(81);
-  expect(corrected.cells.length).toBe(81);
+  expect(solved.cells.length).toBe(81);
   expect(info).toEqual({ difficulty: 0 });
 });
 
 test('一辺のサイズが9の難易度「極み」の問題を生成できる', () => {
-  const [pazzules, corrected, info] = generateGame(
+  const [pazzules, solved, info] = generateGame(
     { width: 3, height: 3 },
     { kiwami: true },
   );
   expect(pazzules.cells.length).toBe(81);
-  expect(corrected.cells.length).toBe(81);
+  expect(solved.cells.length).toBe(81);
   expect(info.difficulty).toBeGreaterThanOrEqual(1);
 });
 
 // 時間がかかるので基本スキップ
 test.skip('一辺のサイズが9の難易度「hyper cross 極み」の問題を生成できる', () => {
   console.time('hyper cross 極み');
-  const [pazzules, corrected, info] = generateGame(
+  const [pazzules, solved, info] = generateGame(
     { width: 3, height: 3 },
     { kiwami: true, gameTypes: ['cross', 'hyper'] },
   );
   console.timeEnd('hyper cross 極み');
   expect(pazzules.cells.length).toBe(81);
-  expect(corrected.cells.length).toBe(81);
+  expect(solved.cells.length).toBe(81);
   expect(info.difficulty).toBeGreaterThanOrEqual(1);
 });
 
 test('一辺のサイズが3の小さな問題を生成できる', () => {
-  const [pazzules, corrected, info] = generateGame({ width: 3, height: 1 });
+  const [pazzules, solved, info] = generateGame({ width: 3, height: 1 });
   expect(pazzules.cells.length).toBe(9);
-  expect(corrected.cells.length).toBe(9);
+  expect(solved.cells.length).toBe(9);
   expect(info).toEqual({ difficulty: 0 });
 });
 
@@ -45,17 +45,17 @@ describe.each([
   { width: 4, height: 3 },
 ])('', blockSize => {
   test(`${JSON.stringify(blockSize)}のクロスの問題を生成できる`, () => {
-    const [_, corrected, info] = generateGame(blockSize, {
+    const [_, solved, info] = generateGame(blockSize, {
       gameTypes: ['cross'],
     });
     // 左上から右下にかけて斜めのグループのセルの数字が一意であること
-    const leftups = corrected.cells
+    const leftups = solved.cells
       .filter(c => c.pos[0] === c.pos[1])
       .map(c => c.answer);
     const set = new Set(leftups);
     expect(leftups.length).toBe(set.size);
     // 右上から左下にかけて斜めのグループのセルの数字が一意であること
-    const rightups = corrected.cells
+    const rightups = solved.cells
       .filter(
         c => c.pos[0] === blockSize.width * blockSize.height - c.pos[1] - 1,
       )
@@ -68,7 +68,7 @@ describe.each([
 
 describe(`{ width: 3, height: 3}の HYPER の問題を生成できる`, () => {
   console.time('hyper');
-  const [puzzle, corrected] = generateGame(
+  const [puzzle, solved] = generateGame(
     { width: 3, height: 3 },
     {
       gameTypes: ['hyper'],
@@ -78,13 +78,13 @@ describe(`{ width: 3, height: 3}の HYPER の問題を生成できる`, () => {
   describe.each([0, 1, 2, 3])('', groupNo => {
     test(`HYPERグループ${groupNo}の数字が一意であること`, () => {
       GroupFactory.HYPER_GROUP_POSITIONS[groupNo].map(pos =>
-        corrected.cells.find(
+        solved.cells.find(
           cell =>
             pos.horizontalPosition.value === cell.pos[0] &&
             pos.verticalPosition.value === cell.pos[1],
         ),
       );
-      const group1 = corrected.cells
+      const group1 = solved.cells
         .filter(cell =>
           GroupFactory.HYPER_GROUP_POSITIONS[0].some(
             pos =>
@@ -101,7 +101,7 @@ describe(`{ width: 3, height: 3}の HYPER の問題を生成できる`, () => {
 
 describe(`{ width: 3, height: 3}の hyper x cross の問題を生成できる`, () => {
   console.time('hyper x cross');
-  const [puzzle, corrected] = generateGame(
+  const [puzzle, solved] = generateGame(
     { width: 3, height: 3 },
     {
       gameTypes: ['hyper', 'cross'],
@@ -111,13 +111,13 @@ describe(`{ width: 3, height: 3}の hyper x cross の問題を生成できる`, 
   describe.each([0, 1, 2, 3])('', groupNo => {
     test(`HYPERグループ${groupNo}の数字が一意であること`, () => {
       GroupFactory.HYPER_GROUP_POSITIONS[groupNo].map(pos =>
-        corrected.cells.find(
+        solved.cells.find(
           cell =>
             pos.horizontalPosition.value === cell.pos[0] &&
             pos.verticalPosition.value === cell.pos[1],
         ),
       );
-      const group1 = corrected.cells
+      const group1 = solved.cells
         .filter(cell =>
           GroupFactory.HYPER_GROUP_POSITIONS[0].some(
             pos =>
@@ -131,14 +131,14 @@ describe(`{ width: 3, height: 3}の hyper x cross の問題を生成できる`, 
     });
   });
   test(`左上から右下にかけて斜めのグループのセルの数字が一意であること`, () => {
-    const leftups = corrected.cells
+    const leftups = solved.cells
       .filter(c => c.pos[0] === c.pos[1])
       .map(c => c.answer);
     const set = new Set(leftups);
     expect(leftups.length).toBe(set.size);
   });
   test(`右上から左下にかけて斜めのグループのセルの数字が一意であること`, () => {
-    const rightups = corrected.cells
+    const rightups = solved.cells
       .filter(c => c.pos[0] === 9 - c.pos[1] - 1)
       .map(c => c.answer);
     const set2 = new Set(rightups);

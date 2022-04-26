@@ -15,7 +15,7 @@ Generate a number place game and its answers by doing the following
 ```typescript
 import { generateGame } from '@ysk8hori/numberplace-generator';
 // Generate standard 9x9 size number place questions.
-const [puzzle, corrected] = generateGame({ width: 3, height: 3 });
+const [puzzle, solved] = generateGame({ width: 3, height: 3 });
 
 console.log(pazzle.toString());
 /*
@@ -30,7 +30,7 @@ console.log(pazzle.toString());
 3, , ,7, ,1,2,4, 
 */
 
-console.log(corrected.toString());
+console.log(solved.toString());
 /*
 9,5,3,8,1,7,4,2,6
 6,8,1,4,9,2,3,5,7

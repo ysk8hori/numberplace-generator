@@ -61,7 +61,7 @@ export type GameInfo = {
  * Generate number-place (Sudoku) game.
  *
  * @param blockSize Block size refers to the size of a 3x3 square area for a game that is 9x9 overall. The argument must be an object of { width: number, height: number }. The length of one side of the game (width multiplied by height) must be 3 or higher, and less than 9.
- * @returns `[pazzules, corrected]`
+ * @returns `[pazzules, solved]`
  */
 export function generateGame(
   blockSize: BlockSize,
@@ -81,14 +81,14 @@ export function generateGame(
 
   const pazzules: Game = convert(gameId);
   InfiniteAnalyzeLogic.createAndExecute(gameId);
-  const corrected: Game = convert(gameId);
+  const solved: Game = convert(gameId);
   const gameInfo: GameInfo = {
     difficulty: gameRepository.find(gameId).difficalty.value,
   };
   cellRepository.remove(gameId);
   groupRepository.remove(gameId);
   gameRepository.remove(gameId);
-  return [pazzules, corrected, gameInfo];
+  return [pazzules, solved, gameInfo];
 
   function convert(gameId: GameID): Game {
     return {

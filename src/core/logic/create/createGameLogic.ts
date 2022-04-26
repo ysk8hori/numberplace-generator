@@ -15,6 +15,7 @@ import AnalyzeLogic from '../analyze/analyzeLogic';
 import Answer from '@/core/valueobject/answer';
 import { pos } from '@/core/valueobject/cellPosition';
 import { GameType } from '@/core/types';
+import Cell from '@/core/entity/cell';
 
 export default class CreateGameLogic {
   public static create(
@@ -86,74 +87,41 @@ export default class CreateGameLogic {
         .filter(cell => cell.isAnswered),
     );
     for (let i = 0; i < filledCells.length; i++) {
-      const targetCell = resultFilledCells.pop();
-      const tempGame = Game.create(
-        this.baseHeight,
-        this.baseWidth,
-        this.option?.gameTypes,
-      );
-      // pop してるので元のゲームより答えが一つ少ないゲームが出来上がる
-      resultFilledCells.forEach(cell =>
-        AnswerLogic.createAndExecute(
-          tempGame.gameId,
-          cell.position,
-          cell.answer!,
-        ),
-      );
-      const emptyCellCount = AnalyzeLogic.create(tempGame.gameId).execute();
-      if (emptyCellCount === 0) {
-        // targetCell はなくても良いってこと
-      } else {
-        // targetCell は必要なので先頭に追加しておく（上で pop してここで先頭追加）
-        resultFilledCells.unshift(targetCell!);
-      }
-      this.deleteGameLogic.execute(tempGame.gameId);
+      this.popAndCheck(resultFilledCells, tempGame => {
+        const emptyCellCount = AnalyzeLogic.create(tempGame.gameId).execute();
+        return emptyCellCount === 0;
+      });
     }
     if (this.option?.kiwami) {
       // レベル「極」の問題にする
       const tempResultFilledCells = Array.from(resultFilledCells);
       for (let i = 0; i < tempResultFilledCells.length; i++) {
-        const targetCell = resultFilledCells.pop();
-        const tempGame = Game.create(
-          this.baseHeight,
-          this.baseWidth,
-          this.option?.gameTypes,
-        );
-        // 答えを tempGame に転記する。pop してるので元のゲームより答えが一つ少ないゲームが出来上がる。
-        resultFilledCells.forEach(cell =>
-          AnswerLogic.createAndExecute(
-            tempGame.gameId,
-            cell.position,
-            cell.answer!,
-          ),
-        );
-        const fliped = tempGame.fliped();
-        try {
-          InfiniteAnalyzeLogic.createAndExecute(fliped.gameId);
-          const maybeSameAsAnswered = fliped.fliped();
-          const newFilledCells = this.cellRepository.findAll(
-            maybeSameAsAnswered.gameId,
-          );
-          const same = filledCells.every(cell =>
-            newFilledCells
-              .find(newCell => newCell.isSamePosition(cell.position))
-              ?.answer?.equals(cell.answer),
-          );
-          if (same) {
-            // targetCell はなくても良いってこと
-            this.gameRepository.find(this.game.gameId).incrementDifficalty();
-          } else {
-            // targetCell は必要なので先頭に追加しておく（上で pop してここで先頭追加）
-            resultFilledCells.unshift(targetCell!);
+        this.popAndCheck(resultFilledCells, tempGame => {
+          const fliped = tempGame.fliped();
+          try {
+            InfiniteAnalyzeLogic.createAndExecute(fliped.gameId);
+            const maybeSameAsAnswered = fliped.fliped();
+            const newFilledCells = this.cellRepository.findAll(
+              maybeSameAsAnswered.gameId,
+            );
+            const same = filledCells.every(cell =>
+              newFilledCells
+                .find(newCell => newCell.isSamePosition(cell.position))
+                ?.answer?.equals(cell.answer),
+            );
+            if (same) {
+              // targetCell はなくても良いってこと
+              this.gameRepository.find(this.game.gameId).incrementDifficalty();
+              return true;
+            } else {
+              return false;
+            }
+          } catch (e) {
+            return false;
+          } finally {
+            this.deleteGameLogic.execute(fliped.gameId);
           }
-          this.deleteGameLogic.execute(maybeSameAsAnswered.gameId);
-        } catch (e) {
-          resultFilledCells.unshift(targetCell!);
-          //
-        } finally {
-          this.deleteGameLogic.execute(tempGame.gameId);
-          this.deleteGameLogic.execute(fliped.gameId);
-        }
+        });
       }
     }
     resultFilledCells.forEach(cell =>
@@ -163,5 +131,38 @@ export default class CreateGameLogic {
         cell.answer!,
       ),
     );
+  }
+
+  /**
+   * 渡された記入済みセルのリストから一つ pop してゲームが成り立つかどうかをチェックする。
+   *
+   * - ゲームが成り立つ場合、pop したままの記入済みセルのリストを返却する
+   * - ゲームが成り立たない場合、pop した記入済みセルをリストの先頭に追加し、リストを返却する
+   */
+  private popAndCheck(
+    resultFilledCells: Cell[],
+    isNeedjudgeFunction: (tempGame: Game) => boolean,
+  ) {
+    const targetCell = resultFilledCells.pop();
+    const tempGame = Game.create(
+      this.baseHeight,
+      this.baseWidth,
+      this.option?.gameTypes,
+    );
+    // pop してるので元のゲームより答えが一つ少ないゲームが出来上がる
+    resultFilledCells.forEach(cell =>
+      AnswerLogic.createAndExecute(
+        tempGame.gameId,
+        cell.position,
+        cell.answer!,
+      ),
+    );
+    if (isNeedjudgeFunction(tempGame)) {
+      // targetCell はなくても良いってこと
+    } else {
+      // targetCell は必要なので先頭に追加しておく（上で pop してここで先頭追加）
+      resultFilledCells.unshift(targetCell!);
+    }
+    this.deleteGameLogic.execute(tempGame.gameId);
   }
 }

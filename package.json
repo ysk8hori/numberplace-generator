@@ -19,6 +19,7 @@
   "scripts": {
     "build": "tsc && tsc-alias",
     "test": "vitest --config vitest.config.ts",
+    "test:index": "vitest run --config vitest.config.ts src/__tests__/index.spec.ts",
     "lint:fix": "eslint --fix src",
     "prettier": "prettier --write .",
     "coverage": "vitest run --coverage"

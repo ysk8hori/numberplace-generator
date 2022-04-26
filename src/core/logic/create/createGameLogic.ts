@@ -65,6 +65,10 @@ export default class CreateGameLogic {
 
     InfiniteAnalyzeLogic.createAndExecute(answeredGame.gameId, true);
 
+    // 極みの際にここで難易度のチェックをしないのは、makeHard を再実行しても
+    // 難易度が変わらないケースがあることを懸念しているため。
+    // createGameLogic の外で難易度チェック＆再実行を行うことで
+    // 全く異なる解を生成する。
     this.makeHard(answeredGame);
     this.deleteGameLogic.execute(answeredGame.gameId);
 

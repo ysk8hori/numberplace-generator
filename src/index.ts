@@ -14,6 +14,9 @@ import BaseHeight from './core/valueobject/baseHeight';
 import BaseWidth from './core/valueobject/baseWidth';
 import GameID from './core/valueobject/gameId';
 import { GameType } from './core/types';
+import GeneratorsGame from './core/entity/game';
+import { pos } from './core/valueobject/cellPosition';
+import Answer from './core/valueobject/answer';
 export { GameType } from './core/types';
 
 const cellRepository = CellRepositoryImpl.create();
@@ -89,32 +92,32 @@ export function generateGame(
   groupRepository.remove(gameId);
   gameRepository.remove(gameId);
   return [pazzules, solved, gameInfo];
+}
 
-  function convert(gameId: GameID): Game {
-    return {
-      cells: cellRepository.findAll(gameId).map(cell => ({
-        pos: [
-          cell.position.horizontalPosition.value,
-          cell.position.verticalPosition.value,
-        ],
-        answer: cell.answer?.value,
-      })),
-      toString() {
-        const horizontalLines: Map<number, Cell[]> = this.cells.reduce(
-          (p, cell) => {
-            const lineNo = cell.pos[1];
-            if (!p.has(lineNo)) p.set(lineNo, new Array<Cell>());
-            p.get(lineNo)?.push(cell);
-            return p;
-          },
-          new Map<number, Cell[]>(),
-        );
-        return Array.from(horizontalLines.values())
-          .map(line => line.map(cell => cell.answer ?? ' ').join(','))
-          .join('\n');
-      },
-    };
-  }
+function convert(gameId: GameID): Game {
+  return {
+    cells: cellRepository.findAll(gameId).map(cell => ({
+      pos: [
+        cell.position.horizontalPosition.value,
+        cell.position.verticalPosition.value,
+      ],
+      answer: cell.answer?.value,
+    })),
+    toString() {
+      const horizontalLines: Map<number, Cell[]> = this.cells.reduce(
+        (p, cell) => {
+          const lineNo = cell.pos[1];
+          if (!p.has(lineNo)) p.set(lineNo, new Array<Cell>());
+          p.get(lineNo)?.push(cell);
+          return p;
+        },
+        new Map<number, Cell[]>(),
+      );
+      return Array.from(horizontalLines.values())
+        .map(line => line.map(cell => cell.answer ?? ' ').join(','))
+        .join('\n');
+    },
+  };
 }
 
 function validation(blockSize: BlockSize) {
@@ -126,4 +129,53 @@ function validation(blockSize: BlockSize) {
     blockSize.height * blockSize.width <= 16 &&
     blockSize.height * blockSize.width >= 3
   );
+}
+
+export type AnalyzeParams = {
+  blockSize: BlockSize;
+  puzzle: Game;
+  option?: { gameTypes?: GameType[] };
+};
+export type AnalyzeStatus = 'solved' | 'invalid_puzzle' | 'multiple_answers';
+export type AnalyzeResult<T extends 'invalid_puzzle' | 'multiple_answers'> = {
+  status: T;
+};
+export type SolvedAnalyzeResult = {
+  status: 'solved';
+  solved: Game;
+};
+export function analyzeGame({
+  blockSize,
+  puzzle,
+  option,
+}: AnalyzeParams):
+  | SolvedAnalyzeResult
+  | AnalyzeResult<'invalid_puzzle'>
+  | AnalyzeResult<'multiple_answers'> {
+  const game = GeneratorsGame.create(
+    BaseHeight.create(blockSize.height),
+    BaseWidth.create(blockSize.width),
+    option?.gameTypes,
+  );
+  let fliped;
+  try {
+    // 不正な問題の場合は game.fill でエラーとなる場合があるので try catch が必要
+    puzzle.cells
+      .filter(cell => cell.answer)
+      .forEach(cell =>
+        game.fill(pos(cell.pos[1], cell.pos[0]), Answer.create(cell.answer!)),
+      );
+    fliped = game.fliped();
+    InfiniteAnalyzeLogic.createAndExecute(game.gameId);
+    InfiniteAnalyzeLogic.createAndExecute(fliped.gameId);
+  } catch (e) {
+    return { status: 'invalid_puzzle' };
+  }
+  const cells = cellRepository.findAll(game.gameId);
+  const flipedCells = cellRepository.findAll(fliped.fliped().gameId);
+  if (!cells.every((cell, i) => cell.answer?.equals(flipedCells[i]?.answer))) {
+    return { status: 'multiple_answers' };
+  }
+
+  return { status: 'solved', solved: convert(game.gameId) };
 }

@@ -117,8 +117,8 @@ export default class Game {
   }
   public fliped(): Game {
     const clonedGame = Game.create(
-      this.baseHeight,
-      this.baseWidth,
+      BaseHeight.create(this.baseWidth.value),
+      BaseWidth.create(this.baseHeight.value),
       this.gameTypes,
     );
     const max = this.baseHeight.value * this.baseWidth.value - 1;

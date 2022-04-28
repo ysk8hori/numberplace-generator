@@ -3,18 +3,18 @@ import { generateGame } from '@/index';
 import { expect, test, describe } from 'vitest';
 
 test('一辺のサイズが9のスタンダードな問題を生成できる', () => {
-  const [pazzules, solved, info] = generateGame({ width: 3, height: 3 });
-  expect(pazzules.cells.length).toBe(81);
+  const [puzzle, solved, info] = generateGame({ width: 3, height: 3 });
+  expect(puzzle.cells.length).toBe(81);
   expect(solved.cells.length).toBe(81);
   expect(info).toEqual({ difficulty: 0 });
 });
 
 test('一辺のサイズが9の難易度「極み」の問題を生成できる', () => {
-  const [pazzules, solved, info] = generateGame(
+  const [puzzle, solved, info] = generateGame(
     { width: 3, height: 3 },
     { kiwami: true },
   );
-  expect(pazzules.cells.length).toBe(81);
+  expect(puzzle.cells.length).toBe(81);
   expect(solved.cells.length).toBe(81);
   expect(info.difficulty).toBeGreaterThanOrEqual(1);
 });
@@ -22,19 +22,19 @@ test('一辺のサイズが9の難易度「極み」の問題を生成できる'
 // 時間がかかるので基本スキップ
 test.skip('一辺のサイズが9の難易度「hyper cross 極み」の問題を生成できる', () => {
   console.time('hyper cross 極み');
-  const [pazzules, solved, info] = generateGame(
+  const [puzzle, solved, info] = generateGame(
     { width: 3, height: 3 },
     { kiwami: true, gameTypes: ['cross', 'hyper'] },
   );
   console.timeEnd('hyper cross 極み');
-  expect(pazzules.cells.length).toBe(81);
+  expect(puzzle.cells.length).toBe(81);
   expect(solved.cells.length).toBe(81);
   expect(info.difficulty).toBeGreaterThanOrEqual(1);
 });
 
 test('一辺のサイズが3の小さな問題を生成できる', () => {
-  const [pazzules, solved, info] = generateGame({ width: 3, height: 1 });
-  expect(pazzules.cells.length).toBe(9);
+  const [puzzle, solved, info] = generateGame({ width: 3, height: 1 });
+  expect(puzzle.cells.length).toBe(9);
   expect(solved.cells.length).toBe(9);
   expect(info).toEqual({ difficulty: 0 });
 });

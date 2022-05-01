@@ -38,14 +38,13 @@ test('一辺のサイズが3の小さな問題を生成できる', () => {
   expect(solved.cells.length).toBe(9);
   expect(info).toEqual({ difficulty: 0 });
 });
-
 describe.each([
   { width: 3, height: 2 },
   { width: 3, height: 3 },
   { width: 4, height: 3 },
 ])('', blockSize => {
   test(`${JSON.stringify(blockSize)}のクロスの問題を生成できる`, () => {
-    const [_, solved, info] = generateGame(blockSize, {
+    const [, solved, info] = generateGame(blockSize, {
       gameTypes: ['cross'],
     });
     // 左上から右下にかけて斜めのグループのセルの数字が一意であること
@@ -68,7 +67,7 @@ describe.each([
 
 describe(`{ width: 3, height: 3}の HYPER の問題を生成できる`, () => {
   console.time('hyper');
-  const [puzzle, solved] = generateGame(
+  const [, solved] = generateGame(
     { width: 3, height: 3 },
     {
       gameTypes: ['hyper'],
@@ -101,7 +100,7 @@ describe(`{ width: 3, height: 3}の HYPER の問題を生成できる`, () => {
 
 describe(`{ width: 3, height: 3}の hyper x cross の問題を生成できる`, () => {
   console.time('hyper x cross');
-  const [puzzle, solved] = generateGame(
+  const [, solved] = generateGame(
     { width: 3, height: 3 },
     {
       gameTypes: ['hyper', 'cross'],

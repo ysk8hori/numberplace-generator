@@ -8,7 +8,6 @@ import BusinessError from '@/core/businessError';
 import BaseHeight from '@/core/valueobject/baseHeight';
 import BaseWidth from '@/core/valueobject/baseWidth';
 import { GameType } from '@/core/types';
-import InfiniteAnalyzeLogic from '../analyze/infiniteAnalyze/infiniteAnalyzeLogic';
 
 export default class CreateGoodGameLogic {
   public static create(

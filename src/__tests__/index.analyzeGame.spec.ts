@@ -1,6 +1,6 @@
 import { analyzeGame } from '@/index';
 import { fail } from 'assert';
-import { expect, test, describe } from 'vitest';
+import { expect, test } from 'vitest';
 
 test('正常な3x3 の問題は solved になる', () => {
   const result = analyzeGame({

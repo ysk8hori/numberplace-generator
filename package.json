@@ -35,7 +35,7 @@
     "@types/node": "12.20.50",
     "@typescript-eslint/eslint-plugin": "5.19.0",
     "@typescript-eslint/parser": "5.19.0",
-    "eslint": "8.13.0",
+    "eslint": "8.14.0",
     "eslint-config-prettier": "8.5.0",
     "prettier": "2.6.2",
     "tsc-alias": "1.6.7",

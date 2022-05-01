@@ -3,7 +3,8 @@
   "packageRules": [
     {
       "matchUpdateTypes": ["minor", "patch"],
-      "labels": ["UPDATE-MINOR&PATCH"]
+      "labels": ["UPDATE-MINOR&PATCH"],
+      "excludePackageNames": ["typescript"]
     }
   ]
 }

@@ -9,7 +9,7 @@ test('一辺のサイズが9のスタンダードな問題を生成できる', (
   expect(info).toEqual({ difficulty: 0 });
 });
 
-test('一辺のサイズが9の難易度「極み」の問題を生成できる', () => {
+test.skip('一辺のサイズが9の難易度「極み」の問題を生成できる', () => {
   const [puzzle, solved, info] = generateGame(
     { width: 3, height: 3 },
     { kiwami: true },

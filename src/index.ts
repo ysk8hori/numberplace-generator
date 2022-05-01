@@ -68,7 +68,14 @@ export type GameInfo = {
  */
 export function generateGame(
   blockSize: BlockSize,
-  option?: { gameTypes?: GameType[]; kiwami?: boolean },
+  option?: {
+    gameTypes?: GameType[];
+    /**
+     * @deprecated
+     * TODO: `[InfiniteAnalyzeLogic#constructor]処理が終了しませんでした。` を解決する
+     */
+    kiwami?: boolean;
+  },
 ): [Game, Game, GameInfo] {
   if (!validation(blockSize)) {
     throw new Error(

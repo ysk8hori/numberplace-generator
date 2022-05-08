@@ -159,13 +159,14 @@ export function analyzeGame({
   | SolvedAnalyzeResult
   | AnalyzeResult<'invalid_puzzle'>
   | AnalyzeResult<'multiple_answers'> {
-  const game = GeneratorsGame.create(
-    BaseHeight.create(blockSize.height),
-    BaseWidth.create(blockSize.width),
-    option?.gameTypes,
-  );
-  let fliped;
+  let game: GeneratorsGame;
+  let fliped: GeneratorsGame;
   try {
+    game = GeneratorsGame.create(
+      BaseHeight.create(blockSize.height),
+      BaseWidth.create(blockSize.width),
+      option?.gameTypes,
+    );
     // 不正な問題の場合は game.fill でエラーとなる場合があるので try catch が必要
     puzzle.cells
       .filter(cell => cell.answer)

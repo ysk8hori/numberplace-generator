@@ -29,10 +29,9 @@ describe('hyperグループの生成', () => {
         baseHeight,
         baseWidth,
       );
-      const groupRepository = new GroupRepositoryImpl();
-      groupFactory.createHyperGroup();
-      const hyperGroups = groupRepository.findByType(gameId, GroupType.Hyper);
-      expect(hyperGroups.length).toBe(0);
+      expect(() => groupFactory.createHyperGroup()).toThrowError(
+        /hyper は baseWidth:3 baseHeight:3 の問題以外では作成できません/,
+      );
     });
   });
   describe('9x9 のサイズの場合', () => {

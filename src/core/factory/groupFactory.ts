@@ -17,6 +17,7 @@ import GameID from '@/core/valueobject/gameId';
 import CellRepository from '@/core/repository/cellRepository';
 import { container } from 'tsyringe';
 import { GameType } from '../types';
+import BusinessError from '../businessError';
 
 export default class GroupFactory {
   public static create(
@@ -270,10 +271,11 @@ export default class GroupFactory {
    */
   public createHyperGroup(): Group[] {
     if (!(this.baseHeight.value === 3 && this.baseWidth.value === 3)) {
-      console.warn(
+      BusinessError.throw(
+        GroupFactory.name,
+        'createHyperGroup',
         'hyper は baseWidth:3 baseHeight:3 の問題以外では作成できません',
       );
-      return [];
     }
     return GroupFactory.HYPER_GROUP_POSITIONS.map((groupCellPoses, i) => {
       // groupId を作り、Cell を GroupId と紐付けし、Group を生成し、groupRepository に登録し、Groupをリターンする。

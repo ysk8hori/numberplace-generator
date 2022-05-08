@@ -20,6 +20,14 @@ test('正常な3x3 hyper cross の問題で gameType を指定しないと multi
   });
   expect(result.status).toEqual('multiple_answers');
 });
+test('3x4 hyper の問題は invalid_puzzle になる', () => {
+  const result = analyzeGame({
+    blockSize: { height: 3, width: 4 },
+    puzzle: puzzle_3_3_hyper_cross,
+    option: { gameTypes: ['hyper'] },
+  });
+  expect(result.status).toEqual('invalid_puzzle');
+});
 test('正常な3x3 hyper cross の問題で gameType を指定すれば solved になる', () => {
   const result = analyzeGame({
     blockSize: { height: 3, width: 3 },

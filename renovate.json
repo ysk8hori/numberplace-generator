@@ -6,5 +6,6 @@
       "labels": ["UPDATE-MINOR&PATCH"],
       "excludePackageNames": ["typescript"]
     }
-  ]
+  ],
+  "automerge": true
 }

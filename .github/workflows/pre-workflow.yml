@@ -18,7 +18,7 @@ jobs:
           scope: '@ysk8hori'
 
       - name: Install Dependencies
-        run: npm ci
+        run: npm install
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 

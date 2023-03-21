@@ -40,7 +40,7 @@
     "eslint": "8.36.0",
     "eslint-config-prettier": "8.8.0",
     "prettier": "2.8.6",
-    "tsc-alias": "1.8.3",
+    "tsc-alias": "1.8.4",
     "typescript": "5.0.2",
     "vitest": "0.29.7"
   }

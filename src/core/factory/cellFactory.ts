@@ -8,49 +8,30 @@ import BaseHeight from '@/core/valueobject/baseHeight';
 import CellCollection from '@/core/cellCollection';
 import CellRepository from '@/core/repository/cellRepository';
 import GameID from '@/core/valueobject/gameId';
-import { container } from 'tsyringe';
 
-export default class CellFactory {
-  public static create(
-    gameId: GameID,
-    baseHeight: BaseHeight,
-    baseWidth: BaseWidth,
-    answerCandidateCollectionOrg: AnswerCandidateCollection,
-  ): CellFactory {
-    return new CellFactory(
-      gameId,
-      baseHeight,
-      baseWidth,
-      answerCandidateCollectionOrg,
+export function createCells({
+  gameId,
+  baseHeight,
+  baseWidth,
+  answerCandidateCollection: answerCandidateCollectionOrg,
+  cellRepository,
+}: {
+  gameId: GameID;
+  baseHeight: BaseHeight;
+  baseWidth: BaseWidth;
+  answerCandidateCollection: AnswerCandidateCollection;
+  cellRepository: CellRepository;
+}) {
+  const cellArray: Cell[] = [];
+  for (const pos of CellPosition.generate(
+    Width.create(baseHeight, baseWidth),
+    Height.create(baseHeight, baseWidth),
+  )) {
+    cellArray.push(
+      Cell.create(gameId, pos, answerCandidateCollectionOrg.clone()),
     );
   }
-
-  constructor(
-    private gameId: GameID,
-    private baseHeight: BaseHeight,
-    private baseWidth: BaseWidth,
-    private answerCandidateCollectionOrg: AnswerCandidateCollection,
-    private cellRepository: CellRepository = container.resolve(
-      'CellRepository',
-    ),
-  ) {}
-
-  public createCells(): CellCollection {
-    const cellArray: Cell[] = [];
-    for (const pos of CellPosition.generate(
-      Width.create(this.baseHeight, this.baseWidth),
-      Height.create(this.baseHeight, this.baseWidth),
-    )) {
-      cellArray.push(
-        Cell.create(
-          this.gameId,
-          pos,
-          this.answerCandidateCollectionOrg.clone(),
-        ),
-      );
-    }
-    const collection = CellCollection.create(cellArray);
-    this.cellRepository!.regist(this.gameId, collection);
-    return collection;
-  }
+  const collection = CellCollection.create(cellArray);
+  cellRepository!.regist(gameId, collection);
+  return collection;
 }

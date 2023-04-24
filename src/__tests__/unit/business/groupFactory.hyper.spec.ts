@@ -1,5 +1,5 @@
 import GroupFactory from '@/core/factory/groupFactory';
-import CellFactory from '@/core/factory/cellFactory';
+import { createCells } from '@/core/factory/cellFactory';
 import BaseWidth from '@/core/valueobject/baseWidth';
 import BaseHeight from '@/core/valueobject/baseHeight';
 import GameID from '@/core/valueobject/gameId';
@@ -7,6 +7,7 @@ import AnswerCandidateCollection from '@/core/answerCandidateCollection';
 import GroupRepositoryImpl from '@/repository/groupRepositoryImpl';
 import { GroupType } from '@/core/entity/group';
 import { describe, it, expect } from 'vitest';
+import { container } from 'tsyringe';
 
 describe('hyperグループの生成', () => {
   describe('9x9 以外のサイズの場合', () => {
@@ -18,12 +19,13 @@ describe('hyperグループの生成', () => {
         baseHeight,
         baseWidth,
       );
-      CellFactory.create(
+      createCells({
         gameId,
         baseHeight,
         baseWidth,
         answerCandidateCollection,
-      ).createCells();
+        cellRepository: container.resolve('CellRepository'),
+      });
       const groupFactory: GroupFactory = GroupFactory.create(
         gameId,
         baseHeight,
@@ -42,12 +44,13 @@ describe('hyperグループの生成', () => {
       baseHeight,
       baseWidth,
     );
-    CellFactory.create(
+    createCells({
       gameId,
       baseHeight,
       baseWidth,
       answerCandidateCollection,
-    ).createCells();
+      cellRepository: container.resolve('CellRepository'),
+    });
     const groupFactory: GroupFactory = GroupFactory.create(
       gameId,
       baseHeight,

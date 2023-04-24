@@ -4,7 +4,7 @@ import BaseHeight from '@/core/valueobject/baseHeight';
 import Answer from '@/core/valueobject/answer';
 import Height from '@/core/valueobject/height';
 import Width from '@/core/valueobject/width';
-import CellFactory from '@/core/factory/cellFactory';
+import { createCells } from '@/core/factory/cellFactory';
 import CellCollection from '@/core/cellCollection';
 import GroupFactory from '@/core/factory/groupFactory';
 import GameID from '@/core/valueobject/gameId';
@@ -40,12 +40,13 @@ export default class Game {
       this.baseHeight,
       this.baseWidth,
     );
-    this.cells = CellFactory.create(
-      this.gameId,
-      this.baseHeight,
-      this.baseWidth,
-      this.answerCandidateCollection,
-    ).createCells();
+    this.cells = createCells({
+      gameId: this.gameId,
+      baseHeight: this.baseHeight,
+      baseWidth: this.baseWidth,
+      answerCandidateCollection: this.answerCandidateCollection,
+      cellRepository: container.resolve('CellRepository'),
+    });
     GroupFactory.create(this.gameId, this.baseHeight, this.baseWidth, {
       gameTypes: this.gameTypes,
     }).createGroups();

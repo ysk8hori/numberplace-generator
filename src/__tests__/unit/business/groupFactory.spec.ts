@@ -1,5 +1,5 @@
 import GroupFactory from '@/core/factory/groupFactory';
-import CellFactory from '@/core/factory/cellFactory';
+import { createCells } from '@/core/factory/cellFactory';
 import BaseWidth from '@/core/valueobject/baseWidth';
 import BaseHeight from '@/core/valueobject/baseHeight';
 import CellPosition from '@/core/valueobject/cellPosition';
@@ -8,6 +8,7 @@ import AnswerCandidateCollection from '@/core/answerCandidateCollection';
 import GroupRepositoryImpl from '@/repository/groupRepositoryImpl';
 import { GroupType } from '@/core/entity/group';
 import { describe, it, expect } from 'vitest';
+import { container } from 'tsyringe';
 
 describe('GroupFactory', () => {
   const baseHeight = BaseHeight.create(2);
@@ -17,12 +18,13 @@ describe('GroupFactory', () => {
     baseHeight,
     baseWidth,
   );
-  CellFactory.create(
+  createCells({
     gameId,
     baseHeight,
     baseWidth,
     answerCandidateCollection,
-  ).createCells();
+    cellRepository: container.resolve('CellRepository'),
+  });
   const groupFactory: GroupFactory = GroupFactory.create(
     gameId,
     baseHeight,

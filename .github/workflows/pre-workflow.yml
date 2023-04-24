@@ -1,29 +1,48 @@
-name: Pre Workflow
+# This workflow will do a clean installation of node dependencies, cache/restore them, build the source code and run tests across different versions of node
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-nodejs
+
+name: integration testing
+
 on:
   pull_request:
-    types: [opened, reopened, synchronize]
+
 jobs:
   build:
     runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
 
-      - name: Use Node.js
+    strategy:
+      matrix:
+        node-version: [18.x]
+        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3
         with:
           always-auth: true
-          node-version: 16.14.0
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm'
           registry-url: 'https://npm.pkg.github.com'
           scope: '@ysk8hori'
-
-      - name: Install Dependencies
-        run: npm install
+      - run: npm install
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - run: npm run type-check
+      - run: npm run test:run
 
-      - name: Type Check
-        run: npm run type-check
+  danger:
+    runs-on: ubuntu-latest
 
-      - name: Test
-        run: npm run test:run
+    steps:
+      - uses: actions/checkout@v3
+      - name: Use Node.js 18.x
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18.x
+          cache: 'npm'
+      - run: npm ci
+      - name: Danger
+        run: npx danger ci
+        env:
+          DANGER_GITHUB_API_TOKEN: ${{ secrets.DANGER_GITHUB_API_TOKEN }}

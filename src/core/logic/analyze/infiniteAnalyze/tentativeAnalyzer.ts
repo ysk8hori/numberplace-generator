@@ -32,7 +32,7 @@ export default class TentativeAnalyzer {
     gameRepository: GameRepository = container.resolve('GameRepository'),
   ) {
     TentativeAnalyzer.count++;
-    if (1000 < TentativeAnalyzer.count) {
+    if (2000 < TentativeAnalyzer.count) {
       BusinessError.throw(
         InfiniteAnalyzeLogic.name,
         'constructor',

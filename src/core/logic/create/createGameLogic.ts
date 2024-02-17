@@ -13,9 +13,9 @@ import DeleteGameLogic from '../deleteGameLogic';
 import { container } from 'tsyringe';
 import AnalyzeLogic from '../analyze/analyzeLogic';
 import Answer from '@/core/valueobject/answer';
-import { pos } from '@/core/valueobject/cellPosition';
 import { GameType } from '@/core/types';
 import Cell from '@/core/entity/cell';
+import { GroupType } from '@/core/entity/group';
 
 export default class CreateGameLogic {
   public static create(
@@ -56,10 +56,18 @@ export default class CreateGameLogic {
       this.baseHeight.value * this.baseWidth.value,
     );
     const shuffledAnswers = Utils.shuffle(answers);
+    const groupRepository: GroupRepository =
+      container.resolve('GroupRepository');
+    const cells = (
+      groupRepository.findByType(answeredGame.gameId, GroupType.Cross)[0] ??
+      groupRepository.findByType(answeredGame.gameId, GroupType.Hyper)[0] ??
+      groupRepository.findByType(answeredGame.gameId, GroupType.Horizontal)[0]
+    ).cells;
+
     shuffledAnswers.forEach((answer, i) =>
       AnswerLogic.createAndExecute(
         answeredGame.gameId,
-        pos(0, i),
+        cells[i].position,
         Answer.create(answer + 1),
       ),
     );

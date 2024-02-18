@@ -60,7 +60,12 @@
   },
   "release": {
     "branches": [
-      "main"
+      "main",
+      "next",
+      {
+        "name": "beta",
+        "prerelease": true
+      }
     ]
   }
 }

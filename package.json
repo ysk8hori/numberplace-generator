@@ -1,6 +1,6 @@
 {
   "name": "@ysk8hori/numberplace-generator",
-  "version": "2.9.0",
+  "version": "3.0.0-beta.1",
   "description": "Generate number-place (Sudoku) game.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -14,7 +14,8 @@
     "game"
   ],
   "publishConfig": {
-    "@ysk8hori:registry": "https://npm.pkg.github.com"
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
   },
   "scripts": {
     "build": "rm -r ./dist & tsc --project tsconfig.publish.json && tsc-alias",

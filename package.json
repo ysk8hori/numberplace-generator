@@ -17,7 +17,7 @@
     "@ysk8hori:registry": "https://npm.pkg.github.com"
   },
   "scripts": {
-    "build": "tsc && tsc-alias",
+    "build": "rm -r ./dist & tsc --project tsconfig.publish.json && tsc-alias",
     "test": "vitest --config vitest.config.ts",
     "test:run": "vitest run --config vitest.config.ts",
     "test:index": "vitest run --config vitest.config.ts src/__tests__/index.spec.ts",

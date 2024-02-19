@@ -1,6 +1,6 @@
 {
   "name": "@ysk8hori/numberplace-generator",
-  "version": "2.9.0",
+  "version": "3.0.0-beta.1",
   "description": "Generate number-place (Sudoku) game.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -14,10 +14,11 @@
     "game"
   ],
   "publishConfig": {
-    "@ysk8hori:registry": "https://npm.pkg.github.com"
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
   },
   "scripts": {
-    "build": "tsc && tsc-alias",
+    "build": "rm -r ./dist & tsc --project tsconfig.publish.json && tsc-alias",
     "test": "vitest --config vitest.config.ts",
     "test:run": "vitest run --config vitest.config.ts",
     "test:index": "vitest run --config vitest.config.ts src/__tests__/index.spec.ts",
@@ -25,7 +26,11 @@
     "prettier": "prettier --write .",
     "type-check": "tsc --noEmit",
     "coverage": "vitest run --coverage",
-    "measure:executeion:time": "ts-node -r tsconfig-paths/register src/measureExecutionTime.ts"
+    "measure:executeion:time": "ts-node -r tsconfig-paths/register src/measureExecutionTime.ts",
+    "commit": "git-cz",
+    "commitmsg": "validate-commit-msg",
+    "prepublishOnly": "npm run build",
+    "semantic-release": "semantic-release"
   },
   "author": "",
   "dependencies": {
@@ -38,12 +43,30 @@
     "@types/uuid": "9.0.8",
     "@typescript-eslint/eslint-plugin": "7.0.1",
     "@typescript-eslint/parser": "7.0.1",
+    "commitizen": "4.3.0",
+    "cz-conventional-changelog": "3.3.0",
     "eslint": "8.56.0",
     "eslint-config-prettier": "9.1.0",
     "prettier": "3.2.5",
+    "semantic-release": "23.0.2",
     "tsc-alias": "1.8.8",
     "tsconfig-paths": "4.2.0",
     "typescript": "5.3.3",
     "vitest": "1.3.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  },
+  "release": {
+    "branches": [
+      "main",
+      "next",
+      {
+        "name": "beta",
+        "prerelease": true
+      }
+    ]
   }
 }

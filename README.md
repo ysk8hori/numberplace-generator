@@ -1,6 +1,7 @@
 # numberplace-generator
 
-The numberplace-generator provides a function to generate a game of numberplace (Sudoku).
+The numberplace-generator provides a function to generate a game of numberplace
+(Sudoku).
 
 ## How to use
 
@@ -13,21 +14,21 @@ npm install @ysk8hori/numberplace-generator
 Generate a number place game and its answers by doing the following
 
 ```typescript
-import { generateGame } from '@ysk8hori/numberplace-generator';
+import { generateGame } from "@ysk8hori/numberplace-generator";
 // Generate standard 9x9 size number place game.
 const [puzzle, solved] = generateGame({ width: 3, height: 3 });
 
 console.log(pazzle.toString());
 /*
-9, , , , , ,4, , 
-6, , ,4,9,2,3,5, 
+9, , , , , ,4, ,
+6, , ,4,9,2,3,5,
 2, ,4, ,6,3, ,1,9
  , , , , , ,5,6,2
-5, , , , , , ,3, 
+5, , , , , , ,3,
  ,3, ,9, , ,7, ,1
-7, , , ,5,6, ,9, 
- ,2, ,3, , ,6,7, 
-3, , ,7, ,1,2,4, 
+7, , , ,5,6, ,9,
+ ,2, ,3, , ,6,7,
+3, , ,7, ,1,2,4,
 */
 
 console.log(solved.toString());
@@ -44,5 +45,8 @@ console.log(solved.toString());
 */
 ```
 
-The **block size** of argument is refers to the size of a 3x3 square area for a game that is 9x9 overall. The argument must be an object of { width: number, height: number }.
-The length of one side of the game (width multiplied by height) must be 3 or higher, and less than 9. If a larger size is specified, it will take longer to generate the game.
+The **block size** of argument is refers to the size of a 3x3 square area for a
+game that is 9x9 overall. The argument must be an object of { width: number,
+height: number }. The length of one side of the game (width multiplied by
+height) must be 3 or higher, and less than 9. If a larger size is specified, it
+will take longer to generate the game.

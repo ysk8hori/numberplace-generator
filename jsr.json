@@ -1,5 +1,0 @@
-{
-  "name": "@ysk8/numberplace-generator",
-  "version": "4.0.0-alpha.1",
-  "exports": "./main.ts"
-}

@@ -1,4 +1,3 @@
-
 /** Numberplace game. */
 export type Game = {
   cells: Cell[];
@@ -25,7 +24,7 @@ export type BlockSize = {
 export type GameInfo = {
   difficulty: number;
 };
-export type GameType = 'standard' | 'cross' | 'hyper';
+export type GameType = "standard" | "cross" | "hyper";
 /**
  * Generate number-place (Sudoku) game.
  *
@@ -43,16 +42,12 @@ export function generateGame(
     kiwami?: boolean;
   },
 ): [Game, Game, GameInfo] {
-  console.log('generateGame');
+  console.log("generateGame");
+  const puzzle = JSON.parse(Deno.readTextFileSync("puzzle.json")).cells;
+  const solved = JSON.parse(Deno.readTextFileSync("solved.json")).cells;
   return [
-    {
-      cells: [],
-      toString: () => '',
-    },
-    {
-      cells: [],
-      toString: () => '',
-    },
+    convert(puzzle),
+    convert(solved),
     {
       difficulty: 0,
     },
@@ -64,12 +59,12 @@ export type AnalyzeParams = {
   puzzle: Game;
   option?: { gameTypes?: GameType[] };
 };
-export type AnalyzeStatus = 'solved' | 'invalid_puzzle' | 'multiple_answers';
-export type AnalyzeResult<T extends 'invalid_puzzle' | 'multiple_answers'> = {
+export type AnalyzeStatus = "solved" | "invalid_puzzle" | "multiple_answers";
+export type AnalyzeResult<T extends "invalid_puzzle" | "multiple_answers"> = {
   status: T;
 };
 export type SolvedAnalyzeResult = {
-  status: 'solved';
+  status: "solved";
   solved: Game;
 };
 export function analyzeGame({
@@ -78,14 +73,40 @@ export function analyzeGame({
   option,
 }: AnalyzeParams):
   | SolvedAnalyzeResult
-  | AnalyzeResult<'invalid_puzzle'>
-  | AnalyzeResult<'multiple_answers'> {
-    console.log('analyzeGame');
-    return {
-      status: 'solved',
-      solved: {
-        cells: [],
-        toString: () => '',
-      },
-    };
+  | AnalyzeResult<"invalid_puzzle">
+  | AnalyzeResult<"multiple_answers"> {
+  console.log("analyzeGame");
+  return {
+    status: "solved",
+    solved: {
+      cells: [],
+      toString: () => "",
+    },
+  };
+}
+
+function convert(hoge: Cell[]): Game {
+  return {
+    cells: hoge,
+    toString() {
+      const horizontalLines: Map<number, Cell[]> = this.cells.reduce(
+        (p, cell) => {
+          const lineNo = cell.pos[1];
+          if (!p.has(lineNo)) p.set(lineNo, new Array<Cell>());
+          p.get(lineNo)?.push(cell);
+          return p;
+        },
+        new Map<number, Cell[]>(),
+      );
+      return Array.from(horizontalLines.values())
+        .map((line) => line.map((cell) => cell.answer ?? " ").join(","))
+        .join("\n");
+    },
+  };
+}
+
+if (import.meta.main) {
+  const [puzzle, solved] = generateGame({ width: 3, height: 3 });
+  console.log(puzzle.toString());
+  console.log(solved.toString());
 }

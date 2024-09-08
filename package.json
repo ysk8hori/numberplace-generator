@@ -33,14 +33,8 @@
     "semantic-release": "semantic-release"
   },
   "author": "",
-  "dependencies": {
-    "reflect-metadata": "^0.2.0",
-    "tsyringe": "^4.6.0",
-    "uuid": "^10.0.0"
-  },
   "devDependencies": {
-    "@types/node": "20.16.5",
-    "@types/uuid": "10.0.0",
+    "@types/node": "22.5.4",
     "@typescript-eslint/eslint-plugin": "8.4.0",
     "@typescript-eslint/parser": "8.4.0",
     "commitizen": "4.3.0",

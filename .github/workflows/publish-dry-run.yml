@@ -1,7 +1,7 @@
-name: Publish
+name: Publish Dry Run
 on:
   release:
-    types: [released]
+    types: [prereleased]
 jobs:
   publish:
     runs-on: ubuntu-latest
@@ -17,4 +17,4 @@ jobs:
       - name: Update version
         run: cat deno.json | jq '.version = "${{ github.event.release.tag_name }}"' > deno.json.tmp
       - name: Publish package
-        run: npx jsr publish --config deno.json.tmp --allow-dirty
+        run: npx jsr publish --config deno.json.tmp --allow-dirty --dry-run

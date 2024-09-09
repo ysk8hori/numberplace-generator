@@ -1,6 +1,8 @@
 import { assertEquals } from "@std/assert";
-import { add } from "./main.ts";
+import { generateGame } from "./main.ts";
 
-Deno.test(function addTest() {
-  assertEquals(add(2, 3), 5);
+Deno.test(function generateGameTest() {
+  const [puzzle, solved] = generateGame({ width: 3, height: 3 });
+  assertEquals(puzzle.cells.length, 81);
+  assertEquals(solved.cells.length, 81);
 });

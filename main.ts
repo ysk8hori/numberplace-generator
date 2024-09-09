@@ -89,9 +89,9 @@ export function analyzeGame({
   };
 }
 
-function convert(hoge: Cell[]): Game {
+function convert(game: Game): Game {
   return {
-    cells: hoge,
+    cells: game.cells,
     toString() {
       const horizontalLines: Map<number, Cell[]> = this.cells.reduce(
         (p, cell) => {

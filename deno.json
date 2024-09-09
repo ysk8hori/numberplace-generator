@@ -1,6 +1,6 @@
 {
   "name": "@ysk8/numberplace-generator",
-  "version": "",
+  "version": "0.0.0",
   "exports": "./main.ts",
   "license": "MIT",
   "tasks": {

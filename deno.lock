@@ -3,7 +3,12 @@
   "packages": {
     "specifiers": {
       "jsr:@std/assert@1": "jsr:@std/assert@1.0.4",
-      "jsr:@std/internal@^1.0.3": "jsr:@std/internal@1.0.3"
+      "jsr:@std/assert@^1.0.4": "jsr:@std/assert@1.0.4",
+      "jsr:@std/fs@^1.0.3": "jsr:@std/fs@1.0.3",
+      "jsr:@std/internal@^1.0.3": "jsr:@std/internal@1.0.3",
+      "jsr:@std/path@^1.0.4": "jsr:@std/path@1.0.4",
+      "jsr:@std/testing@^1.0.2": "jsr:@std/testing@1.0.2",
+      "npm:remeda@^2.12.0": "npm:remeda@2.12.0"
     },
     "jsr": {
       "@std/assert@1.0.4": {
@@ -12,15 +17,47 @@
           "jsr:@std/internal@^1.0.3"
         ]
       },
+      "@std/fs@1.0.3": {
+        "integrity": "3cb839b1360b0a42d8b367c3093bfe4071798e6694fa44cf1963e04a8edba4fe",
+        "dependencies": [
+          "jsr:@std/path@^1.0.4"
+        ]
+      },
       "@std/internal@1.0.3": {
         "integrity": "208e9b94a3d5649bd880e9ca38b885ab7651ab5b5303a56ed25de4755fb7b11e"
+      },
+      "@std/path@1.0.4": {
+        "integrity": "48dd5d8389bcfcd619338a01bdf862cb7799933390146a54ae59356a0acc7105"
+      },
+      "@std/testing@1.0.2": {
+        "integrity": "9e8a7f4e26c219addabe7942d09c3450fa0a74e9662341961bc0ef502274dec3",
+        "dependencies": [
+          "jsr:@std/assert@^1.0.4",
+          "jsr:@std/fs@^1.0.3",
+          "jsr:@std/internal@^1.0.3",
+          "jsr:@std/path@^1.0.4"
+        ]
+      }
+    },
+    "npm": {
+      "remeda@2.12.0": {
+        "integrity": "sha512-VAlyhh1os8boCA9/7yN9sXzo0tfCeOwScGXztwBspS0DXQmbIN8xTBfEABvbAW8rMJMPzqxQ1UymHquuESh/pg==",
+        "dependencies": {
+          "type-fest": "type-fest@4.26.1"
+        }
+      },
+      "type-fest@4.26.1": {
+        "integrity": "sha512-yOGpmOAL7CkKe/91I5O3gPICmJNLJ1G4zFYVAsRHg7M64biSnPtRj0WNQt++bRkjYOqjWXrhnUw1utzmVErAdg==",
+        "dependencies": {}
       }
     }
   },
   "remote": {},
   "workspace": {
     "dependencies": [
-      "jsr:@std/assert@1"
+      "jsr:@std/assert@1",
+      "jsr:@std/testing@^1.0.2",
+      "npm:remeda@^2.12.0"
     ],
     "packageJson": {
       "dependencies": [

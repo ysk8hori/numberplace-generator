@@ -1,2 +1,2 @@
 /** Internal type */
-export type Position = Readonly<[number, number]>;
+export type Position = { x: number; y: number };

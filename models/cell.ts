@@ -4,7 +4,7 @@ import type { Position } from "./position.ts";
 /** Internal type */
 export type Cell = {
   pos: Position;
-  answer: undefined | number;
-  answerCnadidates: number[];
+  answerMut: undefined | number;
+  answerCnadidatesMut: number[];
   groups: Group[];
 };

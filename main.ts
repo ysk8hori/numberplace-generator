@@ -4,6 +4,7 @@ import type { Position } from "./models/position.ts";
 export type {
   /** Block size refers to the size of a 3x3 square area for a game that is 9x9 overall. The argument must be an object of { width: number, height: number }. The length of one side of the game (width multiplied by height) must be 3 or higher, and less than 9. */
   BlockSize,
+  /** "Standard", "Cross", "Hyper" game types */
   GameType,
   /** Position of x and y. */
   Position,

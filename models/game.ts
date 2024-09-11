@@ -1,3 +1,4 @@
+import { pipe, range } from "remeda";
 import type { Cell } from "./cell.ts";
 
 /** Internal type */
@@ -18,3 +19,11 @@ export type Game = {
   puzzle: Cell[];
   solved: Cell[];
 };
+
+/** BlockSize から、そのゲームの幅及び高さを求める。 */
+export const calcSideLength = (blocksize: BlockSize): number =>
+  blocksize.height * blocksize.width;
+
+/** BlockSize から、そのゲームの座標や答えなどの取りうる値の集合を生成する。 */
+export const createGameRange = (blocksize: BlockSize): number[] =>
+  pipe(blocksize, calcSideLength, range)(0);

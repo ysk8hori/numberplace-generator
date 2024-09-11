@@ -14,7 +14,7 @@ npm install @ysk8hori/numberplace-generator
 Generate a number place game and its answers by doing the following
 
 ```typescript
-import { generateGame } from "@ysk8hori/numberplace-generator";
+import { generateGame } from '@ysk8hori/numberplace-generator';
 // Generate standard 9x9 size number place game.
 const [puzzle, solved] = generateGame({ width: 3, height: 3 });
 

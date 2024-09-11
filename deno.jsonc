@@ -1,0 +1,18 @@
+{
+  "name": "@ysk8/numberplace-generator",
+  /* version は CI にて動的に付与する */
+  "version": "0.0.0",
+  "exports": "./main.ts",
+  "license": "MIT",
+  "tasks": {
+    "dev": "deno run --watch main.ts"
+  },
+  "imports": {
+    "@std/assert": "jsr:@std/assert@1",
+    "remeda": "npm:remeda@^2.12.0"
+  },
+  "fmt": {
+    "semiColons": true,
+    "singleQuote": true
+  }
+}

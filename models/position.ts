@@ -1,2 +1,2 @@
-/** Position of x and y. */
+/** Internal type */
 export type Position = Readonly<[number, number]>;

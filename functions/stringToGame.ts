@@ -1,7 +1,6 @@
-import type { Cell } from "../models/cell.ts";
+import { type Cell, createCells } from "../models/cell.ts";
 import { type BlockSize, calcSideLength } from "../models/game.ts";
 import { isSamePos } from "../models/position.ts";
-import { createCells } from "./createCells.ts";
 
 type StringToPuzzleFailureStatus =
   | "invalid_size"

@@ -1,6 +1,6 @@
 export const snapshot = {};
 
-snapshot[`9x9サイズのセルを生成する 1`] = `
+snapshot[`9x9サイズ snapshot 1`] = `
 [
   {
     answerCnadidatesMut: [

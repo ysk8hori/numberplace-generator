@@ -4,5 +4,5 @@ import type { Position } from "./position.ts";
 export type Group = string;
 
 export const getHorizontalGroup: (pos: Position) => Group = (pos) =>
-  `h${pos.x}`;
-export const getVerticalGroup: (pos: Position) => Group = (pos) => `v${pos.y}`;
+  `h${pos.y}`;
+export const getVerticalGroup: (pos: Position) => Group = (pos) => `v${pos.x}`;

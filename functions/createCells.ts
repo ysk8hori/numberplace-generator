@@ -1,5 +1,6 @@
 import type { Cell } from "../models/cell.ts";
 import { createGameRange, type BlockSize } from "../models/game.ts";
+import { getHorizontalGroup, getVerticalGroup } from "../models/group.ts";
 import { createPositions, type Position } from "../models/position.ts";
 import { pipe, map } from "remeda";
 
@@ -7,7 +8,7 @@ const createCell: (answerCnadidatesMut: number[]) => (pos: Position) => Cell =
   (answerCnadidatesMut) => (pos) => ({
     answerMut: undefined,
     answerCnadidatesMut,
-    groups: [],
+    groups: [getVerticalGroup(pos), getHorizontalGroup(pos)],
     pos,
   });
 

@@ -15,7 +15,10 @@ snapshot[`9x9サイズのセルを生成する 1`] = `
       8,
     ],
     answerMut: undefined,
-    groups: [],
+    groups: [
+      "v0",
+      "h0",
+    ],
     pos: {
       x: 0,
       y: 0,
@@ -34,7 +37,10 @@ snapshot[`9x9サイズのセルを生成する 1`] = `
       8,
     ],
     answerMut: undefined,
-    groups: [],
+    groups: [
+      "v0",
+      "h1",
+    ],
     pos: {
       x: 1,
       y: 0,
@@ -53,7 +59,10 @@ snapshot[`9x9サイズのセルを生成する 1`] = `
       8,
     ],
     answerMut: undefined,
-    groups: [],
+    groups: [
+      "v0",
+      "h2",
+    ],
     pos: {
       x: 2,
       y: 0,
@@ -72,7 +81,10 @@ snapshot[`9x9サイズのセルを生成する 1`] = `
       8,
     ],
     answerMut: undefined,
-    groups: [],
+    groups: [
+      "v0",
+      "h3",
+    ],
     pos: {
       x: 3,
       y: 0,
@@ -91,7 +103,10 @@ snapshot[`9x9サイズのセルを生成する 1`] = `
       8,
     ],
     answerMut: undefined,
-    groups: [],
+    groups: [
+      "v0",
+      "h4",
+    ],
     pos: {
       x: 4,
       y: 0,
@@ -110,7 +125,10 @@ snapshot[`9x9サイズのセルを生成する 1`] = `
       8,
     ],
     answerMut: undefined,
-    groups: [],
+    groups: [
+      "v0",
+      "h5",
+    ],
     pos: {
       x: 5,
       y: 0,
@@ -129,7 +147,10 @@ snapshot[`9x9サイズのセルを生成する 1`] = `
       8,
     ],
     answerMut: undefined,
-    groups: [],
+    groups: [
+      "v0",
+      "h6",
+    ],
     pos: {
       x: 6,
       y: 0,
@@ -148,7 +169,10 @@ snapshot[`9x9サイズのセルを生成する 1`] = `
       8,
     ],
     answerMut: undefined,
-    groups: [],
+    groups: [
+      "v0",
+      "h7",
+    ],
     pos: {
       x: 7,
       y: 0,
@@ -167,7 +191,10 @@ snapshot[`9x9サイズのセルを生成する 1`] = `
       8,
     ],
     answerMut: undefined,
-    groups: [],
+    groups: [
+      "v0",
+      "h8",
+    ],
     pos: {
       x: 8,
       y: 0,
@@ -186,7 +213,10 @@ snapshot[`9x9サイズのセルを生成する 1`] = `
       8,
     ],
     answerMut: undefined,
-    groups: [],
+    groups: [
+      "v1",
+      "h0",
+    ],
     pos: {
       x: 0,
       y: 1,
@@ -205,7 +235,10 @@ snapshot[`9x9サイズのセルを生成する 1`] = `
       8,
     ],
     answerMut: undefined,
-    groups: [],
+    groups: [
+      "v1",
+      "h1",
+    ],
     pos: {
       x: 1,
       y: 1,
@@ -224,7 +257,10 @@ snapshot[`9x9サイズのセルを生成する 1`] = `
       8,
     ],
     answerMut: undefined,
-    groups: [],
+    groups: [
+      "v1",
+      "h2",
+    ],
     pos: {
       x: 2,
       y: 1,
@@ -243,7 +279,10 @@ snapshot[`9x9サイズのセルを生成する 1`] = `
       8,
     ],
     answerMut: undefined,
-    groups: [],
+    groups: [
+      "v1",
+      "h3",
+    ],
     pos: {
       x: 3,
       y: 1,
@@ -262,7 +301,10 @@ snapshot[`9x9サイズのセルを生成する 1`] = `
       8,
     ],
     answerMut: undefined,
-    groups: [],
+    groups: [
+      "v1",
+      "h4",
+    ],
     pos: {
       x: 4,
       y: 1,
@@ -281,7 +323,10 @@ snapshot[`9x9サイズのセルを生成する 1`] = `
       8,
     ],
     answerMut: undefined,
-    groups: [],
+    groups: [
+      "v1",
+      "h5",
+    ],
     pos: {
       x: 5,
       y: 1,
@@ -300,7 +345,10 @@ snapshot[`9x9サイズのセルを生成する 1`] = `
       8,
     ],
     answerMut: undefined,
-    groups: [],
+    groups: [
+      "v1",
+      "h6",
+    ],
     pos: {
       x: 6,
       y: 1,
@@ -319,7 +367,10 @@ snapshot[`9x9サイズのセルを生成する 1`] = `
       8,
     ],
     answerMut: undefined,
-    groups: [],
+    groups: [
+      "v1",
+      "h7",
+    ],
     pos: {
       x: 7,
       y: 1,
@@ -338,7 +389,10 @@ snapshot[`9x9サイズのセルを生成する 1`] = `
       8,
     ],
     answerMut: undefined,
-    groups: [],
+    groups: [
+      "v1",
+      "h8",
+    ],
     pos: {
       x: 8,
       y: 1,
@@ -357,7 +411,10 @@ snapshot[`9x9サイズのセルを生成する 1`] = `
       8,
     ],
     answerMut: undefined,
-    groups: [],
+    groups: [
+      "v2",
+      "h0",
+    ],
     pos: {
       x: 0,
       y: 2,
@@ -376,7 +433,10 @@ snapshot[`9x9サイズのセルを生成する 1`] = `
       8,
     ],
     answerMut: undefined,
-    groups: [],
+    groups: [
+      "v2",
+      "h1",
+    ],
     pos: {
       x: 1,
       y: 2,
@@ -395,7 +455,10 @@ snapshot[`9x9サイズのセルを生成する 1`] = `
       8,
     ],
     answerMut: undefined,
-    groups: [],
+    groups: [
+      "v2",
+      "h2",
+    ],
     pos: {
       x: 2,
       y: 2,
@@ -414,7 +477,10 @@ snapshot[`9x9サイズのセルを生成する 1`] = `
       8,
     ],
     answerMut: undefined,
-    groups: [],
+    groups: [
+      "v2",
+      "h3",
+    ],
     pos: {
       x: 3,
       y: 2,
@@ -433,7 +499,10 @@ snapshot[`9x9サイズのセルを生成する 1`] = `
       8,
     ],
     answerMut: undefined,
-    groups: [],
+    groups: [
+      "v2",
+      "h4",
+    ],
     pos: {
       x: 4,
       y: 2,
@@ -452,7 +521,10 @@ snapshot[`9x9サイズのセルを生成する 1`] = `
       8,
     ],
     answerMut: undefined,
-    groups: [],
+    groups: [
+      "v2",
+      "h5",
+    ],
     pos: {
       x: 5,
       y: 2,
@@ -471,7 +543,10 @@ snapshot[`9x9サイズのセルを生成する 1`] = `
       8,
     ],
     answerMut: undefined,
-    groups: [],
+    groups: [
+      "v2",
+      "h6",
+    ],
     pos: {
       x: 6,
       y: 2,
@@ -490,7 +565,10 @@ snapshot[`9x9サイズのセルを生成する 1`] = `
       8,
     ],
     answerMut: undefined,
-    groups: [],
+    groups: [
+      "v2",
+      "h7",
+    ],
     pos: {
       x: 7,
       y: 2,
@@ -509,7 +587,10 @@ snapshot[`9x9サイズのセルを生成する 1`] = `
       8,
     ],
     answerMut: undefined,
-    groups: [],
+    groups: [
+      "v2",
+      "h8",
+    ],
     pos: {
       x: 8,
       y: 2,
@@ -528,7 +609,10 @@ snapshot[`9x9サイズのセルを生成する 1`] = `
       8,
     ],
     answerMut: undefined,
-    groups: [],
+    groups: [
+      "v3",
+      "h0",
+    ],
     pos: {
       x: 0,
       y: 3,
@@ -547,7 +631,10 @@ snapshot[`9x9サイズのセルを生成する 1`] = `
       8,
     ],
     answerMut: undefined,
-    groups: [],
+    groups: [
+      "v3",
+      "h1",
+    ],
     pos: {
       x: 1,
       y: 3,
@@ -566,7 +653,10 @@ snapshot[`9x9サイズのセルを生成する 1`] = `
       8,
     ],
     answerMut: undefined,
-    groups: [],
+    groups: [
+      "v3",
+      "h2",
+    ],
     pos: {
       x: 2,
       y: 3,
@@ -585,7 +675,10 @@ snapshot[`9x9サイズのセルを生成する 1`] = `
       8,
     ],
     answerMut: undefined,
-    groups: [],
+    groups: [
+      "v3",
+      "h3",
+    ],
     pos: {
       x: 3,
       y: 3,
@@ -604,7 +697,10 @@ snapshot[`9x9サイズのセルを生成する 1`] = `
       8,
     ],
     answerMut: undefined,
-    groups: [],
+    groups: [
+      "v3",
+      "h4",
+    ],
     pos: {
       x: 4,
       y: 3,
@@ -623,7 +719,10 @@ snapshot[`9x9サイズのセルを生成する 1`] = `
       8,
     ],
     answerMut: undefined,
-    groups: [],
+    groups: [
+      "v3",
+      "h5",
+    ],
     pos: {
       x: 5,
       y: 3,
@@ -642,7 +741,10 @@ snapshot[`9x9サイズのセルを生成する 1`] = `
       8,
     ],
     answerMut: undefined,
-    groups: [],
+    groups: [
+      "v3",
+      "h6",
+    ],
     pos: {
       x: 6,
       y: 3,
@@ -661,7 +763,10 @@ snapshot[`9x9サイズのセルを生成する 1`] = `
       8,
     ],
     answerMut: undefined,
-    groups: [],
+    groups: [
+      "v3",
+      "h7",
+    ],
     pos: {
       x: 7,
       y: 3,
@@ -680,7 +785,10 @@ snapshot[`9x9サイズのセルを生成する 1`] = `
       8,
     ],
     answerMut: undefined,
-    groups: [],
+    groups: [
+      "v3",
+      "h8",
+    ],
     pos: {
       x: 8,
       y: 3,
@@ -699,7 +807,10 @@ snapshot[`9x9サイズのセルを生成する 1`] = `
       8,
     ],
     answerMut: undefined,
-    groups: [],
+    groups: [
+      "v4",
+      "h0",
+    ],
     pos: {
       x: 0,
       y: 4,
@@ -718,7 +829,10 @@ snapshot[`9x9サイズのセルを生成する 1`] = `
       8,
     ],
     answerMut: undefined,
-    groups: [],
+    groups: [
+      "v4",
+      "h1",
+    ],
     pos: {
       x: 1,
       y: 4,
@@ -737,7 +851,10 @@ snapshot[`9x9サイズのセルを生成する 1`] = `
       8,
     ],
     answerMut: undefined,
-    groups: [],
+    groups: [
+      "v4",
+      "h2",
+    ],
     pos: {
       x: 2,
       y: 4,
@@ -756,7 +873,10 @@ snapshot[`9x9サイズのセルを生成する 1`] = `
       8,
     ],
     answerMut: undefined,
-    groups: [],
+    groups: [
+      "v4",
+      "h3",
+    ],
     pos: {
       x: 3,
       y: 4,
@@ -775,7 +895,10 @@ snapshot[`9x9サイズのセルを生成する 1`] = `
       8,
     ],
     answerMut: undefined,
-    groups: [],
+    groups: [
+      "v4",
+      "h4",
+    ],
     pos: {
       x: 4,
       y: 4,
@@ -794,7 +917,10 @@ snapshot[`9x9サイズのセルを生成する 1`] = `
       8,
     ],
     answerMut: undefined,
-    groups: [],
+    groups: [
+      "v4",
+      "h5",
+    ],
     pos: {
       x: 5,
       y: 4,
@@ -813,7 +939,10 @@ snapshot[`9x9サイズのセルを生成する 1`] = `
       8,
     ],
     answerMut: undefined,
-    groups: [],
+    groups: [
+      "v4",
+      "h6",
+    ],
     pos: {
       x: 6,
       y: 4,
@@ -832,7 +961,10 @@ snapshot[`9x9サイズのセルを生成する 1`] = `
       8,
     ],
     answerMut: undefined,
-    groups: [],
+    groups: [
+      "v4",
+      "h7",
+    ],
     pos: {
       x: 7,
       y: 4,
@@ -851,7 +983,10 @@ snapshot[`9x9サイズのセルを生成する 1`] = `
       8,
     ],
     answerMut: undefined,
-    groups: [],
+    groups: [
+      "v4",
+      "h8",
+    ],
     pos: {
       x: 8,
       y: 4,
@@ -870,7 +1005,10 @@ snapshot[`9x9サイズのセルを生成する 1`] = `
       8,
     ],
     answerMut: undefined,
-    groups: [],
+    groups: [
+      "v5",
+      "h0",
+    ],
     pos: {
       x: 0,
       y: 5,
@@ -889,7 +1027,10 @@ snapshot[`9x9サイズのセルを生成する 1`] = `
       8,
     ],
     answerMut: undefined,
-    groups: [],
+    groups: [
+      "v5",
+      "h1",
+    ],
     pos: {
       x: 1,
       y: 5,
@@ -908,7 +1049,10 @@ snapshot[`9x9サイズのセルを生成する 1`] = `
       8,
     ],
     answerMut: undefined,
-    groups: [],
+    groups: [
+      "v5",
+      "h2",
+    ],
     pos: {
       x: 2,
       y: 5,
@@ -927,7 +1071,10 @@ snapshot[`9x9サイズのセルを生成する 1`] = `
       8,
     ],
     answerMut: undefined,
-    groups: [],
+    groups: [
+      "v5",
+      "h3",
+    ],
     pos: {
       x: 3,
       y: 5,
@@ -946,7 +1093,10 @@ snapshot[`9x9サイズのセルを生成する 1`] = `
       8,
     ],
     answerMut: undefined,
-    groups: [],
+    groups: [
+      "v5",
+      "h4",
+    ],
     pos: {
       x: 4,
       y: 5,
@@ -965,7 +1115,10 @@ snapshot[`9x9サイズのセルを生成する 1`] = `
       8,
     ],
     answerMut: undefined,
-    groups: [],
+    groups: [
+      "v5",
+      "h5",
+    ],
     pos: {
       x: 5,
       y: 5,
@@ -984,7 +1137,10 @@ snapshot[`9x9サイズのセルを生成する 1`] = `
       8,
     ],
     answerMut: undefined,
-    groups: [],
+    groups: [
+      "v5",
+      "h6",
+    ],
     pos: {
       x: 6,
       y: 5,
@@ -1003,7 +1159,10 @@ snapshot[`9x9サイズのセルを生成する 1`] = `
       8,
     ],
     answerMut: undefined,
-    groups: [],
+    groups: [
+      "v5",
+      "h7",
+    ],
     pos: {
       x: 7,
       y: 5,
@@ -1022,7 +1181,10 @@ snapshot[`9x9サイズのセルを生成する 1`] = `
       8,
     ],
     answerMut: undefined,
-    groups: [],
+    groups: [
+      "v5",
+      "h8",
+    ],
     pos: {
       x: 8,
       y: 5,
@@ -1041,7 +1203,10 @@ snapshot[`9x9サイズのセルを生成する 1`] = `
       8,
     ],
     answerMut: undefined,
-    groups: [],
+    groups: [
+      "v6",
+      "h0",
+    ],
     pos: {
       x: 0,
       y: 6,
@@ -1060,7 +1225,10 @@ snapshot[`9x9サイズのセルを生成する 1`] = `
       8,
     ],
     answerMut: undefined,
-    groups: [],
+    groups: [
+      "v6",
+      "h1",
+    ],
     pos: {
       x: 1,
       y: 6,
@@ -1079,7 +1247,10 @@ snapshot[`9x9サイズのセルを生成する 1`] = `
       8,
     ],
     answerMut: undefined,
-    groups: [],
+    groups: [
+      "v6",
+      "h2",
+    ],
     pos: {
       x: 2,
       y: 6,
@@ -1098,7 +1269,10 @@ snapshot[`9x9サイズのセルを生成する 1`] = `
       8,
     ],
     answerMut: undefined,
-    groups: [],
+    groups: [
+      "v6",
+      "h3",
+    ],
     pos: {
       x: 3,
       y: 6,
@@ -1117,7 +1291,10 @@ snapshot[`9x9サイズのセルを生成する 1`] = `
       8,
     ],
     answerMut: undefined,
-    groups: [],
+    groups: [
+      "v6",
+      "h4",
+    ],
     pos: {
       x: 4,
       y: 6,
@@ -1136,7 +1313,10 @@ snapshot[`9x9サイズのセルを生成する 1`] = `
       8,
     ],
     answerMut: undefined,
-    groups: [],
+    groups: [
+      "v6",
+      "h5",
+    ],
     pos: {
       x: 5,
       y: 6,
@@ -1155,7 +1335,10 @@ snapshot[`9x9サイズのセルを生成する 1`] = `
       8,
     ],
     answerMut: undefined,
-    groups: [],
+    groups: [
+      "v6",
+      "h6",
+    ],
     pos: {
       x: 6,
       y: 6,
@@ -1174,7 +1357,10 @@ snapshot[`9x9サイズのセルを生成する 1`] = `
       8,
     ],
     answerMut: undefined,
-    groups: [],
+    groups: [
+      "v6",
+      "h7",
+    ],
     pos: {
       x: 7,
       y: 6,
@@ -1193,7 +1379,10 @@ snapshot[`9x9サイズのセルを生成する 1`] = `
       8,
     ],
     answerMut: undefined,
-    groups: [],
+    groups: [
+      "v6",
+      "h8",
+    ],
     pos: {
       x: 8,
       y: 6,
@@ -1212,7 +1401,10 @@ snapshot[`9x9サイズのセルを生成する 1`] = `
       8,
     ],
     answerMut: undefined,
-    groups: [],
+    groups: [
+      "v7",
+      "h0",
+    ],
     pos: {
       x: 0,
       y: 7,
@@ -1231,7 +1423,10 @@ snapshot[`9x9サイズのセルを生成する 1`] = `
       8,
     ],
     answerMut: undefined,
-    groups: [],
+    groups: [
+      "v7",
+      "h1",
+    ],
     pos: {
       x: 1,
       y: 7,
@@ -1250,7 +1445,10 @@ snapshot[`9x9サイズのセルを生成する 1`] = `
       8,
     ],
     answerMut: undefined,
-    groups: [],
+    groups: [
+      "v7",
+      "h2",
+    ],
     pos: {
       x: 2,
       y: 7,
@@ -1269,7 +1467,10 @@ snapshot[`9x9サイズのセルを生成する 1`] = `
       8,
     ],
     answerMut: undefined,
-    groups: [],
+    groups: [
+      "v7",
+      "h3",
+    ],
     pos: {
       x: 3,
       y: 7,
@@ -1288,7 +1489,10 @@ snapshot[`9x9サイズのセルを生成する 1`] = `
       8,
     ],
     answerMut: undefined,
-    groups: [],
+    groups: [
+      "v7",
+      "h4",
+    ],
     pos: {
       x: 4,
       y: 7,
@@ -1307,7 +1511,10 @@ snapshot[`9x9サイズのセルを生成する 1`] = `
       8,
     ],
     answerMut: undefined,
-    groups: [],
+    groups: [
+      "v7",
+      "h5",
+    ],
     pos: {
       x: 5,
       y: 7,
@@ -1326,7 +1533,10 @@ snapshot[`9x9サイズのセルを生成する 1`] = `
       8,
     ],
     answerMut: undefined,
-    groups: [],
+    groups: [
+      "v7",
+      "h6",
+    ],
     pos: {
       x: 6,
       y: 7,
@@ -1345,7 +1555,10 @@ snapshot[`9x9サイズのセルを生成する 1`] = `
       8,
     ],
     answerMut: undefined,
-    groups: [],
+    groups: [
+      "v7",
+      "h7",
+    ],
     pos: {
       x: 7,
       y: 7,
@@ -1364,7 +1577,10 @@ snapshot[`9x9サイズのセルを生成する 1`] = `
       8,
     ],
     answerMut: undefined,
-    groups: [],
+    groups: [
+      "v7",
+      "h8",
+    ],
     pos: {
       x: 8,
       y: 7,
@@ -1383,7 +1599,10 @@ snapshot[`9x9サイズのセルを生成する 1`] = `
       8,
     ],
     answerMut: undefined,
-    groups: [],
+    groups: [
+      "v8",
+      "h0",
+    ],
     pos: {
       x: 0,
       y: 8,
@@ -1402,7 +1621,10 @@ snapshot[`9x9サイズのセルを生成する 1`] = `
       8,
     ],
     answerMut: undefined,
-    groups: [],
+    groups: [
+      "v8",
+      "h1",
+    ],
     pos: {
       x: 1,
       y: 8,
@@ -1421,7 +1643,10 @@ snapshot[`9x9サイズのセルを生成する 1`] = `
       8,
     ],
     answerMut: undefined,
-    groups: [],
+    groups: [
+      "v8",
+      "h2",
+    ],
     pos: {
       x: 2,
       y: 8,
@@ -1440,7 +1665,10 @@ snapshot[`9x9サイズのセルを生成する 1`] = `
       8,
     ],
     answerMut: undefined,
-    groups: [],
+    groups: [
+      "v8",
+      "h3",
+    ],
     pos: {
       x: 3,
       y: 8,
@@ -1459,7 +1687,10 @@ snapshot[`9x9サイズのセルを生成する 1`] = `
       8,
     ],
     answerMut: undefined,
-    groups: [],
+    groups: [
+      "v8",
+      "h4",
+    ],
     pos: {
       x: 4,
       y: 8,
@@ -1478,7 +1709,10 @@ snapshot[`9x9サイズのセルを生成する 1`] = `
       8,
     ],
     answerMut: undefined,
-    groups: [],
+    groups: [
+      "v8",
+      "h5",
+    ],
     pos: {
       x: 5,
       y: 8,
@@ -1497,7 +1731,10 @@ snapshot[`9x9サイズのセルを生成する 1`] = `
       8,
     ],
     answerMut: undefined,
-    groups: [],
+    groups: [
+      "v8",
+      "h6",
+    ],
     pos: {
       x: 6,
       y: 8,
@@ -1516,7 +1753,10 @@ snapshot[`9x9サイズのセルを生成する 1`] = `
       8,
     ],
     answerMut: undefined,
-    groups: [],
+    groups: [
+      "v8",
+      "h7",
+    ],
     pos: {
       x: 7,
       y: 8,
@@ -1535,7 +1775,10 @@ snapshot[`9x9サイズのセルを生成する 1`] = `
       8,
     ],
     answerMut: undefined,
-    groups: [],
+    groups: [
+      "v8",
+      "h8",
+    ],
     pos: {
       x: 8,
       y: 8,
@@ -1553,7 +1796,10 @@ snapshot[`3x3サイズのセルを生成する 1`] = `
       2,
     ],
     answerMut: undefined,
-    groups: [],
+    groups: [
+      "v0",
+      "h0",
+    ],
     pos: {
       x: 0,
       y: 0,
@@ -1566,7 +1812,10 @@ snapshot[`3x3サイズのセルを生成する 1`] = `
       2,
     ],
     answerMut: undefined,
-    groups: [],
+    groups: [
+      "v0",
+      "h1",
+    ],
     pos: {
       x: 1,
       y: 0,
@@ -1579,7 +1828,10 @@ snapshot[`3x3サイズのセルを生成する 1`] = `
       2,
     ],
     answerMut: undefined,
-    groups: [],
+    groups: [
+      "v0",
+      "h2",
+    ],
     pos: {
       x: 2,
       y: 0,
@@ -1592,7 +1844,10 @@ snapshot[`3x3サイズのセルを生成する 1`] = `
       2,
     ],
     answerMut: undefined,
-    groups: [],
+    groups: [
+      "v1",
+      "h0",
+    ],
     pos: {
       x: 0,
       y: 1,
@@ -1605,7 +1860,10 @@ snapshot[`3x3サイズのセルを生成する 1`] = `
       2,
     ],
     answerMut: undefined,
-    groups: [],
+    groups: [
+      "v1",
+      "h1",
+    ],
     pos: {
       x: 1,
       y: 1,
@@ -1618,7 +1876,10 @@ snapshot[`3x3サイズのセルを生成する 1`] = `
       2,
     ],
     answerMut: undefined,
-    groups: [],
+    groups: [
+      "v1",
+      "h2",
+    ],
     pos: {
       x: 2,
       y: 1,
@@ -1631,7 +1892,10 @@ snapshot[`3x3サイズのセルを生成する 1`] = `
       2,
     ],
     answerMut: undefined,
-    groups: [],
+    groups: [
+      "v2",
+      "h0",
+    ],
     pos: {
       x: 0,
       y: 2,
@@ -1644,7 +1908,10 @@ snapshot[`3x3サイズのセルを生成する 1`] = `
       2,
     ],
     answerMut: undefined,
-    groups: [],
+    groups: [
+      "v2",
+      "h1",
+    ],
     pos: {
       x: 1,
       y: 2,
@@ -1657,7 +1924,10 @@ snapshot[`3x3サイズのセルを生成する 1`] = `
       2,
     ],
     answerMut: undefined,
-    groups: [],
+    groups: [
+      "v2",
+      "h2",
+    ],
     pos: {
       x: 2,
       y: 2,

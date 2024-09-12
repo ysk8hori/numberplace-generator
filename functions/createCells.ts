@@ -1,19 +1,20 @@
 import type { Cell } from "../models/cell.ts";
 import { createGameRange, type BlockSize } from "../models/game.ts";
-import type { Position } from "../models/position.ts";
-import type { Group } from "../models/group.ts";
+import { createPositions, type Position } from "../models/position.ts";
+import { pipe, map } from "remeda";
 
-export const createCells: (blocksize: BlockSize) => Cell[] = (
-  blocksize: BlockSize,
-) =>
-  createGameRange(blocksize).flatMap((y) =>
-    createGameRange(blocksize).map(
-      (x) =>
-        ({
-          answer: undefined,
-          answerCnadidates: createGameRange(blocksize),
-          groups: [] satisfies Group[],
-          pos: { x, y } satisfies Position,
-        }) satisfies Cell,
-    ),
+const createCell: (answerCnadidatesMut: number[]) => (pos: Position) => Cell =
+  (answerCnadidatesMut) => (pos) => ({
+    answerMut: undefined,
+    answerCnadidatesMut,
+    groups: [],
+    pos,
+  });
+
+export const createCells: (blocksize: BlockSize) => Cell[] = (blocksize) =>
+  pipe(
+    blocksize,
+    createGameRange,
+    createPositions,
+    map(createCell(pipe(blocksize, createGameRange))),
   );

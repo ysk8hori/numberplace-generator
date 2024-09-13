@@ -1,6 +1,6 @@
 import { type Cell, createCells, findCell } from "../models/cell.ts";
 import { type BlockSize, calcSideLength } from "../models/game.ts";
-import { isSamePos } from "../models/position.ts";
+import { isSamePos, Position } from "../models/position.ts";
 import { fillAnswer } from "./fillAnswer.ts";
 
 type StringToPuzzleFailureStatus =
@@ -52,7 +52,9 @@ export function stringToPuzzle({
   }
   const answerAndPos = rowsAnswers
     .flatMap((answers, y) =>
-      answers.map((a, x) => [parseInt(a, 16), { x, y }] as const),
+      answers.map(
+        (a, x) => [parseInt(a, 16), [x, y] satisfies Position] as const,
+      ),
     )
     .filter(([a]) => !isNaN(a));
   if (answerAndPos.some(([a]) => sideLength <= a)) {

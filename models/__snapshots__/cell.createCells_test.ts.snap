@@ -19,10 +19,10 @@ snapshot[`9x9サイズ snapshot 1`] = `
       "v0",
       "h0",
     ],
-    pos: {
-      x: 0,
-      y: 0,
-    },
+    pos: [
+      0,
+      0,
+    ],
   },
   {
     answerCnadidatesMut: [
@@ -41,10 +41,10 @@ snapshot[`9x9サイズ snapshot 1`] = `
       "v1",
       "h0",
     ],
-    pos: {
-      x: 1,
-      y: 0,
-    },
+    pos: [
+      1,
+      0,
+    ],
   },
   {
     answerCnadidatesMut: [
@@ -63,10 +63,10 @@ snapshot[`9x9サイズ snapshot 1`] = `
       "v2",
       "h0",
     ],
-    pos: {
-      x: 2,
-      y: 0,
-    },
+    pos: [
+      2,
+      0,
+    ],
   },
   {
     answerCnadidatesMut: [
@@ -85,10 +85,10 @@ snapshot[`9x9サイズ snapshot 1`] = `
       "v3",
       "h0",
     ],
-    pos: {
-      x: 3,
-      y: 0,
-    },
+    pos: [
+      3,
+      0,
+    ],
   },
   {
     answerCnadidatesMut: [
@@ -107,10 +107,10 @@ snapshot[`9x9サイズ snapshot 1`] = `
       "v4",
       "h0",
     ],
-    pos: {
-      x: 4,
-      y: 0,
-    },
+    pos: [
+      4,
+      0,
+    ],
   },
   {
     answerCnadidatesMut: [
@@ -129,10 +129,10 @@ snapshot[`9x9サイズ snapshot 1`] = `
       "v5",
       "h0",
     ],
-    pos: {
-      x: 5,
-      y: 0,
-    },
+    pos: [
+      5,
+      0,
+    ],
   },
   {
     answerCnadidatesMut: [
@@ -151,10 +151,10 @@ snapshot[`9x9サイズ snapshot 1`] = `
       "v6",
       "h0",
     ],
-    pos: {
-      x: 6,
-      y: 0,
-    },
+    pos: [
+      6,
+      0,
+    ],
   },
   {
     answerCnadidatesMut: [
@@ -173,10 +173,10 @@ snapshot[`9x9サイズ snapshot 1`] = `
       "v7",
       "h0",
     ],
-    pos: {
-      x: 7,
-      y: 0,
-    },
+    pos: [
+      7,
+      0,
+    ],
   },
   {
     answerCnadidatesMut: [
@@ -195,10 +195,10 @@ snapshot[`9x9サイズ snapshot 1`] = `
       "v8",
       "h0",
     ],
-    pos: {
-      x: 8,
-      y: 0,
-    },
+    pos: [
+      8,
+      0,
+    ],
   },
   {
     answerCnadidatesMut: [
@@ -217,10 +217,10 @@ snapshot[`9x9サイズ snapshot 1`] = `
       "v0",
       "h1",
     ],
-    pos: {
-      x: 0,
-      y: 1,
-    },
+    pos: [
+      0,
+      1,
+    ],
   },
   {
     answerCnadidatesMut: [
@@ -239,10 +239,10 @@ snapshot[`9x9サイズ snapshot 1`] = `
       "v1",
       "h1",
     ],
-    pos: {
-      x: 1,
-      y: 1,
-    },
+    pos: [
+      1,
+      1,
+    ],
   },
   {
     answerCnadidatesMut: [
@@ -261,10 +261,10 @@ snapshot[`9x9サイズ snapshot 1`] = `
       "v2",
       "h1",
     ],
-    pos: {
-      x: 2,
-      y: 1,
-    },
+    pos: [
+      2,
+      1,
+    ],
   },
   {
     answerCnadidatesMut: [
@@ -283,10 +283,10 @@ snapshot[`9x9サイズ snapshot 1`] = `
       "v3",
       "h1",
     ],
-    pos: {
-      x: 3,
-      y: 1,
-    },
+    pos: [
+      3,
+      1,
+    ],
   },
   {
     answerCnadidatesMut: [
@@ -305,10 +305,10 @@ snapshot[`9x9サイズ snapshot 1`] = `
       "v4",
       "h1",
     ],
-    pos: {
-      x: 4,
-      y: 1,
-    },
+    pos: [
+      4,
+      1,
+    ],
   },
   {
     answerCnadidatesMut: [
@@ -327,10 +327,10 @@ snapshot[`9x9サイズ snapshot 1`] = `
       "v5",
       "h1",
     ],
-    pos: {
-      x: 5,
-      y: 1,
-    },
+    pos: [
+      5,
+      1,
+    ],
   },
   {
     answerCnadidatesMut: [
@@ -349,10 +349,10 @@ snapshot[`9x9サイズ snapshot 1`] = `
       "v6",
       "h1",
     ],
-    pos: {
-      x: 6,
-      y: 1,
-    },
+    pos: [
+      6,
+      1,
+    ],
   },
   {
     answerCnadidatesMut: [
@@ -371,10 +371,10 @@ snapshot[`9x9サイズ snapshot 1`] = `
       "v7",
       "h1",
     ],
-    pos: {
-      x: 7,
-      y: 1,
-    },
+    pos: [
+      7,
+      1,
+    ],
   },
   {
     answerCnadidatesMut: [
@@ -393,10 +393,10 @@ snapshot[`9x9サイズ snapshot 1`] = `
       "v8",
       "h1",
     ],
-    pos: {
-      x: 8,
-      y: 1,
-    },
+    pos: [
+      8,
+      1,
+    ],
   },
   {
     answerCnadidatesMut: [
@@ -415,10 +415,10 @@ snapshot[`9x9サイズ snapshot 1`] = `
       "v0",
       "h2",
     ],
-    pos: {
-      x: 0,
-      y: 2,
-    },
+    pos: [
+      0,
+      2,
+    ],
   },
   {
     answerCnadidatesMut: [
@@ -437,10 +437,10 @@ snapshot[`9x9サイズ snapshot 1`] = `
       "v1",
       "h2",
     ],
-    pos: {
-      x: 1,
-      y: 2,
-    },
+    pos: [
+      1,
+      2,
+    ],
   },
   {
     answerCnadidatesMut: [
@@ -459,10 +459,10 @@ snapshot[`9x9サイズ snapshot 1`] = `
       "v2",
       "h2",
     ],
-    pos: {
-      x: 2,
-      y: 2,
-    },
+    pos: [
+      2,
+      2,
+    ],
   },
   {
     answerCnadidatesMut: [
@@ -481,10 +481,10 @@ snapshot[`9x9サイズ snapshot 1`] = `
       "v3",
       "h2",
     ],
-    pos: {
-      x: 3,
-      y: 2,
-    },
+    pos: [
+      3,
+      2,
+    ],
   },
   {
     answerCnadidatesMut: [
@@ -503,10 +503,10 @@ snapshot[`9x9サイズ snapshot 1`] = `
       "v4",
       "h2",
     ],
-    pos: {
-      x: 4,
-      y: 2,
-    },
+    pos: [
+      4,
+      2,
+    ],
   },
   {
     answerCnadidatesMut: [
@@ -525,10 +525,10 @@ snapshot[`9x9サイズ snapshot 1`] = `
       "v5",
       "h2",
     ],
-    pos: {
-      x: 5,
-      y: 2,
-    },
+    pos: [
+      5,
+      2,
+    ],
   },
   {
     answerCnadidatesMut: [
@@ -547,10 +547,10 @@ snapshot[`9x9サイズ snapshot 1`] = `
       "v6",
       "h2",
     ],
-    pos: {
-      x: 6,
-      y: 2,
-    },
+    pos: [
+      6,
+      2,
+    ],
   },
   {
     answerCnadidatesMut: [
@@ -569,10 +569,10 @@ snapshot[`9x9サイズ snapshot 1`] = `
       "v7",
       "h2",
     ],
-    pos: {
-      x: 7,
-      y: 2,
-    },
+    pos: [
+      7,
+      2,
+    ],
   },
   {
     answerCnadidatesMut: [
@@ -591,10 +591,10 @@ snapshot[`9x9サイズ snapshot 1`] = `
       "v8",
       "h2",
     ],
-    pos: {
-      x: 8,
-      y: 2,
-    },
+    pos: [
+      8,
+      2,
+    ],
   },
   {
     answerCnadidatesMut: [
@@ -613,10 +613,10 @@ snapshot[`9x9サイズ snapshot 1`] = `
       "v0",
       "h3",
     ],
-    pos: {
-      x: 0,
-      y: 3,
-    },
+    pos: [
+      0,
+      3,
+    ],
   },
   {
     answerCnadidatesMut: [
@@ -635,10 +635,10 @@ snapshot[`9x9サイズ snapshot 1`] = `
       "v1",
       "h3",
     ],
-    pos: {
-      x: 1,
-      y: 3,
-    },
+    pos: [
+      1,
+      3,
+    ],
   },
   {
     answerCnadidatesMut: [
@@ -657,10 +657,10 @@ snapshot[`9x9サイズ snapshot 1`] = `
       "v2",
       "h3",
     ],
-    pos: {
-      x: 2,
-      y: 3,
-    },
+    pos: [
+      2,
+      3,
+    ],
   },
   {
     answerCnadidatesMut: [
@@ -679,10 +679,10 @@ snapshot[`9x9サイズ snapshot 1`] = `
       "v3",
       "h3",
     ],
-    pos: {
-      x: 3,
-      y: 3,
-    },
+    pos: [
+      3,
+      3,
+    ],
   },
   {
     answerCnadidatesMut: [
@@ -701,10 +701,10 @@ snapshot[`9x9サイズ snapshot 1`] = `
       "v4",
       "h3",
     ],
-    pos: {
-      x: 4,
-      y: 3,
-    },
+    pos: [
+      4,
+      3,
+    ],
   },
   {
     answerCnadidatesMut: [
@@ -723,10 +723,10 @@ snapshot[`9x9サイズ snapshot 1`] = `
       "v5",
       "h3",
     ],
-    pos: {
-      x: 5,
-      y: 3,
-    },
+    pos: [
+      5,
+      3,
+    ],
   },
   {
     answerCnadidatesMut: [
@@ -745,10 +745,10 @@ snapshot[`9x9サイズ snapshot 1`] = `
       "v6",
       "h3",
     ],
-    pos: {
-      x: 6,
-      y: 3,
-    },
+    pos: [
+      6,
+      3,
+    ],
   },
   {
     answerCnadidatesMut: [
@@ -767,10 +767,10 @@ snapshot[`9x9サイズ snapshot 1`] = `
       "v7",
       "h3",
     ],
-    pos: {
-      x: 7,
-      y: 3,
-    },
+    pos: [
+      7,
+      3,
+    ],
   },
   {
     answerCnadidatesMut: [
@@ -789,10 +789,10 @@ snapshot[`9x9サイズ snapshot 1`] = `
       "v8",
       "h3",
     ],
-    pos: {
-      x: 8,
-      y: 3,
-    },
+    pos: [
+      8,
+      3,
+    ],
   },
   {
     answerCnadidatesMut: [
@@ -811,10 +811,10 @@ snapshot[`9x9サイズ snapshot 1`] = `
       "v0",
       "h4",
     ],
-    pos: {
-      x: 0,
-      y: 4,
-    },
+    pos: [
+      0,
+      4,
+    ],
   },
   {
     answerCnadidatesMut: [
@@ -833,10 +833,10 @@ snapshot[`9x9サイズ snapshot 1`] = `
       "v1",
       "h4",
     ],
-    pos: {
-      x: 1,
-      y: 4,
-    },
+    pos: [
+      1,
+      4,
+    ],
   },
   {
     answerCnadidatesMut: [
@@ -855,10 +855,10 @@ snapshot[`9x9サイズ snapshot 1`] = `
       "v2",
       "h4",
     ],
-    pos: {
-      x: 2,
-      y: 4,
-    },
+    pos: [
+      2,
+      4,
+    ],
   },
   {
     answerCnadidatesMut: [
@@ -877,10 +877,10 @@ snapshot[`9x9サイズ snapshot 1`] = `
       "v3",
       "h4",
     ],
-    pos: {
-      x: 3,
-      y: 4,
-    },
+    pos: [
+      3,
+      4,
+    ],
   },
   {
     answerCnadidatesMut: [
@@ -899,10 +899,10 @@ snapshot[`9x9サイズ snapshot 1`] = `
       "v4",
       "h4",
     ],
-    pos: {
-      x: 4,
-      y: 4,
-    },
+    pos: [
+      4,
+      4,
+    ],
   },
   {
     answerCnadidatesMut: [
@@ -921,10 +921,10 @@ snapshot[`9x9サイズ snapshot 1`] = `
       "v5",
       "h4",
     ],
-    pos: {
-      x: 5,
-      y: 4,
-    },
+    pos: [
+      5,
+      4,
+    ],
   },
   {
     answerCnadidatesMut: [
@@ -943,10 +943,10 @@ snapshot[`9x9サイズ snapshot 1`] = `
       "v6",
       "h4",
     ],
-    pos: {
-      x: 6,
-      y: 4,
-    },
+    pos: [
+      6,
+      4,
+    ],
   },
   {
     answerCnadidatesMut: [
@@ -965,10 +965,10 @@ snapshot[`9x9サイズ snapshot 1`] = `
       "v7",
       "h4",
     ],
-    pos: {
-      x: 7,
-      y: 4,
-    },
+    pos: [
+      7,
+      4,
+    ],
   },
   {
     answerCnadidatesMut: [
@@ -987,10 +987,10 @@ snapshot[`9x9サイズ snapshot 1`] = `
       "v8",
       "h4",
     ],
-    pos: {
-      x: 8,
-      y: 4,
-    },
+    pos: [
+      8,
+      4,
+    ],
   },
   {
     answerCnadidatesMut: [
@@ -1009,10 +1009,10 @@ snapshot[`9x9サイズ snapshot 1`] = `
       "v0",
       "h5",
     ],
-    pos: {
-      x: 0,
-      y: 5,
-    },
+    pos: [
+      0,
+      5,
+    ],
   },
   {
     answerCnadidatesMut: [
@@ -1031,10 +1031,10 @@ snapshot[`9x9サイズ snapshot 1`] = `
       "v1",
       "h5",
     ],
-    pos: {
-      x: 1,
-      y: 5,
-    },
+    pos: [
+      1,
+      5,
+    ],
   },
   {
     answerCnadidatesMut: [
@@ -1053,10 +1053,10 @@ snapshot[`9x9サイズ snapshot 1`] = `
       "v2",
       "h5",
     ],
-    pos: {
-      x: 2,
-      y: 5,
-    },
+    pos: [
+      2,
+      5,
+    ],
   },
   {
     answerCnadidatesMut: [
@@ -1075,10 +1075,10 @@ snapshot[`9x9サイズ snapshot 1`] = `
       "v3",
       "h5",
     ],
-    pos: {
-      x: 3,
-      y: 5,
-    },
+    pos: [
+      3,
+      5,
+    ],
   },
   {
     answerCnadidatesMut: [
@@ -1097,10 +1097,10 @@ snapshot[`9x9サイズ snapshot 1`] = `
       "v4",
       "h5",
     ],
-    pos: {
-      x: 4,
-      y: 5,
-    },
+    pos: [
+      4,
+      5,
+    ],
   },
   {
     answerCnadidatesMut: [
@@ -1119,10 +1119,10 @@ snapshot[`9x9サイズ snapshot 1`] = `
       "v5",
       "h5",
     ],
-    pos: {
-      x: 5,
-      y: 5,
-    },
+    pos: [
+      5,
+      5,
+    ],
   },
   {
     answerCnadidatesMut: [
@@ -1141,10 +1141,10 @@ snapshot[`9x9サイズ snapshot 1`] = `
       "v6",
       "h5",
     ],
-    pos: {
-      x: 6,
-      y: 5,
-    },
+    pos: [
+      6,
+      5,
+    ],
   },
   {
     answerCnadidatesMut: [
@@ -1163,10 +1163,10 @@ snapshot[`9x9サイズ snapshot 1`] = `
       "v7",
       "h5",
     ],
-    pos: {
-      x: 7,
-      y: 5,
-    },
+    pos: [
+      7,
+      5,
+    ],
   },
   {
     answerCnadidatesMut: [
@@ -1185,10 +1185,10 @@ snapshot[`9x9サイズ snapshot 1`] = `
       "v8",
       "h5",
     ],
-    pos: {
-      x: 8,
-      y: 5,
-    },
+    pos: [
+      8,
+      5,
+    ],
   },
   {
     answerCnadidatesMut: [
@@ -1207,10 +1207,10 @@ snapshot[`9x9サイズ snapshot 1`] = `
       "v0",
       "h6",
     ],
-    pos: {
-      x: 0,
-      y: 6,
-    },
+    pos: [
+      0,
+      6,
+    ],
   },
   {
     answerCnadidatesMut: [
@@ -1229,10 +1229,10 @@ snapshot[`9x9サイズ snapshot 1`] = `
       "v1",
       "h6",
     ],
-    pos: {
-      x: 1,
-      y: 6,
-    },
+    pos: [
+      1,
+      6,
+    ],
   },
   {
     answerCnadidatesMut: [
@@ -1251,10 +1251,10 @@ snapshot[`9x9サイズ snapshot 1`] = `
       "v2",
       "h6",
     ],
-    pos: {
-      x: 2,
-      y: 6,
-    },
+    pos: [
+      2,
+      6,
+    ],
   },
   {
     answerCnadidatesMut: [
@@ -1273,10 +1273,10 @@ snapshot[`9x9サイズ snapshot 1`] = `
       "v3",
       "h6",
     ],
-    pos: {
-      x: 3,
-      y: 6,
-    },
+    pos: [
+      3,
+      6,
+    ],
   },
   {
     answerCnadidatesMut: [
@@ -1295,10 +1295,10 @@ snapshot[`9x9サイズ snapshot 1`] = `
       "v4",
       "h6",
     ],
-    pos: {
-      x: 4,
-      y: 6,
-    },
+    pos: [
+      4,
+      6,
+    ],
   },
   {
     answerCnadidatesMut: [
@@ -1317,10 +1317,10 @@ snapshot[`9x9サイズ snapshot 1`] = `
       "v5",
       "h6",
     ],
-    pos: {
-      x: 5,
-      y: 6,
-    },
+    pos: [
+      5,
+      6,
+    ],
   },
   {
     answerCnadidatesMut: [
@@ -1339,10 +1339,10 @@ snapshot[`9x9サイズ snapshot 1`] = `
       "v6",
       "h6",
     ],
-    pos: {
-      x: 6,
-      y: 6,
-    },
+    pos: [
+      6,
+      6,
+    ],
   },
   {
     answerCnadidatesMut: [
@@ -1361,10 +1361,10 @@ snapshot[`9x9サイズ snapshot 1`] = `
       "v7",
       "h6",
     ],
-    pos: {
-      x: 7,
-      y: 6,
-    },
+    pos: [
+      7,
+      6,
+    ],
   },
   {
     answerCnadidatesMut: [
@@ -1383,10 +1383,10 @@ snapshot[`9x9サイズ snapshot 1`] = `
       "v8",
       "h6",
     ],
-    pos: {
-      x: 8,
-      y: 6,
-    },
+    pos: [
+      8,
+      6,
+    ],
   },
   {
     answerCnadidatesMut: [
@@ -1405,10 +1405,10 @@ snapshot[`9x9サイズ snapshot 1`] = `
       "v0",
       "h7",
     ],
-    pos: {
-      x: 0,
-      y: 7,
-    },
+    pos: [
+      0,
+      7,
+    ],
   },
   {
     answerCnadidatesMut: [
@@ -1427,10 +1427,10 @@ snapshot[`9x9サイズ snapshot 1`] = `
       "v1",
       "h7",
     ],
-    pos: {
-      x: 1,
-      y: 7,
-    },
+    pos: [
+      1,
+      7,
+    ],
   },
   {
     answerCnadidatesMut: [
@@ -1449,10 +1449,10 @@ snapshot[`9x9サイズ snapshot 1`] = `
       "v2",
       "h7",
     ],
-    pos: {
-      x: 2,
-      y: 7,
-    },
+    pos: [
+      2,
+      7,
+    ],
   },
   {
     answerCnadidatesMut: [
@@ -1471,10 +1471,10 @@ snapshot[`9x9サイズ snapshot 1`] = `
       "v3",
       "h7",
     ],
-    pos: {
-      x: 3,
-      y: 7,
-    },
+    pos: [
+      3,
+      7,
+    ],
   },
   {
     answerCnadidatesMut: [
@@ -1493,10 +1493,10 @@ snapshot[`9x9サイズ snapshot 1`] = `
       "v4",
       "h7",
     ],
-    pos: {
-      x: 4,
-      y: 7,
-    },
+    pos: [
+      4,
+      7,
+    ],
   },
   {
     answerCnadidatesMut: [
@@ -1515,10 +1515,10 @@ snapshot[`9x9サイズ snapshot 1`] = `
       "v5",
       "h7",
     ],
-    pos: {
-      x: 5,
-      y: 7,
-    },
+    pos: [
+      5,
+      7,
+    ],
   },
   {
     answerCnadidatesMut: [
@@ -1537,10 +1537,10 @@ snapshot[`9x9サイズ snapshot 1`] = `
       "v6",
       "h7",
     ],
-    pos: {
-      x: 6,
-      y: 7,
-    },
+    pos: [
+      6,
+      7,
+    ],
   },
   {
     answerCnadidatesMut: [
@@ -1559,10 +1559,10 @@ snapshot[`9x9サイズ snapshot 1`] = `
       "v7",
       "h7",
     ],
-    pos: {
-      x: 7,
-      y: 7,
-    },
+    pos: [
+      7,
+      7,
+    ],
   },
   {
     answerCnadidatesMut: [
@@ -1581,10 +1581,10 @@ snapshot[`9x9サイズ snapshot 1`] = `
       "v8",
       "h7",
     ],
-    pos: {
-      x: 8,
-      y: 7,
-    },
+    pos: [
+      8,
+      7,
+    ],
   },
   {
     answerCnadidatesMut: [
@@ -1603,10 +1603,10 @@ snapshot[`9x9サイズ snapshot 1`] = `
       "v0",
       "h8",
     ],
-    pos: {
-      x: 0,
-      y: 8,
-    },
+    pos: [
+      0,
+      8,
+    ],
   },
   {
     answerCnadidatesMut: [
@@ -1625,10 +1625,10 @@ snapshot[`9x9サイズ snapshot 1`] = `
       "v1",
       "h8",
     ],
-    pos: {
-      x: 1,
-      y: 8,
-    },
+    pos: [
+      1,
+      8,
+    ],
   },
   {
     answerCnadidatesMut: [
@@ -1647,10 +1647,10 @@ snapshot[`9x9サイズ snapshot 1`] = `
       "v2",
       "h8",
     ],
-    pos: {
-      x: 2,
-      y: 8,
-    },
+    pos: [
+      2,
+      8,
+    ],
   },
   {
     answerCnadidatesMut: [
@@ -1669,10 +1669,10 @@ snapshot[`9x9サイズ snapshot 1`] = `
       "v3",
       "h8",
     ],
-    pos: {
-      x: 3,
-      y: 8,
-    },
+    pos: [
+      3,
+      8,
+    ],
   },
   {
     answerCnadidatesMut: [
@@ -1691,10 +1691,10 @@ snapshot[`9x9サイズ snapshot 1`] = `
       "v4",
       "h8",
     ],
-    pos: {
-      x: 4,
-      y: 8,
-    },
+    pos: [
+      4,
+      8,
+    ],
   },
   {
     answerCnadidatesMut: [
@@ -1713,10 +1713,10 @@ snapshot[`9x9サイズ snapshot 1`] = `
       "v5",
       "h8",
     ],
-    pos: {
-      x: 5,
-      y: 8,
-    },
+    pos: [
+      5,
+      8,
+    ],
   },
   {
     answerCnadidatesMut: [
@@ -1735,10 +1735,10 @@ snapshot[`9x9サイズ snapshot 1`] = `
       "v6",
       "h8",
     ],
-    pos: {
-      x: 6,
-      y: 8,
-    },
+    pos: [
+      6,
+      8,
+    ],
   },
   {
     answerCnadidatesMut: [
@@ -1757,10 +1757,10 @@ snapshot[`9x9サイズ snapshot 1`] = `
       "v7",
       "h8",
     ],
-    pos: {
-      x: 7,
-      y: 8,
-    },
+    pos: [
+      7,
+      8,
+    ],
   },
   {
     answerCnadidatesMut: [
@@ -1779,10 +1779,10 @@ snapshot[`9x9サイズ snapshot 1`] = `
       "v8",
       "h8",
     ],
-    pos: {
-      x: 8,
-      y: 8,
-    },
+    pos: [
+      8,
+      8,
+    ],
   },
 ]
 `;
@@ -1800,10 +1800,10 @@ snapshot[`3x3サイズのセルを生成する 1`] = `
       "v0",
       "h0",
     ],
-    pos: {
-      x: 0,
-      y: 0,
-    },
+    pos: [
+      0,
+      0,
+    ],
   },
   {
     answerCnadidatesMut: [
@@ -1816,10 +1816,10 @@ snapshot[`3x3サイズのセルを生成する 1`] = `
       "v1",
       "h0",
     ],
-    pos: {
-      x: 1,
-      y: 0,
-    },
+    pos: [
+      1,
+      0,
+    ],
   },
   {
     answerCnadidatesMut: [
@@ -1832,10 +1832,10 @@ snapshot[`3x3サイズのセルを生成する 1`] = `
       "v2",
       "h0",
     ],
-    pos: {
-      x: 2,
-      y: 0,
-    },
+    pos: [
+      2,
+      0,
+    ],
   },
   {
     answerCnadidatesMut: [
@@ -1848,10 +1848,10 @@ snapshot[`3x3サイズのセルを生成する 1`] = `
       "v0",
       "h1",
     ],
-    pos: {
-      x: 0,
-      y: 1,
-    },
+    pos: [
+      0,
+      1,
+    ],
   },
   {
     answerCnadidatesMut: [
@@ -1864,10 +1864,10 @@ snapshot[`3x3サイズのセルを生成する 1`] = `
       "v1",
       "h1",
     ],
-    pos: {
-      x: 1,
-      y: 1,
-    },
+    pos: [
+      1,
+      1,
+    ],
   },
   {
     answerCnadidatesMut: [
@@ -1880,10 +1880,10 @@ snapshot[`3x3サイズのセルを生成する 1`] = `
       "v2",
       "h1",
     ],
-    pos: {
-      x: 2,
-      y: 1,
-    },
+    pos: [
+      2,
+      1,
+    ],
   },
   {
     answerCnadidatesMut: [
@@ -1896,10 +1896,10 @@ snapshot[`3x3サイズのセルを生成する 1`] = `
       "v0",
       "h2",
     ],
-    pos: {
-      x: 0,
-      y: 2,
-    },
+    pos: [
+      0,
+      2,
+    ],
   },
   {
     answerCnadidatesMut: [
@@ -1912,10 +1912,10 @@ snapshot[`3x3サイズのセルを生成する 1`] = `
       "v1",
       "h2",
     ],
-    pos: {
-      x: 1,
-      y: 2,
-    },
+    pos: [
+      1,
+      2,
+    ],
   },
   {
     answerCnadidatesMut: [
@@ -1928,10 +1928,10 @@ snapshot[`3x3サイズのセルを生成する 1`] = `
       "v2",
       "h2",
     ],
-    pos: {
-      x: 2,
-      y: 2,
-    },
+    pos: [
+      2,
+      2,
+    ],
   },
 ]
 `;

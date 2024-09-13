@@ -15,10 +15,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v0",
         "h0",
       ],
-      pos: {
-        x: 0,
-        y: 0,
-      },
+      pos: [
+        0,
+        0,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -34,10 +34,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v1",
         "h0",
       ],
-      pos: {
-        x: 1,
-        y: 0,
-      },
+      pos: [
+        1,
+        0,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -52,10 +52,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v2",
         "h0",
       ],
-      pos: {
-        x: 2,
-        y: 0,
-      },
+      pos: [
+        2,
+        0,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -69,10 +69,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v3",
         "h0",
       ],
-      pos: {
-        x: 3,
-        y: 0,
-      },
+      pos: [
+        3,
+        0,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -89,10 +89,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v4",
         "h0",
       ],
-      pos: {
-        x: 4,
-        y: 0,
-      },
+      pos: [
+        4,
+        0,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -110,10 +110,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v5",
         "h0",
       ],
-      pos: {
-        x: 5,
-        y: 0,
-      },
+      pos: [
+        5,
+        0,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -130,10 +130,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v6",
         "h0",
       ],
-      pos: {
-        x: 6,
-        y: 0,
-      },
+      pos: [
+        6,
+        0,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -147,10 +147,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v7",
         "h0",
       ],
-      pos: {
-        x: 7,
-        y: 0,
-      },
+      pos: [
+        7,
+        0,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -167,10 +167,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v8",
         "h0",
       ],
-      pos: {
-        x: 8,
-        y: 0,
-      },
+      pos: [
+        8,
+        0,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -185,10 +185,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v9",
         "h0",
       ],
-      pos: {
-        x: 9,
-        y: 0,
-      },
+      pos: [
+        9,
+        0,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -204,10 +204,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v10",
         "h0",
       ],
-      pos: {
-        x: 10,
-        y: 0,
-      },
+      pos: [
+        10,
+        0,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -226,10 +226,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v11",
         "h0",
       ],
-      pos: {
-        x: 11,
-        y: 0,
-      },
+      pos: [
+        11,
+        0,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -244,10 +244,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v12",
         "h0",
       ],
-      pos: {
-        x: 12,
-        y: 0,
-      },
+      pos: [
+        12,
+        0,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -262,10 +262,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v13",
         "h0",
       ],
-      pos: {
-        x: 13,
-        y: 0,
-      },
+      pos: [
+        13,
+        0,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -281,10 +281,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v14",
         "h0",
       ],
-      pos: {
-        x: 14,
-        y: 0,
-      },
+      pos: [
+        14,
+        0,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -300,10 +300,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v15",
         "h0",
       ],
-      pos: {
-        x: 15,
-        y: 0,
-      },
+      pos: [
+        15,
+        0,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -319,10 +319,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v0",
         "h1",
       ],
-      pos: {
-        x: 0,
-        y: 1,
-      },
+      pos: [
+        0,
+        1,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -339,10 +339,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v1",
         "h1",
       ],
-      pos: {
-        x: 1,
-        y: 1,
-      },
+      pos: [
+        1,
+        1,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -358,10 +358,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v2",
         "h1",
       ],
-      pos: {
-        x: 2,
-        y: 1,
-      },
+      pos: [
+        2,
+        1,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -379,10 +379,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v3",
         "h1",
       ],
-      pos: {
-        x: 3,
-        y: 1,
-      },
+      pos: [
+        3,
+        1,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -399,10 +399,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v4",
         "h1",
       ],
-      pos: {
-        x: 4,
-        y: 1,
-      },
+      pos: [
+        4,
+        1,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -420,10 +420,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v5",
         "h1",
       ],
-      pos: {
-        x: 5,
-        y: 1,
-      },
+      pos: [
+        5,
+        1,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -440,10 +440,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v6",
         "h1",
       ],
-      pos: {
-        x: 6,
-        y: 1,
-      },
+      pos: [
+        6,
+        1,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -459,10 +459,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v7",
         "h1",
       ],
-      pos: {
-        x: 7,
-        y: 1,
-      },
+      pos: [
+        7,
+        1,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -479,10 +479,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v8",
         "h1",
       ],
-      pos: {
-        x: 8,
-        y: 1,
-      },
+      pos: [
+        8,
+        1,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -498,10 +498,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v9",
         "h1",
       ],
-      pos: {
-        x: 9,
-        y: 1,
-      },
+      pos: [
+        9,
+        1,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -515,10 +515,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v10",
         "h1",
       ],
-      pos: {
-        x: 10,
-        y: 1,
-      },
+      pos: [
+        10,
+        1,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -535,10 +535,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v11",
         "h1",
       ],
-      pos: {
-        x: 11,
-        y: 1,
-      },
+      pos: [
+        11,
+        1,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -555,10 +555,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v12",
         "h1",
       ],
-      pos: {
-        x: 12,
-        y: 1,
-      },
+      pos: [
+        12,
+        1,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -574,10 +574,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v13",
         "h1",
       ],
-      pos: {
-        x: 13,
-        y: 1,
-      },
+      pos: [
+        13,
+        1,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -593,10 +593,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v14",
         "h1",
       ],
-      pos: {
-        x: 14,
-        y: 1,
-      },
+      pos: [
+        14,
+        1,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -610,10 +610,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v15",
         "h1",
       ],
-      pos: {
-        x: 15,
-        y: 1,
-      },
+      pos: [
+        15,
+        1,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -631,10 +631,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v0",
         "h2",
       ],
-      pos: {
-        x: 0,
-        y: 2,
-      },
+      pos: [
+        0,
+        2,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -654,10 +654,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v1",
         "h2",
       ],
-      pos: {
-        x: 1,
-        y: 2,
-      },
+      pos: [
+        1,
+        2,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -676,10 +676,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v2",
         "h2",
       ],
-      pos: {
-        x: 2,
-        y: 2,
-      },
+      pos: [
+        2,
+        2,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -697,10 +697,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v3",
         "h2",
       ],
-      pos: {
-        x: 3,
-        y: 2,
-      },
+      pos: [
+        3,
+        2,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -720,10 +720,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v4",
         "h2",
       ],
-      pos: {
-        x: 4,
-        y: 2,
-      },
+      pos: [
+        4,
+        2,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -745,10 +745,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v5",
         "h2",
       ],
-      pos: {
-        x: 5,
-        y: 2,
-      },
+      pos: [
+        5,
+        2,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -768,10 +768,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v6",
         "h2",
       ],
-      pos: {
-        x: 6,
-        y: 2,
-      },
+      pos: [
+        6,
+        2,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -789,10 +789,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v7",
         "h2",
       ],
-      pos: {
-        x: 7,
-        y: 2,
-      },
+      pos: [
+        7,
+        2,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -815,10 +815,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v8",
         "h2",
       ],
-      pos: {
-        x: 8,
-        y: 2,
-      },
+      pos: [
+        8,
+        2,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -839,10 +839,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v9",
         "h2",
       ],
-      pos: {
-        x: 9,
-        y: 2,
-      },
+      pos: [
+        9,
+        2,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -860,10 +860,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v10",
         "h2",
       ],
-      pos: {
-        x: 10,
-        y: 2,
-      },
+      pos: [
+        10,
+        2,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -887,10 +887,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v11",
         "h2",
       ],
-      pos: {
-        x: 11,
-        y: 2,
-      },
+      pos: [
+        11,
+        2,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -911,10 +911,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v12",
         "h2",
       ],
-      pos: {
-        x: 12,
-        y: 2,
-      },
+      pos: [
+        12,
+        2,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -932,10 +932,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v13",
         "h2",
       ],
-      pos: {
-        x: 13,
-        y: 2,
-      },
+      pos: [
+        13,
+        2,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -955,10 +955,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v14",
         "h2",
       ],
-      pos: {
-        x: 14,
-        y: 2,
-      },
+      pos: [
+        14,
+        2,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -976,10 +976,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v15",
         "h2",
       ],
-      pos: {
-        x: 15,
-        y: 2,
-      },
+      pos: [
+        15,
+        2,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -997,10 +997,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v0",
         "h3",
       ],
-      pos: {
-        x: 0,
-        y: 3,
-      },
+      pos: [
+        0,
+        3,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -1016,10 +1016,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v1",
         "h3",
       ],
-      pos: {
-        x: 1,
-        y: 3,
-      },
+      pos: [
+        1,
+        3,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -1036,10 +1036,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v2",
         "h3",
       ],
-      pos: {
-        x: 2,
-        y: 3,
-      },
+      pos: [
+        2,
+        3,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -1056,10 +1056,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v3",
         "h3",
       ],
-      pos: {
-        x: 3,
-        y: 3,
-      },
+      pos: [
+        3,
+        3,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -1075,10 +1075,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v4",
         "h3",
       ],
-      pos: {
-        x: 4,
-        y: 3,
-      },
+      pos: [
+        4,
+        3,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -1097,10 +1097,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v5",
         "h3",
       ],
-      pos: {
-        x: 5,
-        y: 3,
-      },
+      pos: [
+        5,
+        3,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -1117,10 +1117,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v6",
         "h3",
       ],
-      pos: {
-        x: 6,
-        y: 3,
-      },
+      pos: [
+        6,
+        3,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -1136,10 +1136,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v7",
         "h3",
       ],
-      pos: {
-        x: 7,
-        y: 3,
-      },
+      pos: [
+        7,
+        3,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -1159,10 +1159,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v8",
         "h3",
       ],
-      pos: {
-        x: 8,
-        y: 3,
-      },
+      pos: [
+        8,
+        3,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -1180,10 +1180,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v9",
         "h3",
       ],
-      pos: {
-        x: 9,
-        y: 3,
-      },
+      pos: [
+        9,
+        3,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -1197,10 +1197,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v10",
         "h3",
       ],
-      pos: {
-        x: 10,
-        y: 3,
-      },
+      pos: [
+        10,
+        3,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -1219,10 +1219,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v11",
         "h3",
       ],
-      pos: {
-        x: 11,
-        y: 3,
-      },
+      pos: [
+        11,
+        3,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -1241,10 +1241,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v12",
         "h3",
       ],
-      pos: {
-        x: 12,
-        y: 3,
-      },
+      pos: [
+        12,
+        3,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -1260,10 +1260,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v13",
         "h3",
       ],
-      pos: {
-        x: 13,
-        y: 3,
-      },
+      pos: [
+        13,
+        3,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -1281,10 +1281,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v14",
         "h3",
       ],
-      pos: {
-        x: 14,
-        y: 3,
-      },
+      pos: [
+        14,
+        3,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -1300,10 +1300,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v15",
         "h3",
       ],
-      pos: {
-        x: 15,
-        y: 3,
-      },
+      pos: [
+        15,
+        3,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -1320,10 +1320,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v0",
         "h4",
       ],
-      pos: {
-        x: 0,
-        y: 4,
-      },
+      pos: [
+        0,
+        4,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -1342,10 +1342,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v1",
         "h4",
       ],
-      pos: {
-        x: 1,
-        y: 4,
-      },
+      pos: [
+        1,
+        4,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -1364,10 +1364,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v2",
         "h4",
       ],
-      pos: {
-        x: 2,
-        y: 4,
-      },
+      pos: [
+        2,
+        4,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -1384,10 +1384,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v3",
         "h4",
       ],
-      pos: {
-        x: 3,
-        y: 4,
-      },
+      pos: [
+        3,
+        4,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -1405,10 +1405,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v4",
         "h4",
       ],
-      pos: {
-        x: 4,
-        y: 4,
-      },
+      pos: [
+        4,
+        4,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -1429,10 +1429,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v5",
         "h4",
       ],
-      pos: {
-        x: 5,
-        y: 4,
-      },
+      pos: [
+        5,
+        4,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -1451,10 +1451,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v6",
         "h4",
       ],
-      pos: {
-        x: 6,
-        y: 4,
-      },
+      pos: [
+        6,
+        4,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -1472,10 +1472,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v7",
         "h4",
       ],
-      pos: {
-        x: 7,
-        y: 4,
-      },
+      pos: [
+        7,
+        4,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -1497,10 +1497,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v8",
         "h4",
       ],
-      pos: {
-        x: 8,
-        y: 4,
-      },
+      pos: [
+        8,
+        4,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -1520,10 +1520,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v9",
         "h4",
       ],
-      pos: {
-        x: 9,
-        y: 4,
-      },
+      pos: [
+        9,
+        4,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -1539,10 +1539,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v10",
         "h4",
       ],
-      pos: {
-        x: 10,
-        y: 4,
-      },
+      pos: [
+        10,
+        4,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -1564,10 +1564,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v11",
         "h4",
       ],
-      pos: {
-        x: 11,
-        y: 4,
-      },
+      pos: [
+        11,
+        4,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -1586,10 +1586,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v12",
         "h4",
       ],
-      pos: {
-        x: 12,
-        y: 4,
-      },
+      pos: [
+        12,
+        4,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -1606,10 +1606,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v13",
         "h4",
       ],
-      pos: {
-        x: 13,
-        y: 4,
-      },
+      pos: [
+        13,
+        4,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -1627,10 +1627,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v14",
         "h4",
       ],
-      pos: {
-        x: 14,
-        y: 4,
-      },
+      pos: [
+        14,
+        4,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -1648,10 +1648,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v15",
         "h4",
       ],
-      pos: {
-        x: 15,
-        y: 4,
-      },
+      pos: [
+        15,
+        4,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -1667,10 +1667,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v0",
         "h5",
       ],
-      pos: {
-        x: 0,
-        y: 5,
-      },
+      pos: [
+        0,
+        5,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -1685,10 +1685,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v1",
         "h5",
       ],
-      pos: {
-        x: 1,
-        y: 5,
-      },
+      pos: [
+        1,
+        5,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -1703,10 +1703,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v2",
         "h5",
       ],
-      pos: {
-        x: 2,
-        y: 5,
-      },
+      pos: [
+        2,
+        5,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -1723,10 +1723,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v3",
         "h5",
       ],
-      pos: {
-        x: 3,
-        y: 5,
-      },
+      pos: [
+        3,
+        5,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -1743,10 +1743,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v4",
         "h5",
       ],
-      pos: {
-        x: 4,
-        y: 5,
-      },
+      pos: [
+        4,
+        5,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -1764,10 +1764,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v5",
         "h5",
       ],
-      pos: {
-        x: 5,
-        y: 5,
-      },
+      pos: [
+        5,
+        5,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -1783,10 +1783,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v6",
         "h5",
       ],
-      pos: {
-        x: 6,
-        y: 5,
-      },
+      pos: [
+        6,
+        5,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -1801,10 +1801,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v7",
         "h5",
       ],
-      pos: {
-        x: 7,
-        y: 5,
-      },
+      pos: [
+        7,
+        5,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -1821,10 +1821,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v8",
         "h5",
       ],
-      pos: {
-        x: 8,
-        y: 5,
-      },
+      pos: [
+        8,
+        5,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -1840,10 +1840,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v9",
         "h5",
       ],
-      pos: {
-        x: 9,
-        y: 5,
-      },
+      pos: [
+        9,
+        5,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -1858,10 +1858,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v10",
         "h5",
       ],
-      pos: {
-        x: 10,
-        y: 5,
-      },
+      pos: [
+        10,
+        5,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -1878,10 +1878,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v11",
         "h5",
       ],
-      pos: {
-        x: 11,
-        y: 5,
-      },
+      pos: [
+        11,
+        5,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -1899,10 +1899,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v12",
         "h5",
       ],
-      pos: {
-        x: 12,
-        y: 5,
-      },
+      pos: [
+        12,
+        5,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -1918,10 +1918,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v13",
         "h5",
       ],
-      pos: {
-        x: 13,
-        y: 5,
-      },
+      pos: [
+        13,
+        5,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -1936,10 +1936,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v14",
         "h5",
       ],
-      pos: {
-        x: 14,
-        y: 5,
-      },
+      pos: [
+        14,
+        5,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -1954,10 +1954,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v15",
         "h5",
       ],
-      pos: {
-        x: 15,
-        y: 5,
-      },
+      pos: [
+        15,
+        5,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -1971,10 +1971,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v0",
         "h6",
       ],
-      pos: {
-        x: 0,
-        y: 6,
-      },
+      pos: [
+        0,
+        6,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -1991,10 +1991,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v1",
         "h6",
       ],
-      pos: {
-        x: 1,
-        y: 6,
-      },
+      pos: [
+        1,
+        6,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -2009,10 +2009,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v2",
         "h6",
       ],
-      pos: {
-        x: 2,
-        y: 6,
-      },
+      pos: [
+        2,
+        6,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -2026,10 +2026,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v3",
         "h6",
       ],
-      pos: {
-        x: 3,
-        y: 6,
-      },
+      pos: [
+        3,
+        6,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -2045,10 +2045,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v4",
         "h6",
       ],
-      pos: {
-        x: 4,
-        y: 6,
-      },
+      pos: [
+        4,
+        6,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -2065,10 +2065,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v5",
         "h6",
       ],
-      pos: {
-        x: 5,
-        y: 6,
-      },
+      pos: [
+        5,
+        6,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -2085,10 +2085,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v6",
         "h6",
       ],
-      pos: {
-        x: 6,
-        y: 6,
-      },
+      pos: [
+        6,
+        6,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -2103,10 +2103,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v7",
         "h6",
       ],
-      pos: {
-        x: 7,
-        y: 6,
-      },
+      pos: [
+        7,
+        6,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -2124,10 +2124,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v8",
         "h6",
       ],
-      pos: {
-        x: 8,
-        y: 6,
-      },
+      pos: [
+        8,
+        6,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -2143,10 +2143,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v9",
         "h6",
       ],
-      pos: {
-        x: 9,
-        y: 6,
-      },
+      pos: [
+        9,
+        6,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -2161,10 +2161,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v10",
         "h6",
       ],
-      pos: {
-        x: 10,
-        y: 6,
-      },
+      pos: [
+        10,
+        6,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -2182,10 +2182,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v11",
         "h6",
       ],
-      pos: {
-        x: 11,
-        y: 6,
-      },
+      pos: [
+        11,
+        6,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -2201,10 +2201,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v12",
         "h6",
       ],
-      pos: {
-        x: 12,
-        y: 6,
-      },
+      pos: [
+        12,
+        6,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -2219,10 +2219,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v13",
         "h6",
       ],
-      pos: {
-        x: 13,
-        y: 6,
-      },
+      pos: [
+        13,
+        6,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -2239,10 +2239,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v14",
         "h6",
       ],
-      pos: {
-        x: 14,
-        y: 6,
-      },
+      pos: [
+        14,
+        6,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -2257,10 +2257,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v15",
         "h6",
       ],
-      pos: {
-        x: 15,
-        y: 6,
-      },
+      pos: [
+        15,
+        6,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -2277,10 +2277,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v0",
         "h7",
       ],
-      pos: {
-        x: 0,
-        y: 7,
-      },
+      pos: [
+        0,
+        7,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -2298,10 +2298,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v1",
         "h7",
       ],
-      pos: {
-        x: 1,
-        y: 7,
-      },
+      pos: [
+        1,
+        7,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -2319,10 +2319,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v2",
         "h7",
       ],
-      pos: {
-        x: 2,
-        y: 7,
-      },
+      pos: [
+        2,
+        7,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -2339,10 +2339,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v3",
         "h7",
       ],
-      pos: {
-        x: 3,
-        y: 7,
-      },
+      pos: [
+        3,
+        7,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -2359,10 +2359,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v4",
         "h7",
       ],
-      pos: {
-        x: 4,
-        y: 7,
-      },
+      pos: [
+        4,
+        7,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -2381,10 +2381,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v5",
         "h7",
       ],
-      pos: {
-        x: 5,
-        y: 7,
-      },
+      pos: [
+        5,
+        7,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -2401,10 +2401,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v6",
         "h7",
       ],
-      pos: {
-        x: 6,
-        y: 7,
-      },
+      pos: [
+        6,
+        7,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -2421,10 +2421,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v7",
         "h7",
       ],
-      pos: {
-        x: 7,
-        y: 7,
-      },
+      pos: [
+        7,
+        7,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -2444,10 +2444,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v8",
         "h7",
       ],
-      pos: {
-        x: 8,
-        y: 7,
-      },
+      pos: [
+        8,
+        7,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -2465,10 +2465,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v9",
         "h7",
       ],
-      pos: {
-        x: 9,
-        y: 7,
-      },
+      pos: [
+        9,
+        7,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -2483,10 +2483,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v10",
         "h7",
       ],
-      pos: {
-        x: 10,
-        y: 7,
-      },
+      pos: [
+        10,
+        7,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -2505,10 +2505,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v11",
         "h7",
       ],
-      pos: {
-        x: 11,
-        y: 7,
-      },
+      pos: [
+        11,
+        7,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -2527,10 +2527,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v12",
         "h7",
       ],
-      pos: {
-        x: 12,
-        y: 7,
-      },
+      pos: [
+        12,
+        7,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -2547,10 +2547,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v13",
         "h7",
       ],
-      pos: {
-        x: 13,
-        y: 7,
-      },
+      pos: [
+        13,
+        7,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -2566,10 +2566,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v14",
         "h7",
       ],
-      pos: {
-        x: 14,
-        y: 7,
-      },
+      pos: [
+        14,
+        7,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -2585,10 +2585,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v15",
         "h7",
       ],
-      pos: {
-        x: 15,
-        y: 7,
-      },
+      pos: [
+        15,
+        7,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -2604,10 +2604,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v0",
         "h8",
       ],
-      pos: {
-        x: 0,
-        y: 8,
-      },
+      pos: [
+        0,
+        8,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -2625,10 +2625,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v1",
         "h8",
       ],
-      pos: {
-        x: 1,
-        y: 8,
-      },
+      pos: [
+        1,
+        8,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -2645,10 +2645,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v2",
         "h8",
       ],
-      pos: {
-        x: 2,
-        y: 8,
-      },
+      pos: [
+        2,
+        8,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -2664,10 +2664,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v3",
         "h8",
       ],
-      pos: {
-        x: 3,
-        y: 8,
-      },
+      pos: [
+        3,
+        8,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -2685,10 +2685,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v4",
         "h8",
       ],
-      pos: {
-        x: 4,
-        y: 8,
-      },
+      pos: [
+        4,
+        8,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -2707,10 +2707,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v5",
         "h8",
       ],
-      pos: {
-        x: 5,
-        y: 8,
-      },
+      pos: [
+        5,
+        8,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -2729,10 +2729,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v6",
         "h8",
       ],
-      pos: {
-        x: 6,
-        y: 8,
-      },
+      pos: [
+        6,
+        8,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -2749,10 +2749,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v7",
         "h8",
       ],
-      pos: {
-        x: 7,
-        y: 8,
-      },
+      pos: [
+        7,
+        8,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -2772,10 +2772,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v8",
         "h8",
       ],
-      pos: {
-        x: 8,
-        y: 8,
-      },
+      pos: [
+        8,
+        8,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -2793,10 +2793,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v9",
         "h8",
       ],
-      pos: {
-        x: 9,
-        y: 8,
-      },
+      pos: [
+        9,
+        8,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -2813,10 +2813,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v10",
         "h8",
       ],
-      pos: {
-        x: 10,
-        y: 8,
-      },
+      pos: [
+        10,
+        8,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -2838,10 +2838,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v11",
         "h8",
       ],
-      pos: {
-        x: 11,
-        y: 8,
-      },
+      pos: [
+        11,
+        8,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -2860,10 +2860,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v12",
         "h8",
       ],
-      pos: {
-        x: 12,
-        y: 8,
-      },
+      pos: [
+        12,
+        8,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -2879,10 +2879,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v13",
         "h8",
       ],
-      pos: {
-        x: 13,
-        y: 8,
-      },
+      pos: [
+        13,
+        8,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -2901,10 +2901,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v14",
         "h8",
       ],
-      pos: {
-        x: 14,
-        y: 8,
-      },
+      pos: [
+        14,
+        8,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -2920,10 +2920,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v15",
         "h8",
       ],
-      pos: {
-        x: 15,
-        y: 8,
-      },
+      pos: [
+        15,
+        8,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -2939,10 +2939,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v0",
         "h9",
       ],
-      pos: {
-        x: 0,
-        y: 9,
-      },
+      pos: [
+        0,
+        9,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -2960,10 +2960,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v1",
         "h9",
       ],
-      pos: {
-        x: 1,
-        y: 9,
-      },
+      pos: [
+        1,
+        9,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -2981,10 +2981,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v2",
         "h9",
       ],
-      pos: {
-        x: 2,
-        y: 9,
-      },
+      pos: [
+        2,
+        9,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -3001,10 +3001,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v3",
         "h9",
       ],
-      pos: {
-        x: 3,
-        y: 9,
-      },
+      pos: [
+        3,
+        9,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -3022,10 +3022,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v4",
         "h9",
       ],
-      pos: {
-        x: 4,
-        y: 9,
-      },
+      pos: [
+        4,
+        9,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -3046,10 +3046,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v5",
         "h9",
       ],
-      pos: {
-        x: 5,
-        y: 9,
-      },
+      pos: [
+        5,
+        9,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -3066,10 +3066,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v6",
         "h9",
       ],
-      pos: {
-        x: 6,
-        y: 9,
-      },
+      pos: [
+        6,
+        9,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -3086,10 +3086,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v7",
         "h9",
       ],
-      pos: {
-        x: 7,
-        y: 9,
-      },
+      pos: [
+        7,
+        9,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -3108,10 +3108,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v8",
         "h9",
       ],
-      pos: {
-        x: 8,
-        y: 9,
-      },
+      pos: [
+        8,
+        9,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -3127,10 +3127,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v9",
         "h9",
       ],
-      pos: {
-        x: 9,
-        y: 9,
-      },
+      pos: [
+        9,
+        9,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -3146,10 +3146,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v10",
         "h9",
       ],
-      pos: {
-        x: 10,
-        y: 9,
-      },
+      pos: [
+        10,
+        9,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -3168,10 +3168,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v11",
         "h9",
       ],
-      pos: {
-        x: 11,
-        y: 9,
-      },
+      pos: [
+        11,
+        9,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -3189,10 +3189,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v12",
         "h9",
       ],
-      pos: {
-        x: 12,
-        y: 9,
-      },
+      pos: [
+        12,
+        9,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -3210,10 +3210,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v13",
         "h9",
       ],
-      pos: {
-        x: 13,
-        y: 9,
-      },
+      pos: [
+        13,
+        9,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -3230,10 +3230,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v14",
         "h9",
       ],
-      pos: {
-        x: 14,
-        y: 9,
-      },
+      pos: [
+        14,
+        9,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -3250,10 +3250,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v15",
         "h9",
       ],
-      pos: {
-        x: 15,
-        y: 9,
-      },
+      pos: [
+        15,
+        9,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -3269,10 +3269,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v0",
         "h10",
       ],
-      pos: {
-        x: 0,
-        y: 10,
-      },
+      pos: [
+        0,
+        10,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -3287,10 +3287,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v1",
         "h10",
       ],
-      pos: {
-        x: 1,
-        y: 10,
-      },
+      pos: [
+        1,
+        10,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -3306,10 +3306,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v2",
         "h10",
       ],
-      pos: {
-        x: 2,
-        y: 10,
-      },
+      pos: [
+        2,
+        10,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -3324,10 +3324,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v3",
         "h10",
       ],
-      pos: {
-        x: 3,
-        y: 10,
-      },
+      pos: [
+        3,
+        10,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -3342,10 +3342,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v4",
         "h10",
       ],
-      pos: {
-        x: 4,
-        y: 10,
-      },
+      pos: [
+        4,
+        10,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -3362,10 +3362,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v5",
         "h10",
       ],
-      pos: {
-        x: 5,
-        y: 10,
-      },
+      pos: [
+        5,
+        10,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -3382,10 +3382,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v6",
         "h10",
       ],
-      pos: {
-        x: 6,
-        y: 10,
-      },
+      pos: [
+        6,
+        10,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -3400,10 +3400,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v7",
         "h10",
       ],
-      pos: {
-        x: 7,
-        y: 10,
-      },
+      pos: [
+        7,
+        10,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -3422,10 +3422,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v8",
         "h10",
       ],
-      pos: {
-        x: 8,
-        y: 10,
-      },
+      pos: [
+        8,
+        10,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -3442,10 +3442,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v9",
         "h10",
       ],
-      pos: {
-        x: 9,
-        y: 10,
-      },
+      pos: [
+        9,
+        10,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -3459,10 +3459,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v10",
         "h10",
       ],
-      pos: {
-        x: 10,
-        y: 10,
-      },
+      pos: [
+        10,
+        10,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -3480,10 +3480,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v11",
         "h10",
       ],
-      pos: {
-        x: 11,
-        y: 10,
-      },
+      pos: [
+        11,
+        10,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -3499,10 +3499,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v12",
         "h10",
       ],
-      pos: {
-        x: 12,
-        y: 10,
-      },
+      pos: [
+        12,
+        10,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -3515,10 +3515,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v13",
         "h10",
       ],
-      pos: {
-        x: 13,
-        y: 10,
-      },
+      pos: [
+        13,
+        10,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -3535,10 +3535,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v14",
         "h10",
       ],
-      pos: {
-        x: 14,
-        y: 10,
-      },
+      pos: [
+        14,
+        10,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -3553,10 +3553,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v15",
         "h10",
       ],
-      pos: {
-        x: 15,
-        y: 10,
-      },
+      pos: [
+        15,
+        10,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -3571,10 +3571,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v0",
         "h11",
       ],
-      pos: {
-        x: 0,
-        y: 11,
-      },
+      pos: [
+        0,
+        11,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -3590,10 +3590,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v1",
         "h11",
       ],
-      pos: {
-        x: 1,
-        y: 11,
-      },
+      pos: [
+        1,
+        11,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -3609,10 +3609,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v2",
         "h11",
       ],
-      pos: {
-        x: 2,
-        y: 11,
-      },
+      pos: [
+        2,
+        11,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -3627,10 +3627,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v3",
         "h11",
       ],
-      pos: {
-        x: 3,
-        y: 11,
-      },
+      pos: [
+        3,
+        11,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -3646,10 +3646,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v4",
         "h11",
       ],
-      pos: {
-        x: 4,
-        y: 11,
-      },
+      pos: [
+        4,
+        11,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -3664,10 +3664,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v5",
         "h11",
       ],
-      pos: {
-        x: 5,
-        y: 11,
-      },
+      pos: [
+        5,
+        11,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -3683,10 +3683,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v6",
         "h11",
       ],
-      pos: {
-        x: 6,
-        y: 11,
-      },
+      pos: [
+        6,
+        11,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -3700,10 +3700,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v7",
         "h11",
       ],
-      pos: {
-        x: 7,
-        y: 11,
-      },
+      pos: [
+        7,
+        11,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -3720,10 +3720,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v8",
         "h11",
       ],
-      pos: {
-        x: 8,
-        y: 11,
-      },
+      pos: [
+        8,
+        11,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -3739,10 +3739,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v9",
         "h11",
       ],
-      pos: {
-        x: 9,
-        y: 11,
-      },
+      pos: [
+        9,
+        11,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -3755,10 +3755,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v10",
         "h11",
       ],
-      pos: {
-        x: 10,
-        y: 11,
-      },
+      pos: [
+        10,
+        11,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -3775,10 +3775,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v11",
         "h11",
       ],
-      pos: {
-        x: 11,
-        y: 11,
-      },
+      pos: [
+        11,
+        11,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -3794,10 +3794,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v12",
         "h11",
       ],
-      pos: {
-        x: 12,
-        y: 11,
-      },
+      pos: [
+        12,
+        11,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -3811,10 +3811,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v13",
         "h11",
       ],
-      pos: {
-        x: 13,
-        y: 11,
-      },
+      pos: [
+        13,
+        11,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -3831,10 +3831,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v14",
         "h11",
       ],
-      pos: {
-        x: 14,
-        y: 11,
-      },
+      pos: [
+        14,
+        11,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -3848,10 +3848,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v15",
         "h11",
       ],
-      pos: {
-        x: 15,
-        y: 11,
-      },
+      pos: [
+        15,
+        11,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -3867,10 +3867,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v0",
         "h12",
       ],
-      pos: {
-        x: 0,
-        y: 12,
-      },
+      pos: [
+        0,
+        12,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -3890,10 +3890,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v1",
         "h12",
       ],
-      pos: {
-        x: 1,
-        y: 12,
-      },
+      pos: [
+        1,
+        12,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -3911,10 +3911,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v2",
         "h12",
       ],
-      pos: {
-        x: 2,
-        y: 12,
-      },
+      pos: [
+        2,
+        12,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -3931,10 +3931,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v3",
         "h12",
       ],
-      pos: {
-        x: 3,
-        y: 12,
-      },
+      pos: [
+        3,
+        12,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -3951,10 +3951,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v4",
         "h12",
       ],
-      pos: {
-        x: 4,
-        y: 12,
-      },
+      pos: [
+        4,
+        12,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -3974,10 +3974,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v5",
         "h12",
       ],
-      pos: {
-        x: 5,
-        y: 12,
-      },
+      pos: [
+        5,
+        12,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -3995,10 +3995,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v6",
         "h12",
       ],
-      pos: {
-        x: 6,
-        y: 12,
-      },
+      pos: [
+        6,
+        12,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -4015,10 +4015,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v7",
         "h12",
       ],
-      pos: {
-        x: 7,
-        y: 12,
-      },
+      pos: [
+        7,
+        12,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -4038,10 +4038,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v8",
         "h12",
       ],
-      pos: {
-        x: 8,
-        y: 12,
-      },
+      pos: [
+        8,
+        12,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -4059,10 +4059,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v9",
         "h12",
       ],
-      pos: {
-        x: 9,
-        y: 12,
-      },
+      pos: [
+        9,
+        12,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -4078,10 +4078,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v10",
         "h12",
       ],
-      pos: {
-        x: 10,
-        y: 12,
-      },
+      pos: [
+        10,
+        12,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -4101,10 +4101,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v11",
         "h12",
       ],
-      pos: {
-        x: 11,
-        y: 12,
-      },
+      pos: [
+        11,
+        12,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -4121,10 +4121,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v12",
         "h12",
       ],
-      pos: {
-        x: 12,
-        y: 12,
-      },
+      pos: [
+        12,
+        12,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -4142,10 +4142,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v13",
         "h12",
       ],
-      pos: {
-        x: 13,
-        y: 12,
-      },
+      pos: [
+        13,
+        12,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -4163,10 +4163,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v14",
         "h12",
       ],
-      pos: {
-        x: 14,
-        y: 12,
-      },
+      pos: [
+        14,
+        12,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -4183,10 +4183,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v15",
         "h12",
       ],
-      pos: {
-        x: 15,
-        y: 12,
-      },
+      pos: [
+        15,
+        12,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -4203,10 +4203,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v0",
         "h13",
       ],
-      pos: {
-        x: 0,
-        y: 13,
-      },
+      pos: [
+        0,
+        13,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -4225,10 +4225,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v1",
         "h13",
       ],
-      pos: {
-        x: 1,
-        y: 13,
-      },
+      pos: [
+        1,
+        13,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -4246,10 +4246,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v2",
         "h13",
       ],
-      pos: {
-        x: 2,
-        y: 13,
-      },
+      pos: [
+        2,
+        13,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -4266,10 +4266,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v3",
         "h13",
       ],
-      pos: {
-        x: 3,
-        y: 13,
-      },
+      pos: [
+        3,
+        13,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -4286,10 +4286,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v4",
         "h13",
       ],
-      pos: {
-        x: 4,
-        y: 13,
-      },
+      pos: [
+        4,
+        13,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -4308,10 +4308,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v5",
         "h13",
       ],
-      pos: {
-        x: 5,
-        y: 13,
-      },
+      pos: [
+        5,
+        13,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -4329,10 +4329,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v6",
         "h13",
       ],
-      pos: {
-        x: 6,
-        y: 13,
-      },
+      pos: [
+        6,
+        13,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -4349,10 +4349,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v7",
         "h13",
       ],
-      pos: {
-        x: 7,
-        y: 13,
-      },
+      pos: [
+        7,
+        13,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -4373,10 +4373,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v8",
         "h13",
       ],
-      pos: {
-        x: 8,
-        y: 13,
-      },
+      pos: [
+        8,
+        13,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -4397,10 +4397,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v9",
         "h13",
       ],
-      pos: {
-        x: 9,
-        y: 13,
-      },
+      pos: [
+        9,
+        13,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -4414,10 +4414,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v10",
         "h13",
       ],
-      pos: {
-        x: 10,
-        y: 13,
-      },
+      pos: [
+        10,
+        13,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -4437,10 +4437,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v11",
         "h13",
       ],
-      pos: {
-        x: 11,
-        y: 13,
-      },
+      pos: [
+        11,
+        13,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -4459,10 +4459,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v12",
         "h13",
       ],
-      pos: {
-        x: 12,
-        y: 13,
-      },
+      pos: [
+        12,
+        13,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -4479,10 +4479,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v13",
         "h13",
       ],
-      pos: {
-        x: 13,
-        y: 13,
-      },
+      pos: [
+        13,
+        13,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -4500,10 +4500,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v14",
         "h13",
       ],
-      pos: {
-        x: 14,
-        y: 13,
-      },
+      pos: [
+        14,
+        13,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -4520,10 +4520,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v15",
         "h13",
       ],
-      pos: {
-        x: 15,
-        y: 13,
-      },
+      pos: [
+        15,
+        13,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -4540,10 +4540,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v0",
         "h14",
       ],
-      pos: {
-        x: 0,
-        y: 14,
-      },
+      pos: [
+        0,
+        14,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -4560,10 +4560,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v1",
         "h14",
       ],
-      pos: {
-        x: 1,
-        y: 14,
-      },
+      pos: [
+        1,
+        14,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -4581,10 +4581,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v2",
         "h14",
       ],
-      pos: {
-        x: 2,
-        y: 14,
-      },
+      pos: [
+        2,
+        14,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -4600,10 +4600,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v3",
         "h14",
       ],
-      pos: {
-        x: 3,
-        y: 14,
-      },
+      pos: [
+        3,
+        14,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -4620,10 +4620,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v4",
         "h14",
       ],
-      pos: {
-        x: 4,
-        y: 14,
-      },
+      pos: [
+        4,
+        14,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -4644,10 +4644,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v5",
         "h14",
       ],
-      pos: {
-        x: 5,
-        y: 14,
-      },
+      pos: [
+        5,
+        14,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -4666,10 +4666,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v6",
         "h14",
       ],
-      pos: {
-        x: 6,
-        y: 14,
-      },
+      pos: [
+        6,
+        14,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -4686,10 +4686,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v7",
         "h14",
       ],
-      pos: {
-        x: 7,
-        y: 14,
-      },
+      pos: [
+        7,
+        14,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -4710,10 +4710,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v8",
         "h14",
       ],
-      pos: {
-        x: 8,
-        y: 14,
-      },
+      pos: [
+        8,
+        14,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -4730,10 +4730,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v9",
         "h14",
       ],
-      pos: {
-        x: 9,
-        y: 14,
-      },
+      pos: [
+        9,
+        14,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -4748,10 +4748,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v10",
         "h14",
       ],
-      pos: {
-        x: 10,
-        y: 14,
-      },
+      pos: [
+        10,
+        14,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -4772,10 +4772,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v11",
         "h14",
       ],
-      pos: {
-        x: 11,
-        y: 14,
-      },
+      pos: [
+        11,
+        14,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -4792,10 +4792,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v12",
         "h14",
       ],
-      pos: {
-        x: 12,
-        y: 14,
-      },
+      pos: [
+        12,
+        14,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -4812,10 +4812,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v13",
         "h14",
       ],
-      pos: {
-        x: 13,
-        y: 14,
-      },
+      pos: [
+        13,
+        14,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -4834,10 +4834,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v14",
         "h14",
       ],
-      pos: {
-        x: 14,
-        y: 14,
-      },
+      pos: [
+        14,
+        14,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -4855,10 +4855,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v15",
         "h14",
       ],
-      pos: {
-        x: 15,
-        y: 14,
-      },
+      pos: [
+        15,
+        14,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -4872,10 +4872,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v0",
         "h15",
       ],
-      pos: {
-        x: 0,
-        y: 15,
-      },
+      pos: [
+        0,
+        15,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -4891,10 +4891,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v1",
         "h15",
       ],
-      pos: {
-        x: 1,
-        y: 15,
-      },
+      pos: [
+        1,
+        15,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -4910,10 +4910,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v2",
         "h15",
       ],
-      pos: {
-        x: 2,
-        y: 15,
-      },
+      pos: [
+        2,
+        15,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -4928,10 +4928,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v3",
         "h15",
       ],
-      pos: {
-        x: 3,
-        y: 15,
-      },
+      pos: [
+        3,
+        15,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -4944,10 +4944,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v4",
         "h15",
       ],
-      pos: {
-        x: 4,
-        y: 15,
-      },
+      pos: [
+        4,
+        15,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -4963,10 +4963,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v5",
         "h15",
       ],
-      pos: {
-        x: 5,
-        y: 15,
-      },
+      pos: [
+        5,
+        15,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -4980,10 +4980,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v6",
         "h15",
       ],
-      pos: {
-        x: 6,
-        y: 15,
-      },
+      pos: [
+        6,
+        15,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -4999,10 +4999,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v7",
         "h15",
       ],
-      pos: {
-        x: 7,
-        y: 15,
-      },
+      pos: [
+        7,
+        15,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -5018,10 +5018,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v8",
         "h15",
       ],
-      pos: {
-        x: 8,
-        y: 15,
-      },
+      pos: [
+        8,
+        15,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -5036,10 +5036,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v9",
         "h15",
       ],
-      pos: {
-        x: 9,
-        y: 15,
-      },
+      pos: [
+        9,
+        15,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -5052,10 +5052,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v10",
         "h15",
       ],
-      pos: {
-        x: 10,
-        y: 15,
-      },
+      pos: [
+        10,
+        15,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -5070,10 +5070,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v11",
         "h15",
       ],
-      pos: {
-        x: 11,
-        y: 15,
-      },
+      pos: [
+        11,
+        15,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -5088,10 +5088,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v12",
         "h15",
       ],
-      pos: {
-        x: 12,
-        y: 15,
-      },
+      pos: [
+        12,
+        15,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -5106,10 +5106,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v13",
         "h15",
       ],
-      pos: {
-        x: 13,
-        y: 15,
-      },
+      pos: [
+        13,
+        15,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -5123,10 +5123,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v14",
         "h15",
       ],
-      pos: {
-        x: 14,
-        y: 15,
-      },
+      pos: [
+        14,
+        15,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -5141,10 +5141,10 @@ snapshot[`puzzle_4_4 1`] = `
         "v15",
         "h15",
       ],
-      pos: {
-        x: 15,
-        y: 15,
-      },
+      pos: [
+        15,
+        15,
+      ],
     },
   ],
   status: "success",
@@ -5164,10 +5164,10 @@ snapshot[`puzzle_2_3 1`] = `
         "v0",
         "h0",
       ],
-      pos: {
-        x: 0,
-        y: 0,
-      },
+      pos: [
+        0,
+        0,
+      ],
     },
     {
       answerCnadidatesMut: [],
@@ -5176,10 +5176,10 @@ snapshot[`puzzle_2_3 1`] = `
         "v1",
         "h0",
       ],
-      pos: {
-        x: 1,
-        y: 0,
-      },
+      pos: [
+        1,
+        0,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -5190,10 +5190,10 @@ snapshot[`puzzle_2_3 1`] = `
         "v2",
         "h0",
       ],
-      pos: {
-        x: 2,
-        y: 0,
-      },
+      pos: [
+        2,
+        0,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -5205,10 +5205,10 @@ snapshot[`puzzle_2_3 1`] = `
         "v3",
         "h0",
       ],
-      pos: {
-        x: 3,
-        y: 0,
-      },
+      pos: [
+        3,
+        0,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -5220,10 +5220,10 @@ snapshot[`puzzle_2_3 1`] = `
         "v4",
         "h0",
       ],
-      pos: {
-        x: 4,
-        y: 0,
-      },
+      pos: [
+        4,
+        0,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -5234,10 +5234,10 @@ snapshot[`puzzle_2_3 1`] = `
         "v5",
         "h0",
       ],
-      pos: {
-        x: 5,
-        y: 0,
-      },
+      pos: [
+        5,
+        0,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -5250,10 +5250,10 @@ snapshot[`puzzle_2_3 1`] = `
         "v0",
         "h1",
       ],
-      pos: {
-        x: 0,
-        y: 1,
-      },
+      pos: [
+        0,
+        1,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -5265,10 +5265,10 @@ snapshot[`puzzle_2_3 1`] = `
         "v1",
         "h1",
       ],
-      pos: {
-        x: 1,
-        y: 1,
-      },
+      pos: [
+        1,
+        1,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -5280,10 +5280,10 @@ snapshot[`puzzle_2_3 1`] = `
         "v2",
         "h1",
       ],
-      pos: {
-        x: 2,
-        y: 1,
-      },
+      pos: [
+        2,
+        1,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -5296,10 +5296,10 @@ snapshot[`puzzle_2_3 1`] = `
         "v3",
         "h1",
       ],
-      pos: {
-        x: 3,
-        y: 1,
-      },
+      pos: [
+        3,
+        1,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -5311,10 +5311,10 @@ snapshot[`puzzle_2_3 1`] = `
         "v4",
         "h1",
       ],
-      pos: {
-        x: 4,
-        y: 1,
-      },
+      pos: [
+        4,
+        1,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -5327,10 +5327,10 @@ snapshot[`puzzle_2_3 1`] = `
         "v5",
         "h1",
       ],
-      pos: {
-        x: 5,
-        y: 1,
-      },
+      pos: [
+        5,
+        1,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -5343,10 +5343,10 @@ snapshot[`puzzle_2_3 1`] = `
         "v0",
         "h2",
       ],
-      pos: {
-        x: 0,
-        y: 2,
-      },
+      pos: [
+        0,
+        2,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -5358,10 +5358,10 @@ snapshot[`puzzle_2_3 1`] = `
         "v1",
         "h2",
       ],
-      pos: {
-        x: 1,
-        y: 2,
-      },
+      pos: [
+        1,
+        2,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -5373,10 +5373,10 @@ snapshot[`puzzle_2_3 1`] = `
         "v2",
         "h2",
       ],
-      pos: {
-        x: 2,
-        y: 2,
-      },
+      pos: [
+        2,
+        2,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -5389,10 +5389,10 @@ snapshot[`puzzle_2_3 1`] = `
         "v3",
         "h2",
       ],
-      pos: {
-        x: 3,
-        y: 2,
-      },
+      pos: [
+        3,
+        2,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -5405,10 +5405,10 @@ snapshot[`puzzle_2_3 1`] = `
         "v4",
         "h2",
       ],
-      pos: {
-        x: 4,
-        y: 2,
-      },
+      pos: [
+        4,
+        2,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -5419,10 +5419,10 @@ snapshot[`puzzle_2_3 1`] = `
         "v5",
         "h2",
       ],
-      pos: {
-        x: 5,
-        y: 2,
-      },
+      pos: [
+        5,
+        2,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -5434,10 +5434,10 @@ snapshot[`puzzle_2_3 1`] = `
         "v0",
         "h3",
       ],
-      pos: {
-        x: 0,
-        y: 3,
-      },
+      pos: [
+        0,
+        3,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -5450,10 +5450,10 @@ snapshot[`puzzle_2_3 1`] = `
         "v1",
         "h3",
       ],
-      pos: {
-        x: 1,
-        y: 3,
-      },
+      pos: [
+        1,
+        3,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -5465,10 +5465,10 @@ snapshot[`puzzle_2_3 1`] = `
         "v2",
         "h3",
       ],
-      pos: {
-        x: 2,
-        y: 3,
-      },
+      pos: [
+        2,
+        3,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -5480,10 +5480,10 @@ snapshot[`puzzle_2_3 1`] = `
         "v3",
         "h3",
       ],
-      pos: {
-        x: 3,
-        y: 3,
-      },
+      pos: [
+        3,
+        3,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -5495,10 +5495,10 @@ snapshot[`puzzle_2_3 1`] = `
         "v4",
         "h3",
       ],
-      pos: {
-        x: 4,
-        y: 3,
-      },
+      pos: [
+        4,
+        3,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -5510,10 +5510,10 @@ snapshot[`puzzle_2_3 1`] = `
         "v5",
         "h3",
       ],
-      pos: {
-        x: 5,
-        y: 3,
-      },
+      pos: [
+        5,
+        3,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -5526,10 +5526,10 @@ snapshot[`puzzle_2_3 1`] = `
         "v0",
         "h4",
       ],
-      pos: {
-        x: 0,
-        y: 4,
-      },
+      pos: [
+        0,
+        4,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -5541,10 +5541,10 @@ snapshot[`puzzle_2_3 1`] = `
         "v1",
         "h4",
       ],
-      pos: {
-        x: 1,
-        y: 4,
-      },
+      pos: [
+        1,
+        4,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -5557,10 +5557,10 @@ snapshot[`puzzle_2_3 1`] = `
         "v2",
         "h4",
       ],
-      pos: {
-        x: 2,
-        y: 4,
-      },
+      pos: [
+        2,
+        4,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -5574,10 +5574,10 @@ snapshot[`puzzle_2_3 1`] = `
         "v3",
         "h4",
       ],
-      pos: {
-        x: 3,
-        y: 4,
-      },
+      pos: [
+        3,
+        4,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -5589,10 +5589,10 @@ snapshot[`puzzle_2_3 1`] = `
         "v4",
         "h4",
       ],
-      pos: {
-        x: 4,
-        y: 4,
-      },
+      pos: [
+        4,
+        4,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -5604,10 +5604,10 @@ snapshot[`puzzle_2_3 1`] = `
         "v5",
         "h4",
       ],
-      pos: {
-        x: 5,
-        y: 4,
-      },
+      pos: [
+        5,
+        4,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -5619,10 +5619,10 @@ snapshot[`puzzle_2_3 1`] = `
         "v0",
         "h5",
       ],
-      pos: {
-        x: 0,
-        y: 5,
-      },
+      pos: [
+        0,
+        5,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -5633,10 +5633,10 @@ snapshot[`puzzle_2_3 1`] = `
         "v1",
         "h5",
       ],
-      pos: {
-        x: 1,
-        y: 5,
-      },
+      pos: [
+        1,
+        5,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -5648,10 +5648,10 @@ snapshot[`puzzle_2_3 1`] = `
         "v2",
         "h5",
       ],
-      pos: {
-        x: 2,
-        y: 5,
-      },
+      pos: [
+        2,
+        5,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -5663,10 +5663,10 @@ snapshot[`puzzle_2_3 1`] = `
         "v3",
         "h5",
       ],
-      pos: {
-        x: 3,
-        y: 5,
-      },
+      pos: [
+        3,
+        5,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -5678,10 +5678,10 @@ snapshot[`puzzle_2_3 1`] = `
         "v4",
         "h5",
       ],
-      pos: {
-        x: 4,
-        y: 5,
-      },
+      pos: [
+        4,
+        5,
+      ],
     },
     {
       answerCnadidatesMut: [
@@ -5693,10 +5693,10 @@ snapshot[`puzzle_2_3 1`] = `
         "v5",
         "h5",
       ],
-      pos: {
-        x: 5,
-        y: 5,
-      },
+      pos: [
+        5,
+        5,
+      ],
     },
   ],
   status: "success",

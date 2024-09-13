@@ -1,8 +1,8 @@
 /** Internal type */
-export type Position = { x: number; y: number };
+export type Position = Readonly<[number, number]>;
 
 export const createPositions: (range: number[]) => Position[] = (range) =>
-  range.flatMap((y) => range.map((x) => ({ x, y })));
+  range.flatMap((y) => range.map((x) => [x, y]));
 
 export const isSamePos: (a: Position, b: Position) => boolean = (a, b) =>
-  a.x === b.x && a.y === b.y;
+  a[0] === b[0] && a[1] === b[1];

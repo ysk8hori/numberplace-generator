@@ -7,7 +7,7 @@ Deno.test("9x9サイズ position", async (t) => {
   const cells = createCells({ height: 3, width: 3 });
   assertEquals(cells.length, 81);
   assertEquals<Cell>(cells[80], {
-    pos: { x: 8, y: 8 },
+    pos: [8, 8],
     groups: ["v8", "h8"],
     answerMut: undefined,
     answerCnadidatesMut: [0, 1, 2, 3, 4, 5, 6, 7, 8],
@@ -29,10 +29,10 @@ Deno.test("未回答セルの答え候補がなくなった場合は回答でき
   assertFalse(回答できないセルがあるか(cells));
   const fillAnswerByPos = fillAnswer(cells);
 
-  fillAnswerByPos({ x: 1, y: 1 })(0);
+  fillAnswerByPos([1, 1])(0);
   assertFalse(回答できないセルがあるか(cells));
-  fillAnswerByPos({ x: 1, y: 1 })(1);
+  fillAnswerByPos([1, 1])(1);
   assertFalse(回答できないセルがあるか(cells));
-  fillAnswerByPos({ x: 1, y: 1 })(2);
+  fillAnswerByPos([1, 1])(2);
   assert(回答できないセルがあるか(cells));
 });

@@ -81,7 +81,7 @@ function convert(game: Game): Game {
     toString() {
       const horizontalLines: Map<number, Cell[]> = this.cells.reduce(
         (p, cell) => {
-          const lineNo = cell.pos.y;
+          const lineNo = cell.pos[1];
           if (!p.has(lineNo)) p.set(lineNo, new Array<Cell>());
           p.get(lineNo)?.push(cell);
           return p;

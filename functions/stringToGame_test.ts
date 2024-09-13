@@ -42,13 +42,13 @@ Deno.test("puzzle_4_4", async (t) => {
   });
   if (result.status === "success") {
     assertEquals(result.cells[0], {
-      pos: { x: 0, y: 0 },
+      pos: [0, 0],
       answerCnadidatesMut: [6, 8, 10, 12],
       answerMut: 7,
       groups: ["v0", "h0"],
     } satisfies Cell);
     assertEquals(result.cells.at(-1), {
-      pos: { x: 15, y: 15 },
+      pos: [15, 15],
       answerCnadidatesMut: [0, 3, 5, 7, 11],
       answerMut: undefined,
       groups: ["v15", "h15"],
@@ -66,16 +66,16 @@ Deno.test("puzzle_2_3", async (t) => {
   if (result.status === "success") {
     // 最初のセル
     assertEquals(result.cells[0], {
-      pos: { x: 0, y: 0 },
+      pos: [0, 0],
       answerCnadidatesMut: [0, 1],
       answerMut: undefined,
       groups: ["v0", "h0"],
     } satisfies Cell);
     // 答えに0が入るセル
     assertEquals(
-      result.cells.find(({ pos }) => pos.x === 1 && pos.y === 5),
+      result.cells.find(({ pos }) => pos[0] === 1 && pos[1] === 5),
       {
-        pos: { x: 1, y: 5 },
+        pos: [1, 5],
         answerCnadidatesMut: [3],
         answerMut: 0,
         groups: ["v1", "h5"],

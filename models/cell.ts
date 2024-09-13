@@ -1,4 +1,13 @@
-import { pipe, map, isArray } from "remeda";
+import {
+  pipe,
+  map,
+  isArray,
+  isEmpty,
+  isDeepEqual,
+  isNonNullish,
+  uniqueWith,
+  unique,
+} from "remeda";
 import type { Group } from "./group.ts";
 import { createPositions, isSamePos, type Position } from "./position.ts";
 import { createGameRange, type BlockSize } from "./game.ts";
@@ -41,6 +50,9 @@ export const filterByGroup: (cells: Cell[]) => (group: Group) => Cell[] =
   (cl) => (g) =>
     cl.filter((c) => isInGroup(c)(g));
 
+export const getEmptyCells: (cells: Cell[]) => Cell[] = (cl) =>
+  cl.filter((c) => isNonNullish(c.answerMut));
+
 const removeAnswerCandidateForCell: (
   cellMut: Cell,
 ) => (a: AnswerCandidate) => void = (cellMut) => (a) =>
@@ -66,3 +78,27 @@ export const fillCellAnswer: (a: Answer) => (cellMut: Cell) => void =
 
 export const findCell: (cells: Cell[]) => (p: Position) => Cell = (cl) => (p) =>
   cl.find((c) => isSamePos(c.pos, p)) ?? throwError(`該当するセルがない. ${p}`);
+
+const 同じ答え候補をもつセルが答え候補数より多いか: (
+  /** 同一グループのセル */
+  cellsByGroup: Cell[],
+) => (al: AnswerCandidate[]) => "多い" | "同じか少ない" = (cl) => (al) =>
+  al.length < cl.filter((c) => isDeepEqual(c.answerCnadidatesMut, al)).length
+    ? "多い"
+    : "同じか少ない";
+
+/** 同一グループのセルが持つ候補のリストのユニークなリストを取得する */
+const getUniqueAnswercandidatesList: (
+  /** 同一グループのセル */
+  cellsByGroup: Cell[],
+) => AnswerCandidate[][] = (cl) =>
+  uniqueWith(
+    cl.map((c) => c.answerCnadidatesMut),
+    isDeepEqual,
+  );
+
+const getUniqueGroups: (cells: Cell[]) => Group[] = (cl) =>
+  unique(cl.flatMap((c) => c.groups));
+
+export const 回答できないセルがあるか: (cells: Cell[]) => boolean = (cl) =>
+  cl.some((c) => isNonNullish(c.answerMut) && isEmpty(c.answerCnadidatesMut));

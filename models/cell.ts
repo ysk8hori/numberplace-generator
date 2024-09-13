@@ -7,6 +7,7 @@ import {
   isNonNullish,
   uniqueWith,
   unique,
+  difference,
 } from "remeda";
 import type { Group } from "./group.ts";
 import { createPositions, isSamePos, type Position } from "./position.ts";
@@ -87,8 +88,14 @@ const 同じ答え候補をもつセルが答え候補数より多いか: (
     ? "多い"
     : "同じか少ない";
 
+export const 同じ答え候補をもつセルの数が答え候補の数と同じか: (
+  /** 同一グループのセル */
+  cellsByGroup: Cell[],
+) => (al: AnswerCandidate[]) => boolean = (cl) => (al) =>
+  al.length === cl.filter((c) => isDeepEqual(c.answerCnadidatesMut, al)).length;
+
 /** 同一グループのセルが持つ候補のリストのユニークなリストを取得する */
-const getUniqueAnswercandidatesList: (
+export const getUniqueAnswercandidatesList: (
   /** 同一グループのセル */
   cellsByGroup: Cell[],
 ) => AnswerCandidate[][] = (cl) =>
@@ -102,3 +109,15 @@ const getUniqueGroups: (cells: Cell[]) => Group[] = (cl) =>
 
 export const 回答できないセルがあるか: (cells: Cell[]) => boolean = (cl) =>
   cl.some((c) => isNonNullish(c.answerMut) && isEmpty(c.answerCnadidatesMut));
+
+export const refineAnswerCandidate: (cellsGroupMut: Cell[]) => void = (cl) =>
+  getUniqueAnswercandidatesList(cl)
+    .filter(同じ答え候補をもつセルの数が答え候補の数と同じか(cl))
+    .forEach((al) =>
+      cl
+        .filter((c) => !isDeepEqual(al, c.answerCnadidatesMut))
+        .forEach(
+          (c) =>
+            (c.answerCnadidatesMut = difference(c.answerCnadidatesMut, al)),
+        ),
+    );

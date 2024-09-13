@@ -1,8 +1,9 @@
 import { pipe, map, isArray } from "remeda";
 import type { Group } from "./group.ts";
-import { createPositions, type Position } from "./position.ts";
+import { createPositions, isSamePos, type Position } from "./position.ts";
 import { createGameRange, type BlockSize } from "./game.ts";
 import { getHorizontalGroup, getVerticalGroup } from "./group.ts";
+import { throwError } from "../utils/utils.ts";
 
 export type Answer = number;
 export type AnswerCandidate = number;
@@ -58,3 +59,10 @@ export const removeAnswerCandidate: (
   isArray(c)
     ? removeAnswerCandidateForList(c)
     : removeAnswerCandidateForCell(c);
+
+export const fillCellAnswer: (a: Answer) => (cellMut: Cell) => void =
+  (a) => (c) =>
+    (c.answerMut = a);
+
+export const findCell: (cells: Cell[]) => (p: Position) => Cell = (cl) => (p) =>
+  cl.find((c) => isSamePos(c.pos, p)) ?? throwError(`該当するセルがない. ${p}`);

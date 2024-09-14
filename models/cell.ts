@@ -16,8 +16,9 @@ import type { Group } from "./group.ts";
 import { createPositions, isSamePos, type Position } from "./position.ts";
 import { createGameRange, type BlockSize } from "./game.ts";
 import { getHorizontalGroup, getVerticalGroup } from "./group.ts";
-import { branch, merge, throwError } from "../utils/utils.ts";
+import { branch, throwError } from "../utils/utils.ts";
 import { filter } from "remeda";
+import { isStrictEqual } from "remeda";
 
 export type Answer = number;
 export type AnswerCandidate = number;
@@ -181,15 +182,12 @@ const refineAnswerCandidate: (cellsGroupMut: Cell[]) => void = (cl) =>
 export const refineAnswerCandidateRecursive: (cellsGroupMut: Cell[]) => void = (
   cl,
 ) =>
-  pipe(
-    cl,
-    branch(
-      (cl) => JSON.stringify(cl.map((cl) => cl.answerCnadidatesMut)),
-      piped(tap(refineAnswerCandidate), (cl) =>
-        JSON.stringify(cl.map((cl) => cl.answerCnadidatesMut)),
-      ),
+  branch(
+    (cl: Cell[]) => JSON.stringify(cl.map((cl) => cl.answerCnadidatesMut)),
+    piped(tap(refineAnswerCandidate), (cl) =>
+      JSON.stringify(cl.map((cl) => cl.answerCnadidatesMut)),
     ),
-    merge(([oldSnapshot, newSnapshot]) => oldSnapshot === newSnapshot),
-  )
+    isStrictEqual,
+  )(cl)
     ? undefined
     : refineAnswerCandidateRecursive(cl);

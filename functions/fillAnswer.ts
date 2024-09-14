@@ -5,9 +5,12 @@ import {
   fillCellAnswer,
   filterByGroup,
   findCell,
+  isCellsPosition,
+  refineAnswerCandidate,
   removeAnswerCandidate,
 } from "../models/cell.ts";
 import type { Position } from "../models/position.ts";
+import { isNot } from "remeda";
 
 export const fillAnswer: (
   cells: Cell[],
@@ -19,7 +22,7 @@ export const fillAnswer: (
     // ターゲットと同じグループのセルから候補を除去
     tap((c) =>
       c.groups
-        .map(filterByGroup(cl))
+        .map(filterByGroup(cl.filter(isNot(isCellsPosition(p)))))
         .map(removeAnswerCandidate)
         .forEach((f) => f(a)),
     ),

@@ -1,0 +1,42 @@
+import { assertEquals } from "@std/assert";
+import { createCells, filterByGroup } from "./cell.ts";
+import { assertArrayIncludes } from "jsr:@std/assert@1/array-includes";
+
+Deno.test("filterByGroup", () => {
+  const cells = createCells({ width: 3, height: 1 });
+  const filterByPos = filterByGroup(cells);
+
+  // 念の為グループの状態の確認
+  assertEquals(
+    cells.map((c) => c.groups),
+    [
+      ["v0", "h0"],
+      ["v1", "h0"],
+      ["v2", "h0"],
+      ["v0", "h1"],
+      ["v1", "h1"],
+      ["v2", "h1"],
+      ["v0", "h2"],
+      ["v1", "h2"],
+      ["v2", "h2"],
+    ],
+  );
+
+  assertEquals(
+    filterByPos("v1").map((c) => c.groups),
+    [
+      ["v1", "h0"],
+      ["v1", "h1"],
+      ["v1", "h2"],
+    ],
+  );
+
+  assertEquals(
+    filterByPos("h2").map((c) => c.groups),
+    [
+      ["v0", "h2"],
+      ["v1", "h2"],
+      ["v2", "h2"],
+    ],
+  );
+});

@@ -1,7 +1,12 @@
 import { stringToPuzzle } from "./stringToGame.ts";
-import { assertEquals } from "@std/assert";
+import { assertEquals, assertObjectMatch } from "@std/assert";
 import { assertSnapshot } from "@std/testing/snapshot";
-import type { Cell } from "../models/cell.ts";
+import {
+  filterByGroup,
+  refineAnswerCandidate,
+  type Cell,
+} from "../models/cell.ts";
+import { throwError } from "../utils/utils.ts";
 
 Deno.test("不正なサイズのパズル（小さい）", () => {
   const result = stringToPuzzle({
@@ -41,18 +46,18 @@ Deno.test("puzzle_4_4", async (t) => {
     rowSplitter: "n",
   });
   if (result.status === "success") {
-    assertEquals(result.cells[0], {
+    assertObjectMatch(result.cells.at(0)!, {
       pos: [0, 0],
-      answerCnadidatesMut: [6, 8, 10, 12],
+      // answerCnadidatesMut: [6, 8, 10, 12], // TODO 候補値は refineAnswerCandidate が完成してから検証する
       answerMut: 7,
       groups: ["v0", "h0"],
-    } satisfies Cell);
-    assertEquals(result.cells.at(-1), {
+    } satisfies Partial<Cell>);
+    assertObjectMatch(result.cells.at(-1)!, {
       pos: [15, 15],
-      answerCnadidatesMut: [0, 3, 5, 7, 11],
+      // answerCnadidatesMut: [0, 3, 5, 7, 11], // TODO 候補値は refineAnswerCandidate が完成してから検証する
       answerMut: undefined,
       groups: ["v15", "h15"],
-    } satisfies Cell);
+    } satisfies Partial<Cell>);
   } else {
     throw new Error(`Test failed. ${result.status}`);
   }
@@ -65,24 +70,58 @@ Deno.test("puzzle_2_3", async (t) => {
   });
   if (result.status === "success") {
     // 最初のセル
-    assertEquals(result.cells[0], {
+    assertObjectMatch(result.cells[0], {
       pos: [0, 0],
-      answerCnadidatesMut: [0, 1],
+      // answerCnadidatesMut: [0, 1], // TODO 候補値は refineAnswerCandidate が完成してから検証する
       answerMut: undefined,
       groups: ["v0", "h0"],
-    } satisfies Cell);
+    } satisfies Partial<Cell>);
     // 答えに0が入るセル
-    assertEquals(
-      result.cells.find(({ pos }) => pos[0] === 1 && pos[1] === 5),
+    assertObjectMatch(
+      result.cells.find(({ pos }) => pos[0] === 1 && pos[1] === 5)!,
       {
         pos: [1, 5],
-        answerCnadidatesMut: [3],
+        // answerCnadidatesMut: [3], // TODO 候補値は refineAnswerCandidate が完成してから検証する
         answerMut: 0,
         groups: ["v1", "h5"],
-      } satisfies Cell,
+      } satisfies Partial<Cell>,
     );
   } else {
     throw new Error(`Test failed. ${result.status}`);
   }
   await assertSnapshot(t, result);
+});
+Deno.test("puzzle_3_1", () => {
+  const result = stringToPuzzle({
+    blockSize: { width: 3, height: 1 },
+    puzzleStr: "|  1|12",
+  });
+  if (result.status !== "success")
+    throwError(`ステータスが不正：${result.status}`);
+
+  // TODO stringToPuzzle でも refineAnswerCandidate を実行しているが refineAnswerCandidate は複数回呼ぶと結果がより最適化される。refineAnswerCandidate を再帰実行するよう改善する。
+  // console.table(result.cells);
+  refineAnswerCandidate(result.cells);
+  // console.table(result.cells);
+
+  assertEquals(result.cells[0], {
+    pos: [0, 0],
+    answerCnadidatesMut: [0],
+    answerMut: undefined,
+    groups: ["v0", "h0"],
+  } satisfies Cell);
+
+  assertEquals(result.cells[1], {
+    pos: [1, 0],
+    answerCnadidatesMut: [1],
+    answerMut: undefined,
+    groups: ["v1", "h0"],
+  } satisfies Cell);
+
+  assertEquals(result.cells[2], {
+    pos: [2, 0],
+    answerCnadidatesMut: [2],
+    answerMut: undefined,
+    groups: ["v2", "h0"],
+  } satisfies Cell);
 });

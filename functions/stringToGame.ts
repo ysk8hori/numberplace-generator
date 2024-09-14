@@ -1,4 +1,9 @@
-import { type Cell, createCells, findCell } from "../models/cell.ts";
+import {
+  type Cell,
+  createCells,
+  findCell,
+  refineAnswerCandidate,
+} from "../models/cell.ts";
 import { type BlockSize, calcSideLength } from "../models/game.ts";
 import { isSamePos, Position } from "../models/position.ts";
 import { fillAnswer } from "./fillAnswer.ts";
@@ -66,6 +71,9 @@ export function stringToPuzzle({
   // セルに答えを転写する
   const fillByPos = fillAnswer(cells);
   answerAndPos.forEach(([a, p]) => fillByPos(p)(a));
+
+  // 全体の候補のリファインメントを実施する
+  refineAnswerCandidate(cells);
 
   return { status: "success", cells };
 }

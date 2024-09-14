@@ -1,5 +1,5 @@
 import { assertSnapshot } from "@std/testing/snapshot";
-import { type Cell, createCells, 回答できないセルがあるか } from "./cell.ts";
+import { type Cell, createCells, 全てのセルが回答可能か } from "./cell.ts";
 import { assert, assertEquals, assertFalse } from "@std/assert";
 import { fillAnswer } from "../functions/fillAnswer.ts";
 
@@ -24,15 +24,37 @@ Deno.test(
   async (t) => await assertSnapshot(t, createCells({ height: 1, width: 3 })),
 );
 
-Deno.test("未回答セルの答え候補がなくなった場合は回答できない", () => {
-  const cells = createCells({ height: 1, width: 3 });
-  assertFalse(回答できないセルがあるか(cells));
-  const fillAnswerByPos = fillAnswer(cells);
+Deno.test(
+  "全てのセルが回答可能か（未回答セルの答え候補がなくなっていないか）を確認できる",
+  () => {
+    const cells = createCells({ height: 1, width: 3 });
+    assert(全てのセルが回答可能か(cells));
+    const fillAnswerByPos = fillAnswer(cells);
 
-  fillAnswerByPos([1, 1])(0);
-  assertFalse(回答できないセルがあるか(cells));
-  fillAnswerByPos([1, 1])(1);
-  assertFalse(回答できないセルがあるか(cells));
-  fillAnswerByPos([1, 1])(2);
-  assert(回答できないセルがあるか(cells));
+    fillAnswerByPos([1, 1])(0);
+    assert(全てのセルが回答可能か(cells));
+    fillAnswerByPos([1, 1])(1);
+    assert(全てのセルが回答可能か(cells));
+    fillAnswerByPos([1, 1])(2);
+    assertFalse(全てのセルが回答可能か(cells));
+  },
+);
+
+Deno.test("グループの確認", () => {
+  const cells = createCells({ width: 3, height: 1 });
+
+  assertEquals(
+    cells.map((c) => c.groups),
+    [
+      ["v0", "h0"],
+      ["v1", "h0"],
+      ["v2", "h0"],
+      ["v0", "h1"],
+      ["v1", "h1"],
+      ["v2", "h1"],
+      ["v0", "h2"],
+      ["v1", "h2"],
+      ["v2", "h2"],
+    ],
+  );
 });

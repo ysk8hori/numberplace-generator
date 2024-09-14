@@ -20,8 +20,8 @@ Deno.test(
     const targetCell = findCellByPos(targetPos);
     // 答えを記入したセルは答えが入っていること
     assertEquals(targetCell.answerMut, answer);
-    // 答えを記入したセルも答えの候補を引き続き管理すること
-    assertEquals(targetCell.answerCnadidatesMut, [0, 1, 2, 3, 5]);
+    // 答えを記入したセルの候補はその答えのみになること
+    assertEquals(targetCell.answerCnadidatesMut, [answer]);
 
     // 同一 horizontalGroup のセルの候補から入力値が削除されていること
     assertEquals(findCellByPos([0, 3]).answerCnadidatesMut, [0, 1, 2, 3, 5]);

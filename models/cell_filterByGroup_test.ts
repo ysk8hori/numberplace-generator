@@ -1,6 +1,5 @@
 import { assertEquals } from "@std/assert";
 import { createCells, filterByGroup } from "./cell.ts";
-import { assertArrayIncludes } from "jsr:@std/assert@1/array-includes";
 
 Deno.test("filterByGroup", () => {
   const cells = createCells({ width: 3, height: 1 });

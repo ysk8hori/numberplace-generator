@@ -1,13 +1,13 @@
 import { flat } from "remeda";
 import {
-  AnswerCandidate,
-  Cell,
+  type AnswerCandidate,
+  type Cell,
   createCells,
   filterByGroup,
   removeAnswerCandidate,
 } from "./cell.ts";
 import { assertEquals } from "@std/assert";
-import { Position } from "./position.ts";
+import type { Position } from "./position.ts";
 
 const createCell: (
   answerCnadidatesMut: AnswerCandidate[],

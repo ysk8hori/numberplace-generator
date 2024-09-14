@@ -115,14 +115,6 @@ export const fillCellAnswer: (a: Answer) => (cellMut: Cell) => void = (a) =>
 export const findCell: (cells: Cell[]) => (p: Position) => Cell = (cl) => (p) =>
   cl.find((c) => isSamePos(c.pos, p)) ?? throwError(`該当するセルがない. ${p}`);
 
-const 同じ答え候補をもつセルが答え候補数より多いか: (
-  /** 同一グループのセル */
-  cellsByGroup: Cell[],
-) => (al: AnswerCandidate[]) => "多い" | "同じか少ない" = (cl) => (al) =>
-  al.length < cl.filter((c) => isDeepEqual(c.answerCnadidatesMut, al)).length
-    ? "多い"
-    : "同じか少ない";
-
 export const 同じ答え候補をもつセルの数が答え候補の数と同じか: (
   /** 同一グループのセル */
   cellsByGroup: Cell[],

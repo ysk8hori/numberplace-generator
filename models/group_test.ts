@@ -1,6 +1,6 @@
 import { assertEquals } from "@std/assert";
 import { getBlockGroup } from "./group.ts";
-import { BlockSize } from "./game.ts";
+import type { BlockSize } from "./game.ts";
 
 Deno.test("getBlockGroup 6x6", () => {
   const bs = { width: 3, height: 2 } satisfies BlockSize;

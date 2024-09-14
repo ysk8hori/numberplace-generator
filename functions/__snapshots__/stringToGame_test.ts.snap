@@ -11,6 +11,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v0",
         "h0",
+        "b00",
       ],
       pos: [
         0,
@@ -25,6 +26,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v1",
         "h0",
+        "b00",
       ],
       pos: [
         1,
@@ -39,6 +41,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v2",
         "h0",
+        "b00",
       ],
       pos: [
         2,
@@ -56,6 +59,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v3",
         "h0",
+        "b00",
       ],
       pos: [
         3,
@@ -70,6 +74,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v4",
         "h0",
+        "b10",
       ],
       pos: [
         4,
@@ -79,7 +84,6 @@ snapshot[`puzzle_4_4 1`] = `
     {
       answerCnadidatesMut: [
         1,
-        3,
         6,
         8,
         10,
@@ -91,6 +95,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v5",
         "h0",
+        "b10",
       ],
       pos: [
         5,
@@ -102,7 +107,6 @@ snapshot[`puzzle_4_4 1`] = `
         1,
         6,
         8,
-        9,
         10,
         11,
         12,
@@ -111,6 +115,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v6",
         "h0",
+        "b10",
       ],
       pos: [
         6,
@@ -120,7 +125,6 @@ snapshot[`puzzle_4_4 1`] = `
     {
       answerCnadidatesMut: [
         1,
-        3,
         11,
         15,
       ],
@@ -128,6 +132,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v7",
         "h0",
+        "b10",
       ],
       pos: [
         7,
@@ -148,6 +153,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v8",
         "h0",
+        "b20",
       ],
       pos: [
         8,
@@ -166,6 +172,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v9",
         "h0",
+        "b20",
       ],
       pos: [
         9,
@@ -185,6 +192,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v10",
         "h0",
+        "b20",
       ],
       pos: [
         10,
@@ -199,6 +207,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v11",
         "h0",
+        "b20",
       ],
       pos: [
         11,
@@ -213,6 +222,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v12",
         "h0",
+        "b30",
       ],
       pos: [
         12,
@@ -227,6 +237,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v13",
         "h0",
+        "b30",
       ],
       pos: [
         13,
@@ -235,7 +246,6 @@ snapshot[`puzzle_4_4 1`] = `
     },
     {
       answerCnadidatesMut: [
-        1,
         6,
         8,
         9,
@@ -246,6 +256,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v14",
         "h0",
+        "b30",
       ],
       pos: [
         14,
@@ -254,10 +265,8 @@ snapshot[`puzzle_4_4 1`] = `
     },
     {
       answerCnadidatesMut: [
-        3,
         8,
         9,
-        11,
         12,
         15,
       ],
@@ -265,6 +274,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v15",
         "h0",
+        "b30",
       ],
       pos: [
         15,
@@ -273,10 +283,8 @@ snapshot[`puzzle_4_4 1`] = `
     },
     {
       answerCnadidatesMut: [
-        0,
         4,
         5,
-        6,
         10,
         14,
       ],
@@ -284,6 +292,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v0",
         "h1",
+        "b00",
       ],
       pos: [
         0,
@@ -298,6 +307,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v1",
         "h1",
+        "b00",
       ],
       pos: [
         1,
@@ -306,10 +316,8 @@ snapshot[`puzzle_4_4 1`] = `
     },
     {
       answerCnadidatesMut: [
-        0,
         4,
         5,
-        6,
         14,
         15,
       ],
@@ -317,6 +325,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v2",
         "h1",
+        "b00",
       ],
       pos: [
         2,
@@ -331,6 +340,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v3",
         "h1",
+        "b00",
       ],
       pos: [
         3,
@@ -351,6 +361,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v4",
         "h1",
+        "b10",
       ],
       pos: [
         4,
@@ -365,6 +376,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v5",
         "h1",
+        "b10",
       ],
       pos: [
         5,
@@ -379,6 +391,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v6",
         "h1",
+        "b10",
       ],
       pos: [
         6,
@@ -393,6 +406,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v7",
         "h1",
+        "b10",
       ],
       pos: [
         7,
@@ -403,8 +417,6 @@ snapshot[`puzzle_4_4 1`] = `
       answerCnadidatesMut: [
         0,
         1,
-        4,
-        5,
         6,
         14,
         15,
@@ -413,6 +425,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v8",
         "h1",
+        "b20",
       ],
       pos: [
         8,
@@ -422,7 +435,6 @@ snapshot[`puzzle_4_4 1`] = `
     {
       answerCnadidatesMut: [
         0,
-        4,
         6,
         11,
         14,
@@ -432,6 +444,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v9",
         "h1",
+        "b20",
       ],
       pos: [
         9,
@@ -446,6 +459,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v10",
         "h1",
+        "b20",
       ],
       pos: [
         10,
@@ -466,6 +480,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v11",
         "h1",
+        "b20",
       ],
       pos: [
         11,
@@ -478,7 +493,6 @@ snapshot[`puzzle_4_4 1`] = `
         4,
         6,
         10,
-        11,
         14,
         15,
       ],
@@ -486,6 +500,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v12",
         "h1",
+        "b30",
       ],
       pos: [
         12,
@@ -495,16 +510,15 @@ snapshot[`puzzle_4_4 1`] = `
     {
       answerCnadidatesMut: [
         4,
-        5,
         6,
         10,
-        11,
         15,
       ],
       answerMut: undefined,
       groups: [
         "v13",
         "h1",
+        "b30",
       ],
       pos: [
         13,
@@ -519,6 +533,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v14",
         "h1",
+        "b30",
       ],
       pos: [
         14,
@@ -528,14 +543,13 @@ snapshot[`puzzle_4_4 1`] = `
     {
       answerCnadidatesMut: [
         0,
-        5,
-        11,
         15,
       ],
       answerMut: undefined,
       groups: [
         "v15",
         "h1",
+        "b30",
       ],
       pos: [
         15,
@@ -544,19 +558,15 @@ snapshot[`puzzle_4_4 1`] = `
     },
     {
       answerCnadidatesMut: [
-        0,
         4,
-        6,
-        8,
         10,
-        12,
-        13,
         14,
       ],
       answerMut: undefined,
       groups: [
         "v0",
         "h2",
+        "b00",
       ],
       pos: [
         0,
@@ -569,9 +579,6 @@ snapshot[`puzzle_4_4 1`] = `
         2,
         3,
         4,
-        6,
-        7,
-        9,
         11,
         14,
         15,
@@ -580,6 +587,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v1",
         "h2",
+        "b00",
       ],
       pos: [
         1,
@@ -588,13 +596,8 @@ snapshot[`puzzle_4_4 1`] = `
     },
     {
       answerCnadidatesMut: [
-        0,
         3,
         4,
-        6,
-        7,
-        9,
-        12,
         14,
         15,
       ],
@@ -602,6 +605,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v2",
         "h2",
+        "b00",
       ],
       pos: [
         2,
@@ -610,12 +614,10 @@ snapshot[`puzzle_4_4 1`] = `
     },
     {
       answerCnadidatesMut: [
-        0,
         1,
         4,
         10,
         11,
-        13,
         14,
         15,
       ],
@@ -623,6 +625,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v3",
         "h2",
+        "b00",
       ],
       pos: [
         3,
@@ -633,10 +636,8 @@ snapshot[`puzzle_4_4 1`] = `
       answerCnadidatesMut: [
         0,
         1,
-        2,
         4,
         6,
-        9,
         10,
         11,
         12,
@@ -646,6 +647,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v4",
         "h2",
+        "b10",
       ],
       pos: [
         4,
@@ -656,10 +658,8 @@ snapshot[`puzzle_4_4 1`] = `
       answerCnadidatesMut: [
         0,
         1,
-        3,
         4,
         6,
-        7,
         8,
         10,
         11,
@@ -671,6 +671,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v5",
         "h2",
+        "b10",
       ],
       pos: [
         5,
@@ -683,17 +684,16 @@ snapshot[`puzzle_4_4 1`] = `
         1,
         6,
         8,
-        9,
         10,
         11,
         12,
         13,
-        14,
       ],
       answerMut: undefined,
       groups: [
         "v6",
         "h2",
+        "b10",
       ],
       pos: [
         6,
@@ -704,17 +704,15 @@ snapshot[`puzzle_4_4 1`] = `
       answerCnadidatesMut: [
         0,
         1,
-        3,
-        7,
         11,
         13,
-        14,
         15,
       ],
       answerMut: undefined,
       groups: [
         "v7",
         "h2",
+        "b10",
       ],
       pos: [
         7,
@@ -727,13 +725,11 @@ snapshot[`puzzle_4_4 1`] = `
         1,
         2,
         3,
-        4,
         6,
         7,
         8,
         9,
         12,
-        13,
         14,
         15,
       ],
@@ -741,6 +737,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v8",
         "h2",
+        "b20",
       ],
       pos: [
         8,
@@ -755,6 +752,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v9",
         "h2",
+        "b20",
       ],
       pos: [
         9,
@@ -766,7 +764,6 @@ snapshot[`puzzle_4_4 1`] = `
         1,
         2,
         3,
-        4,
         9,
         10,
         11,
@@ -776,6 +773,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v10",
         "h2",
+        "b20",
       ],
       pos: [
         10,
@@ -795,7 +793,6 @@ snapshot[`puzzle_4_4 1`] = `
         10,
         11,
         12,
-        13,
         14,
         15,
       ],
@@ -803,6 +800,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v11",
         "h2",
+        "b20",
       ],
       pos: [
         11,
@@ -812,12 +810,10 @@ snapshot[`puzzle_4_4 1`] = `
     {
       answerCnadidatesMut: [
         0,
-        2,
         4,
         6,
         7,
         10,
-        11,
         12,
         13,
         14,
@@ -827,6 +823,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v12",
         "h2",
+        "b30",
       ],
       pos: [
         12,
@@ -835,12 +832,9 @@ snapshot[`puzzle_4_4 1`] = `
     },
     {
       answerCnadidatesMut: [
-        3,
         4,
         6,
-        7,
         10,
-        11,
         13,
         15,
       ],
@@ -848,6 +842,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v13",
         "h2",
+        "b30",
       ],
       pos: [
         13,
@@ -857,8 +852,6 @@ snapshot[`puzzle_4_4 1`] = `
     {
       answerCnadidatesMut: [
         0,
-        1,
-        2,
         6,
         7,
         8,
@@ -871,6 +864,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v14",
         "h2",
+        "b30",
       ],
       pos: [
         14,
@@ -880,11 +874,9 @@ snapshot[`puzzle_4_4 1`] = `
     {
       answerCnadidatesMut: [
         0,
-        3,
         7,
         8,
         9,
-        11,
         12,
         15,
       ],
@@ -892,6 +884,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v15",
         "h2",
+        "b30",
       ],
       pos: [
         15,
@@ -906,6 +899,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v0",
         "h3",
+        "b00",
       ],
       pos: [
         0,
@@ -917,7 +911,6 @@ snapshot[`puzzle_4_4 1`] = `
         2,
         4,
         5,
-        7,
         14,
         15,
       ],
@@ -925,6 +918,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v1",
         "h3",
+        "b00",
       ],
       pos: [
         1,
@@ -933,11 +927,8 @@ snapshot[`puzzle_4_4 1`] = `
     },
     {
       answerCnadidatesMut: [
-        0,
         4,
         5,
-        7,
-        12,
         14,
         15,
       ],
@@ -945,6 +936,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v2",
         "h3",
+        "b00",
       ],
       pos: [
         2,
@@ -959,6 +951,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v3",
         "h3",
+        "b00",
       ],
       pos: [
         3,
@@ -968,7 +961,6 @@ snapshot[`puzzle_4_4 1`] = `
     {
       answerCnadidatesMut: [
         0,
-        2,
         4,
         10,
         12,
@@ -978,6 +970,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v4",
         "h3",
+        "b10",
       ],
       pos: [
         4,
@@ -989,7 +982,6 @@ snapshot[`puzzle_4_4 1`] = `
         0,
         4,
         5,
-        7,
         8,
         10,
         12,
@@ -1000,6 +992,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v5",
         "h3",
+        "b10",
       ],
       pos: [
         5,
@@ -1014,6 +1007,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v6",
         "h3",
+        "b10",
       ],
       pos: [
         6,
@@ -1024,15 +1018,14 @@ snapshot[`puzzle_4_4 1`] = `
       answerCnadidatesMut: [
         0,
         5,
-        7,
         13,
-        14,
         15,
       ],
       answerMut: undefined,
       groups: [
         "v7",
         "h3",
+        "b10",
       ],
       pos: [
         7,
@@ -1043,12 +1036,9 @@ snapshot[`puzzle_4_4 1`] = `
       answerCnadidatesMut: [
         0,
         2,
-        4,
-        5,
         7,
         8,
         12,
-        13,
         14,
         15,
       ],
@@ -1056,6 +1046,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v8",
         "h3",
+        "b20",
       ],
       pos: [
         8,
@@ -1066,10 +1057,8 @@ snapshot[`puzzle_4_4 1`] = `
       answerCnadidatesMut: [
         0,
         2,
-        4,
         7,
         8,
-        13,
         14,
         15,
       ],
@@ -1077,6 +1066,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v9",
         "h3",
+        "b20",
       ],
       pos: [
         9,
@@ -1086,7 +1076,6 @@ snapshot[`puzzle_4_4 1`] = `
     {
       answerCnadidatesMut: [
         2,
-        4,
         10,
         12,
       ],
@@ -1094,6 +1083,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v10",
         "h3",
+        "b20",
       ],
       pos: [
         10,
@@ -1108,7 +1098,6 @@ snapshot[`puzzle_4_4 1`] = `
         8,
         10,
         12,
-        13,
         14,
         15,
       ],
@@ -1116,6 +1105,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v11",
         "h3",
+        "b20",
       ],
       pos: [
         11,
@@ -1125,7 +1115,6 @@ snapshot[`puzzle_4_4 1`] = `
     {
       answerCnadidatesMut: [
         0,
-        2,
         4,
         7,
         10,
@@ -1138,6 +1127,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v12",
         "h3",
+        "b30",
       ],
       pos: [
         12,
@@ -1152,6 +1142,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v13",
         "h3",
+        "b30",
       ],
       pos: [
         13,
@@ -1166,6 +1157,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v14",
         "h3",
+        "b30",
       ],
       pos: [
         14,
@@ -1175,7 +1167,6 @@ snapshot[`puzzle_4_4 1`] = `
     {
       answerCnadidatesMut: [
         0,
-        5,
         7,
         8,
         12,
@@ -1185,6 +1176,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v15",
         "h3",
+        "b30",
       ],
       pos: [
         15,
@@ -1199,6 +1191,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v0",
         "h4",
+        "b01",
       ],
       pos: [
         0,
@@ -1207,11 +1200,8 @@ snapshot[`puzzle_4_4 1`] = `
     },
     {
       answerCnadidatesMut: [
-        1,
-        3,
         4,
         6,
-        7,
         9,
         11,
         14,
@@ -1221,6 +1211,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v1",
         "h4",
+        "b01",
       ],
       pos: [
         1,
@@ -1230,10 +1221,8 @@ snapshot[`puzzle_4_4 1`] = `
     {
       answerCnadidatesMut: [
         0,
-        3,
         4,
         6,
-        7,
         9,
         12,
         14,
@@ -1243,6 +1232,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v2",
         "h4",
+        "b01",
       ],
       pos: [
         2,
@@ -1252,7 +1242,6 @@ snapshot[`puzzle_4_4 1`] = `
     {
       answerCnadidatesMut: [
         0,
-        1,
         4,
         11,
         13,
@@ -1263,6 +1252,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v3",
         "h4",
+        "b01",
       ],
       pos: [
         3,
@@ -1275,15 +1265,14 @@ snapshot[`puzzle_4_4 1`] = `
         1,
         4,
         6,
-        9,
         11,
         12,
-        15,
       ],
       answerMut: undefined,
       groups: [
         "v4",
         "h4",
+        "b11",
       ],
       pos: [
         4,
@@ -1294,20 +1283,17 @@ snapshot[`puzzle_4_4 1`] = `
       answerCnadidatesMut: [
         0,
         1,
-        3,
         4,
         6,
-        7,
-        8,
         11,
         12,
         13,
-        15,
       ],
       answerMut: undefined,
       groups: [
         "v5",
         "h4",
+        "b11",
       ],
       pos: [
         5,
@@ -1319,17 +1305,15 @@ snapshot[`puzzle_4_4 1`] = `
         0,
         1,
         6,
-        8,
-        9,
         11,
         12,
         13,
-        14,
       ],
       answerMut: undefined,
       groups: [
         "v6",
         "h4",
+        "b11",
       ],
       pos: [
         6,
@@ -1340,17 +1324,14 @@ snapshot[`puzzle_4_4 1`] = `
       answerCnadidatesMut: [
         0,
         1,
-        3,
-        7,
         11,
         13,
-        14,
-        15,
       ],
       answerMut: undefined,
       groups: [
         "v7",
         "h4",
+        "b11",
       ],
       pos: [
         7,
@@ -1359,11 +1340,8 @@ snapshot[`puzzle_4_4 1`] = `
     },
     {
       answerCnadidatesMut: [
-        0,
-        1,
         3,
         4,
-        6,
         7,
         8,
         9,
@@ -1376,6 +1354,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v8",
         "h4",
+        "b21",
       ],
       pos: [
         8,
@@ -1384,9 +1363,7 @@ snapshot[`puzzle_4_4 1`] = `
     },
     {
       answerCnadidatesMut: [
-        0,
         4,
-        6,
         7,
         8,
         9,
@@ -1399,6 +1376,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v9",
         "h4",
+        "b21",
       ],
       pos: [
         9,
@@ -1407,7 +1385,6 @@ snapshot[`puzzle_4_4 1`] = `
     },
     {
       answerCnadidatesMut: [
-        1,
         3,
         4,
         9,
@@ -1418,6 +1395,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v10",
         "h4",
+        "b21",
       ],
       pos: [
         10,
@@ -1432,6 +1410,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v11",
         "h4",
+        "b21",
       ],
       pos: [
         11,
@@ -1441,19 +1420,18 @@ snapshot[`puzzle_4_4 1`] = `
     {
       answerCnadidatesMut: [
         0,
-        4,
         6,
         7,
         11,
         12,
         13,
-        14,
         15,
       ],
       answerMut: undefined,
       groups: [
         "v12",
         "h4",
+        "b31",
       ],
       pos: [
         12,
@@ -1463,9 +1441,7 @@ snapshot[`puzzle_4_4 1`] = `
     {
       answerCnadidatesMut: [
         3,
-        4,
         6,
-        7,
         11,
         13,
         15,
@@ -1474,6 +1450,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v13",
         "h4",
+        "b31",
       ],
       pos: [
         13,
@@ -1486,15 +1463,13 @@ snapshot[`puzzle_4_4 1`] = `
         1,
         6,
         7,
-        8,
-        9,
         12,
-        14,
       ],
       answerMut: undefined,
       groups: [
         "v14",
         "h4",
+        "b31",
       ],
       pos: [
         14,
@@ -1509,6 +1484,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v15",
         "h4",
+        "b31",
       ],
       pos: [
         15,
@@ -1520,7 +1496,6 @@ snapshot[`puzzle_4_4 1`] = `
         0,
         4,
         5,
-        10,
         12,
         13,
       ],
@@ -1528,6 +1503,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v0",
         "h5",
+        "b01",
       ],
       pos: [
         0,
@@ -1536,7 +1512,6 @@ snapshot[`puzzle_4_4 1`] = `
     },
     {
       answerCnadidatesMut: [
-        2,
         4,
         5,
         11,
@@ -1546,6 +1521,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v1",
         "h5",
+        "b01",
       ],
       pos: [
         1,
@@ -1560,6 +1536,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v2",
         "h5",
+        "b01",
       ],
       pos: [
         2,
@@ -1574,6 +1551,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v3",
         "h5",
+        "b01",
       ],
       pos: [
         3,
@@ -1588,6 +1566,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v4",
         "h5",
+        "b11",
       ],
       pos: [
         4,
@@ -1603,12 +1582,12 @@ snapshot[`puzzle_4_4 1`] = `
         11,
         12,
         13,
-        15,
       ],
       answerMut: undefined,
       groups: [
         "v5",
         "h5",
+        "b11",
       ],
       pos: [
         5,
@@ -1628,6 +1607,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v6",
         "h5",
+        "b11",
       ],
       pos: [
         6,
@@ -1642,6 +1622,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v7",
         "h5",
+        "b11",
       ],
       pos: [
         7,
@@ -1650,10 +1631,8 @@ snapshot[`puzzle_4_4 1`] = `
     },
     {
       answerCnadidatesMut: [
-        0,
         2,
         4,
-        5,
         12,
         13,
         15,
@@ -1662,6 +1641,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v8",
         "h5",
+        "b21",
       ],
       pos: [
         8,
@@ -1670,7 +1650,6 @@ snapshot[`puzzle_4_4 1`] = `
     },
     {
       answerCnadidatesMut: [
-        0,
         2,
         4,
         11,
@@ -1681,6 +1660,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v9",
         "h5",
+        "b21",
       ],
       pos: [
         9,
@@ -1695,6 +1675,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v10",
         "h5",
+        "b21",
       ],
       pos: [
         10,
@@ -1703,9 +1684,7 @@ snapshot[`puzzle_4_4 1`] = `
     },
     {
       answerCnadidatesMut: [
-        0,
         2,
-        10,
         11,
         12,
         13,
@@ -1715,6 +1694,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v11",
         "h5",
+        "b21",
       ],
       pos: [
         11,
@@ -1729,6 +1709,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v12",
         "h5",
+        "b31",
       ],
       pos: [
         12,
@@ -1743,6 +1724,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v13",
         "h5",
+        "b31",
       ],
       pos: [
         13,
@@ -1754,13 +1736,13 @@ snapshot[`puzzle_4_4 1`] = `
         0,
         2,
         5,
-        10,
         12,
       ],
       answerMut: undefined,
       groups: [
         "v14",
         "h5",
+        "b31",
       ],
       pos: [
         14,
@@ -1779,6 +1761,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v15",
         "h5",
+        "b31",
       ],
       pos: [
         15,
@@ -1796,6 +1779,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v0",
         "h6",
+        "b01",
       ],
       pos: [
         0,
@@ -1804,11 +1788,8 @@ snapshot[`puzzle_4_4 1`] = `
     },
     {
       answerCnadidatesMut: [
-        1,
-        2,
         5,
         6,
-        7,
         9,
         11,
       ],
@@ -1816,6 +1797,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v1",
         "h6",
+        "b01",
       ],
       pos: [
         1,
@@ -1826,7 +1808,6 @@ snapshot[`puzzle_4_4 1`] = `
       answerCnadidatesMut: [
         5,
         6,
-        7,
         9,
         12,
       ],
@@ -1834,6 +1815,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v2",
         "h6",
+        "b01",
       ],
       pos: [
         2,
@@ -1848,6 +1830,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v3",
         "h6",
+        "b01",
       ],
       pos: [
         3,
@@ -1859,7 +1842,6 @@ snapshot[`puzzle_4_4 1`] = `
         1,
         2,
         6,
-        9,
         11,
         12,
       ],
@@ -1867,6 +1849,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v4",
         "h6",
+        "b11",
       ],
       pos: [
         4,
@@ -1881,6 +1864,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v5",
         "h6",
+        "b11",
       ],
       pos: [
         5,
@@ -1895,6 +1879,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v6",
         "h6",
+        "b11",
       ],
       pos: [
         6,
@@ -1905,7 +1890,6 @@ snapshot[`puzzle_4_4 1`] = `
       answerCnadidatesMut: [
         1,
         5,
-        7,
         11,
         13,
       ],
@@ -1913,6 +1897,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v7",
         "h6",
+        "b11",
       ],
       pos: [
         7,
@@ -1921,10 +1906,7 @@ snapshot[`puzzle_4_4 1`] = `
     },
     {
       answerCnadidatesMut: [
-        1,
         2,
-        5,
-        6,
         7,
         9,
         12,
@@ -1934,6 +1916,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v8",
         "h6",
+        "b21",
       ],
       pos: [
         8,
@@ -1948,6 +1931,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v9",
         "h6",
+        "b21",
       ],
       pos: [
         9,
@@ -1962,6 +1946,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v10",
         "h6",
+        "b21",
       ],
       pos: [
         10,
@@ -1970,9 +1955,7 @@ snapshot[`puzzle_4_4 1`] = `
     },
     {
       answerCnadidatesMut: [
-        1,
         2,
-        6,
         7,
         9,
         11,
@@ -1983,6 +1966,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v11",
         "h6",
+        "b21",
       ],
       pos: [
         11,
@@ -2002,6 +1986,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v12",
         "h6",
+        "b31",
       ],
       pos: [
         12,
@@ -2016,6 +2001,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v13",
         "h6",
+        "b31",
       ],
       pos: [
         13,
@@ -2029,13 +2015,13 @@ snapshot[`puzzle_4_4 1`] = `
         5,
         6,
         7,
-        9,
         12,
       ],
       answerMut: undefined,
       groups: [
         "v14",
         "h6",
+        "b31",
       ],
       pos: [
         14,
@@ -2050,6 +2036,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v15",
         "h6",
+        "b31",
       ],
       pos: [
         15,
@@ -2070,6 +2057,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v0",
         "h7",
+        "b01",
       ],
       pos: [
         0,
@@ -2078,8 +2066,6 @@ snapshot[`puzzle_4_4 1`] = `
     },
     {
       answerCnadidatesMut: [
-        2,
-        3,
         4,
         5,
         6,
@@ -2091,6 +2077,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v1",
         "h7",
+        "b01",
       ],
       pos: [
         1,
@@ -2105,6 +2092,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v2",
         "h7",
+        "b01",
       ],
       pos: [
         2,
@@ -2119,6 +2107,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v3",
         "h7",
+        "b01",
       ],
       pos: [
         3,
@@ -2133,6 +2122,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v4",
         "h7",
+        "b11",
       ],
       pos: [
         4,
@@ -2142,19 +2132,18 @@ snapshot[`puzzle_4_4 1`] = `
     {
       answerCnadidatesMut: [
         0,
-        3,
         4,
         5,
         6,
         11,
         12,
         13,
-        15,
       ],
       answerMut: undefined,
       groups: [
         "v5",
         "h7",
+        "b11",
       ],
       pos: [
         5,
@@ -2169,12 +2158,12 @@ snapshot[`puzzle_4_4 1`] = `
         11,
         12,
         13,
-        14,
       ],
       answerMut: undefined,
       groups: [
         "v6",
         "h7",
+        "b11",
       ],
       pos: [
         6,
@@ -2189,6 +2178,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v7",
         "h7",
+        "b11",
       ],
       pos: [
         7,
@@ -2197,12 +2187,9 @@ snapshot[`puzzle_4_4 1`] = `
     },
     {
       answerCnadidatesMut: [
-        0,
         2,
         3,
         4,
-        5,
-        6,
         12,
         13,
         14,
@@ -2212,6 +2199,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v8",
         "h7",
+        "b21",
       ],
       pos: [
         8,
@@ -2226,6 +2214,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v9",
         "h7",
+        "b21",
       ],
       pos: [
         9,
@@ -2244,6 +2233,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v10",
         "h7",
+        "b21",
       ],
       pos: [
         10,
@@ -2252,10 +2242,8 @@ snapshot[`puzzle_4_4 1`] = `
     },
     {
       answerCnadidatesMut: [
-        0,
         2,
         3,
-        6,
         11,
         12,
         13,
@@ -2266,6 +2254,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v11",
         "h7",
+        "b21",
       ],
       pos: [
         11,
@@ -2276,18 +2265,17 @@ snapshot[`puzzle_4_4 1`] = `
       answerCnadidatesMut: [
         0,
         2,
-        4,
         6,
         11,
         12,
         13,
-        14,
         15,
       ],
       answerMut: undefined,
       groups: [
         "v12",
         "h7",
+        "b31",
       ],
       pos: [
         12,
@@ -2297,7 +2285,6 @@ snapshot[`puzzle_4_4 1`] = `
     {
       answerCnadidatesMut: [
         3,
-        4,
         5,
         6,
         11,
@@ -2308,6 +2295,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v13",
         "h7",
+        "b31",
       ],
       pos: [
         13,
@@ -2321,12 +2309,12 @@ snapshot[`puzzle_4_4 1`] = `
         5,
         6,
         12,
-        14,
       ],
       answerMut: undefined,
       groups: [
         "v14",
         "h7",
+        "b31",
       ],
       pos: [
         14,
@@ -2346,6 +2334,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v15",
         "h7",
+        "b31",
       ],
       pos: [
         15,
@@ -2360,6 +2349,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v0",
         "h8",
+        "b02",
       ],
       pos: [
         0,
@@ -2369,18 +2359,16 @@ snapshot[`puzzle_4_4 1`] = `
     {
       answerCnadidatesMut: [
         1,
-        2,
-        3,
         6,
         7,
         9,
-        11,
         14,
       ],
       answerMut: undefined,
       groups: [
         "v1",
         "h8",
+        "b02",
       ],
       pos: [
         1,
@@ -2390,17 +2378,16 @@ snapshot[`puzzle_4_4 1`] = `
     {
       answerCnadidatesMut: [
         0,
-        3,
         6,
         7,
         9,
-        12,
         14,
       ],
       answerMut: undefined,
       groups: [
         "v2",
         "h8",
+        "b02",
       ],
       pos: [
         2,
@@ -2411,8 +2398,6 @@ snapshot[`puzzle_4_4 1`] = `
       answerCnadidatesMut: [
         0,
         1,
-        10,
-        11,
         13,
         14,
       ],
@@ -2420,6 +2405,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v3",
         "h8",
+        "b02",
       ],
       pos: [
         3,
@@ -2434,6 +2420,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v4",
         "h8",
+        "b12",
       ],
       pos: [
         4,
@@ -2450,12 +2437,12 @@ snapshot[`puzzle_4_4 1`] = `
         10,
         11,
         12,
-        13,
       ],
       answerMut: undefined,
       groups: [
         "v5",
         "h8",
+        "b12",
       ],
       pos: [
         5,
@@ -2471,13 +2458,13 @@ snapshot[`puzzle_4_4 1`] = `
         10,
         11,
         12,
-        13,
         14,
       ],
       answerMut: undefined,
       groups: [
         "v6",
         "h8",
+        "b12",
       ],
       pos: [
         6,
@@ -2491,13 +2478,13 @@ snapshot[`puzzle_4_4 1`] = `
         3,
         7,
         11,
-        13,
         14,
       ],
       answerMut: undefined,
       groups: [
         "v7",
         "h8",
+        "b12",
       ],
       pos: [
         7,
@@ -2511,7 +2498,6 @@ snapshot[`puzzle_4_4 1`] = `
         2,
         3,
         6,
-        7,
         9,
         12,
         13,
@@ -2521,6 +2507,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v8",
         "h8",
+        "b22",
       ],
       pos: [
         8,
@@ -2532,9 +2519,7 @@ snapshot[`puzzle_4_4 1`] = `
         0,
         2,
         6,
-        7,
         9,
-        11,
         13,
         14,
       ],
@@ -2542,6 +2527,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v9",
         "h8",
+        "b22",
       ],
       pos: [
         9,
@@ -2556,6 +2542,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v10",
         "h8",
+        "b22",
       ],
       pos: [
         10,
@@ -2569,10 +2556,8 @@ snapshot[`puzzle_4_4 1`] = `
         2,
         3,
         6,
-        7,
         9,
         10,
-        11,
         12,
         13,
         14,
@@ -2581,6 +2566,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v11",
         "h8",
+        "b22",
       ],
       pos: [
         11,
@@ -2591,18 +2577,15 @@ snapshot[`puzzle_4_4 1`] = `
       answerCnadidatesMut: [
         0,
         2,
-        6,
-        7,
         10,
         11,
         12,
-        13,
-        14,
       ],
       answerMut: undefined,
       groups: [
         "v12",
         "h8",
+        "b32",
       ],
       pos: [
         12,
@@ -2611,17 +2594,14 @@ snapshot[`puzzle_4_4 1`] = `
     },
     {
       answerCnadidatesMut: [
-        3,
-        6,
-        7,
         10,
         11,
-        13,
       ],
       answerMut: undefined,
       groups: [
         "v13",
         "h8",
+        "b32",
       ],
       pos: [
         13,
@@ -2636,6 +2616,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v14",
         "h8",
+        "b32",
       ],
       pos: [
         14,
@@ -2645,9 +2626,6 @@ snapshot[`puzzle_4_4 1`] = `
     {
       answerCnadidatesMut: [
         0,
-        3,
-        7,
-        9,
         11,
         12,
       ],
@@ -2655,6 +2633,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v15",
         "h8",
+        "b32",
       ],
       pos: [
         15,
@@ -2667,13 +2646,12 @@ snapshot[`puzzle_4_4 1`] = `
         4,
         5,
         6,
-        10,
-        12,
       ],
       answerMut: undefined,
       groups: [
         "v0",
         "h9",
+        "b02",
       ],
       pos: [
         0,
@@ -2683,18 +2661,16 @@ snapshot[`puzzle_4_4 1`] = `
     {
       answerCnadidatesMut: [
         1,
-        3,
         4,
         5,
         6,
         7,
-        11,
-        15,
       ],
       answerMut: undefined,
       groups: [
         "v1",
         "h9",
+        "b02",
       ],
       pos: [
         1,
@@ -2704,18 +2680,16 @@ snapshot[`puzzle_4_4 1`] = `
     {
       answerCnadidatesMut: [
         0,
-        3,
         4,
         5,
         6,
         7,
-        12,
-        15,
       ],
       answerMut: undefined,
       groups: [
         "v2",
         "h9",
+        "b02",
       ],
       pos: [
         2,
@@ -2730,6 +2704,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v3",
         "h9",
+        "b02",
       ],
       pos: [
         3,
@@ -2744,6 +2719,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v4",
         "h9",
+        "b12",
       ],
       pos: [
         4,
@@ -2755,8 +2731,6 @@ snapshot[`puzzle_4_4 1`] = `
         0,
         1,
         3,
-        4,
-        5,
         6,
         7,
         10,
@@ -2768,6 +2742,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v5",
         "h9",
+        "b12",
       ],
       pos: [
         5,
@@ -2778,7 +2753,6 @@ snapshot[`puzzle_4_4 1`] = `
       answerCnadidatesMut: [
         0,
         1,
-        5,
         6,
         10,
         11,
@@ -2788,6 +2762,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v6",
         "h9",
+        "b12",
       ],
       pos: [
         6,
@@ -2799,7 +2774,6 @@ snapshot[`puzzle_4_4 1`] = `
         0,
         1,
         3,
-        5,
         7,
         11,
         15,
@@ -2808,6 +2782,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v7",
         "h9",
+        "b12",
       ],
       pos: [
         7,
@@ -2820,9 +2795,7 @@ snapshot[`puzzle_4_4 1`] = `
         1,
         3,
         4,
-        5,
         6,
-        7,
         12,
         15,
       ],
@@ -2830,6 +2803,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v8",
         "h9",
+        "b22",
       ],
       pos: [
         8,
@@ -2841,14 +2815,13 @@ snapshot[`puzzle_4_4 1`] = `
         0,
         4,
         6,
-        7,
-        11,
         15,
       ],
       answerMut: undefined,
       groups: [
         "v9",
         "h9",
+        "b22",
       ],
       pos: [
         9,
@@ -2861,13 +2834,13 @@ snapshot[`puzzle_4_4 1`] = `
         3,
         4,
         10,
-        11,
         12,
       ],
       answerMut: undefined,
       groups: [
         "v10",
         "h9",
+        "b22",
       ],
       pos: [
         10,
@@ -2880,9 +2853,7 @@ snapshot[`puzzle_4_4 1`] = `
         1,
         3,
         6,
-        7,
         10,
-        11,
         12,
         15,
       ],
@@ -2890,6 +2861,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v11",
         "h9",
+        "b22",
       ],
       pos: [
         11,
@@ -2904,6 +2876,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v12",
         "h9",
+        "b32",
       ],
       pos: [
         12,
@@ -2918,6 +2891,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v13",
         "h9",
+        "b32",
       ],
       pos: [
         13,
@@ -2927,10 +2901,7 @@ snapshot[`puzzle_4_4 1`] = `
     {
       answerCnadidatesMut: [
         0,
-        1,
         5,
-        6,
-        7,
         10,
         12,
       ],
@@ -2938,6 +2909,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v14",
         "h9",
+        "b32",
       ],
       pos: [
         14,
@@ -2952,6 +2924,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v15",
         "h9",
+        "b32",
       ],
       pos: [
         15,
@@ -2966,6 +2939,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v0",
         "h10",
+        "b02",
       ],
       pos: [
         0,
@@ -2980,6 +2954,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v1",
         "h10",
+        "b02",
       ],
       pos: [
         1,
@@ -2990,15 +2965,14 @@ snapshot[`puzzle_4_4 1`] = `
       answerCnadidatesMut: [
         0,
         4,
-        7,
         9,
-        12,
         14,
       ],
       answerMut: undefined,
       groups: [
         "v2",
         "h10",
+        "b02",
       ],
       pos: [
         2,
@@ -3017,6 +2991,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v3",
         "h10",
+        "b02",
       ],
       pos: [
         3,
@@ -3027,7 +3002,6 @@ snapshot[`puzzle_4_4 1`] = `
       answerCnadidatesMut: [
         0,
         1,
-        4,
         9,
         12,
       ],
@@ -3035,6 +3009,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v4",
         "h10",
+        "b12",
       ],
       pos: [
         4,
@@ -3049,6 +3024,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v5",
         "h10",
+        "b12",
       ],
       pos: [
         5,
@@ -3062,13 +3038,13 @@ snapshot[`puzzle_4_4 1`] = `
         8,
         9,
         12,
-        13,
         14,
       ],
       answerMut: undefined,
       groups: [
         "v6",
         "h10",
+        "b12",
       ],
       pos: [
         6,
@@ -3079,14 +3055,13 @@ snapshot[`puzzle_4_4 1`] = `
       answerCnadidatesMut: [
         0,
         1,
-        7,
-        13,
         14,
       ],
       answerMut: undefined,
       groups: [
         "v7",
         "h10",
+        "b12",
       ],
       pos: [
         7,
@@ -3098,8 +3073,6 @@ snapshot[`puzzle_4_4 1`] = `
         0,
         1,
         4,
-        7,
-        8,
         9,
         12,
         13,
@@ -3109,6 +3082,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v8",
         "h10",
+        "b22",
       ],
       pos: [
         8,
@@ -3119,8 +3093,6 @@ snapshot[`puzzle_4_4 1`] = `
       answerCnadidatesMut: [
         0,
         4,
-        7,
-        8,
         9,
         13,
         14,
@@ -3129,6 +3101,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v9",
         "h10",
+        "b22",
       ],
       pos: [
         9,
@@ -3143,6 +3116,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v10",
         "h10",
+        "b22",
       ],
       pos: [
         10,
@@ -3153,8 +3127,6 @@ snapshot[`puzzle_4_4 1`] = `
       answerCnadidatesMut: [
         0,
         1,
-        7,
-        8,
         9,
         12,
         13,
@@ -3164,6 +3136,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v11",
         "h10",
+        "b22",
       ],
       pos: [
         11,
@@ -3178,6 +3151,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v12",
         "h10",
+        "b32",
       ],
       pos: [
         12,
@@ -3186,14 +3160,13 @@ snapshot[`puzzle_4_4 1`] = `
     },
     {
       answerCnadidatesMut: [
-        4,
         7,
-        13,
       ],
       answerMut: undefined,
       groups: [
         "v13",
         "h10",
+        "b32",
       ],
       pos: [
         13,
@@ -3208,6 +3181,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v14",
         "h10",
+        "b32",
       ],
       pos: [
         14,
@@ -3222,6 +3196,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v15",
         "h10",
+        "b32",
       ],
       pos: [
         15,
@@ -3236,6 +3211,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v0",
         "h11",
+        "b02",
       ],
       pos: [
         0,
@@ -3250,6 +3226,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v1",
         "h11",
+        "b02",
       ],
       pos: [
         1,
@@ -3264,6 +3241,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v2",
         "h11",
+        "b02",
       ],
       pos: [
         2,
@@ -3274,14 +3252,13 @@ snapshot[`puzzle_4_4 1`] = `
       answerCnadidatesMut: [
         0,
         5,
-        10,
         14,
-        15,
       ],
       answerMut: undefined,
       groups: [
         "v3",
         "h11",
+        "b02",
       ],
       pos: [
         3,
@@ -3291,7 +3268,6 @@ snapshot[`puzzle_4_4 1`] = `
     {
       answerCnadidatesMut: [
         0,
-        2,
         6,
         9,
         10,
@@ -3301,6 +3277,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v4",
         "h11",
+        "b12",
       ],
       pos: [
         4,
@@ -3310,7 +3287,6 @@ snapshot[`puzzle_4_4 1`] = `
     {
       answerCnadidatesMut: [
         0,
-        5,
         6,
         10,
         15,
@@ -3319,6 +3295,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v5",
         "h11",
+        "b12",
       ],
       pos: [
         5,
@@ -3333,6 +3310,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v6",
         "h11",
+        "b12",
       ],
       pos: [
         6,
@@ -3342,7 +3320,6 @@ snapshot[`puzzle_4_4 1`] = `
     {
       answerCnadidatesMut: [
         0,
-        5,
         14,
         15,
       ],
@@ -3350,6 +3327,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v7",
         "h11",
+        "b12",
       ],
       pos: [
         7,
@@ -3364,6 +3342,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v8",
         "h11",
+        "b22",
       ],
       pos: [
         8,
@@ -3383,6 +3362,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v9",
         "h11",
+        "b22",
       ],
       pos: [
         9,
@@ -3397,6 +3377,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v10",
         "h11",
+        "b22",
       ],
       pos: [
         10,
@@ -3417,6 +3398,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v11",
         "h11",
+        "b22",
       ],
       pos: [
         11,
@@ -3427,15 +3409,13 @@ snapshot[`puzzle_4_4 1`] = `
       answerCnadidatesMut: [
         0,
         2,
-        6,
         10,
-        14,
-        15,
       ],
       answerMut: undefined,
       groups: [
         "v12",
         "h11",
+        "b32",
       ],
       pos: [
         12,
@@ -3445,14 +3425,13 @@ snapshot[`puzzle_4_4 1`] = `
     {
       answerCnadidatesMut: [
         5,
-        6,
         10,
-        15,
       ],
       answerMut: undefined,
       groups: [
         "v13",
         "h11",
+        "b32",
       ],
       pos: [
         13,
@@ -3467,6 +3446,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v14",
         "h11",
+        "b32",
       ],
       pos: [
         14,
@@ -3481,6 +3461,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v15",
         "h11",
+        "b32",
       ],
       pos: [
         15,
@@ -3500,6 +3481,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v0",
         "h12",
+        "b03",
       ],
       pos: [
         0,
@@ -3508,14 +3490,11 @@ snapshot[`puzzle_4_4 1`] = `
     },
     {
       answerCnadidatesMut: [
-        1,
         3,
         4,
         5,
         6,
         7,
-        9,
-        11,
         14,
         15,
       ],
@@ -3523,6 +3502,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v1",
         "h12",
+        "b03",
       ],
       pos: [
         1,
@@ -3536,7 +3516,6 @@ snapshot[`puzzle_4_4 1`] = `
         5,
         6,
         7,
-        9,
         14,
         15,
       ],
@@ -3544,6 +3523,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v2",
         "h12",
+        "b03",
       ],
       pos: [
         2,
@@ -3552,11 +3532,9 @@ snapshot[`puzzle_4_4 1`] = `
     },
     {
       answerCnadidatesMut: [
-        1,
         4,
         5,
         10,
-        11,
         14,
         15,
       ],
@@ -3564,6 +3542,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v3",
         "h12",
+        "b03",
       ],
       pos: [
         3,
@@ -3573,10 +3552,7 @@ snapshot[`puzzle_4_4 1`] = `
     {
       answerCnadidatesMut: [
         1,
-        4,
-        6,
         9,
-        10,
         11,
         15,
       ],
@@ -3584,6 +3560,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v4",
         "h12",
+        "b13",
       ],
       pos: [
         4,
@@ -3594,12 +3571,8 @@ snapshot[`puzzle_4_4 1`] = `
       answerCnadidatesMut: [
         1,
         3,
-        4,
         5,
-        6,
         7,
-        8,
-        10,
         11,
         15,
       ],
@@ -3607,6 +3580,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v5",
         "h12",
+        "b13",
       ],
       pos: [
         5,
@@ -3621,6 +3595,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v6",
         "h12",
+        "b13",
       ],
       pos: [
         6,
@@ -3635,6 +3610,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v7",
         "h12",
+        "b13",
       ],
       pos: [
         7,
@@ -3644,20 +3620,18 @@ snapshot[`puzzle_4_4 1`] = `
     {
       answerCnadidatesMut: [
         1,
-        3,
         4,
         5,
         6,
         7,
         8,
         9,
-        14,
-        15,
       ],
       answerMut: undefined,
       groups: [
         "v8",
         "h12",
+        "b23",
       ],
       pos: [
         8,
@@ -3672,13 +3646,12 @@ snapshot[`puzzle_4_4 1`] = `
         8,
         9,
         11,
-        14,
-        15,
       ],
       answerMut: undefined,
       groups: [
         "v9",
         "h12",
+        "b23",
       ],
       pos: [
         9,
@@ -3688,16 +3661,15 @@ snapshot[`puzzle_4_4 1`] = `
     {
       answerCnadidatesMut: [
         1,
-        3,
         4,
         9,
-        10,
         11,
       ],
       answerMut: undefined,
       groups: [
         "v10",
         "h12",
+        "b23",
       ],
       pos: [
         10,
@@ -3707,20 +3679,17 @@ snapshot[`puzzle_4_4 1`] = `
     {
       answerCnadidatesMut: [
         1,
-        3,
         6,
         7,
         8,
         9,
-        10,
         11,
-        14,
-        15,
       ],
       answerMut: undefined,
       groups: [
         "v11",
         "h12",
+        "b23",
       ],
       pos: [
         11,
@@ -3741,6 +3710,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v12",
         "h12",
+        "b33",
       ],
       pos: [
         12,
@@ -3755,6 +3725,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v13",
         "h12",
+        "b33",
       ],
       pos: [
         13,
@@ -3763,7 +3734,6 @@ snapshot[`puzzle_4_4 1`] = `
     },
     {
       answerCnadidatesMut: [
-        1,
         5,
         6,
         7,
@@ -3776,6 +3746,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v14",
         "h12",
+        "b33",
       ],
       pos: [
         14,
@@ -3790,6 +3761,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v15",
         "h12",
+        "b33",
       ],
       pos: [
         15,
@@ -3803,13 +3775,13 @@ snapshot[`puzzle_4_4 1`] = `
         5,
         6,
         8,
-        13,
         14,
       ],
       answerMut: undefined,
       groups: [
         "v0",
         "h13",
+        "b03",
       ],
       pos: [
         0,
@@ -3818,13 +3790,10 @@ snapshot[`puzzle_4_4 1`] = `
     },
     {
       answerCnadidatesMut: [
-        2,
         4,
         5,
         6,
         7,
-        9,
-        11,
         14,
         15,
       ],
@@ -3832,6 +3801,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v1",
         "h13",
+        "b03",
       ],
       pos: [
         1,
@@ -3845,7 +3815,6 @@ snapshot[`puzzle_4_4 1`] = `
         5,
         6,
         7,
-        9,
         14,
         15,
       ],
@@ -3853,6 +3822,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v2",
         "h13",
+        "b03",
       ],
       pos: [
         2,
@@ -3864,8 +3834,6 @@ snapshot[`puzzle_4_4 1`] = `
         0,
         4,
         5,
-        11,
-        13,
         14,
         15,
       ],
@@ -3873,6 +3841,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v3",
         "h13",
+        "b03",
       ],
       pos: [
         3,
@@ -3882,9 +3851,6 @@ snapshot[`puzzle_4_4 1`] = `
     {
       answerCnadidatesMut: [
         0,
-        2,
-        4,
-        6,
         9,
         11,
         15,
@@ -3893,6 +3859,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v4",
         "h13",
+        "b13",
       ],
       pos: [
         4,
@@ -3902,11 +3869,8 @@ snapshot[`puzzle_4_4 1`] = `
     {
       answerCnadidatesMut: [
         0,
-        4,
         5,
-        6,
         7,
-        8,
         11,
         13,
         15,
@@ -3915,6 +3879,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v5",
         "h13",
+        "b13",
       ],
       pos: [
         5,
@@ -3925,8 +3890,6 @@ snapshot[`puzzle_4_4 1`] = `
       answerCnadidatesMut: [
         0,
         5,
-        6,
-        8,
         9,
         11,
         13,
@@ -3936,6 +3899,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v6",
         "h13",
+        "b13",
       ],
       pos: [
         6,
@@ -3950,6 +3914,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v7",
         "h13",
+        "b13",
       ],
       pos: [
         7,
@@ -3967,13 +3932,12 @@ snapshot[`puzzle_4_4 1`] = `
         8,
         9,
         13,
-        14,
-        15,
       ],
       answerMut: undefined,
       groups: [
         "v8",
         "h13",
+        "b23",
       ],
       pos: [
         8,
@@ -3988,6 +3952,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v9",
         "h13",
+        "b23",
       ],
       pos: [
         9,
@@ -4005,6 +3970,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v10",
         "h13",
+        "b23",
       ],
       pos: [
         10,
@@ -4021,13 +3987,12 @@ snapshot[`puzzle_4_4 1`] = `
         9,
         11,
         13,
-        14,
-        15,
       ],
       answerMut: undefined,
       groups: [
         "v11",
         "h13",
+        "b23",
       ],
       pos: [
         11,
@@ -4042,6 +4007,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v12",
         "h13",
+        "b33",
       ],
       pos: [
         12,
@@ -4056,6 +4022,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v13",
         "h13",
+        "b33",
       ],
       pos: [
         13,
@@ -4064,8 +4031,6 @@ snapshot[`puzzle_4_4 1`] = `
     },
     {
       answerCnadidatesMut: [
-        0,
-        2,
         5,
         6,
         7,
@@ -4077,6 +4042,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v14",
         "h13",
+        "b33",
       ],
       pos: [
         14,
@@ -4085,7 +4051,6 @@ snapshot[`puzzle_4_4 1`] = `
     },
     {
       answerCnadidatesMut: [
-        0,
         5,
         7,
         8,
@@ -4097,6 +4062,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v15",
         "h13",
+        "b33",
       ],
       pos: [
         15,
@@ -4111,12 +4077,12 @@ snapshot[`puzzle_4_4 1`] = `
         8,
         10,
         12,
-        13,
       ],
       answerMut: undefined,
       groups: [
         "v0",
         "h14",
+        "b03",
       ],
       pos: [
         0,
@@ -4125,18 +4091,17 @@ snapshot[`puzzle_4_4 1`] = `
     },
     {
       answerCnadidatesMut: [
-        1,
         3,
         5,
         6,
         7,
-        9,
         15,
       ],
       answerMut: undefined,
       groups: [
         "v1",
         "h14",
+        "b03",
       ],
       pos: [
         1,
@@ -4151,6 +4116,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v2",
         "h14",
+        "b03",
       ],
       pos: [
         2,
@@ -4160,16 +4126,15 @@ snapshot[`puzzle_4_4 1`] = `
     {
       answerCnadidatesMut: [
         0,
-        1,
         5,
         10,
-        13,
         15,
       ],
       answerMut: undefined,
       groups: [
         "v3",
         "h14",
+        "b03",
       ],
       pos: [
         3,
@@ -4180,16 +4145,14 @@ snapshot[`puzzle_4_4 1`] = `
       answerCnadidatesMut: [
         0,
         1,
-        6,
         9,
-        10,
-        12,
         15,
       ],
       answerMut: undefined,
       groups: [
         "v4",
         "h14",
+        "b13",
       ],
       pos: [
         4,
@@ -4202,11 +4165,7 @@ snapshot[`puzzle_4_4 1`] = `
         1,
         3,
         5,
-        6,
         7,
-        8,
-        10,
-        12,
         13,
         15,
       ],
@@ -4214,6 +4173,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v5",
         "h14",
+        "b13",
       ],
       pos: [
         5,
@@ -4225,17 +4185,14 @@ snapshot[`puzzle_4_4 1`] = `
         0,
         1,
         5,
-        6,
-        8,
         9,
-        10,
-        12,
         13,
       ],
       answerMut: undefined,
       groups: [
         "v6",
         "h14",
+        "b13",
       ],
       pos: [
         6,
@@ -4250,6 +4207,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v7",
         "h14",
+        "b13",
       ],
       pos: [
         7,
@@ -4260,20 +4218,18 @@ snapshot[`puzzle_4_4 1`] = `
       answerCnadidatesMut: [
         0,
         1,
-        3,
         5,
         6,
         7,
         8,
         9,
-        12,
         13,
-        15,
       ],
       answerMut: undefined,
       groups: [
         "v8",
         "h14",
+        "b23",
       ],
       pos: [
         8,
@@ -4288,12 +4244,12 @@ snapshot[`puzzle_4_4 1`] = `
         8,
         9,
         13,
-        15,
       ],
       answerMut: undefined,
       groups: [
         "v9",
         "h14",
+        "b23",
       ],
       pos: [
         9,
@@ -4308,6 +4264,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v10",
         "h14",
+        "b23",
       ],
       pos: [
         10,
@@ -4318,20 +4275,17 @@ snapshot[`puzzle_4_4 1`] = `
       answerCnadidatesMut: [
         0,
         1,
-        3,
         6,
         7,
         8,
         9,
-        10,
-        12,
         13,
-        15,
       ],
       answerMut: undefined,
       groups: [
         "v11",
         "h14",
+        "b23",
       ],
       pos: [
         11,
@@ -4340,18 +4294,16 @@ snapshot[`puzzle_4_4 1`] = `
     },
     {
       answerCnadidatesMut: [
-        0,
         6,
         7,
         10,
-        12,
-        13,
         15,
       ],
       answerMut: undefined,
       groups: [
         "v12",
         "h14",
+        "b33",
       ],
       pos: [
         12,
@@ -4363,15 +4315,14 @@ snapshot[`puzzle_4_4 1`] = `
         3,
         5,
         6,
-        7,
         10,
-        13,
         15,
       ],
       answerMut: undefined,
       groups: [
         "v13",
         "h14",
+        "b33",
       ],
       pos: [
         13,
@@ -4380,20 +4331,18 @@ snapshot[`puzzle_4_4 1`] = `
     },
     {
       answerCnadidatesMut: [
-        0,
-        1,
         5,
         6,
         7,
         8,
         9,
         10,
-        12,
       ],
       answerMut: undefined,
       groups: [
         "v14",
         "h14",
+        "b33",
       ],
       pos: [
         14,
@@ -4408,6 +4357,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v15",
         "h14",
+        "b33",
       ],
       pos: [
         15,
@@ -4422,6 +4372,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v0",
         "h15",
+        "b03",
       ],
       pos: [
         0,
@@ -4436,6 +4387,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v1",
         "h15",
+        "b03",
       ],
       pos: [
         1,
@@ -4450,6 +4402,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v2",
         "h15",
+        "b03",
       ],
       pos: [
         2,
@@ -4464,6 +4417,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v3",
         "h15",
+        "b03",
       ],
       pos: [
         3,
@@ -4478,6 +4432,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v4",
         "h15",
+        "b13",
       ],
       pos: [
         4,
@@ -4488,7 +4443,6 @@ snapshot[`puzzle_4_4 1`] = `
       answerCnadidatesMut: [
         0,
         3,
-        4,
         5,
         7,
         11,
@@ -4497,6 +4451,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v5",
         "h15",
+        "b13",
       ],
       pos: [
         5,
@@ -4514,6 +4469,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v6",
         "h15",
+        "b13",
       ],
       pos: [
         6,
@@ -4528,6 +4484,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v7",
         "h15",
+        "b13",
       ],
       pos: [
         7,
@@ -4542,6 +4499,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v8",
         "h15",
+        "b23",
       ],
       pos: [
         8,
@@ -4556,6 +4514,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v9",
         "h15",
+        "b23",
       ],
       pos: [
         9,
@@ -4570,6 +4529,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v10",
         "h15",
+        "b23",
       ],
       pos: [
         10,
@@ -4579,15 +4539,14 @@ snapshot[`puzzle_4_4 1`] = `
     {
       answerCnadidatesMut: [
         0,
-        3,
         7,
         11,
-        14,
       ],
       answerMut: undefined,
       groups: [
         "v11",
         "h15",
+        "b23",
       ],
       pos: [
         11,
@@ -4596,7 +4555,6 @@ snapshot[`puzzle_4_4 1`] = `
     },
     {
       answerCnadidatesMut: [
-        0,
         4,
         7,
         11,
@@ -4606,6 +4564,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v12",
         "h15",
+        "b33",
       ],
       pos: [
         12,
@@ -4617,13 +4576,13 @@ snapshot[`puzzle_4_4 1`] = `
         3,
         4,
         5,
-        7,
         11,
       ],
       answerMut: undefined,
       groups: [
         "v13",
         "h15",
+        "b33",
       ],
       pos: [
         13,
@@ -4632,7 +4591,6 @@ snapshot[`puzzle_4_4 1`] = `
     },
     {
       answerCnadidatesMut: [
-        0,
         5,
         7,
         14,
@@ -4641,6 +4599,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v14",
         "h15",
+        "b33",
       ],
       pos: [
         14,
@@ -4649,7 +4608,6 @@ snapshot[`puzzle_4_4 1`] = `
     },
     {
       answerCnadidatesMut: [
-        0,
         3,
         5,
         7,
@@ -4659,6 +4617,7 @@ snapshot[`puzzle_4_4 1`] = `
       groups: [
         "v15",
         "h15",
+        "b33",
       ],
       pos: [
         15,
@@ -4681,6 +4640,7 @@ snapshot[`puzzle_2_3 1`] = `
       groups: [
         "v0",
         "h0",
+        "b00",
       ],
       pos: [
         0,
@@ -4695,6 +4655,7 @@ snapshot[`puzzle_2_3 1`] = `
       groups: [
         "v1",
         "h0",
+        "b00",
       ],
       pos: [
         1,
@@ -4709,6 +4670,7 @@ snapshot[`puzzle_2_3 1`] = `
       groups: [
         "v2",
         "h0",
+        "b10",
       ],
       pos: [
         2,
@@ -4723,6 +4685,7 @@ snapshot[`puzzle_2_3 1`] = `
       groups: [
         "v3",
         "h0",
+        "b10",
       ],
       pos: [
         3,
@@ -4737,6 +4700,7 @@ snapshot[`puzzle_2_3 1`] = `
       groups: [
         "v4",
         "h0",
+        "b20",
       ],
       pos: [
         4,
@@ -4751,6 +4715,7 @@ snapshot[`puzzle_2_3 1`] = `
       groups: [
         "v5",
         "h0",
+        "b20",
       ],
       pos: [
         5,
@@ -4765,6 +4730,7 @@ snapshot[`puzzle_2_3 1`] = `
       groups: [
         "v0",
         "h1",
+        "b00",
       ],
       pos: [
         0,
@@ -4779,6 +4745,7 @@ snapshot[`puzzle_2_3 1`] = `
       groups: [
         "v1",
         "h1",
+        "b00",
       ],
       pos: [
         1,
@@ -4793,6 +4760,7 @@ snapshot[`puzzle_2_3 1`] = `
       groups: [
         "v2",
         "h1",
+        "b10",
       ],
       pos: [
         2,
@@ -4807,6 +4775,7 @@ snapshot[`puzzle_2_3 1`] = `
       groups: [
         "v3",
         "h1",
+        "b10",
       ],
       pos: [
         3,
@@ -4815,12 +4784,13 @@ snapshot[`puzzle_2_3 1`] = `
     },
     {
       answerCnadidatesMut: [
-        2,
+        0,
       ],
       answerMut: undefined,
       groups: [
         "v4",
         "h1",
+        "b20",
       ],
       pos: [
         4,
@@ -4835,6 +4805,7 @@ snapshot[`puzzle_2_3 1`] = `
       groups: [
         "v5",
         "h1",
+        "b20",
       ],
       pos: [
         5,
@@ -4849,6 +4820,7 @@ snapshot[`puzzle_2_3 1`] = `
       groups: [
         "v0",
         "h2",
+        "b00",
       ],
       pos: [
         0,
@@ -4857,12 +4829,13 @@ snapshot[`puzzle_2_3 1`] = `
     },
     {
       answerCnadidatesMut: [
-        4,
+        5,
       ],
       answerMut: undefined,
       groups: [
         "v1",
         "h2",
+        "b00",
       ],
       pos: [
         1,
@@ -4877,6 +4850,7 @@ snapshot[`puzzle_2_3 1`] = `
       groups: [
         "v2",
         "h2",
+        "b10",
       ],
       pos: [
         2,
@@ -4891,6 +4865,7 @@ snapshot[`puzzle_2_3 1`] = `
       groups: [
         "v3",
         "h2",
+        "b10",
       ],
       pos: [
         3,
@@ -4899,12 +4874,13 @@ snapshot[`puzzle_2_3 1`] = `
     },
     {
       answerCnadidatesMut: [
-        1,
+        4,
       ],
       answerMut: undefined,
       groups: [
         "v4",
         "h2",
+        "b20",
       ],
       pos: [
         4,
@@ -4919,6 +4895,7 @@ snapshot[`puzzle_2_3 1`] = `
       groups: [
         "v5",
         "h2",
+        "b20",
       ],
       pos: [
         5,
@@ -4928,12 +4905,12 @@ snapshot[`puzzle_2_3 1`] = `
     {
       answerCnadidatesMut: [
         2,
-        5,
       ],
       answerMut: undefined,
       groups: [
         "v0",
         "h3",
+        "b01",
       ],
       pos: [
         0,
@@ -4948,6 +4925,7 @@ snapshot[`puzzle_2_3 1`] = `
       groups: [
         "v1",
         "h3",
+        "b01",
       ],
       pos: [
         1,
@@ -4962,6 +4940,7 @@ snapshot[`puzzle_2_3 1`] = `
       groups: [
         "v2",
         "h3",
+        "b11",
       ],
       pos: [
         2,
@@ -4970,13 +4949,13 @@ snapshot[`puzzle_2_3 1`] = `
     },
     {
       answerCnadidatesMut: [
-        3,
         5,
       ],
       answerMut: undefined,
       groups: [
         "v3",
         "h3",
+        "b11",
       ],
       pos: [
         3,
@@ -4984,13 +4963,12 @@ snapshot[`puzzle_2_3 1`] = `
       ],
     },
     {
-      answerCnadidatesMut: [
-        4,
-      ],
+      answerCnadidatesMut: [],
       answerMut: undefined,
       groups: [
         "v4",
         "h3",
+        "b21",
       ],
       pos: [
         4,
@@ -4998,14 +4976,12 @@ snapshot[`puzzle_2_3 1`] = `
       ],
     },
     {
-      answerCnadidatesMut: [
-        2,
-        3,
-      ],
+      answerCnadidatesMut: [],
       answerMut: undefined,
       groups: [
         "v5",
         "h3",
+        "b21",
       ],
       pos: [
         5,
@@ -5014,13 +4990,13 @@ snapshot[`puzzle_2_3 1`] = `
     },
     {
       answerCnadidatesMut: [
-        1,
         5,
       ],
       answerMut: undefined,
       groups: [
         "v0",
         "h4",
+        "b01",
       ],
       pos: [
         0,
@@ -5035,6 +5011,7 @@ snapshot[`puzzle_2_3 1`] = `
       groups: [
         "v1",
         "h4",
+        "b01",
       ],
       pos: [
         1,
@@ -5049,6 +5026,7 @@ snapshot[`puzzle_2_3 1`] = `
       groups: [
         "v2",
         "h4",
+        "b11",
       ],
       pos: [
         2,
@@ -5058,12 +5036,12 @@ snapshot[`puzzle_2_3 1`] = `
     {
       answerCnadidatesMut: [
         1,
-        5,
       ],
       answerMut: undefined,
       groups: [
         "v3",
         "h4",
+        "b11",
       ],
       pos: [
         3,
@@ -5072,12 +5050,13 @@ snapshot[`puzzle_2_3 1`] = `
     },
     {
       answerCnadidatesMut: [
-        0,
+        1,
       ],
       answerMut: undefined,
       groups: [
         "v4",
         "h4",
+        "b21",
       ],
       pos: [
         4,
@@ -5092,6 +5071,7 @@ snapshot[`puzzle_2_3 1`] = `
       groups: [
         "v5",
         "h4",
+        "b21",
       ],
       pos: [
         5,
@@ -5100,13 +5080,13 @@ snapshot[`puzzle_2_3 1`] = `
     },
     {
       answerCnadidatesMut: [
-        1,
         2,
       ],
       answerMut: undefined,
       groups: [
         "v0",
         "h5",
+        "b01",
       ],
       pos: [
         0,
@@ -5121,6 +5101,7 @@ snapshot[`puzzle_2_3 1`] = `
       groups: [
         "v1",
         "h5",
+        "b01",
       ],
       pos: [
         1,
@@ -5135,6 +5116,7 @@ snapshot[`puzzle_2_3 1`] = `
       groups: [
         "v2",
         "h5",
+        "b11",
       ],
       pos: [
         2,
@@ -5143,13 +5125,13 @@ snapshot[`puzzle_2_3 1`] = `
     },
     {
       answerCnadidatesMut: [
-        1,
         3,
       ],
       answerMut: undefined,
       groups: [
         "v3",
         "h5",
+        "b11",
       ],
       pos: [
         3,
@@ -5164,6 +5146,7 @@ snapshot[`puzzle_2_3 1`] = `
       groups: [
         "v4",
         "h5",
+        "b21",
       ],
       pos: [
         4,
@@ -5171,14 +5154,12 @@ snapshot[`puzzle_2_3 1`] = `
       ],
     },
     {
-      answerCnadidatesMut: [
-        2,
-        3,
-      ],
+      answerCnadidatesMut: [],
       answerMut: undefined,
       groups: [
         "v5",
         "h5",
+        "b21",
       ],
       pos: [
         5,

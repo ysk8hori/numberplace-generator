@@ -8,7 +8,7 @@ Deno.test("9x9サイズ position", async (t) => {
   assertEquals(cells.length, 81);
   assertEquals<Cell>(cells[80], {
     pos: [8, 8],
-    groups: ["v8", "h8"],
+    groups: ["v8", "h8", "b22"],
     answerMut: undefined,
     answerCnadidatesMut: [0, 1, 2, 3, 4, 5, 6, 7, 8],
   });
@@ -46,15 +46,15 @@ Deno.test("グループの確認", () => {
   assertEquals(
     cells.map((c) => c.groups),
     [
-      ["v0", "h0"],
-      ["v1", "h0"],
-      ["v2", "h0"],
-      ["v0", "h1"],
-      ["v1", "h1"],
-      ["v2", "h1"],
-      ["v0", "h2"],
-      ["v1", "h2"],
-      ["v2", "h2"],
+      ["v0", "h0", "b00"],
+      ["v1", "h0", "b00"],
+      ["v2", "h0", "b00"],
+      ["v0", "h1", "b01"],
+      ["v1", "h1", "b01"],
+      ["v2", "h1", "b01"],
+      ["v0", "h2", "b02"],
+      ["v1", "h2", "b02"],
+      ["v2", "h2", "b02"],
     ],
   );
 });

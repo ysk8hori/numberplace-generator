@@ -15,7 +15,11 @@ import {
 import type { Group } from "./group.ts";
 import { createPositions, isSamePos, type Position } from "./position.ts";
 import { createGameRange, type BlockSize } from "./game.ts";
-import { getHorizontalGroup, getVerticalGroup } from "./group.ts";
+import {
+  getBlockGroup,
+  getHorizontalGroup,
+  getVerticalGroup,
+} from "./group.ts";
 import { branch, throwError } from "../utils/utils.ts";
 import { filter } from "remeda";
 import { isStrictEqual } from "remeda";
@@ -31,21 +35,24 @@ export type Cell = {
   groups: Group[];
 };
 
-export const createCell: (
-  answerCnadidatesMut: AnswerCandidate[],
-) => (pos: Position) => Cell = (answerCnadidatesMut) => (pos) => ({
-  answerMut: undefined,
-  answerCnadidatesMut,
-  groups: [getVerticalGroup(pos), getHorizontalGroup(pos)],
-  pos,
-});
-
 export const createCells: (blocksize: BlockSize) => Cell[] = (blocksize) =>
   pipe(
     blocksize,
     createGameRange,
     createPositions,
-    map(createCell(pipe(blocksize, createGameRange))),
+    map(
+      (pos) =>
+        ({
+          answerMut: undefined,
+          answerCnadidatesMut: createGameRange(blocksize),
+          groups: [
+            getVerticalGroup(pos),
+            getHorizontalGroup(pos),
+            getBlockGroup(blocksize)(pos),
+          ],
+          pos,
+        }) satisfies Cell,
+    ),
   );
 
 export const isCellsPosition: (p: Position) => (c: Cell) => boolean =

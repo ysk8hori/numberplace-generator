@@ -18,6 +18,7 @@ snapshot[`9x9サイズ snapshot 1`] = `
     groups: [
       "v0",
       "h0",
+      "b00",
     ],
     pos: [
       0,
@@ -40,6 +41,7 @@ snapshot[`9x9サイズ snapshot 1`] = `
     groups: [
       "v1",
       "h0",
+      "b00",
     ],
     pos: [
       1,
@@ -62,6 +64,7 @@ snapshot[`9x9サイズ snapshot 1`] = `
     groups: [
       "v2",
       "h0",
+      "b00",
     ],
     pos: [
       2,
@@ -84,6 +87,7 @@ snapshot[`9x9サイズ snapshot 1`] = `
     groups: [
       "v3",
       "h0",
+      "b10",
     ],
     pos: [
       3,
@@ -106,6 +110,7 @@ snapshot[`9x9サイズ snapshot 1`] = `
     groups: [
       "v4",
       "h0",
+      "b10",
     ],
     pos: [
       4,
@@ -128,6 +133,7 @@ snapshot[`9x9サイズ snapshot 1`] = `
     groups: [
       "v5",
       "h0",
+      "b10",
     ],
     pos: [
       5,
@@ -150,6 +156,7 @@ snapshot[`9x9サイズ snapshot 1`] = `
     groups: [
       "v6",
       "h0",
+      "b20",
     ],
     pos: [
       6,
@@ -172,6 +179,7 @@ snapshot[`9x9サイズ snapshot 1`] = `
     groups: [
       "v7",
       "h0",
+      "b20",
     ],
     pos: [
       7,
@@ -194,6 +202,7 @@ snapshot[`9x9サイズ snapshot 1`] = `
     groups: [
       "v8",
       "h0",
+      "b20",
     ],
     pos: [
       8,
@@ -216,6 +225,7 @@ snapshot[`9x9サイズ snapshot 1`] = `
     groups: [
       "v0",
       "h1",
+      "b00",
     ],
     pos: [
       0,
@@ -238,6 +248,7 @@ snapshot[`9x9サイズ snapshot 1`] = `
     groups: [
       "v1",
       "h1",
+      "b00",
     ],
     pos: [
       1,
@@ -260,6 +271,7 @@ snapshot[`9x9サイズ snapshot 1`] = `
     groups: [
       "v2",
       "h1",
+      "b00",
     ],
     pos: [
       2,
@@ -282,6 +294,7 @@ snapshot[`9x9サイズ snapshot 1`] = `
     groups: [
       "v3",
       "h1",
+      "b10",
     ],
     pos: [
       3,
@@ -304,6 +317,7 @@ snapshot[`9x9サイズ snapshot 1`] = `
     groups: [
       "v4",
       "h1",
+      "b10",
     ],
     pos: [
       4,
@@ -326,6 +340,7 @@ snapshot[`9x9サイズ snapshot 1`] = `
     groups: [
       "v5",
       "h1",
+      "b10",
     ],
     pos: [
       5,
@@ -348,6 +363,7 @@ snapshot[`9x9サイズ snapshot 1`] = `
     groups: [
       "v6",
       "h1",
+      "b20",
     ],
     pos: [
       6,
@@ -370,6 +386,7 @@ snapshot[`9x9サイズ snapshot 1`] = `
     groups: [
       "v7",
       "h1",
+      "b20",
     ],
     pos: [
       7,
@@ -392,6 +409,7 @@ snapshot[`9x9サイズ snapshot 1`] = `
     groups: [
       "v8",
       "h1",
+      "b20",
     ],
     pos: [
       8,
@@ -414,6 +432,7 @@ snapshot[`9x9サイズ snapshot 1`] = `
     groups: [
       "v0",
       "h2",
+      "b00",
     ],
     pos: [
       0,
@@ -436,6 +455,7 @@ snapshot[`9x9サイズ snapshot 1`] = `
     groups: [
       "v1",
       "h2",
+      "b00",
     ],
     pos: [
       1,
@@ -458,6 +478,7 @@ snapshot[`9x9サイズ snapshot 1`] = `
     groups: [
       "v2",
       "h2",
+      "b00",
     ],
     pos: [
       2,
@@ -480,6 +501,7 @@ snapshot[`9x9サイズ snapshot 1`] = `
     groups: [
       "v3",
       "h2",
+      "b10",
     ],
     pos: [
       3,
@@ -502,6 +524,7 @@ snapshot[`9x9サイズ snapshot 1`] = `
     groups: [
       "v4",
       "h2",
+      "b10",
     ],
     pos: [
       4,
@@ -524,6 +547,7 @@ snapshot[`9x9サイズ snapshot 1`] = `
     groups: [
       "v5",
       "h2",
+      "b10",
     ],
     pos: [
       5,
@@ -546,6 +570,7 @@ snapshot[`9x9サイズ snapshot 1`] = `
     groups: [
       "v6",
       "h2",
+      "b20",
     ],
     pos: [
       6,
@@ -568,6 +593,7 @@ snapshot[`9x9サイズ snapshot 1`] = `
     groups: [
       "v7",
       "h2",
+      "b20",
     ],
     pos: [
       7,
@@ -590,6 +616,7 @@ snapshot[`9x9サイズ snapshot 1`] = `
     groups: [
       "v8",
       "h2",
+      "b20",
     ],
     pos: [
       8,
@@ -612,6 +639,7 @@ snapshot[`9x9サイズ snapshot 1`] = `
     groups: [
       "v0",
       "h3",
+      "b01",
     ],
     pos: [
       0,
@@ -634,6 +662,7 @@ snapshot[`9x9サイズ snapshot 1`] = `
     groups: [
       "v1",
       "h3",
+      "b01",
     ],
     pos: [
       1,
@@ -656,6 +685,7 @@ snapshot[`9x9サイズ snapshot 1`] = `
     groups: [
       "v2",
       "h3",
+      "b01",
     ],
     pos: [
       2,
@@ -678,6 +708,7 @@ snapshot[`9x9サイズ snapshot 1`] = `
     groups: [
       "v3",
       "h3",
+      "b11",
     ],
     pos: [
       3,
@@ -700,6 +731,7 @@ snapshot[`9x9サイズ snapshot 1`] = `
     groups: [
       "v4",
       "h3",
+      "b11",
     ],
     pos: [
       4,
@@ -722,6 +754,7 @@ snapshot[`9x9サイズ snapshot 1`] = `
     groups: [
       "v5",
       "h3",
+      "b11",
     ],
     pos: [
       5,
@@ -744,6 +777,7 @@ snapshot[`9x9サイズ snapshot 1`] = `
     groups: [
       "v6",
       "h3",
+      "b21",
     ],
     pos: [
       6,
@@ -766,6 +800,7 @@ snapshot[`9x9サイズ snapshot 1`] = `
     groups: [
       "v7",
       "h3",
+      "b21",
     ],
     pos: [
       7,
@@ -788,6 +823,7 @@ snapshot[`9x9サイズ snapshot 1`] = `
     groups: [
       "v8",
       "h3",
+      "b21",
     ],
     pos: [
       8,
@@ -810,6 +846,7 @@ snapshot[`9x9サイズ snapshot 1`] = `
     groups: [
       "v0",
       "h4",
+      "b01",
     ],
     pos: [
       0,
@@ -832,6 +869,7 @@ snapshot[`9x9サイズ snapshot 1`] = `
     groups: [
       "v1",
       "h4",
+      "b01",
     ],
     pos: [
       1,
@@ -854,6 +892,7 @@ snapshot[`9x9サイズ snapshot 1`] = `
     groups: [
       "v2",
       "h4",
+      "b01",
     ],
     pos: [
       2,
@@ -876,6 +915,7 @@ snapshot[`9x9サイズ snapshot 1`] = `
     groups: [
       "v3",
       "h4",
+      "b11",
     ],
     pos: [
       3,
@@ -898,6 +938,7 @@ snapshot[`9x9サイズ snapshot 1`] = `
     groups: [
       "v4",
       "h4",
+      "b11",
     ],
     pos: [
       4,
@@ -920,6 +961,7 @@ snapshot[`9x9サイズ snapshot 1`] = `
     groups: [
       "v5",
       "h4",
+      "b11",
     ],
     pos: [
       5,
@@ -942,6 +984,7 @@ snapshot[`9x9サイズ snapshot 1`] = `
     groups: [
       "v6",
       "h4",
+      "b21",
     ],
     pos: [
       6,
@@ -964,6 +1007,7 @@ snapshot[`9x9サイズ snapshot 1`] = `
     groups: [
       "v7",
       "h4",
+      "b21",
     ],
     pos: [
       7,
@@ -986,6 +1030,7 @@ snapshot[`9x9サイズ snapshot 1`] = `
     groups: [
       "v8",
       "h4",
+      "b21",
     ],
     pos: [
       8,
@@ -1008,6 +1053,7 @@ snapshot[`9x9サイズ snapshot 1`] = `
     groups: [
       "v0",
       "h5",
+      "b01",
     ],
     pos: [
       0,
@@ -1030,6 +1076,7 @@ snapshot[`9x9サイズ snapshot 1`] = `
     groups: [
       "v1",
       "h5",
+      "b01",
     ],
     pos: [
       1,
@@ -1052,6 +1099,7 @@ snapshot[`9x9サイズ snapshot 1`] = `
     groups: [
       "v2",
       "h5",
+      "b01",
     ],
     pos: [
       2,
@@ -1074,6 +1122,7 @@ snapshot[`9x9サイズ snapshot 1`] = `
     groups: [
       "v3",
       "h5",
+      "b11",
     ],
     pos: [
       3,
@@ -1096,6 +1145,7 @@ snapshot[`9x9サイズ snapshot 1`] = `
     groups: [
       "v4",
       "h5",
+      "b11",
     ],
     pos: [
       4,
@@ -1118,6 +1168,7 @@ snapshot[`9x9サイズ snapshot 1`] = `
     groups: [
       "v5",
       "h5",
+      "b11",
     ],
     pos: [
       5,
@@ -1140,6 +1191,7 @@ snapshot[`9x9サイズ snapshot 1`] = `
     groups: [
       "v6",
       "h5",
+      "b21",
     ],
     pos: [
       6,
@@ -1162,6 +1214,7 @@ snapshot[`9x9サイズ snapshot 1`] = `
     groups: [
       "v7",
       "h5",
+      "b21",
     ],
     pos: [
       7,
@@ -1184,6 +1237,7 @@ snapshot[`9x9サイズ snapshot 1`] = `
     groups: [
       "v8",
       "h5",
+      "b21",
     ],
     pos: [
       8,
@@ -1206,6 +1260,7 @@ snapshot[`9x9サイズ snapshot 1`] = `
     groups: [
       "v0",
       "h6",
+      "b02",
     ],
     pos: [
       0,
@@ -1228,6 +1283,7 @@ snapshot[`9x9サイズ snapshot 1`] = `
     groups: [
       "v1",
       "h6",
+      "b02",
     ],
     pos: [
       1,
@@ -1250,6 +1306,7 @@ snapshot[`9x9サイズ snapshot 1`] = `
     groups: [
       "v2",
       "h6",
+      "b02",
     ],
     pos: [
       2,
@@ -1272,6 +1329,7 @@ snapshot[`9x9サイズ snapshot 1`] = `
     groups: [
       "v3",
       "h6",
+      "b12",
     ],
     pos: [
       3,
@@ -1294,6 +1352,7 @@ snapshot[`9x9サイズ snapshot 1`] = `
     groups: [
       "v4",
       "h6",
+      "b12",
     ],
     pos: [
       4,
@@ -1316,6 +1375,7 @@ snapshot[`9x9サイズ snapshot 1`] = `
     groups: [
       "v5",
       "h6",
+      "b12",
     ],
     pos: [
       5,
@@ -1338,6 +1398,7 @@ snapshot[`9x9サイズ snapshot 1`] = `
     groups: [
       "v6",
       "h6",
+      "b22",
     ],
     pos: [
       6,
@@ -1360,6 +1421,7 @@ snapshot[`9x9サイズ snapshot 1`] = `
     groups: [
       "v7",
       "h6",
+      "b22",
     ],
     pos: [
       7,
@@ -1382,6 +1444,7 @@ snapshot[`9x9サイズ snapshot 1`] = `
     groups: [
       "v8",
       "h6",
+      "b22",
     ],
     pos: [
       8,
@@ -1404,6 +1467,7 @@ snapshot[`9x9サイズ snapshot 1`] = `
     groups: [
       "v0",
       "h7",
+      "b02",
     ],
     pos: [
       0,
@@ -1426,6 +1490,7 @@ snapshot[`9x9サイズ snapshot 1`] = `
     groups: [
       "v1",
       "h7",
+      "b02",
     ],
     pos: [
       1,
@@ -1448,6 +1513,7 @@ snapshot[`9x9サイズ snapshot 1`] = `
     groups: [
       "v2",
       "h7",
+      "b02",
     ],
     pos: [
       2,
@@ -1470,6 +1536,7 @@ snapshot[`9x9サイズ snapshot 1`] = `
     groups: [
       "v3",
       "h7",
+      "b12",
     ],
     pos: [
       3,
@@ -1492,6 +1559,7 @@ snapshot[`9x9サイズ snapshot 1`] = `
     groups: [
       "v4",
       "h7",
+      "b12",
     ],
     pos: [
       4,
@@ -1514,6 +1582,7 @@ snapshot[`9x9サイズ snapshot 1`] = `
     groups: [
       "v5",
       "h7",
+      "b12",
     ],
     pos: [
       5,
@@ -1536,6 +1605,7 @@ snapshot[`9x9サイズ snapshot 1`] = `
     groups: [
       "v6",
       "h7",
+      "b22",
     ],
     pos: [
       6,
@@ -1558,6 +1628,7 @@ snapshot[`9x9サイズ snapshot 1`] = `
     groups: [
       "v7",
       "h7",
+      "b22",
     ],
     pos: [
       7,
@@ -1580,6 +1651,7 @@ snapshot[`9x9サイズ snapshot 1`] = `
     groups: [
       "v8",
       "h7",
+      "b22",
     ],
     pos: [
       8,
@@ -1602,6 +1674,7 @@ snapshot[`9x9サイズ snapshot 1`] = `
     groups: [
       "v0",
       "h8",
+      "b02",
     ],
     pos: [
       0,
@@ -1624,6 +1697,7 @@ snapshot[`9x9サイズ snapshot 1`] = `
     groups: [
       "v1",
       "h8",
+      "b02",
     ],
     pos: [
       1,
@@ -1646,6 +1720,7 @@ snapshot[`9x9サイズ snapshot 1`] = `
     groups: [
       "v2",
       "h8",
+      "b02",
     ],
     pos: [
       2,
@@ -1668,6 +1743,7 @@ snapshot[`9x9サイズ snapshot 1`] = `
     groups: [
       "v3",
       "h8",
+      "b12",
     ],
     pos: [
       3,
@@ -1690,6 +1766,7 @@ snapshot[`9x9サイズ snapshot 1`] = `
     groups: [
       "v4",
       "h8",
+      "b12",
     ],
     pos: [
       4,
@@ -1712,6 +1789,7 @@ snapshot[`9x9サイズ snapshot 1`] = `
     groups: [
       "v5",
       "h8",
+      "b12",
     ],
     pos: [
       5,
@@ -1734,6 +1812,7 @@ snapshot[`9x9サイズ snapshot 1`] = `
     groups: [
       "v6",
       "h8",
+      "b22",
     ],
     pos: [
       6,
@@ -1756,6 +1835,7 @@ snapshot[`9x9サイズ snapshot 1`] = `
     groups: [
       "v7",
       "h8",
+      "b22",
     ],
     pos: [
       7,
@@ -1778,6 +1858,7 @@ snapshot[`9x9サイズ snapshot 1`] = `
     groups: [
       "v8",
       "h8",
+      "b22",
     ],
     pos: [
       8,
@@ -1799,6 +1880,7 @@ snapshot[`3x3サイズのセルを生成する 1`] = `
     groups: [
       "v0",
       "h0",
+      "b00",
     ],
     pos: [
       0,
@@ -1815,6 +1897,7 @@ snapshot[`3x3サイズのセルを生成する 1`] = `
     groups: [
       "v1",
       "h0",
+      "b00",
     ],
     pos: [
       1,
@@ -1831,6 +1914,7 @@ snapshot[`3x3サイズのセルを生成する 1`] = `
     groups: [
       "v2",
       "h0",
+      "b00",
     ],
     pos: [
       2,
@@ -1847,6 +1931,7 @@ snapshot[`3x3サイズのセルを生成する 1`] = `
     groups: [
       "v0",
       "h1",
+      "b01",
     ],
     pos: [
       0,
@@ -1863,6 +1948,7 @@ snapshot[`3x3サイズのセルを生成する 1`] = `
     groups: [
       "v1",
       "h1",
+      "b01",
     ],
     pos: [
       1,
@@ -1879,6 +1965,7 @@ snapshot[`3x3サイズのセルを生成する 1`] = `
     groups: [
       "v2",
       "h1",
+      "b01",
     ],
     pos: [
       2,
@@ -1895,6 +1982,7 @@ snapshot[`3x3サイズのセルを生成する 1`] = `
     groups: [
       "v0",
       "h2",
+      "b02",
     ],
     pos: [
       0,
@@ -1911,6 +1999,7 @@ snapshot[`3x3サイズのセルを生成する 1`] = `
     groups: [
       "v1",
       "h2",
+      "b02",
     ],
     pos: [
       1,
@@ -1927,6 +2016,7 @@ snapshot[`3x3サイズのセルを生成する 1`] = `
     groups: [
       "v2",
       "h2",
+      "b02",
     ],
     pos: [
       2,

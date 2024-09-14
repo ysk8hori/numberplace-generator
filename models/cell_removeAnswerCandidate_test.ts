@@ -1,11 +1,22 @@
 import { flat } from "remeda";
 import {
-  createCell,
+  AnswerCandidate,
+  Cell,
   createCells,
   filterByGroup,
   removeAnswerCandidate,
 } from "./cell.ts";
 import { assertEquals } from "@std/assert";
+import { Position } from "./position.ts";
+
+const createCell: (
+  answerCnadidatesMut: AnswerCandidate[],
+) => (pos: Position) => Cell = (answerCnadidatesMut) => (pos) => ({
+  answerMut: undefined,
+  answerCnadidatesMut,
+  groups: [],
+  pos,
+});
 
 Deno.test("セルの答えの候補から指定した値を削除できる", () => {
   const cell = createCell([0, 1, 2, 3, 4, 5])([0, 0]);

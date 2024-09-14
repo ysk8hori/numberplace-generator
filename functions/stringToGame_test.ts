@@ -44,13 +44,13 @@ Deno.test("puzzle_4_4", async (t) => {
   if (result.status === "success") {
     assertObjectMatch(result.cells.at(0)!, {
       pos: [0, 0],
-      // answerCnadidatesMut: [6, 8, 10, 12], // TODO 候補値は refineAnswerCandidate が完成してから検証する
+      answerCnadidatesMut: [7],
       answerMut: 7,
       groups: ["v0", "h0"],
     } satisfies Partial<Cell>);
     assertObjectMatch(result.cells.at(-1)!, {
       pos: [15, 15],
-      // answerCnadidatesMut: [0, 3, 5, 7, 11], // TODO 候補値は refineAnswerCandidate が完成してから検証する
+      answerCnadidatesMut: [3, 5, 7, 11],
       answerMut: undefined,
       groups: ["v15", "h15"],
     } satisfies Partial<Cell>);
@@ -68,7 +68,7 @@ Deno.test("puzzle_2_3", async (t) => {
     // 最初のセル
     assertObjectMatch(result.cells[0], {
       pos: [0, 0],
-      // answerCnadidatesMut: [0, 1], // TODO 候補値は refineAnswerCandidate が完成してから検証する
+      answerCnadidatesMut: [0],
       answerMut: undefined,
       groups: ["v0", "h0"],
     } satisfies Partial<Cell>);
@@ -77,7 +77,7 @@ Deno.test("puzzle_2_3", async (t) => {
       result.cells.find(({ pos }) => pos[0] === 1 && pos[1] === 5)!,
       {
         pos: [1, 5],
-        // answerCnadidatesMut: [3], // TODO 候補値は refineAnswerCandidate が完成してから検証する
+        answerCnadidatesMut: [0],
         answerMut: 0,
         groups: ["v1", "h5"],
       } satisfies Partial<Cell>,
@@ -100,20 +100,20 @@ Deno.test("puzzle_3_1", () => {
     pos: [0, 0],
     answerCnadidatesMut: [0],
     answerMut: undefined,
-    groups: ["v0", "h0"],
+    groups: ["v0", "h0", "b00"],
   } satisfies Cell);
 
   assertEquals(result.cells[1], {
     pos: [1, 0],
     answerCnadidatesMut: [1],
     answerMut: undefined,
-    groups: ["v1", "h0"],
+    groups: ["v1", "h0", "b00"],
   } satisfies Cell);
 
   assertEquals(result.cells[2], {
     pos: [2, 0],
     answerCnadidatesMut: [2],
     answerMut: undefined,
-    groups: ["v2", "h0"],
+    groups: ["v2", "h0", "b00"],
   } satisfies Cell);
 });

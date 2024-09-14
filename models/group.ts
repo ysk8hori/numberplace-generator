@@ -1,5 +1,5 @@
-import type { BlockSize } from "./blockSize.ts";
-import type { Position } from "./position.ts";
+import type { BlockSize } from './blockSize.ts';
+import type { Position } from './position.ts';
 
 /** Internal type */
 export type Group = string;

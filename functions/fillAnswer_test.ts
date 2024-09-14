@@ -1,10 +1,10 @@
-import { assertEquals } from "@std/assert";
-import { createCells, findCell } from "../models/cell.ts";
-import { fillAnswer } from "./fillAnswer.ts";
-import type { Position } from "../models/position.ts";
+import { assertEquals } from '@std/assert';
+import { createCells, findCell } from '../models/cell.ts';
+import { fillAnswer } from './fillAnswer.ts';
+import type { Position } from '../models/position.ts';
 
 Deno.test(
-  "記入対象のセルに答えを保持し、そのセルが所属するグループの全てのセルの候補から記入した値を除去する",
+  '記入対象のセルに答えを保持し、そのセルが所属するグループの全てのセルの候補から記入した値を除去する',
   () => {
     const cells = createCells({ width: 3, height: 2 });
     const findCellByPos = findCell(cells);

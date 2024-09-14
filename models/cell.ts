@@ -1,28 +1,28 @@
 import {
-  pipe,
-  map,
-  isEmpty,
-  isDeepEqual,
-  isNonNullish,
-  uniqueWith,
-  unique,
   difference,
-  zip,
-  tap,
-  piped,
+  isDeepEqual,
+  isEmpty,
+  isNonNullish,
   isNullish,
-} from "remeda";
-import type { Group } from "./group.ts";
-import { createPositions, isSamePos, type Position } from "./position.ts";
-import { createGameRange, type BlockSize } from "./blockSize.ts";
+  map,
+  pipe,
+  piped,
+  tap,
+  unique,
+  uniqueWith,
+  zip,
+} from 'remeda';
+import type { Group } from './group.ts';
+import { createPositions, isSamePos, type Position } from './position.ts';
+import { type BlockSize, createGameRange } from './blockSize.ts';
 import {
   getBlockGroup,
   getHorizontalGroup,
   getVerticalGroup,
-} from "./group.ts";
-import { branch, throwError } from "../utils/utils.ts";
-import { filter } from "remeda";
-import { isStrictEqual } from "remeda";
+} from './group.ts';
+import { branch, throwError } from '../utils/utils.ts';
+import { filter } from 'remeda';
+import { isStrictEqual } from 'remeda';
 
 export type Answer = number;
 export type AnswerCandidate = number;
@@ -41,42 +41,38 @@ export const createCells: (blocksize: BlockSize) => Cell[] = (blocksize) =>
     createGameRange,
     createPositions,
     map(
-      (pos) =>
-        ({
-          answerMut: undefined,
-          answerCnadidatesMut: createGameRange(blocksize),
-          groups: [
-            getVerticalGroup(pos),
-            getHorizontalGroup(pos),
-            getBlockGroup(blocksize)(pos),
-          ],
-          pos,
-        } satisfies Cell)
-    )
+      (pos) => ({
+        answerMut: undefined,
+        answerCnadidatesMut: createGameRange(blocksize),
+        groups: [
+          getVerticalGroup(pos),
+          getHorizontalGroup(pos),
+          getBlockGroup(blocksize)(pos),
+        ],
+        pos,
+      } satisfies Cell),
+    ),
   );
 
 export const isCellsPosition: (p: Position) => (c: Cell) => boolean =
-  (p) => (c) =>
-    isSamePos(c.pos, p);
+  (p) => (c) => isSamePos(c.pos, p);
 
 export const isInGroup: (cell: Cell) => (group: Group) => boolean =
-  (c) => (g) =>
-    c.groups.includes(g);
+  (c) => (g) => c.groups.includes(g);
 
 export const filterByGroup: (cells: Cell[]) => (group: Group) => Cell[] =
-  (cl) => (g) =>
-    cl.filter((c) => isInGroup(c)(g));
+  (cl) => (g) => cl.filter((c) => isInGroup(c)(g));
 
 export const getEmptyCells: (cells: Cell[]) => Cell[] = (cl) =>
   cl.filter((c) => isNonNullish(c.answerMut));
 
 /** 指定したセルから指定した候補値を削除する。削除した場合は true を返し、削除対象がなかった場合は false を返す。*/
 const removeAnswerCandidateForCell: (
-  c: Cell
+  c: Cell,
 ) => (a: AnswerCandidate) => boolean = (cellMut) => (a) => {
   const oldAnswerCandidateList = cellMut.answerCnadidatesMut;
   cellMut.answerCnadidatesMut = cellMut.answerCnadidatesMut.filter(
-    (v) => v !== a
+    (v) => v !== a,
   );
   return oldAnswerCandidateList.length !== cellMut.answerCnadidatesMut.length;
 };
@@ -86,7 +82,7 @@ const removeAnswerCandidateForCell: (
 削除対象としたセルのリストを返却する理由は、本関数によって変更が生じたか否かを確かめるのに使用するため。
 */
 export const removeAnswerCandidate: (
-  c: Cell[]
+  c: Cell[],
 ) => (a: AnswerCandidate) => Cell[] = (cells) => (a) =>
   pipe(
     cells,
@@ -94,7 +90,7 @@ export const removeAnswerCandidate: (
     map((f) => f(a)),
     zip(cells),
     filter(([b, _]) => b),
-    map(([_, c]) => c)
+    map(([_, c]) => c),
   );
 
 /**
@@ -104,7 +100,7 @@ export const removeAnswerCandidate: (
 export const fillCellAnswer: (a: Answer) => (cellMut: Cell) => void = (a) =>
   piped(
     tap((c) => (c.answerMut = a)),
-    tap((c) => (c.answerCnadidatesMut = [a]))
+    tap((c) => (c.answerCnadidatesMut = [a])),
   );
 
 export const findCell: (cells: Cell[]) => (p: Position) => Cell = (cl) => (p) =>
@@ -112,18 +108,18 @@ export const findCell: (cells: Cell[]) => (p: Position) => Cell = (cl) => (p) =>
 
 export const 同じ答え候補をもつセルの数が答え候補の数と同じか: (
   /** 同一グループのセル */
-  cellsByGroup: Cell[]
+  cellsByGroup: Cell[],
 ) => (al: AnswerCandidate[]) => boolean = (cl) => (al) =>
   al.length === cl.filter((c) => isDeepEqual(c.answerCnadidatesMut, al)).length;
 
 /** 同一グループのセルが持つ候補のリストのユニークなリストを取得する */
 export const getUniqueAnswercandidatesList: (
   /** 同一グループのセル */
-  cellsByGroup: Cell[]
+  cellsByGroup: Cell[],
 ) => AnswerCandidate[][] = (cl) =>
   uniqueWith(
     cl.map((c) => c.answerCnadidatesMut),
-    isDeepEqual
+    isDeepEqual,
   );
 
 const getUniqueGroups: (cells: Cell[]) => Group[] = (cl) =>
@@ -159,11 +155,15 @@ const refineAnswerCandidate: (cellsGroupMut: Cell[]) => void = (cl) =>
           cl
             .filter((c) => !isDeepEqual(al, c.answerCnadidatesMut))
             .forEach(
-              (c) =>
-                (c.answerCnadidatesMut = difference(c.answerCnadidatesMut, al))
+              (
+                c,
+              ) => (c.answerCnadidatesMut = difference(
+                c.answerCnadidatesMut,
+                al,
+              )),
             )
         )
-    )
+    ),
   );
 
 /**
@@ -174,14 +174,13 @@ const refineAnswerCandidate: (cellsGroupMut: Cell[]) => void = (cl) =>
 - 同じ候補値のリストを持つセルの数がその候補値のリスト長と同じ場合は、それらを持つセル達のみにそれらの候補値が当てはまるはずであるため、他のセルからそれらの候補値を削除する。
 */
 export const refineAnswerCandidateRecursive: (cellsGroupMut: Cell[]) => void = (
-  cl
+  cl,
 ) =>
   branch(
-    (cl: Cell[]) => JSON.stringify(cl.map((cl) => cl.answerCnadidatesMut)),
-    piped(tap(refineAnswerCandidate), (cl) =>
-      JSON.stringify(cl.map((cl) => cl.answerCnadidatesMut))
-    ),
-    isStrictEqual
-  )(cl)
+      (cl: Cell[]) => JSON.stringify(cl.map((cl) => cl.answerCnadidatesMut)),
+      piped(tap(refineAnswerCandidate), (cl) =>
+        JSON.stringify(cl.map((cl) => cl.answerCnadidatesMut))),
+      isStrictEqual,
+    )(cl)
     ? undefined
     : refineAnswerCandidateRecursive(cl);

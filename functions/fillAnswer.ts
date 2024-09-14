@@ -1,4 +1,4 @@
-import { tap, pipe } from "remeda";
+import { pipe, tap } from 'remeda';
 import {
   type Answer,
   type Cell,
@@ -7,9 +7,9 @@ import {
   findCell,
   isCellsPosition,
   removeAnswerCandidate,
-} from "../models/cell.ts";
-import type { Position } from "../models/position.ts";
-import { isNot } from "remeda";
+} from '../models/cell.ts';
+import type { Position } from '../models/position.ts';
+import { isNot } from 'remeda';
 
 export const fillAnswer: (
   cells: Cell[],
@@ -23,6 +23,6 @@ export const fillAnswer: (
       c.groups
         .map(filterByGroup(cl.filter(isNot(isCellsPosition(p)))))
         .map(removeAnswerCandidate)
-        .forEach((f) => f(a)),
+        .forEach((f) => f(a))
     ),
   );

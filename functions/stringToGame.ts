@@ -3,7 +3,7 @@ import {
   createCells,
   refineAnswerCandidateRecursive,
 } from "../models/cell.ts";
-import { type BlockSize, calcSideLength } from "../models/game.ts";
+import { calcSideLength, type BlockSize } from "../models/blockSize.ts";
 import type { Position } from "../models/position.ts";
 import { fillAnswer } from "./fillAnswer.ts";
 
@@ -57,8 +57,8 @@ export function stringToPuzzle({
   const answerAndPos = rowsAnswers
     .flatMap((answers, y) =>
       answers.map(
-        (a, x) => [parseInt(a, 16), [x, y] satisfies Position] as const,
-      ),
+        (a, x) => [parseInt(a, 16), [x, y] satisfies Position] as const
+      )
     )
     .filter(([a]) => !isNaN(a));
   if (answerAndPos.some(([a]) => sideLength <= a)) {

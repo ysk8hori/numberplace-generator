@@ -14,7 +14,7 @@ import {
 } from "remeda";
 import type { Group } from "./group.ts";
 import { createPositions, isSamePos, type Position } from "./position.ts";
-import { createGameRange, type BlockSize } from "./game.ts";
+import { createGameRange, type BlockSize } from "./blockSize.ts";
 import {
   getBlockGroup,
   getHorizontalGroup,
@@ -51,8 +51,8 @@ export const createCells: (blocksize: BlockSize) => Cell[] = (blocksize) =>
             getBlockGroup(blocksize)(pos),
           ],
           pos,
-        }) satisfies Cell,
-    ),
+        } satisfies Cell)
+    )
   );
 
 export const isCellsPosition: (p: Position) => (c: Cell) => boolean =
@@ -70,17 +70,13 @@ export const filterByGroup: (cells: Cell[]) => (group: Group) => Cell[] =
 export const getEmptyCells: (cells: Cell[]) => Cell[] = (cl) =>
   cl.filter((c) => isNonNullish(c.answerMut));
 
-type RemoveAnswerCandidate<T extends Cell | Cell[]> = (
-  c: T,
-) => (a: AnswerCandidate) => T extends Cell ? boolean : Cell[];
-
 /** 指定したセルから指定した候補値を削除する。削除した場合は true を返し、削除対象がなかった場合は false を返す。*/
 const removeAnswerCandidateForCell: (
-  c: Cell,
+  c: Cell
 ) => (a: AnswerCandidate) => boolean = (cellMut) => (a) => {
   const oldAnswerCandidateList = cellMut.answerCnadidatesMut;
   cellMut.answerCnadidatesMut = cellMut.answerCnadidatesMut.filter(
-    (v) => v !== a,
+    (v) => v !== a
   );
   return oldAnswerCandidateList.length !== cellMut.answerCnadidatesMut.length;
 };
@@ -90,16 +86,15 @@ const removeAnswerCandidateForCell: (
 削除対象としたセルのリストを返却する理由は、本関数によって変更が生じたか否かを確かめるのに使用するため。
 */
 export const removeAnswerCandidate: (
-  c: Cell[],
+  c: Cell[]
 ) => (a: AnswerCandidate) => Cell[] = (cells) => (a) =>
   pipe(
     cells,
     map(removeAnswerCandidateForCell),
     map((f) => f(a)),
-    // (b)=>zip(cells,b),
     zip(cells),
     filter(([b, _]) => b),
-    map(([_, c]) => c),
+    map(([_, c]) => c)
   );
 
 /**
@@ -109,7 +104,7 @@ export const removeAnswerCandidate: (
 export const fillCellAnswer: (a: Answer) => (cellMut: Cell) => void = (a) =>
   piped(
     tap((c) => (c.answerMut = a)),
-    tap((c) => (c.answerCnadidatesMut = [a])),
+    tap((c) => (c.answerCnadidatesMut = [a]))
   );
 
 export const findCell: (cells: Cell[]) => (p: Position) => Cell = (cl) => (p) =>
@@ -117,18 +112,18 @@ export const findCell: (cells: Cell[]) => (p: Position) => Cell = (cl) => (p) =>
 
 export const 同じ答え候補をもつセルの数が答え候補の数と同じか: (
   /** 同一グループのセル */
-  cellsByGroup: Cell[],
+  cellsByGroup: Cell[]
 ) => (al: AnswerCandidate[]) => boolean = (cl) => (al) =>
   al.length === cl.filter((c) => isDeepEqual(c.answerCnadidatesMut, al)).length;
 
 /** 同一グループのセルが持つ候補のリストのユニークなリストを取得する */
 export const getUniqueAnswercandidatesList: (
   /** 同一グループのセル */
-  cellsByGroup: Cell[],
+  cellsByGroup: Cell[]
 ) => AnswerCandidate[][] = (cl) =>
   uniqueWith(
     cl.map((c) => c.answerCnadidatesMut),
-    isDeepEqual,
+    isDeepEqual
   );
 
 const getUniqueGroups: (cells: Cell[]) => Group[] = (cl) =>
@@ -165,10 +160,10 @@ const refineAnswerCandidate: (cellsGroupMut: Cell[]) => void = (cl) =>
             .filter((c) => !isDeepEqual(al, c.answerCnadidatesMut))
             .forEach(
               (c) =>
-                (c.answerCnadidatesMut = difference(c.answerCnadidatesMut, al)),
-            ),
-        ),
-    ),
+                (c.answerCnadidatesMut = difference(c.answerCnadidatesMut, al))
+            )
+        )
+    )
   );
 
 /**
@@ -179,14 +174,14 @@ const refineAnswerCandidate: (cellsGroupMut: Cell[]) => void = (cl) =>
 - 同じ候補値のリストを持つセルの数がその候補値のリスト長と同じ場合は、それらを持つセル達のみにそれらの候補値が当てはまるはずであるため、他のセルからそれらの候補値を削除する。
 */
 export const refineAnswerCandidateRecursive: (cellsGroupMut: Cell[]) => void = (
-  cl,
+  cl
 ) =>
   branch(
     (cl: Cell[]) => JSON.stringify(cl.map((cl) => cl.answerCnadidatesMut)),
     piped(tap(refineAnswerCandidate), (cl) =>
-      JSON.stringify(cl.map((cl) => cl.answerCnadidatesMut)),
+      JSON.stringify(cl.map((cl) => cl.answerCnadidatesMut))
     ),
-    isStrictEqual,
+    isStrictEqual
   )(cl)
     ? undefined
     : refineAnswerCandidateRecursive(cl);

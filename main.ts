@@ -1,4 +1,5 @@
-import type { BlockSize, GameType } from "./models/game.ts";
+import type { GameType } from "./models/game.ts";
+import type { BlockSize } from "./models/blockSize.ts";
 import type { Position } from "./models/position.ts";
 
 export type {

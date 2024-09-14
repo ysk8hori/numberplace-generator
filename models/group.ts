@@ -1,4 +1,4 @@
-import type { BlockSize } from "./game.ts";
+import type { BlockSize } from "./blockSize.ts";
 import type { Position } from "./position.ts";
 
 /** Internal type */

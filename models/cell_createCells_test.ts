@@ -3,7 +3,7 @@ import { type Cell, createCells, 全てのセルが回答可能か } from "./cel
 import { assert, assertEquals, assertFalse } from "@std/assert";
 import { fillAnswer } from "../functions/fillAnswer.ts";
 
-Deno.test("9x9サイズ position", async (t) => {
+Deno.test("9x9サイズ position", () => {
   const cells = createCells({ height: 3, width: 3 });
   assertEquals(cells.length, 81);
   assertEquals<Cell>(cells[80], {
@@ -21,7 +21,7 @@ Deno.test("9x9サイズ snapshot", async (t) => {
 
 Deno.test(
   "3x3サイズのセルを生成する",
-  async (t) => await assertSnapshot(t, createCells({ height: 1, width: 3 })),
+  async (t) => await assertSnapshot(t, createCells({ height: 1, width: 3 }))
 );
 
 Deno.test(
@@ -37,7 +37,7 @@ Deno.test(
     assert(全てのセルが回答可能か(cells));
     fillAnswerByPos([1, 1])(2);
     assertFalse(全てのセルが回答可能か(cells));
-  },
+  }
 );
 
 Deno.test("グループの確認", () => {
@@ -55,6 +55,6 @@ Deno.test("グループの確認", () => {
       ["v0", "h2", "b02"],
       ["v1", "h2", "b02"],
       ["v2", "h2", "b02"],
-    ],
+    ]
   );
 });

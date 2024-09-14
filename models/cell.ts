@@ -16,7 +16,7 @@ import type { Group } from "./group.ts";
 import { createPositions, isSamePos, type Position } from "./position.ts";
 import { createGameRange, type BlockSize } from "./game.ts";
 import { getHorizontalGroup, getVerticalGroup } from "./group.ts";
-import { throwError } from "../utils/utils.ts";
+import { branch, merge, throwError } from "../utils/utils.ts";
 import { filter } from "remeda";
 
 export type Answer = number;
@@ -144,13 +144,15 @@ export const 全てのセルが回答可能か: (cells: Cell[]) => boolean = (cl
     .some((c) => isEmpty(c.answerCnadidatesMut));
 
 /**
-指定した複数のセルの候補値を、できる限り絞り込む。
+したものを利用する場合は refineAnswerCandidateRecursive を使うべき。
+
+候補値の最適化を行う。指定した複数のセルの候補値を、できる限り絞り込む。
 
 指定した複数のセルの候補値についてそれぞれグループに分け、同一グループに属するセルに以下を行う。
 
 - 同じ候補値のリストを持つセルの数がその候補値のリスト長と同じ場合は、それらを持つセル達のみにそれらの候補値が当てはまるはずであるため、他のセルからそれらの候補値を削除する。
 */
-export const refineAnswerCandidate: (cellsGroupMut: Cell[]) => void = (cl) =>
+const refineAnswerCandidate: (cellsGroupMut: Cell[]) => void = (cl) =>
   pipe(
     cl,
     getUniqueGroups,
@@ -168,3 +170,26 @@ export const refineAnswerCandidate: (cellsGroupMut: Cell[]) => void = (cl) =>
         ),
     ),
   );
+
+/**
+候補値の最適化を行う。指定した複数のセルの候補値を、できる限り絞り込む。
+
+指定した複数のセルの候補値についてそれぞれグループに分け、同一グループに属するセルに以下を行う。
+
+- 同じ候補値のリストを持つセルの数がその候補値のリスト長と同じ場合は、それらを持つセル達のみにそれらの候補値が当てはまるはずであるため、他のセルからそれらの候補値を削除する。
+*/
+export const refineAnswerCandidateRecursive: (cellsGroupMut: Cell[]) => void = (
+  cl,
+) =>
+  pipe(
+    cl,
+    branch(
+      (cl) => JSON.stringify(cl.map((cl) => cl.answerCnadidatesMut)),
+      piped(tap(refineAnswerCandidate), (cl) =>
+        JSON.stringify(cl.map((cl) => cl.answerCnadidatesMut)),
+      ),
+    ),
+    merge(([oldSnapshot, newSnapshot]) => oldSnapshot === newSnapshot),
+  )
+    ? undefined
+    : refineAnswerCandidateRecursive(cl);

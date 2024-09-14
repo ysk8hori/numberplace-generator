@@ -1,11 +1,7 @@
 import { stringToPuzzle } from "./stringToGame.ts";
 import { assertEquals, assertObjectMatch } from "@std/assert";
 import { assertSnapshot } from "@std/testing/snapshot";
-import {
-  filterByGroup,
-  refineAnswerCandidate,
-  type Cell,
-} from "../models/cell.ts";
+import type { Cell } from "../models/cell.ts";
 import { throwError } from "../utils/utils.ts";
 
 Deno.test("不正なサイズのパズル（小さい）", () => {
@@ -91,6 +87,7 @@ Deno.test("puzzle_2_3", async (t) => {
   }
   await assertSnapshot(t, result);
 });
+
 Deno.test("puzzle_3_1", () => {
   const result = stringToPuzzle({
     blockSize: { width: 3, height: 1 },
@@ -98,11 +95,6 @@ Deno.test("puzzle_3_1", () => {
   });
   if (result.status !== "success")
     throwError(`ステータスが不正：${result.status}`);
-
-  // TODO stringToPuzzle でも refineAnswerCandidate を実行しているが refineAnswerCandidate は複数回呼ぶと結果がより最適化される。refineAnswerCandidate を再帰実行するよう改善する。
-  // console.table(result.cells);
-  refineAnswerCandidate(result.cells);
-  // console.table(result.cells);
 
   assertEquals(result.cells[0], {
     pos: [0, 0],

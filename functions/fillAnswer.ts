@@ -6,7 +6,6 @@ import {
   filterByGroup,
   findCell,
   isCellsPosition,
-  refineAnswerCandidate,
   removeAnswerCandidate,
 } from "../models/cell.ts";
 import type { Position } from "../models/position.ts";

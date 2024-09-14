@@ -1,11 +1,10 @@
 import {
   type Cell,
   createCells,
-  findCell,
-  refineAnswerCandidate,
+  refineAnswerCandidateRecursive,
 } from "../models/cell.ts";
 import { type BlockSize, calcSideLength } from "../models/game.ts";
-import { isSamePos, Position } from "../models/position.ts";
+import type { Position } from "../models/position.ts";
 import { fillAnswer } from "./fillAnswer.ts";
 
 type StringToPuzzleFailureStatus =
@@ -73,7 +72,7 @@ export function stringToPuzzle({
   answerAndPos.forEach(([a, p]) => fillByPos(p)(a));
 
   // 全体の候補のリファインメントを実施する
-  refineAnswerCandidate(cells);
+  refineAnswerCandidateRecursive(cells);
 
   return { status: "success", cells };
 }

@@ -23,6 +23,7 @@ import {
 import { branch, throwError } from '../utils/utils.ts';
 import { filter } from 'remeda';
 import { isStrictEqual } from 'remeda';
+import type { GameType } from './game.ts';
 
 export type Answer = number;
 export type AnswerCandidate = number;
@@ -35,7 +36,10 @@ export type Cell = {
   groups: Group[];
 };
 
-export const createCells: (blocksize: BlockSize) => Cell[] = (blocksize) =>
+export const createCells: (
+  blocksize: BlockSize,
+  gameType?: GameType,
+) => Cell[] = (blocksize, gameType = 'standard') =>
   pipe(
     blocksize,
     createGameRange,
@@ -55,7 +59,7 @@ export const createCells: (blocksize: BlockSize) => Cell[] = (blocksize) =>
   );
 
 export const isCellsPosition: (p: Position) => (c: Cell) => boolean =
-  (p) => (c) => isSamePos(c.pos, p);
+  (p) => (c) => isSamePos(c.pos)(p);
 
 export const isInGroup: (cell: Cell) => (group: Group) => boolean =
   (c) => (g) => c.groups.includes(g);
@@ -109,7 +113,7 @@ export const fillCellAnswer: (a: Answer) => (cellMut: Cell) => void = (a) =>
   );
 
 export const findCell: (cells: Cell[]) => (p: Position) => Cell = (cl) => (p) =>
-  cl.find((c) => isSamePos(c.pos, p)) ?? throwError(`該当するセルがない. ${p}`);
+  cl.find(isCellsPosition(p)) ?? throwError(`該当するセルがない. ${p}`);
 
 export const 同じ答え候補をもつセルの数が答え候補の数と同じか: (
   /** 同一グループのセル */

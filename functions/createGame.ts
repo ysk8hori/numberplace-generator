@@ -19,7 +19,7 @@ export function createGame(
 ): Game {
   const sideLength = calcSideLength(blockSize);
   /** セルのリスト。巻き戻し時に再生性を行い再割り当てを行うことがある。 */
-  let cellsMut = createCells(blockSize);
+  let cellsMut = createCells(blockSize, gameType);
   /** 入力履歴 */
   const historiesMut: History[] = [];
 

@@ -32,3 +32,22 @@ Deno.test(
     assertEquals(findCellByPos([2, 5]).answerCnadidatesMut, [0, 1, 2, 3, 5]);
   },
 );
+
+Deno.test(
+  '1列回答したときに、それらのセルは解答と候補値が一致している',
+  () => {
+    const cells = createCells({ width: 1, height: 3 });
+    const findCellByPos = findCell(cells);
+
+    fillAnswer(cells)([0, 0])(0);
+    fillAnswer(cells)([1, 0])(1);
+    fillAnswer(cells)([2, 0])(2);
+
+    assertEquals(findCellByPos([0, 0]).answerMut, 0);
+    assertEquals(findCellByPos([0, 0]).answerCnadidatesMut[0], 0);
+    assertEquals(findCellByPos([1, 0]).answerMut, 1);
+    assertEquals(findCellByPos([1, 0]).answerCnadidatesMut[0], 1);
+    assertEquals(findCellByPos([2, 0]).answerMut, 2);
+    assertEquals(findCellByPos([2, 0]).answerCnadidatesMut[0], 2);
+  },
+);

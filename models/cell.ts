@@ -66,6 +66,11 @@ export const filterByGroup: (cells: Cell[]) => (group: Group) => Cell[] =
 export const getEmptyCells: (cells: Cell[]) => Cell[] = (cl) =>
   cl.filter((c) => isNonNullish(c.answerMut));
 
+export const getByPosition: (cells: Cell[]) => (p: Position) => Cell = (cl) =>
+(
+  p,
+) => cl.find(isCellsPosition(p)) ?? throwError(`該当するセルがない. ${p}`);
+
 /** 指定したセルから指定した候補値を削除する。削除した場合は true を返し、削除対象がなかった場合は false を返す。*/
 const removeAnswerCandidateForCell: (
   c: Cell,
@@ -125,6 +130,12 @@ export const getUniqueAnswercandidatesList: (
 const getUniqueGroups: (cells: Cell[]) => Group[] = (cl) =>
   unique(cl.flatMap((c) => c.groups));
 
+export const セルが回答済みか: (cell: Cell) => boolean = (c) =>
+  isNonNullish(c.answerMut);
+export const セルが未回答か: (cell: Cell) => boolean = (c) =>
+  isNullish(c.answerMut);
+export const 未回答のセルを抽出する: (cells: Cell[]) => Cell[] = (cl) =>
+  cl.filter(セルが未回答か);
 /**
 指定されたセル全部に対し、回答できる状態であることを確認する。
 答えが記入されていないのに候補が空であるセルは回答できない不正な状態になっているとみなせる。
@@ -133,6 +144,9 @@ export const 全てのセルが回答可能か: (cells: Cell[]) => boolean = (cl
   !cl
     .filter((c) => isNullish(c.answerMut))
     .some((c) => isEmpty(c.answerCnadidatesMut));
+
+export const 全てのセルが回答済みか: (cells: Cell[]) => boolean = (cl) =>
+  cl.filter((c) => isNullish(c.answerMut)).length === 0;
 
 /**
 したものを利用する場合は refineAnswerCandidateRecursive を使うべき。
@@ -184,3 +198,18 @@ export const refineAnswerCandidateRecursive: (cellsGroupMut: Cell[]) => void = (
     )(cl)
     ? undefined
     : refineAnswerCandidateRecursive(cl);
+
+export function cellToString(cells: Cell[]): string {
+  const horizontalLines: Map<number, Cell[]> = cells.reduce(
+    (p, cell) => {
+      const lineNo = cell.pos[1];
+      if (!p.has(lineNo)) p.set(lineNo, new Array<Cell>());
+      p.get(lineNo)?.push(cell);
+      return p;
+    },
+    new Map<number, Cell[]>(),
+  );
+  return Array.from(horizontalLines.values())
+    .map((line) => line.map((cell) => cell.answerMut ?? ' ').join(','))
+    .join('\n');
+}

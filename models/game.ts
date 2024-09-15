@@ -7,10 +7,14 @@ export type GameType = 'standard' | 'cross' | 'hyper';
 export type Difficulty = 'easy' | 'normal' | 'hard';
 
 /** Internal type */
-export type Game = {
+export type GameInfo = {
   blockSize: BlockSize;
   difficulty: Difficulty;
   gameType: GameType;
+};
+
+/** Internal type */
+export type Game = GameInfo & {
   puzzle: Cell[];
   solved: Cell[];
 };

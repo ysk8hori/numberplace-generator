@@ -1,7 +1,14 @@
-import type { Cell } from './cell.ts';
+import type { Answer, AnswerCandidate } from './cell.ts';
+import type { Position } from './position.ts';
 
 /** Internal type */
 export type History = {
-  cell: Cell;
-  answerCandidates: number[];
+  pos: Position;
+  answer: Answer;
+  answerCandidatesMut: AnswerCandidate[];
+  isTemporaryInput: true;
+} | {
+  pos: Position;
+  answer: Answer;
+  isTemporaryInput: false;
 };

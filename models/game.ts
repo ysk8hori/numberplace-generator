@@ -2,7 +2,7 @@ import type { Cell } from './cell.ts';
 import type { BlockSize } from './blockSize.ts';
 
 /** Internal type */
-export type GameType = 'standard' | 'cross' | 'hyper';
+export type GameType = 'standard' | 'cross' | 'hyper' | 'hypercross';
 /** Internal type */
 export type Difficulty = 'easy' | 'normal' | 'hard';
 

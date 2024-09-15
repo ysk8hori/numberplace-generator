@@ -99,6 +99,7 @@ export const getGroups: (
       getBlockGroup(b)(p),
       getHyperGroup(p),
       getTLBRGroup(p),
+      getTRBLGroup(b)(p),
     ]
     : gameType === 'hyper'
     ? [
@@ -113,6 +114,7 @@ export const getGroups: (
       getHorizontalGroup(p),
       getBlockGroup(b)(p),
       getTLBRGroup(p),
+      getTRBLGroup(b)(p),
     ]
     : [getVerticalGroup(p), getHorizontalGroup(p), getBlockGroup(b)(p)]).filter(
       isNonNullish,

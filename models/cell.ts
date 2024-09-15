@@ -15,11 +15,7 @@ import {
 import type { Group } from './group.ts';
 import { createPositions, isSamePos, type Position } from './position.ts';
 import { type BlockSize, createGameRange } from './blockSize.ts';
-import {
-  getBlockGroup,
-  getHorizontalGroup,
-  getVerticalGroup,
-} from './group.ts';
+import { getGroups } from './group.ts';
 import { branch, throwError } from '../utils/utils.ts';
 import { filter } from 'remeda';
 import { isStrictEqual } from 'remeda';
@@ -48,11 +44,7 @@ export const createCells: (
       (pos) => ({
         answerMut: undefined,
         answerCnadidatesMut: createGameRange(blocksize),
-        groups: [
-          getVerticalGroup(pos),
-          getHorizontalGroup(pos),
-          getBlockGroup(blocksize)(pos),
-        ],
+        groups: getGroups(blocksize)(gameType)(pos),
         pos,
       } satisfies Cell),
     ),
@@ -184,6 +176,9 @@ const refineAnswerCandidate: (cellsGroupMut: Cell[]) => void = (cl) =>
     ),
   );
 
+export const 候補値のスナップショットを取る: (cells: Cell[]) => string = (cl) =>
+  JSON.stringify(cl.map((cl) => cl.answerCnadidatesMut));
+
 /**
 候補値の最適化を行う。指定した複数のセルの候補値を、できる限り絞り込む。
 
@@ -195,9 +190,9 @@ export const refineAnswerCandidateRecursive: (cellsGroupMut: Cell[]) => void = (
   cl,
 ) =>
   branch(
-      (cl: Cell[]) => JSON.stringify(cl.map((cl) => cl.answerCnadidatesMut)),
+      (cl: Cell[]) => 候補値のスナップショットを取る(cl),
       piped(tap(refineAnswerCandidate), (cl) =>
-        JSON.stringify(cl.map((cl) => cl.answerCnadidatesMut))),
+        候補値のスナップショットを取る(cl)),
       isStrictEqual,
     )(cl)
     ? undefined

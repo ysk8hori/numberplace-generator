@@ -1,10 +1,10 @@
 import { pipe, shuffle } from 'remeda';
 import { calcSideLength, createGameRange } from '../models/blockSize.ts';
 import {
-  cellToString,
   filterByGroup,
   getByPosition,
   refineAnswerCandidateRecursive,
+  候補値のスナップショットを取る,
   全てのセルが回答可能か,
   全てのセルが回答済みか,
   未回答のセルを抽出する,
@@ -13,6 +13,18 @@ import { createCells } from '../models/cell.ts';
 import type { Game, GameInfo } from '../models/game.ts';
 import type { History } from '../models/history.ts';
 import { fillAnswer } from './fillAnswer.ts';
+
+export function createGameWrapper(
+  { blockSize, difficulty, gameType }: GameInfo,
+): Game {
+  while (true) {
+    try {
+      return createGame({ blockSize, difficulty, gameType });
+    } catch (e) {
+    }
+  }
+}
+
 
 export function createGame(
   { blockSize, difficulty, gameType }: GameInfo,
@@ -25,7 +37,9 @@ export function createGame(
 
   // 最上段のセルに対して、ランダムに解答を割り当てる
   const h0AnswersMut = pipe(createGameRange(sideLength), shuffle<number[]>);
-  filterByGroup(cellsMut)('h0').forEach((c) => {
+  filterByGroup(cellsMut)(
+    'hyper1',
+  ).forEach((c) => {
     const answer = h0AnswersMut.pop()!;
     historiesMut.push({
       pos: c.pos,
@@ -37,14 +51,36 @@ export function createGame(
     return c;
   });
 
+  let 試行回数 = 0;
+  let 候補値のスナップショット = '';
+
   // このループのルールとして、break する際には必ず fillAnswer を行うこと。状態が変わらないと無限ループになるため。
   while (true) {
+    試行回数++;
+    if (300 < 試行回数) {
+      // 試行回数が多すぎる場合は問題を生成できないとみなす
+      throw new Error('試行回数が多すぎる');
+    }
+    let flg = false;
+    if (80 < 試行回数 && 試行回数 % 10 === 0) {
+      // 80回以上の試行回数で、10回ごとにスナップショットを取り、前回と同じスナップショットが取れた場合は無限ループに陥っているため巻き戻しを行う。
+      const 前回のスナップショット = 候補値のスナップショット;
+      候補値のスナップショット = 候補値のスナップショットを取る(cellsMut);
+      flg = 前回のスナップショット === 候補値のスナップショット;
+      // if (試行回数 % 100 === 0) {
+      //   console.group(`途中経過 ${gameType}`);
+      //   console.log('試行回数2', 試行回数);
+      //   console.log(前回のスナップショット === 候補値のスナップショット);
+      //   console.groupEnd();
+      // }
+    }
     if (全てのセルが回答済みか(cellsMut)) {
       // すべてのセルに回答が割り当てられた場合は完成
       break;
     }
     refineAnswerCandidateRecursive(cellsMut);
-    if (!全てのセルが回答可能か(cellsMut)) {
+    if (!全てのセルが回答可能か(cellsMut) || flg) {
+      flg = false;
       // 回答不可能なセルがある場合は仮入力に誤りがあったといえる。
       // そのため仮入力ポイントまで巻き戻して、別の解答を試す。
       while (true) {
@@ -110,6 +146,7 @@ export function createGame(
       fillAnswer(cellsMut)(c.pos)(answer);
     });
   }
+  // console.log('試行回数', 試行回数);
 
   return {
     blockSize,
@@ -121,11 +158,42 @@ export function createGame(
 }
 
 if (import.meta.main) {
-  const game = createGame({
-    blockSize: { width: 3, height: 3 },
-    difficulty: 'easy',
-    gameType: 'standard',
-  });
-  console.log(cellToString(game.puzzle));
-  console.log(cellToString(game.solved));
+
+  await Deno.writeTextFile(
+    './hello.csv',
+    `standard,hyper,hypercross\n`,
+  );
+  for (let i = 0; i < 100; i++) {
+    const standardStart = Date.now();
+    createGameWrapper({
+      blockSize: { width: 3, height: 3 },
+      difficulty: 'easy',
+      gameType: 'standard',
+    });
+    const standardEnd = Date.now();
+    const hyperStart = Date.now();
+    createGameWrapper({
+      blockSize: { width: 3, height: 3 },
+      difficulty: 'easy',
+      gameType: 'hyper',
+    });
+    const hyperEnd = Date.now();
+    const hypercrossStart = Date.now();
+    createGameWrapper({
+      blockSize: { width: 3, height: 3 },
+      difficulty: 'easy',
+      gameType: 'hypercross',
+    });
+    const hypercrossEnd = Date.now();
+
+    await Deno.writeTextFile(
+      './hello.csv',
+      `${standardEnd - standardStart},${hyperEnd - hyperStart},${
+        hypercrossEnd - hypercrossStart
+      }\n`,
+      {
+        append: true,
+      },
+    );
+  }
 }

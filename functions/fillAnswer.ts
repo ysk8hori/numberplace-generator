@@ -12,7 +12,7 @@ import type { Position } from '../models/position.ts';
 import { isNot } from 'remeda';
 
 export const fillAnswer: (
-  cells: Cell[],
+  cellsMut: Cell[],
 ) => (p: Position) => (a: Answer) => void = (cl) => (p) => (a) =>
   pipe(
     findCell(cl)(p),

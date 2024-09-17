@@ -1,4 +1,5 @@
 import {
+  allPass,
   difference,
   isDeepEqual,
   isEmpty,
@@ -128,6 +129,8 @@ const getUniqueGroups: (cells: Cell[]) => Group[] = (cl) =>
 
 export const セルが回答済みか: (cell: Cell) => boolean = (c) =>
   isNonNullish(c.answerMut);
+export const 回答済みのセルを抽出する: (cells: Cell[]) => Cell[] = (cl) =>
+  cl.filter(セルが回答済みか);
 export const セルが未回答か: (cell: Cell) => boolean = (c) =>
   isNullish(c.answerMut);
 export const 未回答のセルを抽出する: (cells: Cell[]) => Cell[] = (cl) =>
@@ -141,8 +144,18 @@ export const 全てのセルが回答可能か: (cells: Cell[]) => boolean = (cl
     .filter((c) => isNullish(c.answerMut))
     .some((c) => isEmpty(c.answerCnadidatesMut));
 
+export const 重複した答えがあるか: (cells: Cell[]) => boolean = (cl) =>
+  pipe(
+    cl,
+    branch(getUniqueGroups, filterByGroup, (gl, f) => gl.map(f)),
+    (cll) =>
+      cll.map(回答済みのセルを抽出する).some((cl) =>
+        cl.length !== unique(cl.map((c) => c.answerMut)).length
+      ),
+  );
+
 export const 全てのセルが回答済みか: (cells: Cell[]) => boolean = (cl) =>
-  cl.filter((c) => isNullish(c.answerMut)).length === 0;
+  未回答のセルを抽出する(cl).length === 0;
 
 /**
 したものを利用する場合は refineAnswerCandidateRecursive を使うべき。
@@ -153,7 +166,7 @@ export const 全てのセルが回答済みか: (cells: Cell[]) => boolean = (cl
 
 - 同じ候補値のリストを持つセルの数がその候補値のリスト長と同じ場合は、それらを持つセル達のみにそれらの候補値が当てはまるはずであるため、他のセルからそれらの候補値を削除する。
 */
-const refineAnswerCandidate: (cellsGroupMut: Cell[]) => void = (cl) =>
+const refineAnswerCandidate: (cellsMut: Cell[]) => void = (cl) =>
   pipe(
     cl,
     getUniqueGroups,
@@ -186,7 +199,7 @@ export const 候補値のスナップショットを取る: (cells: Cell[]) => s
 
 - 同じ候補値のリストを持つセルの数がその候補値のリスト長と同じ場合は、それらを持つセル達のみにそれらの候補値が当てはまるはずであるため、他のセルからそれらの候補値を削除する。
 */
-export const refineAnswerCandidateRecursive: (cellsGroupMut: Cell[]) => void = (
+export const refineAnswerCandidateRecursive: (cellsMut: Cell[]) => void = (
   cl,
 ) =>
   branch(

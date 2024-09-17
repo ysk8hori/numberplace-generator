@@ -1,4 +1,4 @@
-import { stringToPuzzle } from './stringToGame.ts';
+import { stringToPuzzle } from './stringToPuzzle.ts';
 import { assertEquals, assertObjectMatch } from '@std/assert';
 import { assertSnapshot } from '@std/testing/snapshot';
 import type { Cell } from '../models/cell.ts';

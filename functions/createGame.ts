@@ -80,7 +80,7 @@ export function createGameWrapper(
     if (result.status === 'success') {
       return result.game;
     }
-    
+
     errorCount++;
     console.log('errorCount', errorCount, result.message);
   }
@@ -88,7 +88,7 @@ export function createGameWrapper(
 
 export function createGame(
   { blockSize, difficulty, gameType }: GameInfo,
-): { status: 'success'; game: Game } | { status: 'error', message:string } {
+): { status: 'success'; game: Game } | { status: 'error'; message: string } {
   /** セルのリスト。巻き戻し時に再生性を行い再割り当てを行うことがある。 */
   let cellsMut = createCells(blockSize, gameType);
   /** 入力履歴 */
@@ -119,7 +119,7 @@ export function createGame(
     試行回数++;
     if (最大試行回数を取得する(blockSize, gameType) < 試行回数) { // history を巻き戻して試すよりも、ダメなら最初からやり直すほうが早いようだ。
       // 試行回数が多すぎる場合は問題を生成できないとみなす
-      return { status: 'error', 'message':`試行回数エラー ${試行回数}` };
+      return { status: 'error', 'message': `試行回数エラー ${試行回数}` };
     }
     let flg = false;
     // if (試行回数 % 10 === 0) {
@@ -148,7 +148,10 @@ export function createGame(
         if (history === undefined) {
           // すべての回答を試し終えて問題を生成できないことは本来ない。
           // throw new Error('全ての解答を試し終わった');
-          return { status: 'error', message: '全ての解答を試し終わったが問題を生成できなかった' };
+          return {
+            status: 'error',
+            message: '全ての解答を試し終わったが問題を生成できなかった',
+          };
         }
         // history に対応するセルの回答を削除する
         getByPosition(cellsMut)(history.pos).answerMut = undefined;
@@ -221,7 +224,12 @@ export function createGame(
   if (
     threashold !== undefined &&
     threashold <= pipe(puzzle, 回答済みのセルを抽出する).length
-  ) return { status: 'error', message: `最小回答数が ${ pipe(puzzle, 回答済みのセルを抽出する).length}` };
+  ) {
+    return {
+      status: 'error',
+      message: `最小回答数が ${pipe(puzzle, 回答済みのセルを抽出する).length}`,
+    };
+  }
   console.log(
     '回答済みのセル',
     //   pipe(tmpPuzzle, 回答済みのセルを抽出する).length,

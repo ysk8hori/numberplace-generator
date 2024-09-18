@@ -257,16 +257,20 @@ export function createGame(
   };
 }
 
-if (import.meta.main) {
-  // await Deno.writeTextFile(
-  //   './hello.csv',
-  //   `standard,standard count,hyper,hyper count,hypercross,hypercross count\n`,
-  // );
-  for (let i = 0; i < 1; i++) {
-    await hypercrossを含まない時間計測処理();
+async function hoge() {
+  if (import.meta.main) {
+    // await Deno.writeTextFile(
+    //   './hello.csv',
+    //   `standard,standard count,hyper,hyper count,hypercross,hypercross count\n`,
+    // );
+    for (let i = 0; i < 1; i++) {
+      await hypercrossを含まない時間計測処理();
+    }
+    // 全タイプ生成してみる();
   }
-  // 全タイプ生成してみる();
 }
+
+hoge();
 
 function 全タイプ生成してみる() {
   console.group('▼standard3x3');

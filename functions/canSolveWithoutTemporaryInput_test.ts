@@ -1,4 +1,4 @@
-import { 仮入力無しで解けるか } from './仮入力無しで解けるか.ts';
+import { 仮入力無しで解けるか } from './canSolveWithoutTemporaryInput.ts';
 import { stringToPuzzle } from './stringToPuzzle.ts';
 import { assert, assertFalse } from '@std/assert';
 

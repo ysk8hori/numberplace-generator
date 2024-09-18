@@ -21,7 +21,7 @@ import { createCells } from '../models/cell.ts';
 import type { Game, GameInfo, GameType } from '../models/game.ts';
 import type { History } from '../models/history.ts';
 import { fillAnswer } from './fillAnswer.ts';
-import { 仮入力無しで解けるか } from './仮入力無しで解けるか.ts';
+import { 仮入力無しで解けるか } from './canSolveWithoutTemporaryInput.ts';
 
 function getMinimumAnsweredCellsCount(
   blockSize: BlockSize,

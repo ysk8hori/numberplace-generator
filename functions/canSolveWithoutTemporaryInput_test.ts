@@ -17,7 +17,7 @@ Deno.test('仮入力無しで解けない場合は false を返す', () => {
   }
 
   assertFalse(
-    仮入力無しで解けるか(result.cells, { blockSize, gameType: 'standard' }),
+    仮入力無しで解けるか(result.cells, { blockSize, gameTypes: ['standard'] }),
     '解けないはず',
   );
 });
@@ -37,7 +37,7 @@ Deno.test('仮入力無しで解ける場合は true を返す', () => {
   }
 
   assert(
-    仮入力無しで解けるか(result.cells, { blockSize, gameType: 'standard' }),
+    仮入力無しで解けるか(result.cells, { blockSize, gameTypes: ['standard'] }),
     '解けるはず',
   );
 });
@@ -56,7 +56,7 @@ Deno.test('仮入力無しで解けない場合は false を返す 3x3', () => {
   }
 
   assertFalse(
-    仮入力無しで解けるか(result.cells, { blockSize, gameType: 'standard' }),
+    仮入力無しで解けるか(result.cells, { blockSize, gameTypes: ['standard'] }),
     '解けないはず',
   );
 });
@@ -75,7 +75,7 @@ Deno.test('仮入力無しで解ける場合は true を返す 3x3', () => {
   }
 
   assertFalse(
-    仮入力無しで解けるか(result.cells, { blockSize, gameType: 'standard' }),
+    仮入力無しで解けるか(result.cells, { blockSize, gameTypes: ['standard'] }),
     '解けないはず',
   );
 });

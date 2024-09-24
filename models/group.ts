@@ -87,35 +87,16 @@ export const getHyperGroup: (pos: Position) => Group | undefined = (p) =>
 
 export const getGroups: (
   blockSize: BlockSize,
-) => (gameType: GameType) => (pos: Position) => Group[] = (
+) => (gameTypes: GameType[]) => (pos: Position) => Group[] = (
   b,
 ) =>
-(gameType) =>
+(gameTypes) =>
 (p) =>
-  (gameType === 'hypercross'
-    ? [
-      getVerticalGroup(p),
-      getHorizontalGroup(p),
-      getBlockGroup(b)(p),
-      getHyperGroup(p),
-      getTLBRGroup(p),
-      getTRBLGroup(b)(p),
-    ]
-    : gameType === 'hyper'
-    ? [
-      getVerticalGroup(p),
-      getHorizontalGroup(p),
-      getBlockGroup(b)(p),
-      getHyperGroup(p),
-    ]
-    : gameType === 'cross'
-    ? [
-      getVerticalGroup(p),
-      getHorizontalGroup(p),
-      getBlockGroup(b)(p),
-      getTLBRGroup(p),
-      getTRBLGroup(b)(p),
-    ]
-    : [getVerticalGroup(p), getHorizontalGroup(p), getBlockGroup(b)(p)]).filter(
-      isNonNullish,
-    );
+  [
+    getVerticalGroup(p),
+    getHorizontalGroup(p),
+    getBlockGroup(b)(p),
+    gameTypes.includes('hyper') ? getHyperGroup(p) : undefined,
+    gameTypes.includes('cross') ? getTLBRGroup(p) : undefined,
+    gameTypes.includes('cross') ? getTRBLGroup(b)(p) : undefined,
+  ].filter(isNonNullish);

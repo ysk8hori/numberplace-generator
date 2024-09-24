@@ -27,7 +27,7 @@ Deno.test('全てのセルが回答済みかを確認できる', () => {
 });
 
 Deno.test('セルが未回答かを確認できる', () => {
-  const cells = createCells({ height: 1, width: 3 });
+  const cells = createCells({ height: 1, width: 3 }, ['standard']);
   assert(セルが未回答か(cells[0]));
   assert(セルが未回答か(cells[1]));
   assert(セルが未回答か(cells[2]));

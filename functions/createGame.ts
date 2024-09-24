@@ -25,9 +25,9 @@ import { 仮入力無しで解けるか } from './canSolveWithoutTemporaryInput.
 
 function getMinimumAnsweredCellsCount(
   blockSize: BlockSize,
-  gameType: GameType,
+  gameTypes: GameType[],
 ): number | undefined {
-  if (gameType !== 'standard') return undefined;
+  if (!gameTypes.includes('standard')) return undefined;
   switch (calcSideLength(blockSize)) {
     case 3:
       return 3;
@@ -37,13 +37,18 @@ function getMinimumAnsweredCellsCount(
       return undefined;
   }
 }
+
 function 最大試行回数を取得する(
   blockSize: BlockSize,
-  gameType: GameType,
+  gameTypes: GameType[],
 ): number {
+  const sideLength = calcSideLength(blockSize);
+  const gameType = gameTypes.includes('hyper') && gameTypes.includes('cross')
+    ? 'hypercross'
+    : gameTypes[0];
   switch (gameType) {
     case 'standard':
-      switch (calcSideLength(blockSize)) {
+      switch (sideLength) {
         case 12:
           return 80;
         case 16:
@@ -54,7 +59,7 @@ function 最大試行回数を取得する(
     case 'hyper':
       return 35;
     case 'cross':
-      switch (calcSideLength(blockSize)) {
+      switch (sideLength) {
         case 6:
           return 25;
         case 9:
@@ -72,11 +77,11 @@ function 最大試行回数を取得する(
 }
 
 export function createGameWrapper(
-  { blockSize, difficulty, gameType }: GameInfo,
+  { blockSize, difficulty, gameTypes }: GameInfo,
 ): Game {
   let errorCount = 0;
   while (true) {
-    const result = createGame({ blockSize, difficulty, gameType });
+    const result = createGame({ blockSize, difficulty, gameTypes });
     if (result.status === 'success') {
       return result.game;
     }
@@ -87,10 +92,10 @@ export function createGameWrapper(
 }
 
 export function createGame(
-  { blockSize, difficulty, gameType }: GameInfo,
+  { blockSize, difficulty, gameTypes }: GameInfo,
 ): { status: 'success'; game: Game } | { status: 'error'; message: string } {
   /** セルのリスト。巻き戻し時に再生性を行い再割り当てを行うことがある。 */
-  let cellsMut = createCells(blockSize, gameType);
+  let cellsMut = createCells(blockSize, gameTypes);
   /** 入力履歴 */
   const historiesMut: History[] = [];
 
@@ -98,7 +103,7 @@ export function createGame(
   // const sideLength = calcSideLength(blockSize);
   // const h0AnswersMut = pipe(createGameRange(sideLength), shuffle<number[]>);
   // filterByGroup(cellsMut)(
-  //   gameType === 'hyper' || gameType === 'hypercross' ? 'b11': `h${sample(createGameRange(sideLength),1).at(0)}`,
+  //   gameTypes === 'hyper' || gameTypes === 'hypercross' ? 'b11': `h${sample(createGameRange(sideLength),1).at(0)}`,
   // ).forEach((c) => {
   //   const answer = h0AnswersMut.pop()!;
   //   historiesMut.push({
@@ -117,7 +122,7 @@ export function createGame(
   // このループのルールとして、break する際には必ず fillAnswer を行うこと。状態が変わらないと無限ループになるため。
   while (true) {
     試行回数++;
-    if (最大試行回数を取得する(blockSize, gameType) < 試行回数) { // history を巻き戻して試すよりも、ダメなら最初からやり直すほうが早いようだ。
+    if (最大試行回数を取得する(blockSize, gameTypes) < 試行回数) { // history を巻き戻して試すよりも、ダメなら最初からやり直すほうが早いようだ。
       // 試行回数が多すぎる場合は問題を生成できないとみなす
       return { status: 'error', 'message': `試行回数エラー ${試行回数}` };
     }
@@ -128,7 +133,7 @@ export function createGame(
     //   候補値のスナップショット = 候補値のスナップショットを取る(cellsMut);
     //   flg = 前回のスナップショット === 候補値のスナップショット;
     //   if (試行回数 % 100 === 0) {
-    //     console.group(`途中経過 ${gameType}`);
+    //     console.group(`途中経過 ${gameTypes}`);
     //     console.log('試行回数2', 試行回数);
     //     console.log(前回のスナップショット === 候補値のスナップショット);
     //     console.groupEnd();
@@ -170,7 +175,7 @@ export function createGame(
       }
 
       // 全てのセルの候補値の再計算を行うため、セルをリセットし history から復元する
-      cellsMut = createCells(blockSize, gameType);
+      cellsMut = createCells(blockSize, gameTypes);
       historiesMut.forEach((h) => fillAnswer(cellsMut)(h.pos)(h.answer));
       refineAnswerCandidateRecursive(cellsMut);
     }
@@ -219,8 +224,8 @@ export function createGame(
     historiesMut.filter((h) => h.isTemporaryInput).length,
   );
 
-  const puzzle = 穴あけ4(blockSize, gameType, [...historiesMut]);
-  const threashold = getMinimumAnsweredCellsCount(blockSize, gameType);
+  const puzzle = 穴あけ4(blockSize, gameTypes, [...historiesMut]);
+  const threashold = getMinimumAnsweredCellsCount(blockSize, gameTypes);
   if (
     threashold !== undefined &&
     threashold <= pipe(puzzle, 回答済みのセルを抽出する).length
@@ -237,7 +242,7 @@ export function createGame(
   );
   // const 仮入力無しで解ける = 仮入力無しで解けるか(puzzle, {
   //   blockSize,
-  //   gameType,
+  //   gameTypes,
   // });
   // console.log(仮入力無しで解ける);
   // if (!仮入力無しで解ける) {
@@ -250,7 +255,7 @@ export function createGame(
     game: {
       blockSize,
       difficulty,
-      gameType,
+      gameTypes,
       puzzle: puzzle,
       solved: cellsMut,
     },
@@ -278,7 +283,7 @@ function 全タイプ生成してみる() {
   const standard3 = createGameWrapper({
     blockSize: { width: 3, height: 1 },
     difficulty: 'easy',
-    gameType: 'standard',
+    gameTypes: ['standard'],
   });
   console.timeEnd('standard3x3');
   console.log('\nstandard\n', cellToString(standard3.puzzle));
@@ -289,7 +294,7 @@ function 全タイプ生成してみる() {
   const standard4 = createGameWrapper({
     blockSize: { width: 2, height: 2 },
     difficulty: 'easy',
-    gameType: 'standard',
+    gameTypes: ['standard'],
   });
   console.timeEnd('standard4x4');
   console.log('\nstandard4\n', cellToString(standard4.puzzle));
@@ -300,7 +305,7 @@ function 全タイプ生成してみる() {
   const standard6 = createGameWrapper({
     blockSize: { width: 3, height: 2 },
     difficulty: 'easy',
-    gameType: 'standard',
+    gameTypes: ['standard'],
   });
   console.timeEnd('standard6x6');
   console.log('\nstandard6\n', cellToString(standard6.puzzle));
@@ -311,7 +316,7 @@ function 全タイプ生成してみる() {
   const standard6c = createGameWrapper({
     blockSize: { width: 3, height: 2 },
     difficulty: 'easy',
-    gameType: 'cross',
+    gameTypes: ['cross'],
   });
   console.timeEnd('standard6x6cross');
   console.log('\nstandard6c\n', cellToString(standard6c.puzzle));
@@ -322,7 +327,7 @@ function 全タイプ生成してみる() {
   const standard = createGameWrapper({
     blockSize: { width: 3, height: 3 },
     difficulty: 'easy',
-    gameType: 'standard',
+    gameTypes: ['standard'],
   });
   console.timeEnd('standard');
   console.log('\nstandard\n', cellToString(standard.puzzle));
@@ -333,7 +338,7 @@ function 全タイプ生成してみる() {
   const hyper = createGameWrapper({
     blockSize: { width: 3, height: 3 },
     difficulty: 'easy',
-    gameType: 'hyper',
+    gameTypes: ['hyper'],
   });
   console.timeEnd('hyper');
   console.log('\nhyper\n', cellToString(hyper.puzzle));
@@ -344,7 +349,7 @@ function 全タイプ生成してみる() {
   const cross = createGameWrapper({
     blockSize: { width: 3, height: 3 },
     difficulty: 'easy',
-    gameType: 'cross',
+    gameTypes: ['cross'],
   });
   console.timeEnd('cross');
   console.log('\ncross\n', cellToString(cross.puzzle));
@@ -355,7 +360,7 @@ function 全タイプ生成してみる() {
   const standard12 = createGameWrapper({
     blockSize: { width: 4, height: 3 },
     difficulty: 'easy',
-    gameType: 'standard',
+    gameTypes: ['standard'],
   });
   console.timeEnd('standard12x12');
   console.log('\nstandard12\n', cellToString(standard12.puzzle));
@@ -366,7 +371,7 @@ function 全タイプ生成してみる() {
   const standard16 = createGameWrapper({
     blockSize: { width: 4, height: 4 },
     difficulty: 'easy',
-    gameType: 'standard',
+    gameTypes: ['standard'],
   });
   console.timeEnd('standard16x16');
   console.log('\nstandard16\n', cellToString(standard16.puzzle));
@@ -379,7 +384,7 @@ async function hypercrossを含まない時間計測処理() {
   const standard = createGameWrapper({
     blockSize: { width: 3, height: 3 },
     difficulty: 'easy',
-    gameType: 'standard',
+    gameTypes: ['standard'],
   });
   const standardEnd = Date.now();
   console.log('\nstandard\n', cellToString(standard.puzzle));
@@ -390,7 +395,7 @@ async function hypercrossを含まない時間計測処理() {
   const hyper = createGameWrapper({
     blockSize: { width: 3, height: 3 },
     difficulty: 'easy',
-    gameType: 'hyper',
+    gameTypes: ['hyper'],
   });
   const hyperEnd = Date.now();
   console.log('\nhyper\n', cellToString(hyper.puzzle));
@@ -415,7 +420,7 @@ async function hypercrossを含む時間計測処理() {
   const standard = createGameWrapper({
     blockSize: { width: 3, height: 3 },
     difficulty: 'easy',
-    gameType: 'standard',
+    gameTypes: ['standard'],
   });
   const standardEnd = Date.now();
   console.log('\nstandard\n', cellToString(standard.puzzle));
@@ -426,7 +431,7 @@ async function hypercrossを含む時間計測処理() {
   const hyper = createGameWrapper({
     blockSize: { width: 3, height: 3 },
     difficulty: 'easy',
-    gameType: 'hyper',
+    gameTypes: ['hyper'],
   });
   const hyperEnd = Date.now();
   console.log('\nhyper\n', cellToString(hyper.puzzle));
@@ -437,7 +442,7 @@ async function hypercrossを含む時間計測処理() {
   const hypercross = createGameWrapper({
     blockSize: { width: 3, height: 3 },
     difficulty: 'easy',
-    gameType: 'hypercross',
+    gameTypes: ['hyper', 'cross'],
   });
   const hypercrossEnd = Date.now();
   console.log(cellToString(hypercross.puzzle));
@@ -461,17 +466,17 @@ async function hypercrossを含む時間計測処理() {
 
 function 穴あけ4(
   blockSize: BlockSize,
-  gameType: GameType,
+  gameTypes: GameType[],
   historiesMut: History[],
 ): Cell[] {
   const 仮入力の履歴 = historiesMut.filter((h) => h.isTemporaryInput);
   const historiesLength = 仮入力の履歴.length;
-  const tmpPuzzle = createCells(blockSize, gameType);
+  const tmpPuzzle = createCells(blockSize, gameTypes);
   for (let i = 0; i < historiesLength; i++) {
     console.log('仮入力の履歴', 仮入力の履歴.length);
     const history = 仮入力の履歴.shift()!;
     仮入力の履歴.forEach((h) => fillAnswer(tmpPuzzle)(h.pos)(h.answer));
-    if (!仮入力無しで解けるか(tmpPuzzle, { blockSize, gameType })) {
+    if (!仮入力無しで解けるか(tmpPuzzle, { blockSize, gameTypes })) {
       仮入力の履歴.push(history);
     }
   }
@@ -480,17 +485,17 @@ function 穴あけ4(
 
 function 穴あけ３(
   blockSize: BlockSize,
-  gameType: GameType,
+  gameTypes: GameType[],
   cellsMut: Cell[],
 ): Cell[] {
-  const tmpPuzzle = createCells(blockSize, gameType);
+  const tmpPuzzle = createCells(blockSize, gameTypes);
   const shuffled = shuffle(cellsMut);
   for (let answer = 0; answer < calcSideLength(blockSize) - 1; answer++) {
     const c = shuffled.find((c) => c.answerMut === answer)!;
     fillAnswer(tmpPuzzle)(c.pos)(c.answerMut!);
   }
 
-  while (!仮入力無しで解けるか(tmpPuzzle, { blockSize, gameType })) {
+  while (!仮入力無しで解けるか(tmpPuzzle, { blockSize, gameTypes })) {
     // 候補が最も少ないセルを抽出する
     // const minAnswerCell = shuffle(
     //   未回答のセルを抽出する(tmpPuzzle).toSorted((a, b) =>
@@ -531,17 +536,17 @@ function 穴あけ３(
 
 function 穴あけ2(
   blockSize: BlockSize,
-  gameType: GameType,
+  gameTypes: GameType[],
   cellsMut: Cell[],
 ): Cell[] {
-  const tmpPuzzle = createCells(blockSize, gameType);
+  const tmpPuzzle = createCells(blockSize, gameTypes);
   const shuffled = shuffle(cellsMut);
   for (let answer = 0; answer < calcSideLength(blockSize) - 1; answer++) {
     const c = shuffled.find((c) => c.answerMut === answer)!;
     fillAnswer(tmpPuzzle)(c.pos)(c.answerMut!);
   }
 
-  while (!仮入力無しで解けるか(tmpPuzzle, { blockSize, gameType })) {
+  while (!仮入力無しで解けるか(tmpPuzzle, { blockSize, gameTypes })) {
     // 候補が最も少ないセルを抽出する
     // const minAnswerCell = shuffle(
     //   未回答のセルを抽出する(tmpPuzzle).toSorted((a, b) =>
@@ -571,24 +576,24 @@ function 穴あけ2(
 
 function 穴あけ1(
   blockSize: BlockSize,
-  gameType: GameType,
+  gameTypes: GameType[],
   cellsMut: Cell[],
 ): Cell[] {
   /** シャッフルしたセルのリスト。 ここから問題を解くのに必要最低限のセルを puzzle へ移植する。 */
-  const tmpPuzzle = createCells(blockSize, gameType);
+  const tmpPuzzle = createCells(blockSize, gameTypes);
 
   // 出来上がった答えをシャッフルして tmpPuzzle に答えを移植する
   for (const c of shuffle(cellsMut)) {
     fillAnswer(tmpPuzzle)(c.pos)(c.answerMut!);
     refineAnswerCandidateRecursive(tmpPuzzle);
     // 全てのセルが回答可能になるまで埋める
-    if (仮入力無しで解けるか(tmpPuzzle, { blockSize, gameType })) break;
+    if (仮入力無しで解けるか(tmpPuzzle, { blockSize, gameTypes })) break;
   }
 
   // tmpPuzzle を更に絞って puzzle に移植する
   const shuffledTmpPuzzle = shuffle(回答済みのセルを抽出する(tmpPuzzle));
   for (let i = 0; i < 回答済みのセルを抽出する(tmpPuzzle).length; i++) {
-    const tmptmpPuzzle = createCells(blockSize, gameType);
+    const tmptmpPuzzle = createCells(blockSize, gameTypes);
     const tmpCell = shuffledTmpPuzzle.pop()!;
 
     // console.log('shuffledTmpPuzzle', shuffledTmpPuzzle.length);
@@ -601,11 +606,11 @@ function 穴あけ1(
     //   pipe(tmptmpPuzzle, 回答済みのセルを抽出する).length,
     // );
     // 仮入力無しで解けるなら tmpCell はなくても良いが、解けないなら tmpCell は必要なので puzzle に移植する
-    if (!仮入力無しで解けるか(tmptmpPuzzle, { blockSize, gameType })) {
+    if (!仮入力無しで解けるか(tmptmpPuzzle, { blockSize, gameTypes })) {
       shuffledTmpPuzzle.unshift(tmpCell);
     }
   }
-  const puzzle = createCells(blockSize, gameType);
+  const puzzle = createCells(blockSize, gameTypes);
   for (const c of shuffledTmpPuzzle) {
     fillAnswer(puzzle)(c.pos)(c.answerMut!);
   }

@@ -41,7 +41,7 @@ export function generateGame(
   const result = createGameWrapper({
     blockSize,
     difficulty: 'easy',
-    gameType: option?.gameTypes?.at(0) ?? 'standard',
+    gameTypes: option?.gameTypes ?? ['standard'],
   });
   return [convert(result.puzzle), convert(result.solved)];
 }

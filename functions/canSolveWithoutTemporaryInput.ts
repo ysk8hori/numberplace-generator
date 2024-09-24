@@ -16,12 +16,12 @@ import { fillAnswer } from './fillAnswer.ts';
 
 export function 仮入力無しで解けるか(
   途中まで入力済みのパズル: Cell[],
-  { blockSize, gameType }: Pick<GameInfo, 'blockSize' | 'gameType'>,
+  { blockSize, gameTypes }: Pick<GameInfo, 'blockSize' | 'gameTypes'>,
 ): boolean {
   // 受け取ったパズルを汚染したくないのでコピーを作成する
   const 入力済みのパズルが解けるかを試すためのパズル = createCells(
     blockSize,
-    gameType,
+    gameTypes,
   );
   pipe(
     途中まで入力済みのパズル,

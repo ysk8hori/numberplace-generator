@@ -35,8 +35,8 @@ export type Cell = {
 
 export const createCells: (
   blocksize: BlockSize,
-  gameType?: GameType,
-) => Cell[] = (blocksize, gameType = 'standard') =>
+  gameTypes?: GameType[],
+) => Cell[] = (blocksize, gameTypes) =>
   pipe(
     blocksize,
     createGameRange,
@@ -45,7 +45,7 @@ export const createCells: (
       (pos) => ({
         answerMut: undefined,
         answerCnadidatesMut: createGameRange(blocksize),
-        groups: getGroups(blocksize)(gameType)(pos),
+        groups: getGroups(blocksize)(gameTypes ?? ['standard'])(pos),
         pos,
       } satisfies Cell),
     ),

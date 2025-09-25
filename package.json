@@ -34,9 +34,9 @@
   },
   "author": "",
   "dependencies": {
-    "reflect-metadata": "^0.2.0",
-    "tsyringe": "^4.6.0",
-    "uuid": "^10.0.0"
+    "reflect-metadata": "0.2.2",
+    "tsyringe": "4.8.0",
+    "uuid": "10.0.0"
   },
   "devDependencies": {
     "@types/node": "20.16.5",

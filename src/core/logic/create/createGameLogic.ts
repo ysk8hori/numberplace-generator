@@ -124,7 +124,7 @@ export default class CreateGameLogic {
             } else {
               return false;
             }
-          } catch (e) {
+          } catch {
             return false;
           } finally {
             this.deleteGameLogic.execute(fliped.gameId);

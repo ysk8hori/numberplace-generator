@@ -33,16 +33,6 @@ function calculateAverage(values: number[]): number {
   return sum / values.length;
 }
 
-function calculateAverageExcludingOutliers(values: number[]): number {
-  if (values.length <= 2) {
-    return calculateAverage(values);
-  }
-  // 最大値と最小値を除外
-  const sorted = [...values].sort((a, b) => a - b);
-  const excluded = sorted.slice(1, -1);
-  return calculateAverage(excluded);
-}
-
 function saveToCsv(
   timestamp: string,
   branch: string,

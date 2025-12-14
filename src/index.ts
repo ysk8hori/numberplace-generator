@@ -176,7 +176,7 @@ export function analyzeGame({
     fliped = game.fliped();
     InfiniteAnalyzeLogic.createAndExecute(game.gameId);
     InfiniteAnalyzeLogic.createAndExecute(fliped.gameId);
-  } catch (e) {
+  } catch {
     return { status: 'invalid_puzzle' };
   }
   const cells = cellRepository.findAll(game.gameId);

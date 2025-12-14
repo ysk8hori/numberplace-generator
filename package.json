@@ -4,6 +4,7 @@
   "description": "Generate number-place (Sudoku) game.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "packageManager": "pnpm@10.18.2",
   "files": [
     "dist"
   ],
@@ -29,7 +30,7 @@
     "measure:executeion:time": "ts-node -r tsconfig-paths/register src/measureExecutionTime.ts",
     "commit": "git-cz",
     "commitmsg": "validate-commit-msg",
-    "prepublishOnly": "npm run build",
+    "prepublishOnly": "pnpm run build",
     "semantic-release": "semantic-release"
   },
   "author": "",

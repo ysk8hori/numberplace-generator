@@ -1,4 +1,3 @@
-import { Width } from '@/core/valueobject/width';
 import Utils from '@/utils/utils';
 
 /**
@@ -14,7 +13,7 @@ export default class HorizontalPosition {
    * 指定したWidthの幅分すべてのHorizontalPositionを生成する。
    * @param width ゲームボードの幅
    */
-  public static createAll(width: Width): HorizontalPosition[] {
+  public static createAll(width: number): HorizontalPosition[] {
     return Utils.createArray(width).map(index => new HorizontalPosition(index));
   }
   /**

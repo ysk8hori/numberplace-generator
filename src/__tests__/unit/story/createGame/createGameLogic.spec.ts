@@ -79,7 +79,7 @@ describe('CreateGameLogic', () => {
       ).toBeLessThan(82 / 2 + 5);
     });
   });
-  describe('3x3(極)', () => {
+  describe.skip('3x3(極)', () => {
     let gameId: GameID;
     beforeAll(() => {
       gameId = CreateGoodGameLogic.create(

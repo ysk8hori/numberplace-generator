@@ -15,9 +15,7 @@ export default class HorizontalPosition {
    * @param width ゲームボードの幅
    */
   public static createAll(width: Width): HorizontalPosition[] {
-    return Utils.createArray(width).map(index =>
-      new HorizontalPosition(index),
-    );
+    return Utils.createArray(width).map(index => new HorizontalPosition(index));
   }
   /**
    * HorizontalPositionを生成する

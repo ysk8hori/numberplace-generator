@@ -15,9 +15,7 @@ export default class VerticalPosition {
    * @param height ゲームボードの高さ
    */
   public static createAll(height: Height): VerticalPosition[] {
-    return Utils.createArray(height).map(index =>
-      new VerticalPosition(index),
-    );
+    return Utils.createArray(height).map(index => new VerticalPosition(index));
   }
   /**
    * VerticalPositionを生成する

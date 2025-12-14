@@ -1,7 +1,7 @@
 import Cell from '@/core/entity/cell';
 import CellPosition from '@/core/valueobject/cellPosition';
-import { Height, createHeight } from '@/core/valueobject/height';
-import { Width, createWidth } from '@/core/valueobject/width';
+import { createHeight } from '@/core/valueobject/height';
+import { createWidth } from '@/core/valueobject/width';
 import AnswerCandidateCollection from '@/core/answerCandidateCollection';
 import BaseWidth from '@/core/valueobject/baseWidth';
 import BaseHeight from '@/core/valueobject/baseHeight';

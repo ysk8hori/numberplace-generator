@@ -6,6 +6,9 @@ import BaseWidth from '@/core/valueobject/baseWidth';
  */
 export type Width = number;
 
-export const createWidth = (baseHeight: BaseHeight, baseWidth: BaseWidth): Width => {
+export const createWidth = (
+  baseHeight: BaseHeight,
+  baseWidth: BaseWidth,
+): Width => {
   return baseHeight.value * baseWidth.value;
 };

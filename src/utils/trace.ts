@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
- 
+
 /**
  * トレースログを出力する。ログの内容は以下。
  * - クラス名

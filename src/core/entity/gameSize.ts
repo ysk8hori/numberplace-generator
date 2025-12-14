@@ -12,15 +12,18 @@ export default class GameSize {
     return Number.isNaN(oneSideLength)
       ? 'Please chose base-height and base-width.'
       : GameSize.MAX_SIZE < oneSideLength
-      ? 'Please chose smaller size.'
-      : oneSideLength < GameSize.MIN_SIZE
-      ? 'Please chose larger size.'
-      : new GameSize(
-          BaseHeight.create(baseHeight),
-          BaseWidth.create(baseWidth),
-        );
+        ? 'Please chose smaller size.'
+        : oneSideLength < GameSize.MIN_SIZE
+          ? 'Please chose larger size.'
+          : new GameSize(
+              BaseHeight.create(baseHeight),
+              BaseWidth.create(baseWidth),
+            );
   }
-  constructor(private _baseHeight: BaseHeight, private _baseWidth: BaseWidth) {}
+  constructor(
+    private _baseHeight: BaseHeight,
+    private _baseWidth: BaseWidth,
+  ) {}
   public get size(): number {
     return this.baseHeight.value * this.baseWidth.value;
   }

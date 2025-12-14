@@ -1,12 +1,12 @@
 import Group, { GroupType } from '@/core/entity/group';
 import VerticalPosition, { vPos } from '@/core/valueobject/verticalPosition';
-import { Height, createHeight } from '@/core/valueobject/height';
+import { createHeight } from '@/core/valueobject/height';
 import BaseHeight from '@/core/valueobject/baseHeight';
 import BaseWidth from '@/core/valueobject/baseWidth';
 import HorizontalPosition, {
   hPos,
 } from '@/core/valueobject/horizontalPosition';
-import { Width, createWidth } from '@/core/valueobject/width';
+import { createWidth } from '@/core/valueobject/width';
 import Utils from '@/utils/utils';
 import CellPosition from '@/core/valueobject/cellPosition';
 import CellCollection from '@/core/cellCollection';

@@ -1,7 +1,7 @@
 import Cell from '@/core/entity/cell';
 import CellPosition from '@/core/valueobject/cellPosition';
-import Height from '@/core/valueobject/height';
-import Width from '@/core/valueobject/width';
+import { Height, createHeight } from '@/core/valueobject/height';
+import { Width, createWidth } from '@/core/valueobject/width';
 import AnswerCandidateCollection from '@/core/answerCandidateCollection';
 import BaseWidth from '@/core/valueobject/baseWidth';
 import BaseHeight from '@/core/valueobject/baseHeight';
@@ -38,8 +38,8 @@ export default class CellFactory {
   public createCells(): CellCollection {
     const cellArray: Cell[] = [];
     for (const pos of CellPosition.generate(
-      Width.create(this.baseHeight, this.baseWidth),
-      Height.create(this.baseHeight, this.baseWidth),
+      createWidth(this.baseHeight, this.baseWidth),
+      createHeight(this.baseHeight, this.baseWidth),
     )) {
       cellArray.push(
         Cell.create(

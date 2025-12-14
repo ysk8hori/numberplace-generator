@@ -1,4 +1,4 @@
-import Width from '@/core/valueobject/width';
+import { Width } from '@/core/valueobject/width';
 import Utils from '@/utils/utils';
 
 /**
@@ -14,20 +14,17 @@ export default class HorizontalPosition {
    * 指定したWidthの幅分すべてのHorizontalPositionを生成する。
    * @param width ゲームボードの幅
    */
-  public static create(width: Width): HorizontalPosition[];
+  public static createAll(width: Width): HorizontalPosition[] {
+    return Utils.createArray(width).map(index =>
+      new HorizontalPosition(index),
+    );
+  }
   /**
-   * 水平位置を指定してHorizontalPositionを生成する。
+   * HorizontalPositionを生成する
    * @param value 水平位置
    */
-  public static create(value: number): HorizontalPosition;
-  public static create(
-    arg: number | Width,
-  ): HorizontalPosition | HorizontalPosition[] {
-    return arg instanceof Width
-      ? Utils.createArray(arg.value).map(index =>
-          HorizontalPosition.create(index),
-        )
-      : new HorizontalPosition(arg);
+  public static create(value: number): HorizontalPosition {
+    return new HorizontalPosition(value);
   }
   public equals(horizontalPosition: HorizontalPosition): boolean {
     return this.value === horizontalPosition.value;

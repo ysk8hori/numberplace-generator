@@ -1,4 +1,4 @@
-import Height from '@/core/valueobject/height';
+import { Height } from '@/core/valueobject/height';
 import Utils from '@/utils/utils';
 
 /**
@@ -14,20 +14,17 @@ export default class VerticalPosition {
    * 指定したHeightの幅分すべてのVerticalPositionを生成する。
    * @param height ゲームボードの高さ
    */
-  public static create(height: Height): VerticalPosition[];
+  public static createAll(height: Height): VerticalPosition[] {
+    return Utils.createArray(height).map(index =>
+      new VerticalPosition(index),
+    );
+  }
   /**
-   * VerticalPosition
+   * VerticalPositionを生成する
    * @param value 縦位置
    */
-  public static create(value: number): VerticalPosition;
-  public static create(
-    arg: number | Height,
-  ): VerticalPosition | VerticalPosition[] {
-    return arg instanceof Height
-      ? Utils.createArray(arg.value).map(index =>
-          VerticalPosition.create(index),
-        )
-      : new VerticalPosition(arg);
+  public static create(value: number): VerticalPosition {
+    return new VerticalPosition(value);
   }
   /** 等価比較 */
   public equals(other: VerticalPosition): boolean {

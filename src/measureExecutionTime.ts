@@ -37,7 +37,7 @@ function saveToCsv(
   timestamp: string,
   branch: string,
   nodeVersion: string,
-  averages: Map<GameType, number>
+  averages: Map<GameType, number>,
 ) {
   try {
     const benchmarkDir = join(process.cwd(), 'benchmark');
@@ -50,7 +50,8 @@ function saveToCsv(
 
     // ファイルが存在しない場合はヘッダーを作成
     if (!existsSync(csvPath)) {
-      const header = 'timestamp\tbranch\tnode_version\tstandard_avg_ms\tcross_avg_ms\n';
+      const header =
+        'timestamp\tbranch\tnode_version\tstandard_avg_ms\tcross_avg_ms\n';
       writeFileSync(csvPath, header, 'utf8');
     }
 
@@ -87,7 +88,9 @@ async function measureExecutionTime() {
   console.log('\n=== Individual Results ===');
   console.log('standard\tcross');
   for (let i = 0; i < repeatCount; i++) {
-    const row = gameTypes.map(gameType => map.get(gameType)![i].toFixed(2)).join('\t');
+    const row = gameTypes
+      .map(gameType => map.get(gameType)![i].toFixed(2))
+      .join('\t');
     console.log(row);
   }
 
@@ -98,7 +101,9 @@ async function measureExecutionTime() {
     const values = map.get(gameType)!;
     const avg = calculateAverage(values);
     averages.set(gameType, avg);
-    console.log(`${gameType}: ${avg.toFixed(2)} (from ${values.length} samples)`);
+    console.log(
+      `${gameType}: ${avg.toFixed(2)} (from ${values.length} samples)`,
+    );
   });
 
   // CSV に保存

@@ -1,7 +1,5 @@
 import HorizontalPosition, { hPos } from './horizontalPosition';
 import VerticalPosition, { vPos } from './verticalPosition';
-import Width from '@/core/valueobject/width';
-import Height from '@/core/valueobject/height';
 
 /**
  * GameBoardにおけるCellの位置を表すクラス。
@@ -57,11 +55,11 @@ export default class CellPosition {
   }
 
   public static *generate(
-    width: Width,
-    height: Height,
+    width: number,
+    height: number,
   ): Generator<CellPosition, void, unknown> {
-    for (const vPos of VerticalPosition.create(height)) {
-      for (const hPos of HorizontalPosition.create(width)) {
+    for (const vPos of VerticalPosition.createAll(height)) {
+      for (const hPos of HorizontalPosition.createAll(width)) {
         yield CellPosition.create(vPos, hPos);
       }
     }

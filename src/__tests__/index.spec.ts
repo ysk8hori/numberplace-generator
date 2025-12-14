@@ -39,15 +39,11 @@ test('一辺のサイズが3の小さな問題を生成できる', () => {
   expect(info).toEqual({ difficulty: 0 });
 });
 
-describe.each([
-  { width: 3, height: 2 },
-])('', blockSize => {
-  test(
-    `${JSON.stringify(blockSize)}のクロスの問題を生成できる`,
-    () => {
-      const [, solved, info] = generateGame(blockSize, {
-        gameTypes: ['cross'],
-      });
+describe.each([{ width: 3, height: 2 }])('', blockSize => {
+  test(`${JSON.stringify(blockSize)}のクロスの問題を生成できる`, () => {
+    const [, solved, info] = generateGame(blockSize, {
+      gameTypes: ['cross'],
+    });
     // 左上から右下にかけて斜めのグループのセルの数字が一意であること
     const leftups = solved.cells
       .filter(c => c.pos[0] === c.pos[1])

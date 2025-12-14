@@ -2,8 +2,6 @@ import CellPosition from '../valueobject/cellPosition';
 import BaseWidth from '@/core/valueobject/baseWidth';
 import BaseHeight from '@/core/valueobject/baseHeight';
 import Answer from '@/core/valueobject/answer';
-import Height from '@/core/valueobject/height';
-import Width from '@/core/valueobject/width';
 import CellFactory from '@/core/factory/cellFactory';
 import CellCollection from '@/core/cellCollection';
 import GroupFactory from '@/core/factory/groupFactory';
@@ -33,8 +31,8 @@ export default class Game {
     private gameTypes: GameType[],
     gameRepository: GameRepository = container.resolve('GameRepository'),
   ) {
-    this._height = Height.create(this.baseHeight, this.baseWidth);
-    this._width = Width.create(this.baseHeight, this.baseWidth);
+    this._height = this.baseHeight.value * this.baseWidth.value;
+    this._width = this.baseHeight.value * this.baseWidth.value;
     this._gameId = GameID.create();
     this._answerCandidateCollection = AnswerCandidateCollection.create(
       this.baseHeight,
@@ -68,9 +66,9 @@ export default class Game {
   /** ゲームボードにある全Cell */
   private cells: CellCollection;
   /** ゲームボードの横幅 */
-  private _width: Width;
+  private _width: number;
   /** ゲームボードの縦幅 */
-  private _height: Height;
+  private _height: number;
   /** 解答候補 */
   private _answerCandidateCollection: AnswerCandidateCollection;
   /** 解答候補（クローン） */

@@ -1,12 +1,10 @@
 import Group, { GroupType } from '@/core/entity/group';
 import VerticalPosition, { vPos } from '@/core/valueobject/verticalPosition';
-import { createHeight } from '@/core/valueobject/height';
 import BaseHeight from '@/core/valueobject/baseHeight';
 import BaseWidth from '@/core/valueobject/baseWidth';
 import HorizontalPosition, {
   hPos,
 } from '@/core/valueobject/horizontalPosition';
-import { createWidth } from '@/core/valueobject/width';
 import Utils from '@/utils/utils';
 import CellPosition from '@/core/valueobject/cellPosition';
 import CellCollection from '@/core/cellCollection';
@@ -68,7 +66,7 @@ export default class GroupFactory {
    */
   public createVerticalGroup(): Group[] {
     const groups = HorizontalPosition.createAll(
-      createWidth(this.baseHeight, this.baseWidth),
+      this.baseHeight.value * this.baseWidth.value,
     ).reduce((previous, currentPosition) => {
       const groupId = this.createId(
         this.gameId,
@@ -98,7 +96,7 @@ export default class GroupFactory {
    */
   public createHorizontalGroup(): Group[] {
     const groups = VerticalPosition.createAll(
-      createHeight(this.baseHeight, this.baseWidth),
+      this.baseHeight.value * this.baseWidth.value,
     ).reduce((previous, currentPosition) => {
       const groupId = this.createId(
         this.gameId,

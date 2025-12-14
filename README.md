@@ -18,7 +18,7 @@ import { generateGame } from '@ysk8hori/numberplace-generator';
 // Generate standard 9x9 size number place game.
 const [puzzle, solved] = generateGame({ width: 3, height: 3 });
 
-console.log(pazzle.toString());
+console.log(puzzle.toString());
 /*
 9, , , , , ,4, ,
 6, , ,4,9,2,3,5,

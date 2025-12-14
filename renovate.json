@@ -12,6 +12,12 @@
   "rangeStrategy": "pin",
   "packageRules": [
     {
+      "matchManagers": ["npm"],
+      "matchDepTypes": ["packageManager"],
+      "labels": ["packageManager"],
+      "groupName": "Package Manager"
+    },
+    {
       "matchUpdateTypes": ["major", "minor"],
       "labels": ["TypeScript"],
       "matchPackageNames": ["typescript"],
@@ -28,6 +34,11 @@
       "labels": ["UPDATE-MINOR&PATCH"],
       "excludePackageNames": ["typescript", "eslint", "eslint-config-prettier"],
       "excludePackagePatterns": ["^@typescript-eslint/", "^eslint-plugin"]
+    },
+    {
+      "matchManagers": ["github-actions"],
+      "pinDigests": true,
+      "minimumReleaseAge": "1 week"
     }
   ],
   "lockFileMaintenance": {

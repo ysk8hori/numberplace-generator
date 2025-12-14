@@ -49,7 +49,7 @@ export default class CreateGoodGameLogic {
           this.option,
         ).execute();
         difficulty = this.gameRepository.find(createdGameId).difficalty.value;
-      } catch (e) {
+      } catch {
         //
       }
     } while (

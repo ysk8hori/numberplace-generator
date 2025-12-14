@@ -23,6 +23,7 @@
     "test": "vitest --config vitest.config.ts",
     "test:run": "vitest run --config vitest.config.ts",
     "test:index": "vitest run --config vitest.config.ts src/__tests__/index.spec.ts",
+    "lint": "eslint --max-warnings=0 src",
     "lint:fix": "eslint --fix src",
     "prettier": "prettier --write .",
     "type-check": "tsc --noEmit",
@@ -31,7 +32,17 @@
     "commit": "git-cz",
     "commitmsg": "validate-commit-msg",
     "prepublishOnly": "pnpm run build",
-    "semantic-release": "semantic-release"
+    "semantic-release": "semantic-release",
+    "prepare": "husky"
+  },
+  "lint-staged": {
+    "*.ts": [
+      "eslint --max-warnings=0",
+      "prettier --write"
+    ],
+    "*.{json,yml,yaml,md}": [
+      "prettier --write"
+    ]
   },
   "author": "",
   "dependencies": {
@@ -48,6 +59,8 @@
     "cz-conventional-changelog": "3.3.0",
     "eslint": "9.39.1",
     "eslint-config-prettier": "10.1.8",
+    "husky": "9.1.7",
+    "lint-staged": "16.2.7",
     "prettier": "3.7.4",
     "semantic-release": "25.0.2",
     "tsc-alias": "1.8.16",

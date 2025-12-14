@@ -80,7 +80,7 @@ async function measureExecutionTime() {
   map.set('standard', []);
   map.set('cross', []);
 
-  const repeatCount = 10; // 繰り返し回数
+  const repeatCount = 30; // 繰り返し回数
   for (let i = 0; i < repeatCount; i++) {
     console.log(`Repeat count: ${i + 1}`);
     for (const gameType of gameTypes) {
@@ -101,14 +101,14 @@ async function measureExecutionTime() {
     console.log(row);
   }
 
-  // 平均値を計算して出力（外れ値を除外）
-  console.log('\n=== Average Results (excluding min/max, ms) ===');
+  // 平均値を計算して出力
+  console.log('\n=== Average Results (ms) ===');
   const averages = new Map<GameType, number>();
   gameTypes.forEach(gameType => {
     const values = map.get(gameType)!;
-    const avg = calculateAverageExcludingOutliers(values);
+    const avg = calculateAverage(values);
     averages.set(gameType, avg);
-    console.log(`${gameType}: ${avg.toFixed(2)} (from ${values.length} samples, excluded min/max)`);
+    console.log(`${gameType}: ${avg.toFixed(2)} (from ${values.length} samples)`);
   });
 
   // CSV に保存

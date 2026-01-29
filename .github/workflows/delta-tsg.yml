@@ -10,5 +10,5 @@ jobs:
     name: Delta TypeScript Graph
     steps:
       - name: Checkout
-        uses: actions/checkout@v6.0.1 # specify latest version
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2 # specify latest version
       - uses: ysk8hori/delta-typescript-graph-action@v1.0.4 # specify latest version

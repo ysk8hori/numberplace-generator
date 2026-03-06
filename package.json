@@ -4,7 +4,7 @@
   "description": "Generate number-place (Sudoku) game.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "packageManager": "pnpm@10.30.0",
+  "packageManager": "pnpm@10.30.3",
   "files": [
     "dist"
   ],
@@ -51,7 +51,7 @@
     "uuid": "13.0.0"
   },
   "devDependencies": {
-    "@types/node": "24.10.13",
+    "@types/node": "24.10.15",
     "@types/uuid": "11.0.0",
     "@typescript-eslint/eslint-plugin": "8.56.1",
     "@typescript-eslint/parser": "8.56.1",

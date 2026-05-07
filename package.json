@@ -48,7 +48,7 @@
   "dependencies": {
     "reflect-metadata": "0.2.2",
     "tsyringe": "4.10.0",
-    "uuid": "13.0.0"
+    "uuid": "13.0.1"
   },
   "devDependencies": {
     "@types/node": "24.12.2",

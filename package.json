@@ -53,8 +53,8 @@
   "devDependencies": {
     "@types/node": "24.12.4",
     "@types/uuid": "11.0.0",
-    "@typescript-eslint/eslint-plugin": "8.59.2",
-    "@typescript-eslint/parser": "8.59.2",
+    "@typescript-eslint/eslint-plugin": "8.59.3",
+    "@typescript-eslint/parser": "8.59.3",
     "commitizen": "4.3.1",
     "cz-conventional-changelog": "3.3.0",
     "eslint": "10.3.0",

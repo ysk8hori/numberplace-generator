@@ -65,7 +65,7 @@
     "semantic-release": "25.0.5",
     "tsc-alias": "1.8.17",
     "tsconfig-paths": "4.2.0",
-    "typescript": "5.9.3",
+    "typescript": "6.0.3",
     "vitest": "4.1.9"
   },
   "config": {

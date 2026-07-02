@@ -4,7 +4,7 @@
   "description": "Generate number-place (Sudoku) game.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "packageManager": "pnpm@10.34.3",
+  "packageManager": "pnpm@10.34.4",
   "files": [
     "dist"
   ],
@@ -60,7 +60,7 @@
     "eslint": "10.5.0",
     "eslint-config-prettier": "10.1.8",
     "husky": "9.1.7",
-    "lint-staged": "17.0.7",
+    "lint-staged": "17.0.8",
     "prettier": "3.8.4",
     "semantic-release": "25.0.5",
     "tsc-alias": "1.8.17",

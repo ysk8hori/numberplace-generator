@@ -51,7 +51,7 @@
     "uuid": "13.0.2"
   },
   "devDependencies": {
-    "@types/node": "24.13.2",
+    "@types/node": "24.13.3",
     "@types/uuid": "11.0.0",
     "@typescript-eslint/eslint-plugin": "8.62.1",
     "@typescript-eslint/parser": "8.62.1",
@@ -63,10 +63,10 @@
     "lint-staged": "17.0.8",
     "prettier": "3.9.4",
     "semantic-release": "25.0.5",
-    "tsc-alias": "1.8.17",
+    "tsc-alias": "1.9.0",
     "tsconfig-paths": "4.2.0",
     "typescript": "5.9.3",
-    "vitest": "4.1.9"
+    "vitest": "4.1.10"
   },
   "config": {
     "commitizen": {

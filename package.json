@@ -63,10 +63,10 @@
     "lint-staged": "17.3.0",
     "prettier": "3.9.6",
     "semantic-release": "25.0.9",
-    "tsc-alias": "1.9.1",
+    "tsc-alias": "1.9.2",
     "tsconfig-paths": "4.2.0",
     "typescript": "5.9.3",
-    "vitest": "4.1.10"
+    "vitest": "4.1.11"
   },
   "config": {
     "commitizen": {

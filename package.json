@@ -63,7 +63,7 @@
     "lint-staged": "17.6.0",
     "prettier": "3.9.10",
     "semantic-release": "25.0.9",
-    "tsc-alias": "1.9.7",
+    "tsc-alias": "1.9.9",
     "tsconfig-paths": "4.2.0",
     "typescript": "5.9.3",
     "vitest": "4.1.12"

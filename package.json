@@ -60,7 +60,7 @@
     "eslint": "10.14.0",
     "eslint-config-prettier": "10.1.8",
     "husky": "9.1.7",
-    "lint-staged": "17.6.0",
+    "lint-staged": "17.6.1",
     "prettier": "3.10.1",
     "semantic-release": "25.0.9",
     "tsc-alias": "1.9.10",
